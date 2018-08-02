@@ -1,0 +1,126 @@
+# 자바 ORM 표준 JPA 프로그래밍
+
+1. 객체지향설계에서 JPA를 사용해야 하는 이유
+	1. 반복작업 줄임
+	2. 자동 생성 SQL
+	3. SQL의 패러다임 불일치 해소 ( 상속, 연관관계 )
+	4. 객체 그래프 탐색, 지연 로딩 가능
+	5. 성능 최적화 : jpa는 같은 트랜잭션일 때 같은 객체가 조회되는 것을 보장
+	6. 생산성 향상
+	7. 유지보수 용이
+	8. 데이터 접근 추상화와 벤더 독립성
+
+2. JPA(Java Persistence API)란 무엇인가?
+	> 자바진영의 ORM 기술 표준.
+    > ORM ( Object-Relational Mapping )
+    > hibernate는 대중적으로 사용되는 ORM framework
+
+
+3. JPA 핵심 기능
+	1. 영속성 관리
+		> * EntityManagerFactory는 멀티쓰레드에 안전. EntityManager 는 동시성문제 발생. 스레드간 공유 금지.
+		> * persistence context : 객체를 영구 저장하는 환경.
+		> * entity의 생명주기 : new/transient - managed - detached - removed
+		> * 영속성 컨텍스트의 객체 관리가 가지는 장점
+		> 	>* 1차 캐시
+		> 	>* 동일성 보장
+		> 	>* 트랜잭션을 지원하는 쓰기 지연
+		> 	>* 변경 감지
+		> 	>* 지연 로딩
+		> * @DynamicUpdate : 수정된 데이터만을 사용하여 업데이트 쿼리 동적 생성
+		> * @DynamicInsert : null이 아닌 필드만으로 저장 쿼리 동적 생성.
+		> 	> 상황에 따라 다르지만 컬럼이 약 30개 이상이 되면 기본 방법인 정적 수정 쿼리보다 동적 수정쿼리가 빠르다고 한다.
+		> * flush : 영속성 콘텍스트의 변경 내용을 데이터베이스에 반영
+		> 	1. 변경 감지가 동작해서 영속성 컨텍스트에 있는 모든 엔티티를 스냅샷과 비교해서 수정된 엔티티를 찾는다. 수정된 엔티티는 수정 쿼리를 만들어 쓰기 지연 sql저장소에 등록된다.
+		> 	2. 쓰기 지연 SQL 저장소의 쿼리를 데이터베이스에 전송한다. (등록,수정,삭제 쿼리)
+		> 	* 영속성 컨텍스트를 플러시하는 방법
+		> 		1. em.flush() 호출
+		> 		2. 트랜잭션 커밋
+		> 		3. JPQL 쿼리 실행 시 (식별자를 기준으로 조회하는 find() 메소드 호출 시는 제외)
+		> * 준영속
+		> 	>* em.detach(entity)
+		> 	>* em.clear()
+		> 	>* em.close()
+		> * 준영속 -> 영속 상태로 변경하기 위해 : merge()
+		>
+
+4. JPA 사용하기
+	1. persistence.xml 설정
+    	```
+		 <?xml version="1.0" encoding="UTF-8"?>
+          <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+
+              <persistence-unit name="jpabook">
+
+                  <properties>
+
+                      <!-- 필수 속성 -->
+                      <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+                      <property name="javax.persistence.jdbc.user" value="sa"/>
+                      <property name="javax.persistence.jdbc.password" value=""/>
+                      <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/>
+                      <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+
+                      <!-- 옵션 -->
+                      <property name="hibernate.show_sql" value="true" />
+                      <property name="hibernate.format_sql" value="true" />
+                      <property name="hibernate.use_sql_comments" value="true" />
+                      <property name="hibernate.id.new_generator_mappings" value="true" />
+
+                      <!--<property name="hibernate.hbm2ddl.auto" value="create" />-->
+                  </properties>
+              </persistence-unit>
+
+          </persistence>
+		```
+        [hibernate documentation 바로가기](http://hibernate.org/orm/documentation/5.3)
+
+	2. 엔티티 매핑
+		> 객체와 테이블 매핑 : @Entity, @Table
+		> 기본 키 매핑 : @Id
+		> 필드와 컬럼 매핑 : @Column
+		> 연관 관계 매핑 : @ManyToOne, @JoinColumn, @ManyToMany, @OneToMany ...
+
+    3. 데이터베이스 스키마 자동 생성
+    	> `<property name="hibernate.hbm2ddl.auto" value="create" />`
+    	> | 옵션 | 설명 |
+    	> | --- | --- |
+    	> | create | 기존 테이블을 삭제하고 새로 생성한다. drop + create |
+    	> | create-drop | create 속성에 추가로 애플리케이션을 종료할 때 생성한 DDL을 제거한다. drop + create + drop |
+    	> | update | 데이터베이스 테이블과 엔티티 매핑정보를 비교해서 변경 사항만 수정한다. |
+    	> | validate | 데이터베이스 테이블과 엔티티 매핑정보를 비교해서 차이가 있으면 경고를 남기고 애플리케이션을 실행하지 않는다. 이 설정은 DDL을 수정하지 않는다. |
+    	> | none | 자동 생성 기능을 사용하지 않으려면 .auto 속성 자체를 삭제하거나 유효하지 않은 옵션 값을 주면 된다. |
+    	> .
+    	> 개발 환경에 따른 추천 전략
+    	> > 개발 초기 : create, update
+    	> > 개발 테스트 환경 : create, create-drop
+    	> > 테스트 서버 : update, validate
+    	> > 운영 서버 : validate, none
+
+    4. jpa annotation - db 매핑
+    	> | jpa | db |
+    	> | --- | --- |
+    	> | @Column(name="NAME", nullable = false, length = 10) | NAME varchar(10) not null |
+    	> | @Table(name="MEMBER", uniqueConstraints = {@UniqueConstraint(name="NAME_AGE_UNIQUE", columnNames={"NAME", "AGE"} )}) | ALTER TABLE MEMBER ADD CONSTRAINT NAME_AGE_UNIQUE UNIQUE (NAME, AGE) |
+    	> | @Id | PK |
+    	>
+
+	5. 기본 키 매핑 : `persistence.xml`에 `hibernate.id.new_generator_maippings=true` 속성을 추가해야 한다.
+		1. 직접 키 할당 전략 : @Id
+		2. IDENTITY 전략 : @Id @GeneratedValue(strategy = GenerationType.IDENTITY) : auto_increment 기능이 있는 mysql, postgreSQL, SQL server, db2 등에서 사용
+		3. SEQUENCE 전략 : 오라클, postgreSQL, DB2, H2 등에서 사용.
+			> ```
+			> @SequenceGenerator(name="board_seq_generator", sequenceName="board_seq", initialValue=1, allocationSize=1)
+			> @Id @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="board_seq_generator")
+			> ```
+		4. table 전략 : 모든 데이터베이스에 사용 가능.
+			> ```
+			> @TableGenerator(
+			> 	name = "board_seq_generator",
+			> 	table = "my_sequences",
+			> 	pkColumnValue = "board_seq", allocationSize = 1)
+			> @Id @GeneratedValue(strategy = GenerationType.TABLE, generator="board_seq_generator")
+			> ```
+		5. AUTO 전략 : 데이터베이스 방언에 따라 identity, sequence, table 전략 중 하나를 자동으로 선택함.
+			> `@Id @GeneratedValue(strategy = GenerationType.AUTO)`
+	6. 필드와 컬럼 매핑 (p.145)
