@@ -12,8 +12,6 @@ public class Java9ApplicationTests {
 	@Test
 	public void contextLoads() {
 
-		System.out.println(123);
-
 	}
 
 
