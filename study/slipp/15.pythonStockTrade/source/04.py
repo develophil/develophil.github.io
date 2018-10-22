@@ -6,6 +6,7 @@ from pandas import DataFrame
 import datetime
 import sqlite3
 import os
+import pandas_datareader.data as web
 
 MARKET_KOSPI   = 0
 MARKET_KOSDAQ  = 10
@@ -34,6 +35,14 @@ class PyMon:
                        index=self.kiwoom.ohlcv['date'])
         return df
 
+    @staticmethod
+    def get_ohicv_web(code):
+        time.sleep(TR_REQ_TIME_INTERVAL)
+        data = web.DataReader(code + ".KS", "yahoo")
+
+        return data
+
+
     def saveAllStockPrice(self, codes):
         num = len(codes)
 
@@ -42,11 +51,9 @@ class PyMon:
 
         for i, code in enumerate(codes):
             print(i, '/', num, ':', code)
-            df = self.get_ohlcv(code, datetime.datetime.today().strftime("%Y%m%d"))
+            df = self.get_ohlcv_web(code)
             print(df)
-            df.to_sql(code, con, if_exists='replace')
-
-
+            # df.to_sql(code, con, if_exists='replace')
 
     def run(self):
 
