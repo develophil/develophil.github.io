@@ -15,10 +15,42 @@ import java.util.stream.Stream;
  *
  * 1.	객체지향 언어에서 인터페이스는 그 시그너처와 선언이 변하지 않는다는 전제로 하여 다형성을 정의하는 객체간의 규약입니다. 자바8의 인터페이스는 인터페이스를 업그레이드하는 개념을 도입하였습니다.  새롭게 변경된 인터페이스에 대한 내용을 각각 기술하세요. (30점)
  * A.	인터페이스에서 구현 메서드를 작성할 수 있는 방법을 기술하세요.
- *      : default method 구현
- *      : static method 구현
+ *      : default method 구현 - 모든 구현 객체에서 공유하는 기본 메소드를 구현할 수 있다. 인터페이스를 다중 구현할때 동일한 이름의 메소드가 충돌하는 경우에는 반드시 해당 메소드를 재정의하여야 한다.
+ 				예) 
+				public interface SampleInterface {
+					default void sample() {
+						System.out.println("sample");
+					}
+				}
+ *      : static method 구현 - 인터페이스만으로 호출 가능한 정적 메소드를 구현할 수 있다.
+			 예)
+			public interface SampleInterface {
+				static void sample() {
+				System.out.println("sample");
+			 }
+		}
+			호출 예) SampleInterface.sample();
  * B.	자바9 에서 새롭게 추가된 구현 메서드를 작성할 수 있는 방법을 기술하세요.
- *      : private method / static method 구현
+ *      : private method 추가
+ *      예)
+ * 			public interface SampleInterface {
+ * 				private void innerMethod() {
+ * 			        System.out.println("private");
+ *              }
+ *              default void sample() {
+ *                  innerMethod();
+ *              }
+ * 		    }
+ *      : private static method 추가
+ *      예)
+ *          public interface SampleInterface {
+ * 				private static void innerMethod() {
+ * 			        System.out.println("private");
+ *              }
+ *              static void sample() {
+ *                  innerMethod();
+ *              }
+ * 		    }
  * C.	함수형 인터페이스에 대해서 설명하세요.
  *      : 추상 메서드가 한 개만 포함된 인터페이스
  *      : @FunctionalInterface 어노테이션을 붙여 함수형 인터페이스임을 명시한다.
