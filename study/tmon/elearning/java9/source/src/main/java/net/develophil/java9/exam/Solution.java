@@ -74,28 +74,34 @@ public class Solution {
 	final String examFileName = "stream-data.txt";
 	final String examFilePath = "/Users/hkpking/study/hkp/develophil.github.io/study/tmon/elearning/java9/exam/";
 
+	// 2-A. stream-data.txt 파일은 하나의 숫자를 행으로 가지고 있는 텍스트 파일입니다. 각 행을 읽어서 Stream<String> 타입으로 작성하세요.
 	public Stream<String> twoA() throws IOException {
 		return Files.lines(Paths.get(examFilePath + examFileName));
 	}
 
+	// 2-B. A를 IntStream 타입으로 변환하는 코드를 작성하세요.
 	public IntStream twoB() throws IOException {
 		return twoA().mapToInt(Integer::parseInt);
 	}
 
+	// 2-C. B 에서 작성된 코드에서 map 중간연산을 사용해서 각 요소를 2배로 해서 새롭게 스트림을 생성합니다.
 	public IntStream twoC() throws IOException {
 		return twoB().map(i -> i * 2);
 	}
 
+	// 2-D.	C에서 생성된 스트림에서 50미만의 숫자는 제외하고 새롭게 스트림을 생성합니다.
 	public IntStream twoD() throws IOException {
 		return twoC().filter(i -> i >= 50);
 	}
 
+	// 2-E.	최종적으로 모든 요소의 합을 구해서 출력합니다. (System.out.println)
 	public int twoE() throws IOException {
 		int sum = twoD().sum();
 		System.out.println(sum);
 		return sum;
 	}
 
+	// 3-A.	stream-data.txt 파일을 읽어 List<Integer> 혹은 ArrayList<Integer> 타입으로 데이터를 읽어옵니다.
 	public List<Integer> threeA() {
 
 		List<Integer> list = new ArrayList<>();
@@ -111,6 +117,7 @@ public class Solution {
 		return list;
 	}
 
+	// 3-B.	for 문을 사용하여 요소 중 50을 초과하는 요소의 총 합을 구해서 출력합니다. (각 요소를 2배로 곱하지 않습니다.)
 	public int threeB() {
 
 		int sum = 0;
