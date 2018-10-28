@@ -35,7 +35,7 @@ def reverse_min_max_scaling(org_x, x):
 input_data_column_cnt = 6  # 입력데이터의 컬럼 개수(Variable 개수)
 output_data_column_cnt = 1  # 결과데이터의 컬럼 개수
 
-seq_length = 28  # 1개 시퀀스의 길이(시계열데이터 입력 개수)
+seq_length = 7  # 1개 시퀀스의 길이(시계열데이터 입력 개수)
 rnn_cell_hidden_dim = 20  # 각 셀의 (hidden)출력 크기
 forget_bias = 1.0  # 망각편향(기본값 1.0)
 num_stacked_layers = 1  # stacked LSTM layers 개수
@@ -45,7 +45,7 @@ epoch_num = 100  # 에폭 횟수(학습용전체데이터를 몇 회 반복해�
 learning_rate = 0.01  # 학습률
 
 # 데이터를 로딩한다.
-stock_file_name = 'AMZN.csv'  # 아마존 주가데이터 파일
+stock_file_name = './sample/AMZN.csv'  # 아마존 주가데이터 파일
 encoding = 'euc-kr'  # 문자 인코딩
 names = ['Date', 'Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume']
 raw_dataframe = pd.read_csv(stock_file_name, names=names, encoding=encoding)  # 판다스이용 csv파일 로딩
@@ -140,7 +140,7 @@ def lstm_cell():
     #              (default: 1)  in order to reduce the scale of forgetting in the beginning of the training.
     # state_is_tuple: True ==> accepted and returned states are 2-tuples of the c_state and m_state.
     # state_is_tuple: False ==> they are concatenated along the column axis.
-    cell = tf.contrib.rnn.BasicLSTMCell(num_units=rnn_cell_hidden_dim,
+    cell = tf.contrib.rnn.LSTMCell(num_units=rnn_cell_hidden_dim,
                                         forget_bias=forget_bias, state_is_tuple=True, activation=tf.nn.softsign)
     if keep_prob < 1.0:
         cell = tf.contrib.rnn.DropoutWrapper(cell, output_keep_prob=keep_prob)
@@ -176,15 +176,25 @@ train_error_summary = []  # 학습용 데이터의 오류를 중간 중간 기�
 test_error_summary = []  # 테스트용 데이터의 오류를 중간 중간 기록한다
 test_predict = ''  # 테스트용데이터로 예측한 결과
 
+saver = tf.train.Saver()
 sess = tf.Session()
-sess.run(tf.global_variables_initializer())
+
+chk = tf.train.latest_checkpoint('checkpoints')
+
+if chk is not None:
+    saver = tf.train.import_meta_graph('./checkpoints/sentiment.ckpt.meta')
+    saver.restore(sess, chk)
+    tf.reset_default_graph()
+    print(chk)
+else:
+    sess.run(tf.global_variables_initializer())
 
 # 학습한다
 start_time = datetime.datetime.now()  # 시작시간을 기록한다
 print('학습을 시작합니다...')
 for epoch in range(epoch_num):
     _, _loss = sess.run([train, loss], feed_dict={X: trainX, Y: trainY})
-    if ((epoch + 1) % 100 == 0) or (epoch == epoch_num - 1):  # 100번째마다 또는 마지막 epoch인 경우
+    if ((epoch + 1) % 10 == 0) or (epoch == epoch_num - 1):  # 100번째마다 또는 마지막 epoch인 경우
         # 학습용데이터로 rmse오차를 구한다
         train_predict = sess.run(hypothesis, feed_dict={X: trainX})
         train_error = sess.run(rmse, feed_dict={targets: trainY, predictions: train_predict})
@@ -198,6 +208,8 @@ for epoch in range(epoch_num):
         # 현재 오류를 출력한다
         print("epoch: {}, train_error(A): {}, test_error(B): {}, B-A: {}".format(epoch + 1, train_error, test_error,
                                                                                  test_error - train_error))
+
+saver.save(sess, "checkpoints/sentiment.ckpt")
 
 end_time = datetime.datetime.now()  # 종료시간을 기록한다
 elapsed_time = end_time - start_time  # 경과시간을 구한다
