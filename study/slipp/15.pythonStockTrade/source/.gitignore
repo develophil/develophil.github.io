@@ -236,5 +236,9 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# added data ignore
+checkpoints/**
+stock.db*
+
 
 # End of https://www.gitignore.io/api/python,windows,intellij
