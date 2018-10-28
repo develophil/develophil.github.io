@@ -57,6 +57,8 @@ class SlippStockCrawler:
                 self.append_moving_average(df, 20)
                 self.append_moving_average(df, 60)
                 self.append_moving_average(df, 120)
+
+                df.drop(df.index[[0, 10]])
                 # print(df)
                 # df.to_sql(code, con, if_exists='replace')
                 stockData[code] = df
