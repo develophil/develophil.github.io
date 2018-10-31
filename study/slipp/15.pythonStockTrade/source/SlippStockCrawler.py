@@ -35,6 +35,8 @@ class SlippStockCrawler:
 
         dataframe = dataframe.loc[:, ['종목코드']]
 
+        # dataframe = dataframe[0:10] # 테스트용으로 10개만 자르기
+
         return dataframe['종목코드']
 
     @staticmethod
@@ -51,15 +53,18 @@ class SlippStockCrawler:
 
         for i, code in enumerate(codes):
             try:
-                print(i, '/', num, ':', code)
                 df = self.get_available_stock(code)
-                self.append_moving_average(df, 10)
-                self.append_moving_average(df, 20)
-                self.append_moving_average(df, 60)
-                self.append_moving_average(df, 120)
+                print(i, '/', num, ':', code, '(', len(df), ')')
+                if(len(df) < 60):
+                    continue
 
-                df.drop(df.index[[0, 10]])
-                # print(df)
+                df = self.append_moving_average(df, 5)
+                df = self.append_moving_average(df, 20)
+                df = self.append_moving_average(df, 60)
+                # df = self.append_moving_average(df, 120)
+
+                df = df[df['MA60'] == df['MA60']]
+                print(df)
                 # df.to_sql(code, con, if_exists='replace')
                 stockData[code] = df
 
@@ -70,13 +75,13 @@ class SlippStockCrawler:
 
     @staticmethod
     def save_stock_data(data):
-        with gzip.open('testPickleFile.pickle', 'wb') as f:
+        with gzip.open('kospi_stock_price.pickle', 'wb') as f:
             pickle.dump(data, f)
             f.close()
 
     @staticmethod
     def view_pickle():
-        with gzip.open('testPickleFile.pickle', 'rb') as f:
+        with gzip.open('kospi_stock_price.pickle', 'rb') as f:
             data = pickle.load(f)
             print("==================pickle=================")
             print(len(data))
@@ -111,8 +116,9 @@ class SlippStockCrawler:
 
     @staticmethod
     def append_moving_average(df, days):
+        col_name = "MA" + str(days)
         ma = df['Adj Close'].rolling(window=days).mean().round(0)
-        df.insert(len(df.columns), "MA" + str(days), ma)
+        df.insert(len(df.columns), col_name, ma)
 
         return df
 
