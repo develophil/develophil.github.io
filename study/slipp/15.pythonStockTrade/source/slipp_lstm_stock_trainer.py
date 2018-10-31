@@ -32,6 +32,23 @@ def reverse_min_max_scaling(org_x, x):
     x_np = np.asarray(x)
     return (x_np * (org_x_np.max() - org_x_np.min() + 1e-7)) + org_x_np.min()
 
+def get_raw_dataframe():
+    stock_file_name = './sample/AMZN.csv'  # 아마존 주가데이터 파일
+    encoding = 'euc-kr'  # 문자 인코딩
+    names = ['Date', 'Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume']
+
+    raw_dataframe = pd.read_csv(stock_file_name, names=names, encoding=encoding)  # 판다스이용 csv파일 로딩
+
+    # raw_dataframe.drop('Date', axis=1, inplace=True) # 시간열을 제거하고 dataframe 재생성하지 않기
+    del raw_dataframe['Date']  # 위 줄과 같은 효과
+
+    return raw_dataframe
+
+def get_raw_dataframe_with_code():
+    # 데이터를 로딩한다.
+    stock_file_name = 'kospi_stock_price.pickle'  # 아마존 주가데이터 파일
+    with gzip.open(stock_file_name, 'rb') as f:
+        return pickle.load(f)
 
 # 하이퍼파라미터
 input_data_column_cnt = 6  # 입력데이터의 컬럼 개수(Variable 개수)
@@ -47,27 +64,16 @@ epoch_num = 100  # 에폭 횟수(학습용전체데이터를 몇 회 반복해�
 learning_rate = 0.01  # 학습률
 
 # 데이터를 로딩한다.
-stock_file_name = 'kospi_stock_price.pickle'  # 아마존 주가데이터 파일
-# encoding = 'euc-kr'  # 문자 인코딩
-names = ['High', 'Low', 'Open', 'Close', 'Volume', 'Adj Close', 'MA10', 'MA20', 'MA60', 'MA120']
-# raw_dataframe = pd.read_csv(stock_file_name, names=names, encoding=encoding)  # 판다스이용 csv파일 로딩
-
-with gzip.open(stock_file_name, 'rb') as f:
-    raw_dataframe = pickle.load(f)
-    # raw_dataframe.info()  # 데이터 정보 출력
-
-
-for code in raw_dataframe:
-    rdf = raw_dataframe[code]
-    if(len(rdf) >= 120):
-        rdf = rdf.drop(rdf.index[[0, 118]]) # 상위 119개 행 삭제 처리 필요...
-        print(code)
-        rdf.info()
-    else:
-        continue
-
-# raw_dataframe.drop('Date', axis=1, inplace=True) # 시간열을 제거하고 dataframe 재생성하지 않기
-del raw_dataframe['Date']  # 위 줄과 같은 효과
+# raw_dataframe = get_raw_dataframe()
+raw_dataframe = get_raw_dataframe_with_code()
+#
+# for code in raw_dataframe:
+#     rdf = raw_dataframe[code]
+#     if(len(rdf) >= 120):
+#         rdf = rdf.drop(rdf.index[[0, 118]]) # 상위 119개 행 삭제 처리 필요...
+#         print(code)
+#     else:
+#         continue
 
 stock_info = raw_dataframe.values[1:].astype(np.float)  # 금액&거래량 문자열을 부동소수점형으로 변환한다
 print("stock_info.shape: ", stock_info.shape)
