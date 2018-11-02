@@ -237,7 +237,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # added data ignore
-checkpoints/**
 stock.db*
 
 
