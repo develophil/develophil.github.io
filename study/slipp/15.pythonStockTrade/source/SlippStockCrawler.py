@@ -1,14 +1,14 @@
+import gzip
 import os
+import pickle
 import sqlite3
+from datetime import timedelta
 from io import BytesIO
 
-import numpy as np
 import pandas as pd
 import pandas_datareader.data as web
 import requests
-from pandas_datareader._utils import RemoteDataError
-import pickle
-import gzip
+
 
 class SlippStockCrawler:
     def __init__(self):
@@ -35,7 +35,7 @@ class SlippStockCrawler:
 
         dataframe = dataframe.loc[:, ['종목코드']]
 
-        # dataframe = dataframe[0:10] # 테스트용으로 10개만 자르기
+        dataframe = dataframe[0:10] # 테스트용으로 10개만 자르기
 
         return dataframe['종목코드']
 
@@ -44,18 +44,18 @@ class SlippStockCrawler:
         # sqlite 현재 폴더 stock.db 연결
         return sqlite3.connect(os.getcwd() + "/stock.db")
 
-    def run(self):
-
+    def get_kospi_stock_price(self, start, end):
         codes = self.get_stock_code_list()
         num = len(codes)
 
-        stockData = {}
+        stock_data = {}
 
         for i, code in enumerate(codes):
             try:
-                df = self.get_available_stock(code)
+                df = self.get_available_stock(code, start, end)
                 print(i, '/', num, ':', code, '(', len(df), ')')
-                if(len(df) < 60):
+                if (len(df) < 68):
+                    print('not efficient rows')
                     continue
 
                 df = self.append_moving_average(df, 5)
@@ -66,12 +66,15 @@ class SlippStockCrawler:
                 df = df[df['MA60'] == df['MA60']]
                 print(df)
                 # df.to_sql(code, con, if_exists='replace')
-                stockData[code] = df
-
+                stock_data[code] = df
             except:
                 print('error')
 
-        self.save_stock_data(stockData)
+        return stock_data
+
+    def run(self):
+        stock_data = self.get_kospi_stock_price()
+        self.save_stock_data(stock_data)
 
     @staticmethod
     def save_stock_data(data):
@@ -105,9 +108,14 @@ class SlippStockCrawler:
             f.close()
 
     @staticmethod
-    def get_available_stock(code):
+    def get_available_stock(code, start, end):
+
+        if(start is not None):
+            start = start - timedelta(days=95)
+
+
         # 종목 선택
-        gs = web.DataReader(code + ".KS", "yahoo")
+        gs = web.DataReader(code + ".KS", "yahoo", start, end)
         gs[["High", "Low", "Open", "Close", "Volume", "Adj Close"]] = gs[
             ["High", "Low", "Open", "Close", "Volume", "Adj Close"]].round()
         # print(gs)
@@ -130,7 +138,3 @@ if __name__ == "__main__":
 
     # SlippStockCrawler.save_test()
     # SlippStockCrawler.view_test()
-
-
-
-

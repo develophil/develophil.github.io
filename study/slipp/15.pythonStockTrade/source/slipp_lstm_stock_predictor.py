@@ -1,12 +1,19 @@
 import tensorflow as tf
 import numpy as np
 import pandas as pd
-import datetime
+from datetime import datetime, timedelta
 import matplotlib.pyplot as plt
 import pickle
 import gzip
 from pandas import DataFrame
 
+from SlippStockCrawler import SlippStockCrawler
+
+# if __name__ == "__main__":
+#     crawler = SlippStockCrawler()
+#     end = datetime.today()
+#     start = end - timedelta(days=7)
+#     stock_data = crawler.get_kospi_stock_price(start, end)
 
 # 랜덤에 의해 똑같은 결과를 재현하도록 시드 설정
 # 하이퍼파라미터를 튜닝하기 위한 용도(흔들리면 무엇때문에 좋아졌는지 알기 어려움)
@@ -122,39 +129,48 @@ saver = tf.train.import_meta_graph('./checkpoints/sentiment.ckpt.meta')
 saver.restore(sess, chk)
 # tf.reset_default_graph()
 
-current_stock_prices = {
-    'date': [1,2,3,4,5],
-    'open': [37400,36500,37200,37700,37450],
-    'high': [36100,35100,35700,36650,35000],
-    'low': [36650,36250,36200,36700,37100],
-    'close': [36450,35800,36650,37450,35350],
-    'adj close': [36450,35800,36650,37450,35350],
-    'MA5': [38430,37560,36950,36670,36340],
-    'MA20': [41380,40960,40622,40342,39950],
-    'MA60': [43389,43306,43225,43122,43000],
-    'volume': [210220,232572,116477,111172,266428]}
+# current_stock_prices = {
+#     'date': [1,2,3,4,5],
+#     'open': [37400,36500,37200,37700,37450],
+#     'high': [36100,35100,35700,36650,35000],
+#     'low': [36650,36250,36200,36700,37100],
+#     'close': [36450,35800,36650,37450,35350],
+#     'adj close': [36450,35800,36650,37450,35350],
+#     'MA5': [38430,37560,36950,36670,36340],
+#     'MA20': [41380,40960,40622,40342,39950],
+#     'MA60': [43389,43306,43225,43122,43000],
+#     'volume': [210220,232572,116477,111172,266428]}
+#
+# df = DataFrame(current_stock_prices, columns=['open', 'high', 'low', 'close', 'adj close', 'MA5', 'MA20', 'MA60', 'volume'],
+#                index=current_stock_prices['date'])
 
-df = DataFrame(current_stock_prices, columns=['open', 'high', 'low', 'close', 'adj close', 'MA5', 'MA20', 'MA60', 'volume'],
-               index=current_stock_prices['date'])
+crawler = SlippStockCrawler()
+end = datetime.today()
+start = end - timedelta(days=7)
+stock_data = crawler.get_kospi_stock_price(start, end)
 
+for code in stock_data:
+    df = stock_data[code]
+    df = df[['Open', 'High', 'Low', 'Close', 'Adj Close', 'MA5', 'MA20', 'MA60', 'Volume']]
 
-stock_info = df.values.astype(np.float)  # 금액&거래량 문자열을 부동소수점형으로 변환한다
-price = stock_info[:, 0:8]
-volume = stock_info[:, -1:]
+    stock_info = df.values.astype(np.float)  # 금액&거래량 문자열을 부동소수점형으로 변환한다
+    price = stock_info[:, 0:8]
+    volume = stock_info[:, -1:]
 
-norm_price = min_max_scaling(price)  # 가격형태 데이터 정규화 처리
-norm_volume = min_max_scaling(volume)  # 거래량형태 데이터 정규화 처리
+    norm_price = min_max_scaling(price)  # 가격형태 데이터 정규화 처리
+    norm_volume = min_max_scaling(volume)  # 거래량형태 데이터 정규화 처리
 
-x = np.concatenate((norm_price, norm_volume), axis=1)  # axis=1, 세로로 합친다
+    x = np.concatenate((norm_price, norm_volume), axis=1)  # axis=1, 세로로 합친다
 
-# sequence length만큼의 가장 최근 데이터를 슬라이싱한다
-recent_data = np.array([x[len(x) - seq_length:]])
-print("recent_data.shape:", recent_data.shape)
-print("recent_data:", recent_data)
+    # sequence length만큼의 가장 최근 데이터를 슬라이싱한다
+    recent_data = np.array([x[len(x) - seq_length:]])
+    print("recent_data.shape:", recent_data.shape)
+    print("recent_data:", recent_data)
 
-# 내일 종가를 예측해본다
-test_predict = sess.run(hypothesis, feed_dict={X: recent_data})
+    # 내일 종가를 예측해본다
+    test_predict = sess.run(hypothesis, feed_dict={X: recent_data})
 
-print("test_predict", test_predict[0])
-test_predict = reverse_min_max_scaling(price, test_predict)  # 금액데이터 역정규화한다
-print("Tomorrow's stock price", test_predict[0])  # 예측한 주가를 출력한다
+    print("test_predict", test_predict[0])
+    test_predict = reverse_min_max_scaling(price, test_predict)  # 금액데이터 역정규화한다
+    print("Tomorrow's stock price", test_predict[0])  # 예측한 주가를 출력한다
+
