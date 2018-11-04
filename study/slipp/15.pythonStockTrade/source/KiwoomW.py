@@ -10,6 +10,13 @@ class Kiwoom(QAxWidget):
         super().__init__()
         self._create_kiwoom_instance()
         self._set_signal_slots()
+        self._set_variable
+
+    def _set_variable(self):
+        account_number = kiwoom.get_login_info("ACCNO")  # 7006265572
+        self.account_number = account_number.split(';')[0]
+        self.trade_item_code = "6EZ18"
+        print('accno : ', self.account_number, 'code : ', self.trade_item_code)
 
     def _create_kiwoom_instance(self):
         self.setControl("KFOPENAPI.KFOpenAPICtrl.1")
@@ -97,8 +104,19 @@ class Kiwoom(QAxWidget):
             self._opt10081(rqname, trcode)
         elif rqname == "opw00001_req":
             self._opw00001(rqname, trcode)
-        elif rqname == "opw00018_req":
-            self._opw00018(rqname, trcode)
+        elif rqname == "opw30009_req":
+            self._opw30009(rqname, trcode)
+        elif rqname == "opw30011_req":
+            self._opw30011(rqname, trcode)
+        elif rqname == "opw50001_req":
+            self._opw50001(rqname, trcode)
+        elif rqname == "opw60003_req":
+            self._opw60003(rqname, trcode)
+        elif rqname == "opw30019" \
+                       "" \
+                       "" \
+                       "_req":
+            self._opw30019(rqname, trcode)
         elif rqname == "opc10001_req":
             self._opc10001(rqname, trcode)
         elif rqname == "opc10002_req":
@@ -188,6 +206,12 @@ class Kiwoom(QAxWidget):
 
         return df
 
+    def get_available_order_count(self, sell_buy):
+        kiwoom.set_input_value("계좌번호", self.account_number)
+        kiwoom.set_input_value("종목코드", self.trade_item_code)
+        kiwoom.set_input_value("매도수구분", sell_buy)
+        kiwoom.comm_rq_data("opw30011_req", "opw30011", "", "1212")
+
     def get_chart_data(self, type, value):
         # opt10012 : 분 단위 데이터 조회.... 이걸로 바꿔야 할듯..
         tr_code = ''
@@ -205,6 +229,72 @@ class Kiwoom(QAxWidget):
 
         kiwoom.comm_rq_data(tr_code+"_req", tr_code, "", "화면번호")
 
+    def reset_opw30009_output(self):
+        self.opw30009_output = []
+
+    def _opw30009(self, rqname, trcode):
+        # single data
+        currency_code = self._comm_get_data(trcode, "", rqname, 0, "통화코드")
+        foreign_currency_deposit = self._comm_get_data(trcode, "", rqname, 0, "외화예수금")
+        receivables = self._comm_get_data(trcode, "", rqname, 0, "미수금")
+        aa= self._comm_get_data(trcode, "", rqname, 0, "선물청산손익")
+        bb= self._comm_get_data(trcode, "", rqname, 0, "옵션청산손익")
+        cc= self._comm_get_data(trcode, "", rqname, 0, "옵션결제차금")
+        dd= self._comm_get_data(trcode, "", rqname, 0, "선물평가손익")
+        ee= self._comm_get_data(trcode, "", rqname, 0, "옵션평가손익")
+        ff= self._comm_get_data(trcode, "", rqname, 0, "옵션평가차금")
+        gg= self._comm_get_data(trcode, "", rqname, 0, "증거금율")
+        hh= self._comm_get_data(trcode, "", rqname, 0, "원화대용평가금액")
+        ii= self._comm_get_data(trcode, "", rqname, 0, "예탁자산평가")
+        jj= self._comm_get_data(trcode, "", rqname, 0, "익일예탁금")
+        kk= self._comm_get_data(trcode, "", rqname, 0, "위탁증거금")
+        ll= self._comm_get_data(trcode, "", rqname, 0, "미체결증거금")
+        mm= self._comm_get_data(trcode, "", rqname, 0, "포지션증거금")
+        nn= self._comm_get_data(trcode, "", rqname, 0, "유지증거금")
+        oo= self._comm_get_data(trcode, "", rqname, 0, "추가증거금")
+        pp= self._comm_get_data(trcode, "", rqname, 0, "수수료")
+        qq= self._comm_get_data(trcode, "", rqname, 0, "주문가능금액")
+        rr= self._comm_get_data(trcode, "", rqname, 0, "인출가능금액")
+        ss= self._comm_get_data(trcode, "", rqname, 0, "위험도")
+
+        self.opw00018_output.append(currency_code)
+        self.opw00018_output.append(Kiwoom.change_format(foreign_currency_deposit))
+        self.opw00018_output.append(Kiwoom.change_format(receivables))
+        self.opw00018_output.append(Kiwoom.change_format(aa))
+        self.opw00018_output.append(Kiwoom.change_format(bb))
+        self.opw00018_output.append(Kiwoom.change_format(cc))
+        self.opw00018_output.append(Kiwoom.change_format(dd))
+        self.opw00018_output.append(Kiwoom.change_format(ee))
+        self.opw00018_output.append(Kiwoom.change_format(ff))
+        self.opw00018_output.append(Kiwoom.change_format(gg))
+        self.opw00018_output.append(Kiwoom.change_format(hh))
+        self.opw00018_output.append(Kiwoom.change_format(ii))
+        self.opw00018_output.append(Kiwoom.change_format(jj))
+        self.opw00018_output.append(Kiwoom.change_format(kk))
+        self.opw00018_output.append(Kiwoom.change_format(ll))
+        self.opw00018_output.append(Kiwoom.change_format(mm))
+        self.opw00018_output.append(Kiwoom.change_format(nn))
+        self.opw00018_output.append(Kiwoom.change_format(oo))
+        self.opw00018_output.append(Kiwoom.change_format(pp))
+        self.opw00018_output.append(Kiwoom.change_format(qq))
+        self.opw00018_output.append(Kiwoom.change_format(rr))
+        self.opw00018_output.append(Kiwoom.change_format(ss))
+
+    # 주문가능수량조회
+    def _opw30011(self, rqname, trcode):
+        available_buy_count = self._comm_get_data(trcode, "", rqname, 0, "주문가능수량")
+
+    # 장운영정보조회
+    def _opw50001(self, rqname, trcode):
+        print('opw50001')
+
+    # 원화외화예수금잔액조회
+    def _opw60003(self, rqname, trcode):
+        print('opw60003')
+
+    # 해외옵션인수도신청
+    def _opw30019(self, rqname, trcode):
+        print('opw30019')
 
 if __name__ == "__main__":
     app = QApplication(sys.argv) 
@@ -214,6 +304,3 @@ if __name__ == "__main__":
     # kiwoom.reset_opw00018_output()
     kiwoom.get_chart_data('minute', 30)
 
-    account_number = kiwoom.get_login_info("ACCNO")
-    account_number = account_number.split(';')[0]
-    print('accno : ', account_number)
