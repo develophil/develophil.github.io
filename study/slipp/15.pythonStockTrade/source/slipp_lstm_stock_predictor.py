@@ -1,3 +1,6 @@
+import sqlite3
+from collections import namedtuple
+
 import tensorflow as tf
 import numpy as np
 import pandas as pd
@@ -41,11 +44,13 @@ def reverse_min_max_scaling(org_x, x):
     x_np = np.asarray(x)
     return (x_np * (org_x_np.max() - org_x_np.min() + 1e-7)) + org_x_np.min()
 
+
 def get_stock_dictionary():
     # 데이터를 로딩한다.
     stock_file_name = 'kospi_stock_price.pickle'  # 아마존 주가데이터 파일
     with gzip.open(stock_file_name, 'rb') as f:
         return pickle.load(f)
+
 
 # 모델(LSTM 네트워크) 생성
 def lstm_cell():
@@ -56,10 +61,26 @@ def lstm_cell():
     # state_is_tuple: True ==> accepted and returned states are 2-tuples of the c_state and m_state.
     # state_is_tuple: False ==> they are concatenated along the column axis.
     cell = tf.contrib.rnn.LSTMCell(num_units=rnn_cell_hidden_dim,
-                                        forget_bias=forget_bias, state_is_tuple=True, activation=tf.nn.softsign)
+                                   forget_bias=forget_bias, state_is_tuple=True, activation=tf.nn.softsign)
     if keep_prob < 1.0:
         cell = tf.contrib.rnn.DropoutWrapper(cell, output_keep_prob=keep_prob)
     return cell
+
+Stock = namedtuple("Stock", ["gain_rate", "code"])
+
+gain_rate_top_10 = [Stock(0, "0000")]
+
+
+def append_gain_rate_top_10(gain_rate, code):
+
+    if gain_rate > gain_rate_top_10[-1].gain_rate:
+        if len(gain_rate_top_10) is 10:
+            print("del stock : ", gain_rate_top_10[-1])
+            del gain_rate_top_10[-1]
+        print("append stock : ", gain_rate)
+        gain_rate_top_10.append(Stock(gain_rate, code))
+        gain_rate_top_10.sort(key=lambda s:s.gain_rate, reverse=True)
+
 
 # 하이퍼파라미터
 input_data_column_cnt = 9  # 입력데이터의 컬럼 개수(Variable 개수)
@@ -146,15 +167,15 @@ saver.restore(sess, chk)
 
 crawler = SlippStockCrawler()
 end = datetime.today()
-start = end - timedelta(days=7)
-stock_data = crawler.get_kospi_stock_price(start, end)
+start = end - timedelta(days=seq_length)
+stock_data = crawler.get_kospi_stock_price(start, end, seq_length)
 
 for code in stock_data:
     df = stock_data[code]
     df = df[['Open', 'High', 'Low', 'Close', 'Adj Close', 'MA5', 'MA20', 'MA60', 'Volume']]
 
     stock_info = df.values.astype(np.float)  # 금액&거래량 문자열을 부동소수점형으로 변환한다
-    price = stock_info[:, 0:8]
+    price = stock_info[:, 0:input_data_column_cnt - 1]
     volume = stock_info[:, -1:]
 
     norm_price = min_max_scaling(price)  # 가격형태 데이터 정규화 처리
@@ -163,14 +184,26 @@ for code in stock_data:
     x = np.concatenate((norm_price, norm_volume), axis=1)  # axis=1, 세로로 합친다
 
     # sequence length만큼의 가장 최근 데이터를 슬라이싱한다
-    recent_data = np.array([x[len(x) - seq_length:]])
+    recent_data = np.array([x[len(x) - seq_length - 1:-1]])
     print("recent_data.shape:", recent_data.shape)
     print("recent_data:", recent_data)
 
     # 내일 종가를 예측해본다
-    test_predict = sess.run(hypothesis, feed_dict={X: recent_data})
+    test_predict = sess.run(hypothesis, feed_dict={X: recent_data})[0][0]
 
-    print("test_predict", test_predict[0])
+    print("test_predict", test_predict)
     test_predict = reverse_min_max_scaling(price, test_predict)  # 금액데이터 역정규화한다
-    print("Tomorrow's stock price", test_predict[0])  # 예측한 주가를 출력한다
+    print("Tomorrow's stock price", test_predict)  # 예측한 주가를 출력한다
 
+    real_close_price = df['Adj Close'][-1]
+    last_close_price = df['Adj Close'][-2]
+    print("last close : ", last_close_price)
+    print("real close : ", real_close_price)
+    gain_rate = (test_predict / last_close_price * 100).round(2)
+    print("gain rate : ", gain_rate)
+
+    append_gain_rate_top_10(gain_rate, code)
+
+print("append_gain_rate_top_10 : ", gain_rate_top_10)
+con = sqlite3.connect("/gain_rate_top_10.db")
+gain_rate_top_10.to_sql(code, con, if_exists='replace')

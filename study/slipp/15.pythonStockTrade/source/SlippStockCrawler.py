@@ -35,7 +35,7 @@ class SlippStockCrawler:
 
         dataframe = dataframe.loc[:, ['종목코드']]
 
-        dataframe = dataframe[0:10] # 테스트용으로 10개만 자르기
+        # dataframe = dataframe[0:10] # 테스트용으로 10개만 자르기
 
         return dataframe['종목코드']
 
@@ -44,17 +44,22 @@ class SlippStockCrawler:
         # sqlite 현재 폴더 stock.db 연결
         return sqlite3.connect(os.getcwd() + "/stock.db")
 
-    def get_kospi_stock_price(self, start, end):
+    def get_kospi_stock_price(self, start, end, seq_length):
         codes = self.get_stock_code_list()
         num = len(codes)
 
         stock_data = {}
 
+        min_available_days = 60 + seq_length
+        min_search_days = min_available_days + int(min_available_days / 5 * 3)
+        print("min_search_days : ", min_search_days)
+
         for i, code in enumerate(codes):
             try:
-                df = self.get_available_stock(code, start, end)
+                df = self.get_available_stock(code, start, end, min_search_days)
                 print(i, '/', num, ':', code, '(', len(df), ')')
-                if (len(df) < 68):
+
+                if (len(df) < 60 + seq_length):
                     print('not efficient rows')
                     continue
 
@@ -108,11 +113,10 @@ class SlippStockCrawler:
             f.close()
 
     @staticmethod
-    def get_available_stock(code, start, end):
+    def get_available_stock(code, start, end, min_search_days):
 
         if(start is not None):
-            start = start - timedelta(days=95)
-
+            start = start - timedelta(days=min_search_days)
 
         # 종목 선택
         gs = web.DataReader(code + ".KS", "yahoo", start, end)
