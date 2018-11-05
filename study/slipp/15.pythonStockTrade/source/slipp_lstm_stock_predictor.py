@@ -66,19 +66,27 @@ def lstm_cell():
         cell = tf.contrib.rnn.DropoutWrapper(cell, output_keep_prob=keep_prob)
     return cell
 
-Stock = namedtuple("Stock", ["gain_rate", "code"])
 
-gain_rate_top_10 = [Stock(0, "0000")]
+Stock = namedtuple("Stock", ["gain_rate", "code", "price"])
+
+gain_rate_top_10 = [Stock(0, "0000", 0)]
 
 
-def append_gain_rate_top_10(gain_rate, code):
+def update_buy_list():
+    with open("top10_buy_list.txt", "w") as f:
+        for stock in gain_rate_top_10:
+            line = "buy;%s;market;10;0;prebuy\n" % stock.code
+            f.write(line)
+
+
+def append_gain_rate_top_10(gain_rate, code, price):
 
     if gain_rate > gain_rate_top_10[-1].gain_rate:
         if len(gain_rate_top_10) is 10:
             print("del stock : ", gain_rate_top_10[-1])
             del gain_rate_top_10[-1]
         print("append stock : ", gain_rate)
-        gain_rate_top_10.append(Stock(gain_rate, code))
+        gain_rate_top_10.append(Stock(gain_rate, code, price))
         gain_rate_top_10.sort(key=lambda s:s.gain_rate, reverse=True)
 
 
@@ -184,7 +192,7 @@ for code in stock_data:
     x = np.concatenate((norm_price, norm_volume), axis=1)  # axis=1, 세로로 합친다
 
     # sequence length만큼의 가장 최근 데이터를 슬라이싱한다
-    recent_data = np.array([x[len(x) - seq_length - 1:-1]])
+    recent_data = np.array([x[len(x) - seq_length:]])
     print("recent_data.shape:", recent_data.shape)
     print("recent_data:", recent_data)
 
@@ -202,8 +210,9 @@ for code in stock_data:
     gain_rate = (test_predict / last_close_price * 100).round(2)
     print("gain rate : ", gain_rate)
 
-    append_gain_rate_top_10(gain_rate, code)
+    append_gain_rate_top_10(gain_rate, code, price)
 
 print("append_gain_rate_top_10 : ", gain_rate_top_10)
-con = sqlite3.connect("/gain_rate_top_10.db")
-gain_rate_top_10.to_sql(code, con, if_exists='replace')
+update_buy_list()
+
+

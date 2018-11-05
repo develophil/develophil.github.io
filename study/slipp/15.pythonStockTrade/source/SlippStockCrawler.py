@@ -35,7 +35,7 @@ class SlippStockCrawler:
 
         dataframe = dataframe.loc[:, ['종목코드']]
 
-        # dataframe = dataframe[0:10] # 테스트용으로 10개만 자르기
+        dataframe = dataframe[0:10] # 테스트용으로 10개만 자르기
 
         return dataframe['종목코드']
 
