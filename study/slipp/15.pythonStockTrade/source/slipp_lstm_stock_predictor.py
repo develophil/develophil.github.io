@@ -73,9 +73,9 @@ gain_rate_top_10 = [Stock(0, "0000", 0)]
 
 
 def update_buy_list():
-    with open("top10_buy_list.txt", "w") as f:
+    with open("top10_buy_list.txt", "wt") as f:
         for stock in gain_rate_top_10:
-            line = "buy;%s;market;10;0;prebuy\n" % stock.code
+            line = "buy;{};market;10;0;prebuy;{};{}\n".format(stock.code, stock.gain_rate, stock.price)
             f.write(line)
 
 
@@ -201,7 +201,7 @@ for code in stock_data:
 
     print("test_predict", test_predict)
     test_predict = reverse_min_max_scaling(price, test_predict)  # 금액데이터 역정규화한다
-    print("Tomorrow's stock price", test_predict)  # 예측한 주가를 출력한다
+    print("Tomorrow's stock price", test_predict.round(2))  # 예측한 주가를 출력한다
 
     real_close_price = df['Adj Close'][-1]
     last_close_price = df['Adj Close'][-2]
@@ -210,7 +210,7 @@ for code in stock_data:
     gain_rate = (test_predict / last_close_price * 100).round(2)
     print("gain rate : ", gain_rate)
 
-    append_gain_rate_top_10(gain_rate, code, price)
+    append_gain_rate_top_10(gain_rate, code, test_predict.round(2))
 
 print("append_gain_rate_top_10 : ", gain_rate_top_10)
 update_buy_list()
