@@ -1,14 +1,9 @@
-import sqlite3
+import gzip
+import pickle
 from collections import namedtuple
 
-import tensorflow as tf
 import numpy as np
-import pandas as pd
-from datetime import datetime, timedelta
-import matplotlib.pyplot as plt
-import pickle
-import gzip
-from pandas import DataFrame
+import tensorflow as tf
 
 from SlippStockCrawler import SlippStockCrawler
 
@@ -91,7 +86,7 @@ def append_gain_rate_top_10(gain_rate, code, price):
 
 
 # 하이퍼파라미터
-input_data_column_cnt = 9  # 입력데이터의 컬럼 개수(Variable 개수)
+input_data_column_cnt = 8  # 입력데이터의 컬럼 개수(Variable 개수)
 output_data_column_cnt = 1  # 결과데이터의 컬럼 개수
 
 seq_length = 5  # 1개 시퀀스의 길이(시계열데이터 입력 개수)
@@ -156,31 +151,22 @@ chk = tf.train.latest_checkpoint('checkpoints')
 saver = tf.train.Saver()
 saver = tf.train.import_meta_graph('./checkpoints/sentiment.ckpt.meta')
 saver.restore(sess, chk)
-# tf.reset_default_graph()
 
-# current_stock_prices = {
-#     'date': [1,2,3,4,5],
-#     'open': [37400,36500,37200,37700,37450],
-#     'high': [36100,35100,35700,36650,35000],
-#     'low': [36650,36250,36200,36700,37100],
-#     'close': [36450,35800,36650,37450,35350],
-#     'adj close': [36450,35800,36650,37450,35350],
-#     'MA5': [38430,37560,36950,36670,36340],
-#     'MA20': [41380,40960,40622,40342,39950],
-#     'MA60': [43389,43306,43225,43122,43000],
-#     'volume': [210220,232572,116477,111172,266428]}
-#
-# df = DataFrame(current_stock_prices, columns=['open', 'high', 'low', 'close', 'adj close', 'MA5', 'MA20', 'MA60', 'volume'],
-#                index=current_stock_prices['date'])
 
-crawler = SlippStockCrawler()
-end = datetime.today()
-start = end - timedelta(days=seq_length)
-stock_data = crawler.get_kospi_stock_price(start, end, seq_length)
+stock_data = SlippStockCrawler().select_stock_price_model(row_limit=seq_length+2)
 
 for code in stock_data:
     df = stock_data[code]
-    df = df[['Open', 'High', 'Low', 'Close', 'Adj Close', 'MA5', 'MA20', 'MA60', 'Volume']]
+    df = df[df['MA60'] == df['MA60']]  # 이동평균값이 존재하는 데이터만 취급
+    df = df[['Open', 'High', 'Low', 'Close', 'MA5', 'MA20', 'MA60', 'Volume']]
+
+    # 최근 데이터 1행 훈련데이터에 포함하지 않음 (임시용)
+    df = df[:-1]
+    #########################################
+
+    if(len(df) < seq_length):
+        print('data is not enough')
+        continue
 
     stock_info = df.values.astype(np.float)  # 금액&거래량 문자열을 부동소수점형으로 변환한다
     price = stock_info[:, 0:input_data_column_cnt - 1]
@@ -203,10 +189,8 @@ for code in stock_data:
     test_predict = reverse_min_max_scaling(price, test_predict)  # 금액데이터 역정규화한다
     print("Tomorrow's stock price", test_predict.round(2))  # 예측한 주가를 출력한다
 
-    real_close_price = df['Adj Close'][-1]
-    last_close_price = df['Adj Close'][-2]
+    last_close_price = df['Close'][-1]
     print("last close : ", last_close_price)
-    print("real close : ", real_close_price)
     gain_rate = (test_predict / last_close_price * 100).round(2)
     print("gain rate : ", gain_rate)
 

@@ -130,3 +130,6 @@ kotlin.iml
 
 
 # End of https://www.gitignore.io/api/web,java,kotlin,intellij
+*.db
+
+*.db-journal
