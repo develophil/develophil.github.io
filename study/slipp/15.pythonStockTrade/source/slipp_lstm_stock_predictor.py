@@ -7,16 +7,7 @@ import tensorflow as tf
 
 from SlippStockCrawler import SlippStockCrawler
 
-# if __name__ == "__main__":
-#     crawler = SlippStockCrawler()
-#     end = datetime.today()
-#     start = end - timedelta(days=7)
-#     stock_data = crawler.get_kospi_stock_price(start, end)
-
-# 랜덤에 의해 똑같은 결과를 재현하도록 시드 설정
-# 하이퍼파라미터를 튜닝하기 위한 용도(흔들리면 무엇때문에 좋아졌는지 알기 어려움)
 tf.set_random_seed(777)
-
 
 # Standardization
 def data_standardization(x):
@@ -38,13 +29,6 @@ def reverse_min_max_scaling(org_x, x):
     org_x_np = np.asarray(org_x)
     x_np = np.asarray(x)
     return (x_np * (org_x_np.max() - org_x_np.min() + 1e-7)) + org_x_np.min()
-
-
-def get_stock_dictionary():
-    # 데이터를 로딩한다.
-    stock_file_name = 'kospi_stock_price.pickle'  # 아마존 주가데이터 파일
-    with gzip.open(stock_file_name, 'rb') as f:
-        return pickle.load(f)
 
 
 # 모델(LSTM 네트워크) 생성
@@ -86,14 +70,14 @@ def append_gain_rate_top_10(gain_rate, code, price):
 
 
 # 하이퍼파라미터
-input_data_column_cnt = 8  # 입력데이터의 컬럼 개수(Variable 개수)
+input_data_column_cnt = 9  # 입력데이터의 컬럼 개수(Variable 개수)
 output_data_column_cnt = 1  # 결과데이터의 컬럼 개수
 
 seq_length = 5  # 1개 시퀀스의 길이(시계열데이터 입력 개수)
 rnn_cell_hidden_dim = 20  # 각 셀의 (hidden)출력 크기
 forget_bias = 1.0  # 망각편향(기본값 1.0)
-num_stacked_layers = 1  # stacked LSTM layers 개수
-keep_prob = 1.0  # dropout할 때 keep할 비율
+num_stacked_layers = 2  # stacked LSTM layers 개수
+keep_prob = 0.7  # dropout할 때 keep할 비율
 
 epoch_num = 100  # 에폭 횟수(학습용전체데이터를 몇 회 반복해서 학습할 것인가 입력)
 learning_rate = 0.01  # 학습률
@@ -153,16 +137,12 @@ saver = tf.train.import_meta_graph('./checkpoints/sentiment.ckpt.meta')
 saver.restore(sess, chk)
 
 
-stock_data = SlippStockCrawler().select_stock_price_model(row_limit=seq_length+2)
+stock_data = SlippStockCrawler().select_stock_price_model_for_predict(predict_date='2018-11-06')
 
 for code in stock_data:
     df = stock_data[code]
     df = df[df['MA60'] == df['MA60']]  # 이동평균값이 존재하는 데이터만 취급
-    df = df[['Open', 'High', 'Low', 'Close', 'MA5', 'MA20', 'MA60', 'Volume']]
-
-    # 최근 데이터 1행 훈련데이터에 포함하지 않음 (임시용)
-    df = df[:-1]
-    #########################################
+    df = df[['Open', 'High', 'Low', 'Close', 'Adj_Close', 'MA5', 'MA20', 'MA60', 'Volume']]
 
     if(len(df) < seq_length):
         print('data is not enough')
@@ -189,7 +169,7 @@ for code in stock_data:
     test_predict = reverse_min_max_scaling(price, test_predict)  # 금액데이터 역정규화한다
     print("Tomorrow's stock price", test_predict.round(2))  # 예측한 주가를 출력한다
 
-    last_close_price = df['Close'][-1]
+    last_close_price = df['Adj_Close'][-1]
     print("last close : ", last_close_price)
     gain_rate = (test_predict / last_close_price * 100).round(2)
     print("gain rate : ", gain_rate)

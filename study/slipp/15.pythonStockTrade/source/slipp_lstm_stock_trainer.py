@@ -3,7 +3,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
 from SlippStockCrawler import SlippStockCrawler
+import logging
 
+log = logging.getLogger("dev")
 
 # 랜덤에 의해 똑같은 결과를 재현하도록 시드 설정
 # 하이퍼파라미터를 튜닝하기 위한 용도(흔들리면 무엇때문에 좋아졌는지 알기 어려움)
@@ -47,9 +49,39 @@ def lstm_cell():
     return cell
 
 
-def get_stock_dictionary():
+def remove_none_value_row(stock_dict):
+
+    for code in stock_dict:
+        stock_dict[code] = stock_dict[code][
+            stock_dict[code]['MA60'] == stock_dict[code]['MA60']
+        ]  # 이동평균값이 존재하는 데이터만 취급
+
+    return stock_dict
+
+
+def remove_under_minimum_row_table(stock_dict):
+    resized_stock_dict = {}
+    for code in stock_dict:
+        if len(stock_dict[code]) >= 1000:
+            resized_stock_dict[code] = stock_dict[code]
+
+    return resized_stock_dict
+
+
+def preprocess_data(stock_dict):
+    """
+    데이터 전처리
+    :param stock_dict:
+    :return:
+    """
+    stock_dict = remove_none_value_row(stock_dict)
+    stock_dict = remove_under_minimum_row_table(stock_dict)
+    return stock_dict
+
+
+def get_stock_dictionary(predict_date):
     # 데이터를 로딩한다.
-    return SlippStockCrawler().select_stock_price_model()
+    return preprocess_data(SlippStockCrawler().select_stock_price_model_for_training(corp_limit=10, predict_date=predict_date))
 
 
 # 하이퍼파라미터
@@ -122,19 +154,17 @@ else:
     sess.run(tf.global_variables_initializer())
 
 # 데이터를 로딩한다.
-stock_dict = get_stock_dictionary()
+stock_dict = get_stock_dictionary('2018-11-06') # 11-06 예측을 위한 데이터 훈련
+log.info('data length : {}'.format(len(stock_dict)))
 
 for code in stock_dict:
     raw_dataframe = stock_dict[code]
-    raw_dataframe = raw_dataframe[raw_dataframe['MA60'] == raw_dataframe['MA60']]   # 이동평균값이 존재하는 데이터만 취급
+    raw_dataframe = raw_dataframe[['Volume', 'High', 'Low', 'Open', 'Close', 'Adj_Close', 'MA5', 'MA20', 'MA60']] # 컬럼 정렬
+    # raw_dataframe = raw_dataframe[raw_dataframe['MA60'] == raw_dataframe['MA60']]   # 이동평균값이 존재하는 데이터만 취급
 
-    # 최근 데이터 1행 훈련데이터에 포함하지 않음 (임시용)
-    raw_dataframe = raw_dataframe[:-1]
-    #########################################
-
-    if(len(raw_dataframe) < seq_length):
-        print('data is not enough')
-        continue
+    # if(len(raw_dataframe) < seq_length):
+    #     print('data is not enough')
+    #     continue
 
     stock_info = raw_dataframe.values.astype(np.float)  # 금액&거래량 문자열을 부동소수점형으로 변환한다
     print("stock_info.shape: ", stock_info.shape)
@@ -170,7 +200,7 @@ for code in stock_dict:
     print("x[-1]: ", x[-1])  # x의 마지막 값
     print("=" * 100)  # 화면상 구분용
 
-    y = x[:, [3]]  # 타켓은 주식 종가('Adj_Close')이다
+    y = x[:, [5]]  # 타켓은 주식 종가('Adj_Close')이다
     print("y[0]: ", y[0])  # y의 첫 값
     print("y[-1]: ", y[-1])  # y의 마지막 값
 
@@ -256,3 +286,5 @@ plt.plot(test_predict, 'b')
 plt.xlabel('Time Period')
 plt.ylabel('Stock Price')
 plt.show()
+
+# 23:57:02 시작 12:42:00 종료

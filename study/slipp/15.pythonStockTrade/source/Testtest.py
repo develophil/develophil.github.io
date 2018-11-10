@@ -22,8 +22,11 @@ today = datetime.today().replace(hour=0, minute=0, second=0, microsecond=0)
 
 
 with crawler.get_sqlite_connection() as con:
+    # cursor = con.cursor()
+    # cursor.execute("delete from {} where Date = '{}'".format('stock_000050', today - timedelta(days=1)))
+    # con.commit()
 
-    print(crawler.crawling_stock_price('000040', datetime.today().date()))
+    # print(crawler.crawling_stock_price('000040', datetime.today().date()))
 
     # total = len(kospi_corp_info)
     # for i, code in enumerate(kospi_corp_info.index.values):

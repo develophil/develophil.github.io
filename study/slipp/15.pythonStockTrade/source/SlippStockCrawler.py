@@ -7,10 +7,13 @@ import pandas as pd
 import pandas_datareader.data as web
 import requests
 
+import logging
 
-def calc_available_days(moving_average_days):
+log = logging.getLogger("dev")
+
+
+def calc_available_days(max_ma_days):
     # 장이 열리지 않는 날은 제외되므로 이동평균을 구할 수 있는 일 수를 계산한다.
-    max_ma_days = max(moving_average_days)
     weekend_days = int(max_ma_days / 5 * (2 + 1))
     holidays = int(max_ma_days * 0.1)
 
@@ -32,7 +35,8 @@ class SlippStockCrawler:
     corp_list_tbl_name = 'corporation'
     stock_price_tbl_prefix = 'stock_'
     moving_average_days = [5, 20, 60]
-    ma_caculatable_days = calc_available_days(moving_average_days)
+    max_ma_days = max(moving_average_days)
+    ma_caculatable_days = calc_available_days(max_ma_days)
     # ==================================
 
     def __init__(self):
@@ -50,6 +54,22 @@ class SlippStockCrawler:
                 df.to_sql(tbl_name, conn, if_exists=exist_policy)
         else:
             df.to_sql(tbl_name, con, if_exists=exist_policy)
+
+    # index row 삭제하기
+    def delete_stock_tbl_row(self, con=None, tbl_name=None, index_name=None):
+
+        try:
+            if con is None:
+                with self.get_sqlite_connection() as conn:
+                    cursor = conn.cursor()
+                    cursor.execute("delete from {} where Date = '{}'".format(tbl_name, index_name))
+                    conn.commit()
+            else:
+                cursor = con.cursor()
+                cursor.execute("delete from {} where Date = '{}'".format(tbl_name, index_name))
+                con.commit()
+        except:
+            print('행 삭제 실패 - tblname : {}, indexname : {}'.format(tbl_name, index_name))
 
     # sql 조회하기
     # return dataframe
@@ -99,15 +119,18 @@ class SlippStockCrawler:
     # yahoo 데이터 사용
     def crawling_stock_price(self, code, start=None, end=None):
 
-        # 종목 선택
-        df = web.DataReader(code + ".KS", "yahoo", start, end)
+        try:
+            # 종목 선택
+            df = web.DataReader(code + ".KS", "yahoo", start, end)
 
-        df.rename(columns={
-            'Adj Close': 'Adj_Close'
-        }, inplace=True)
+            df.rename(columns={
+                'Adj Close': 'Adj_Close'
+            }, inplace=True)
 
-        # 주말에는 장이 열리지 않으므로 제거
-        df = df[df['Volume'] != 0]
+            # 주말에는 장이 열리지 않으므로 제거
+            df = df[df['Volume'] != 0]
+        except:
+            print('크롤링 실패 - code: {}, start: {}, end: {}'.format(code, start, end))
 
         return df
 
@@ -143,30 +166,48 @@ class SlippStockCrawler:
                 # if code in ('005450','006490','009970','152550','145210','300720','293940','010400','293480','306200'):
                 try:
                     self.insert_stock_price_model(code, con, setup_type)
-                    print('{} / {} : {}'.format(i, total, code))
+                    log.info('{} / {} : {}'.format(i, total, code))
                 except:
-                    print('{} / {} : {} - 주가 모델 저장 불가'.format(i, total, code))
+                    log.warning('{} / {} : {} - 주가 모델 저장 불가'.format(i, total, code))
                     insert_error_code_list.append(code)
 
         return insert_error_code_list
 
-    def insert_stock_price_model(self, code, con, setup_type):
+    def insert_stock_price_model(self, code, con, setup_type='init'):
 
         start = '2000-01-01'
         exist_policy = ''
+        today = datetime.today().replace(hour=0, minute=0, second=0, microsecond=0)
 
         if setup_type is 'init':
             exist_policy = 'replace'
 
         elif setup_type is 'daily':
-            start = datetime.today() - timedelta(days=self.ma_caculatable_days)
+            start = today - timedelta(days=self.ma_caculatable_days)
             exist_policy = 'append'
 
         price_df = self.crawling_stock_price(code, start)
         price_df = self.append_moving_averages(price_df)
 
+        tbl_name = self.stock_price_tbl_prefix + code
         if setup_type is 'daily':
-            price_df = price_df[datetime.today().date():]  # 이동평균 계산 후 오늘 날짜의 데이터만 남김
+            price_df = price_df[today - timedelta(days=1):]  # 이동평균 계산 후 오늘 날짜의 데이터만 남김
+            self.delete_stock_tbl_row(con, tbl_name, today - timedelta(days=1))   # 금일 데이터 제거
+            self.delete_stock_tbl_row(con, tbl_name, today)   # 금일 데이터 제거
+
+        self.insert_dataframe(price_df, tbl_name, exist_policy, con)
+
+    def append_daily_stock_price_model(self, code, con):
+
+        start = datetime.today().date()
+        exist_policy = 'append'
+
+        previous_price_df = self.select_stock_price_model(row_limit=self.max_ma_days)
+        today_price_df = self.crawling_stock_price(code, start)
+        price_df = self.merge_stock_price_for_unique_day(previous_price_df, today_price_df)
+        price_df = self.append_moving_averages(price_df)
+
+        price_df = price_df[datetime.today().date():]  # 이동평균 계산 후 오늘 날짜의 데이터만 남김
 
         self.insert_dataframe(price_df, self.stock_price_tbl_prefix + code, exist_policy, con)
 
@@ -202,19 +243,37 @@ class SlippStockCrawler:
             for code in kospi_corp_info.index.values:
                 try:
                     model[code] = self.select_dataframe(
-                        "SELECT * FROM (SELECT * FROM {} WHERE Date < '{}' ORDER BY Date DESC limit { }) ORDER BY Date ASC"
-                            .format(self.stock_price_tbl_prefix + code, max(self.moving_average_days))
-                        , 'Date',predict_date , con)
+                        "SELECT * FROM (SELECT * FROM {} WHERE Date < '{}' ORDER BY Date DESC limit {}) ORDER BY Date ASC"
+                            .format(self.stock_price_tbl_prefix + code, predict_date, self.max_ma_days)
+                        , 'Date', con)
+                except:
+                    print('조회 불가 : {}'.format(code))
+
+        return model
+
+    # 주가 예측 훈련을 위한 dataframe sqlite 조회하기 - 예측일 이전 데이터 조회
+    def select_stock_price_model_for_training(self, corp_limit=None, predict_date=(datetime.today().date()+timedelta(days=1))):
+
+        model = {}
+        kospi_corp_info = self.select_kospi_corp_list(corp_limit)
+
+        with self.get_sqlite_connection() as con:
+            for code in kospi_corp_info.index.values:
+                try:
+                    model[code] = self.select_dataframe(
+                        "SELECT * FROM (SELECT * FROM {} WHERE Date < '{}' ORDER BY Date DESC) ORDER BY Date ASC"
+                            .format(self.stock_price_tbl_prefix + code, predict_date)
+                        , 'Date', con)
                 except:
                     print('조회 불가 : {}'.format(code))
 
         return model
 
     def init_crawling(self):
-        print("error_code_list : {}".format(self.setup_data('init')))
+        log.warning("error_code_list : {}".format(self.setup_data('init')))
 
     def daily_crawling(self):
-        print("error_code_list : {}".format(self.setup_data('daily')))
+        log.warning("error_code_list : {}".format(self.setup_data('daily')))
 
     @staticmethod
     def append_moving_average(df, days, target_col_name='Adj_Close', round_num=0):
@@ -226,4 +285,4 @@ class SlippStockCrawler:
 
 
 if __name__ == "__main__":
-    SlippStockCrawler().daily_crawling()
+    SlippStockCrawler().daily_crawling() # 21:47:00 ~22:16:00 약 30분.....;;;
