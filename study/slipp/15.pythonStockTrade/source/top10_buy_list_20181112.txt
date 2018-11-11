@@ -1,0 +1,10 @@
+buy;003030;market;10;0;prebuy;113.45;56722.65
+buy;227840;market;10;0;prebuy;113.19;18449.61
+buy;001290;market;10;0;prebuy;110.94;2196.64
+buy;005090;market;10;0;prebuy;107.46;32667.57
+buy;103130;market;10;0;prebuy;106.9;1913.51
+buy;023810;market;10;0;prebuy;106.41;3506.12
+buy;017810;market;10;0;prebuy;106.25;92221.64
+buy;145720;market;10;0;prebuy;105.9;76776.33
+buy;226320;market;10;0;prebuy;105.87;27367.23
+buy;002630;market;10;0;prebuy;105.06;780.57
