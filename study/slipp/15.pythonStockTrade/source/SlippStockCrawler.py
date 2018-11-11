@@ -1,15 +1,12 @@
 import enum
 import sqlite3
+import sys
 from datetime import timedelta, datetime
 from io import BytesIO
-
 import pandas as pd
 import pandas_datareader.data as web
 import requests
-
-import logging
-
-log = logging.getLogger("dev")
+import Logger as log
 
 
 def calc_available_days(max_ma_days):
@@ -29,7 +26,6 @@ class MarketType(enum.Enum):
 
 
 class SlippStockCrawler:
-
     # properties
     db_name = 'slipp_stocks'
     corp_list_tbl_name = 'corporation'
@@ -163,7 +159,9 @@ class SlippStockCrawler:
         with self.get_sqlite_connection() as con:
             for i, code in enumerate(kospi_corp_info.index.values):
                 # test
-                # if code in ('005450','006490','009970','152550','145210','300720','293940','010400','293480','306200'):
+                if i < 592:
+                    continue
+
                 try:
                     self.insert_stock_price_model(code, con, setup_type)
                     log.info('{} / {} : {}'.format(i, total, code))
@@ -192,7 +190,7 @@ class SlippStockCrawler:
         tbl_name = self.stock_price_tbl_prefix + code
         if setup_type is 'daily':
             price_df = price_df[today - timedelta(days=1):]  # 이동평균 계산 후 오늘 날짜의 데이터만 남김
-            self.delete_stock_tbl_row(con, tbl_name, today - timedelta(days=1))   # 금일 데이터 제거
+            # self.delete_stock_tbl_row(con, tbl_name, today - timedelta(days=1))
             self.delete_stock_tbl_row(con, tbl_name, today)   # 금일 데이터 제거
 
         self.insert_dataframe(price_df, tbl_name, exist_policy, con)
@@ -244,7 +242,7 @@ class SlippStockCrawler:
                 try:
                     model[code] = self.select_dataframe(
                         "SELECT * FROM (SELECT * FROM {} WHERE Date < '{}' ORDER BY Date DESC limit {}) ORDER BY Date ASC"
-                            .format(self.stock_price_tbl_prefix + code, predict_date, self.max_ma_days)
+                            .format(self.stock_price_tbl_prefix + code, predict_date, 5)
                         , 'Date', con)
                 except:
                     print('조회 불가 : {}'.format(code))
@@ -285,4 +283,5 @@ class SlippStockCrawler:
 
 
 if __name__ == "__main__":
-    SlippStockCrawler().daily_crawling() # 21:47:00 ~22:16:00 약 30분.....;;;
+    SlippStockCrawler().init_crawling()
+    sys.exit()
