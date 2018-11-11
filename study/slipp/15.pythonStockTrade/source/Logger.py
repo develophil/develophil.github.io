@@ -2,15 +2,15 @@ import logging
 
 mylogger = logging.getLogger("my")
 mylogger.propagate=0
-mylogger.setLevel(logging.INFO)
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+mylogger.setLevel(logging.DEBUG)
+formatter = logging.Formatter('[%(levelname)s] %(asctime)s : %(message)s') # %(name)s
 
 stream_hander = logging.StreamHandler()
 stream_hander.setFormatter(formatter)
 mylogger.addHandler(stream_hander)
 
-# file_handler = logging.FileHandler('my.log')
-# mylogger.addHandler(file_handler)
+file_handler = logging.FileHandler('my.log')
+mylogger.addHandler(file_handler)
 
 def critical(msg, *args, **kwargs):
     mylogger.critical(msg, *args, **kwargs)
