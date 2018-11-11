@@ -4,9 +4,9 @@ from datetime import datetime, timedelta
 # from SlippStockCrawler import SlippStockCrawler
 
 
-log.debug("test")
-log.info("test")
-log.warning("test")
+log.debug("test %s", "234234")
+log.info("test"+"ssss")
+log.warning("test %d", 1231)
 
 # crawler = SlippStockCrawler()
 #

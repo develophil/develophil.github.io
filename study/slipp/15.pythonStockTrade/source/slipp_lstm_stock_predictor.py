@@ -1,10 +1,11 @@
 import gzip
 import pickle
+import sys
 from collections import namedtuple
 
 import numpy as np
 import tensorflow as tf
-
+import Logger as log
 from SlippStockCrawler import SlippStockCrawler
 
 tf.set_random_seed(777)
@@ -52,7 +53,7 @@ gain_rate_top_10 = [Stock(0, "0000", 0)]
 
 
 def update_buy_list():
-    with open("top10_buy_list.txt", "wt") as f:
+    with open("top10_buy_list_org.txt", "wt") as f:
         for stock in gain_rate_top_10:
             line = "buy;{};market;10;0;prebuy;{};{}\n".format(stock.code, stock.gain_rate, stock.price)
             f.write(line)
@@ -76,8 +77,8 @@ output_data_column_cnt = 1  # 결과데이터의 컬럼 개수
 seq_length = 5  # 1개 시퀀스의 길이(시계열데이터 입력 개수)
 rnn_cell_hidden_dim = 20  # 각 셀의 (hidden)출력 크기
 forget_bias = 1.0  # 망각편향(기본값 1.0)
-num_stacked_layers = 2  # stacked LSTM layers 개수
-keep_prob = 0.7  # dropout할 때 keep할 비율
+num_stacked_layers = 1  # stacked LSTM layers 개수
+keep_prob = 1.0  # dropout할 때 keep할 비율
 
 epoch_num = 100  # 에폭 횟수(학습용전체데이터를 몇 회 반복해서 학습할 것인가 입력)
 learning_rate = 0.01  # 학습률
@@ -131,13 +132,13 @@ train = optimizer.minimize(loss)
 # rmse = tf.sqrt(tf.reduce_mean(tf.square(targets-predictions))) # 아래 코드와 같다
 rmse = tf.sqrt(tf.reduce_mean(tf.squared_difference(targets, predictions)))
 
-chk = tf.train.latest_checkpoint('checkpoints')
+chk = tf.train.latest_checkpoint('checkpoints-org')
 saver = tf.train.Saver()
-saver = tf.train.import_meta_graph('./checkpoints/sentiment.ckpt.meta')
+saver = tf.train.import_meta_graph('./checkpoints-org/sentiment.ckpt.meta')
 saver.restore(sess, chk)
 
 
-stock_data = SlippStockCrawler().select_stock_price_model_for_predict(predict_date='2018-11-06')
+stock_data = SlippStockCrawler().select_stock_price_model_for_predict(predict_date='2018-11-05')
 
 for code in stock_data:
     df = stock_data[code]
@@ -179,4 +180,6 @@ for code in stock_data:
 print("append_gain_rate_top_10 : ", gain_rate_top_10)
 update_buy_list()
 
+sess.close()
 
+sys.exit()

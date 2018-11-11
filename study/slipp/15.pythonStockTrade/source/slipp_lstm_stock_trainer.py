@@ -1,12 +1,14 @@
 import datetime
+import sys
+
 import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
 from SlippStockCrawler import SlippStockCrawler
-import logging
+import Logger as log
 
-log = logging.getLogger("dev")
 
+saver_dir_name = "checkpoints-org"
 # 랜덤에 의해 똑같은 결과를 재현하도록 시드 설정
 # 하이퍼파라미터를 튜닝하기 위한 용도(흔들리면 무엇때문에 좋아졌는지 알기 어려움)
 tf.set_random_seed(777)
@@ -62,7 +64,7 @@ def remove_none_value_row(stock_dict):
 def remove_under_minimum_row_table(stock_dict):
     resized_stock_dict = {}
     for code in stock_dict:
-        if len(stock_dict[code]) >= 1000:
+        if len(stock_dict[code]) >= 100:
             resized_stock_dict[code] = stock_dict[code]
 
     return resized_stock_dict
@@ -81,7 +83,7 @@ def preprocess_data(stock_dict):
 
 def get_stock_dictionary(predict_date):
     # 데이터를 로딩한다.
-    return preprocess_data(SlippStockCrawler().select_stock_price_model_for_training(corp_limit=10, predict_date=predict_date))
+    return preprocess_data(SlippStockCrawler().select_stock_price_model_for_training(predict_date=predict_date))
 
 
 # 하이퍼파라미터
@@ -91,8 +93,8 @@ output_data_column_cnt = 1  # 결과데이터의 컬럼 개수
 seq_length = 5  # 1개 시퀀스의 길이(시계열데이터 입력 개수)
 rnn_cell_hidden_dim = 20  # 각 셀의 (hidden)출력 크기
 forget_bias = 1.0  # 망각편향(기본값 1.0)
-num_stacked_layers = 2  # stacked LSTM layers 개수
-keep_prob = 0.7  # dropout할 때 keep할 비율
+num_stacked_layers = 1  # stacked LSTM layers 개수
+keep_prob = 1.0  # dropout할 때 keep할 비율
 
 epoch_num = 100  # 에폭 횟수(학습용전체데이터를 몇 회 반복해서 학습할 것인가 입력)
 learning_rate = 0.01  # 학습률
@@ -142,11 +144,11 @@ train = optimizer.minimize(loss)
 # rmse = tf.sqrt(tf.reduce_mean(tf.square(targets-predictions))) # 아래 코드와 같다
 rmse = tf.sqrt(tf.reduce_mean(tf.squared_difference(targets, predictions)))
 
-chk = tf.train.latest_checkpoint('checkpoints')
+chk = tf.train.latest_checkpoint(saver_dir_name)
 saver = tf.train.Saver()
 
 if chk is not None:
-    saver = tf.train.import_meta_graph('./checkpoints/sentiment.ckpt.meta')
+    saver = tf.train.import_meta_graph('./'+saver_dir_name+'/sentiment.ckpt.meta')
     saver.restore(sess, chk)
     tf.reset_default_graph()
     print(chk)
@@ -271,7 +273,7 @@ for code in stock_dict:
     print(',test_error:', test_error_summary[-1], end='')
     print(',min_test_error:', np.min(test_error_summary))
 
-saver.save(sess, "checkpoints/sentiment.ckpt")
+saver.save(sess, saver_dir_name + "/sentiment.ckpt")
 
 # 결과 그래프 출력
 plt.figure(1)
@@ -288,3 +290,7 @@ plt.ylabel('Stock Price')
 plt.show()
 
 # 23:57:02 시작 12:42:00 종료
+
+sess.close()
+
+sys.exit()
