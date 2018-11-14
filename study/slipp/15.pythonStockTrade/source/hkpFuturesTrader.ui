@@ -30,7 +30,7 @@
     <property name="title">
      <string>잔고 및 보유종목현황</string>
     </property>
-    <widget class="QTableWidget" name="tableWidget">
+    <widget class="QTableWidget" name="balanceTable">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -40,8 +40,13 @@
       </rect>
      </property>
      <property name="rowCount">
-      <number>1</number>
+      <number>2</number>
      </property>
+     <row>
+      <property name="text">
+       <string>1</string>
+      </property>
+     </row>
      <row/>
      <column>
       <property name="text">
@@ -399,12 +404,17 @@
      </property>
      <item>
       <property name="text">
+       <string>신규매도</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
        <string>신규매수</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>신규매도</string>
+       <string>매도취소</string>
       </property>
      </item>
      <item>
@@ -414,7 +424,12 @@
      </item>
      <item>
       <property name="text">
-       <string>매도취소</string>
+       <string>매도정정</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>매수정정</string>
       </property>
      </item>
     </widget>
@@ -440,6 +455,9 @@
        <height>30</height>
       </rect>
      </property>
+     <property name="text">
+      <string>6EZ18</string>
+     </property>
     </widget>
     <widget class="QComboBox" name="comboBox_3">
      <property name="geometry">
@@ -452,12 +470,22 @@
      </property>
      <item>
       <property name="text">
+       <string>시장가</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
        <string>지정가</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>시장가</string>
+       <string>STOP</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>STOP LIMIT</string>
       </property>
      </item>
     </widget>
@@ -513,33 +541,11 @@
       <string>가격</string>
      </property>
     </widget>
-    <widget class="QSpinBox" name="spinBox_2">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>270</y>
-       <width>134</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="prefix">
-      <string/>
-     </property>
-     <property name="maximum">
-      <number>10000000</number>
-     </property>
-     <property name="singleStep">
-      <number>100</number>
-     </property>
-     <property name="value">
-      <number>0</number>
-     </property>
-    </widget>
     <widget class="QPushButton" name="pushButton">
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>320</y>
+       <y>350</y>
        <width>131</width>
        <height>51</height>
       </rect>
@@ -568,13 +574,49 @@
      <property name="geometry">
       <rect>
        <x>180</x>
-       <y>320</y>
+       <y>350</y>
        <width>171</width>
        <height>51</height>
       </rect>
      </property>
      <property name="text">
       <string>주문가능수량</string>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="doubleSpinBox">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>270</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <double>999999.989999999990687</double>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_3">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>309</y>
+       <width>241</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>320</y>
+       <width>56</width>
+       <height>12</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>메세지</string>
      </property>
     </widget>
    </widget>
@@ -585,7 +627,7 @@
      <x>0</x>
      <y>0</y>
      <width>1876</width>
-     <height>31</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

@@ -13,9 +13,11 @@ class Kiwoom(QAxWidget):
         self._create_kiwoom_instance()
         self._set_signal_slots()
         self._set_variable()
+        self.reset_opw30009_output()
 
     def _set_variable(self):
         self.trade_item_code = "6EZ18"
+        self.rq_msg = ""
         print('code : ', self.trade_item_code)
 
     def _create_kiwoom_instance(self):
@@ -62,17 +64,23 @@ class Kiwoom(QAxWidget):
         self.dynamicCall("SetInputValue(QString, QString)", id, value)
 
     def comm_rq_data(self, rqname, trcode, next, screen_no):
+        print('rqname : {}, trcode : {}, next: {}, screenno: {}'.format(rqname, trcode, next, screen_no))
         self.dynamicCall("CommRqData(QString, QString, int, QString)", rqname, trcode, next, screen_no)
-        self.tr_event_loop = QEventLoop()
-        self.tr_event_loop.exec_()
+        # self.tr_event_loop = QEventLoop()
+        # self.tr_event_loop.exec_()
 
     def _get_comm_data(self, tr_code, record_name, index, item_name):
         ret = self.dynamicCall("GetCommData(QString, QString, int, QString)", tr_code,
                                record_name, index, item_name)
         return ret
 
+    def _get_comm_full_data(self, tr_code, record_name, gubun):
+        ret = self.dynamicCall("GetCommFullData(QString, QString, long)", tr_code,
+                               record_name, gubun)
+        return ret
+
     def _get_comm_real_data(self, type, fid):
-        ret = self.dynamicCall("GetCommRealData(QString, long)", type, fid  )
+        ret = self.dynamicCall("GetCommRealData(QString, long)", type, fid)
         return ret
 
     def _get_repeat_cnt(self, trcode, rqname):
@@ -88,29 +96,56 @@ class Kiwoom(QAxWidget):
         return ret
 
     def _receive_msg(self, screen_no, rqname, trcode, msg):
-        print(screen_no)
-        print(rqname)
-        print(trcode)
-        print(msg)
+        print("_receive_msg screen_no:{}, rqname:{}, trcode:{}, msg:{}".format(screen_no, rqname, trcode, msg))
+        self.rq_msg = msg
 
     def _receive_real_data(self, sJongmokCode, sRealType, sRealData):
-        print(sJongmokCode)
-        print(sRealType)
-        print(sRealData)
+        print("receive_real_data sJongmokCode:{}, sRealType:{}, sRealData:{}".format(sJongmokCode, sRealType, sRealData))
 
     def _receive_chejan_data(self, gubun, item_cnt, fid_list):
-        print(gubun)
+        '''
+          [ Real Name : 주문체결 ]
+
+          [9201]      =     계좌번호
+          [9203]      =     주문번호
+          [9001]      =     종목코드
+          [907]       =     매도수구분
+          [905]       =     주문구분
+          [904]       =     원주문번호
+          [302]       =     종목명
+          [906]       =     주문유형
+          [900]       =     주문수량
+          [901]       =     주문가격
+          [13333]     =     조건가격
+          [13330]     =     주문표시가격
+          [13332]     =     조건표시가격
+          [902]       =     미체결수량
+          [913]       =     주문상태
+          [919]       =     반대매매여부
+          [8046]      =     거래소코드
+          [947]       =     FCM코드
+          [8043]      =     통화코드
+          [908]       =     주문시간
+
+        :param gubun:
+        :param item_cnt:
+        :param fid_list:
+        :return:
+        '''
+
+        print("_receive_chejan_data - ", gubun, item_cnt, fid_list)
         print(self.get_chejan_data(9203))
         print(self.get_chejan_data(302))
         print(self.get_chejan_data(900))
         print(self.get_chejan_data(901))
 
     def _receive_tr_data(self, screen_no, rqname, trcode, record_name, next):
-        print(rqname, " : ", trcode)
+        print('_receive_tr_data | screen_no:{}, rqname:{}, trcode:{}, record_name:{}, next:{}'.format(screen_no, rqname, trcode, record_name, next))
         if next == '2':
             self.remained_data = True
         else:
             self.remained_data = False
+        print('remained data : ', self.remained_data)
 
         if rqname == "opt10081_req":
             self._opt10081(rqname, trcode)
@@ -129,12 +164,14 @@ class Kiwoom(QAxWidget):
         elif rqname == "opc10001_req":
             self._opc10001(rqname, trcode)
         elif rqname == "opc10002_req":
-            self._opc10001(rqname, trcode)
+            self._opc10002(rqname, trcode)
+        elif rqname == "send_order_req":
+            print('end')
 
-        try:
-            self.tr_event_loop.exit()
-        except AttributeError:
-            pass
+        # try:
+        #     self.tr_event_loop.exit()
+        # except AttributeError:
+        #     pass
 
     @staticmethod
     def change_format(data):
@@ -216,13 +253,15 @@ class Kiwoom(QAxWidget):
         return df
 
     def get_available_order_count(self, account_number, sell_buy):
+        print('accno : {}, sell_buy : {}'.format(account_number, sell_buy))
         self.set_input_value("계좌번호", account_number)
-        self.set_input_value("종목코드", '6EZ18')
+        self.set_input_value("비밀번호", '0000')
         self.set_input_value("비밀번호입력매체", '00')
+        self.set_input_value("종목코드", '6EZ18')
         self.set_input_value("매도수구분", '1')
         self.set_input_value("해외주문유형", '1')
         self.set_input_value("주문표시가격", '1')
-        self.comm_rq_data("opw30011_req", "opw30011", 0, "3000")
+        return self.comm_rq_data("opw30011_req", "opw30011", 0, "4868")
 
     def get_chart_data(self, type, value):
         # opt10012 : 분 단위 데이터 조회.... 이걸로 바꿔야 할듯..
@@ -245,7 +284,7 @@ class Kiwoom(QAxWidget):
         self.opw30009_output = []
 
     def _opw30009(self, rqname, trcode):
-        # single data
+        print(self._get_comm_full_data(trcode, rqname, 0))
         currency_code = self._get_comm_data(trcode, rqname, 0, "통화코드")
         foreign_currency_deposit = self._get_comm_data(trcode, rqname, 0, "외화예수금")
         receivables = self._get_comm_data(trcode, rqname, 0, "미수금")
@@ -269,33 +308,35 @@ class Kiwoom(QAxWidget):
         rr= self._get_comm_data(trcode, rqname, 0, "인출가능금액")
         ss= self._get_comm_data(trcode, rqname, 0, "위험도")
 
-        self.opw00018_output.append(currency_code)
-        self.opw00018_output.append(Kiwoom.change_format(foreign_currency_deposit))
-        self.opw00018_output.append(Kiwoom.change_format(receivables))
-        self.opw00018_output.append(Kiwoom.change_format(aa))
-        self.opw00018_output.append(Kiwoom.change_format(bb))
-        self.opw00018_output.append(Kiwoom.change_format(cc))
-        self.opw00018_output.append(Kiwoom.change_format(dd))
-        self.opw00018_output.append(Kiwoom.change_format(ee))
-        self.opw00018_output.append(Kiwoom.change_format(ff))
-        self.opw00018_output.append(Kiwoom.change_format(gg))
-        self.opw00018_output.append(Kiwoom.change_format(hh))
-        self.opw00018_output.append(Kiwoom.change_format(ii))
-        self.opw00018_output.append(Kiwoom.change_format(jj))
-        self.opw00018_output.append(Kiwoom.change_format(kk))
-        self.opw00018_output.append(Kiwoom.change_format(ll))
-        self.opw00018_output.append(Kiwoom.change_format(mm))
-        self.opw00018_output.append(Kiwoom.change_format(nn))
-        self.opw00018_output.append(Kiwoom.change_format(oo))
-        self.opw00018_output.append(Kiwoom.change_format(pp))
-        self.opw00018_output.append(Kiwoom.change_format(qq))
-        self.opw00018_output.append(Kiwoom.change_format(rr))
-        self.opw00018_output.append(Kiwoom.change_format(ss))
+        self.opw30009_output.append(currency_code)
+        self.opw30009_output.append(foreign_currency_deposit)
+        self.opw30009_output.append(receivables)
+        self.opw30009_output.append(aa)
+        self.opw30009_output.append(bb)
+        self.opw30009_output.append(cc)
+        self.opw30009_output.append(dd)
+        self.opw30009_output.append(ee)
+        self.opw30009_output.append(ff)
+        self.opw30009_output.append(gg)
+        self.opw30009_output.append(hh)
+        self.opw30009_output.append(ii)
+        self.opw30009_output.append(jj)
+        self.opw30009_output.append(kk)
+        self.opw30009_output.append(ll)
+        self.opw30009_output.append(mm)
+        self.opw30009_output.append(nn)
+        self.opw30009_output.append(oo)
+        self.opw30009_output.append(pp)
+        self.opw30009_output.append(qq)
+        self.opw30009_output.append(rr)
+        self.opw30009_output.append(ss)
 
     # 주문가능수량조회
     def _opw30011(self, rqname, trcode):
+        print('_opw30011 : ', rqname, trcode)
+        print(self._get_comm_full_data(trcode, rqname, 0))
         self.available_buy_count = self._get_comm_data(trcode, rqname, 0, "주문가능수량")
-        print('avaliable : {}'.format(self.available_buy_count))
+        print('available : {}'.format(self.available_buy_count))
 
     # 장운영정보조회
     def _opw50001(self, rqname, trcode):
@@ -312,17 +353,13 @@ class Kiwoom(QAxWidget):
 if __name__ == "__main__":
     accno = '7006265572'
     item_code = '6EZ18'
-    app = QApplication(sys.argv) 
+    app = QApplication(sys.argv)
     kiwoom = Kiwoom()
     kiwoom.comm_connect()
 
-    # kiwoom.reset_opw00018_output()
+    kiwoom.reset_opw30009_output()
     kiwoom.get_chart_data('minute', 30)
-    kiwoom.get_available_order_count(accno, '1')
-    kiwoom.get_comm_real_data()
+    print(kiwoom.get_available_order_count(accno, '1'))
+    print(kiwoom._get_comm_real_data("해외선물시세", 10))
 
-    time.sleep(10)
-    print('sendorder!!!')
-    sendorder = kiwoom.send_order("RQ_1", "4501", "7002650572", 1, "CLJ17", 1, "0", "1", "0", "0")
-    print('order : ', sendorder)
 

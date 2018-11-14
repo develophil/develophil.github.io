@@ -2,8 +2,9 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5 import uic
-from KiwoomW import *
 import time
+
+from KiwoomW import Kiwoom
 
 form_class = uic.loadUiType("hkpFuturesTrader.ui")[0]
 
@@ -35,6 +36,8 @@ class MyWindow(QMainWindow, form_class):
         self.pushButton.clicked.connect(self.send_order)
         self.pushButton_2.clicked.connect(self.check_balance)
         self.pushButton_4.clicked.connect(self.check_available_order)
+
+        print(self.kiwoom._get_comm_real_data("해외선물시세", 10))
 
         # self.load_buy_sell_list()
 
@@ -136,17 +139,20 @@ class MyWindow(QMainWindow, form_class):
         self.lineEdit_2.setText(name)
 
     def send_order(self):
-        order_type_lookup = {'신규매수': 1, '신규매도': 2, '매수취소': 3, '매도취소': 4}
-        hoga_lookup = {'지정가': "00", '시장가': "03"}
+        order_type_lookup = {'신규매도': 1, '신규매수': 2, '매도취소': 3, '매수취소': 4, '매도정정': 5, '매수정정': 6}
+        hoga_lookup = {'시장가': "1", '지정가': "2", 'STOP': "3", 'STOP LIMIT': "4"}
 
         account = self.comboBox.currentText()
         order_type = self.comboBox_2.currentText()
         code = self.lineEdit.text()
         hoga = self.comboBox_3.currentText()
         num = self.spinBox.value()
-        price = self.spinBox_2.value()
+        price = self.doubleSpinBox.value()
 
-        self.kiwoom.send_order("send_order_req", "0101", account, order_type_lookup[order_type], code, num, price, hoga_lookup[hoga], "")
+        order_result = self.kiwoom.send_order("send_order_req", "0101", account, order_type_lookup[order_type], code, num, price, price, hoga_lookup[hoga], "")
+        print('order : ', order_result)
+        self.statusbar.showMessage(self.kiwoom.rq_msg)
+        # self.check_balance()
 
     def timeout(self):
         market_start_time = QTime(9, 0, 0)
@@ -175,41 +181,44 @@ class MyWindow(QMainWindow, form_class):
         order_type_lookup = {'신규매수': 1, '신규매도': 2, '매수취소': 3, '매도취소': 4}
         order_type = self.comboBox_2.currentText()
         account = self.comboBox.currentText()
-        print(account)
-        self.kiwoom.get_available_order_count(account, order_type_lookup[order_type])
 
-        while self.kiwoom.remained_data:
-            time.sleep(0.2)
-            self.kiwoom.get_available_order_count(account, order_type_lookup[order_type])
+        ret = self.kiwoom.get_available_order_count(account, order_type_lookup[order_type])
+        print('available ret : ', ret)
 
-        self.spin_box.setText(self.kiwoom.available_buy_count)
+        if ret is not None:
+            self.spin_box.setText(self.kiwoom.available_buy_count)
 
     def check_balance(self):
         # self.kiwoom.reset_opw00018_output()
-        account_number = self.kiwoom.get_login_info("ACCNO")
+        account_number = self.comboBox.currentText()
         account_number = account_number.split(';')[0]
         print('balance : ', account_number)
         self.kiwoom.set_input_value("계좌번호", account_number)
-        self.kiwoom.comm_rq_data("opw30009_req", "opw30009", 0, "2000")
+        self.kiwoom.set_input_value("비밀번호", '0000')
+        self.kiwoom.set_input_value("비밀번호입력매체", '00')
+        ret = self.kiwoom.comm_rq_data("opw30009_req", "opw30009", 0, "3009")
 
-        while self.kiwoom.remained_data:
-            print('while')
-            time.sleep(0.2)
-            self.kiwoom.set_input_value("계좌번호", account_number)
-            self.kiwoom.comm_rq_data("opw30009_req", "opw30009", 2, "2000")
+        print('check_balance ret : ', ret)
+
+        # while self.kiwoom.remained_data:
+        #     print('while')
+        #     time.sleep(0.2)
+        #     self.kiwoom.set_input_value("계좌번호", account_number)
+        #     self.kiwoom.comm_rq_data("opw30009_req", "opw30009", 2, "3009")
 
         # balance
-        item = QTableWidgetItem(self.kiwoom.d2_deposit)
-        item.setTextAlignment(Qt.AlignVCenter | Qt.AlignRight)
-        self.tableWidget.setItem(0, 0, item)
+        # item = QTableWidgetItem(self.balanceTable)
+        # item.setTextAlignment(Qt.AlignVCenter | Qt.AlignRight)
+        # self.balanceTable.setItem(0, 0, item)
 
-        for i in range(1, 22):
-            print(kiwoom.opw3009_output)
-            item = QTableWidgetItem(self.kiwoom.opw30009_output[i - 1])
-            item.setTextAlignment(Qt.AlignVCenter | Qt.AlignRight)
-            self.tableWidget.setItem(0, i, item)
+        if len(self.kiwoom.opw30009_output) > 0:
+            for i in range(1, 22):
+                print(i, ' : ', self.kiwoom.opw30009_output)
+                item = QTableWidgetItem(self.kiwoom.opw30009_output[i - 1])
+                item.setTextAlignment(Qt.AlignVCenter | Qt.AlignRight)
+                self.balanceTable.setItem(0, i, item)
 
-        self.tableWidget.resizeRowsToContents()
+            self.balanceTable.resizeRowsToContents()
         #
         # # Item list
         # item_count = len(self.kiwoom.opw00018_output['multi'])
