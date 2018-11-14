@@ -34,6 +34,7 @@ class MyWindow(QMainWindow, form_class):
         self.lineEdit.textChanged.connect(self.code_changed)
         self.pushButton.clicked.connect(self.send_order)
         self.pushButton_2.clicked.connect(self.check_balance)
+        self.pushButton_4.clicked.connect(self.check_available_order)
 
         # self.load_buy_sell_list()
 
@@ -170,15 +171,29 @@ class MyWindow(QMainWindow, form_class):
         if self.checkBox.isChecked():
             self.check_balance()
 
+    def check_available_order(self):
+        order_type_lookup = {'신규매수': 1, '신규매도': 2, '매수취소': 3, '매도취소': 4}
+        order_type = self.comboBox_2.currentText()
+        account = self.comboBox.currentText()
+        print(account)
+        self.kiwoom.get_available_order_count(account, order_type_lookup[order_type])
+
+        while self.kiwoom.remained_data:
+            time.sleep(0.2)
+            self.kiwoom.get_available_order_count(account, order_type_lookup[order_type])
+
+        self.spin_box.setText(self.kiwoom.available_buy_count)
+
     def check_balance(self):
         # self.kiwoom.reset_opw00018_output()
         account_number = self.kiwoom.get_login_info("ACCNO")
         account_number = account_number.split(';')[0]
-
+        print('balance : ', account_number)
         self.kiwoom.set_input_value("계좌번호", account_number)
         self.kiwoom.comm_rq_data("opw30009_req", "opw30009", 0, "2000")
 
         while self.kiwoom.remained_data:
+            print('while')
             time.sleep(0.2)
             self.kiwoom.set_input_value("계좌번호", account_number)
             self.kiwoom.comm_rq_data("opw30009_req", "opw30009", 2, "2000")
