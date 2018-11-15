@@ -175,7 +175,8 @@ class MyWindow(QMainWindow, form_class):
 
     def timeout2(self):
         if self.checkBox.isChecked():
-            self.check_balance()
+            # self.check_balance()
+            self.kiwoom.get_chart_data('minute', 30)
 
     def check_available_order(self):
         order_type_lookup = {'신규매수': 1, '신규매도': 2, '매수취소': 3, '매도취소': 4}

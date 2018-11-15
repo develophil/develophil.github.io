@@ -14,6 +14,10 @@ class Kiwoom(QAxWidget):
         self._set_signal_slots()
         self._set_variable()
         self.reset_opw30009_output()
+        self._set_comm_func()
+
+    def _set_comm_func(self):
+        self.dynamicCall("GetCommonFunc(QString, QString)", "SetStartTime", "ScrNo;6EZ18")
 
     def _set_variable(self):
         self.trade_item_code = "6EZ18"
@@ -69,6 +73,10 @@ class Kiwoom(QAxWidget):
         # self.tr_event_loop = QEventLoop()
         # self.tr_event_loop.exec_()
 
+    def _get_comm_func(self, func_name, params):
+        ret = self.dynamicCall("GetCommonFunc(QString, QString)", func_name, params)
+        return ret
+
     def _get_comm_data(self, tr_code, record_name, index, item_name):
         ret = self.dynamicCall("GetCommData(QString, QString, int, QString)", tr_code,
                                record_name, index, item_name)
@@ -101,6 +109,8 @@ class Kiwoom(QAxWidget):
 
     def _receive_real_data(self, sJongmokCode, sRealType, sRealData):
         print("receive_real_data sJongmokCode:{}, sRealType:{}, sRealData:{}".format(sJongmokCode, sRealType, sRealData))
+        real_val = self._get_comm_func("GetRealMA", "1001;opc10002_req;6EZ18;'해외옵션시세")
+        print(real_val)
 
     def _receive_chejan_data(self, gubun, item_cnt, fid_list):
         '''
@@ -164,7 +174,7 @@ class Kiwoom(QAxWidget):
         elif rqname == "opc10001_req":
             self._opc10001(rqname, trcode)
         elif rqname == "opc10002_req":
-            self._opc10002(rqname, trcode)
+            self._opc10001(rqname, trcode)
         elif rqname == "send_order_req":
             print('end')
 
@@ -202,6 +212,7 @@ class Kiwoom(QAxWidget):
 
     def _opc10001(self, rqname, trcode):
         data_cnt = self._get_repeat_cnt(trcode, rqname)
+        print('total count : ', data_cnt)
 
         for i in range(data_cnt):
             # date = self._get_comm_data(trcode, rqname, i, "영업일자")
@@ -220,13 +231,22 @@ class Kiwoom(QAxWidget):
             self.ohlcv['price'].append(price)
             self.ohlcv['volume'].append(volume)
 
-        df = DataFrame(self.ohlcv, columns=['open', 'high', 'low', 'price', 'volume'], index=kiwoom.ohlcv['time'])
+        df = DataFrame(self.ohlcv, columns=['open', 'high', 'low', 'price', 'volume'], index=self.ohlcv['time'])
         df.sort_index(inplace=True)
-        self.append_moving_average(df, 5)
-        self.append_moving_average(df, 20)
-        self.append_moving_average(df, 60)
+        # self.append_moving_average(df, 5)
+        # self.append_moving_average(df, 20)
+        # self.append_moving_average(df, 60)
 
-        df = df[df['MA60'] == df['MA60']]
+        # df = df[df['MA60'] == df['MA60']]
+
+        print('dataframe result : ', df)
+
+        ma_val = self._get_comm_func("GetMA", "1001;" + rqname + ";0;0;5;20;60;120;250")
+        # ma_val2 = self._get_comm_func("GetMA", "1001;" + rqname + ";1;0;5;20;60;120;250")
+        print('ma val')
+        print(ma_val)
+        # print('ma val2')
+        # print(ma_val2)
 
         # 결과 그래프 출력
         # plt.figure(1)
@@ -234,16 +254,16 @@ class Kiwoom(QAxWidget):
         # plt.ylabel('dollor')
         # plt.show()
 
-        plt.figure(2)
-        plt.plot(df['MA5'], 'r', label='5')
-        plt.plot(df['MA20'], 'g', label='20')
-        plt.plot(df['MA60'], 'b', label='60')
-        plt.plot(df['price'], 'k', label='price')
-        plt.xlabel('time')
-        plt.ylabel('dollor')
-        plt.legend(loc=0)
-        plt.show()
-        print(df)
+        # plt.figure(2)
+        # plt.plot(df['MA5'], 'r', label='5')
+        # plt.plot(df['MA20'], 'g', label='20')
+        # plt.plot(df['MA60'], 'b', label='60')
+        # plt.plot(df['price'], 'k', label='price')
+        # plt.xlabel('time')
+        # plt.ylabel('dollor')
+        # plt.legend(loc=0)
+        # plt.show()
+
 
     @staticmethod
     def append_moving_average(df, days):
@@ -278,7 +298,7 @@ class Kiwoom(QAxWidget):
 
         self.ohlcv = {'time': [], 'open': [], 'high': [], 'low': [], 'price': [], 'volume': []}
 
-        self.comm_rq_data(tr_code+"_req", tr_code, 0, "화면번호")
+        self.comm_rq_data(tr_code+"_req", tr_code, 0, '1001')
 
     def reset_opw30009_output(self):
         self.opw30009_output = []
