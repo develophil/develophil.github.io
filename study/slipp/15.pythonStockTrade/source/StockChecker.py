@@ -16,8 +16,8 @@ if __name__ == "__main__":
 
         corp_info = crawler.select_kospi_corp_list()
         stock = crawler.select_stock_price_model(row_limit=between_days)
-        # prev_date = target_date - timedelta(days=1)
-        # print(target_date, '|', prev_date)
+        prev_date = target_date - timedelta(days=5)
+        print(target_date, '|', prev_date)
 
         print('종목코드,종목명,전일종가,예측종가,시가,실 종가')
         # buy list
@@ -27,29 +27,34 @@ if __name__ == "__main__":
             price = float(split_row_data[-1])
             name = corp_info.loc[code]['회사명']
 
-            target_date_df = stock[code][str(target_date):str(target_date)]
+            range_df = crawler.crawling_stock_price(code, prev_date, target_date)
+
+            # target_date_df = stock[code][str(target_date):str(target_date)]
             # prev_date_df = stock[code][str(prev_date):str(prev_date)]
 
-            indexes = stock[code].index.values
-
-            prev_date_idx = -1
-            if between_days > 2:
-                prev_date_idx = list(indexes).index(str(target_date)) - 1
-
-            prev_date_df = stock[code][indexes[prev_date_idx]:indexes[prev_date_idx]]
+            # indexes = stock[code].index.values
+            #
+            # prev_date_idx = -1
+            # if between_days > 2:
+            #     prev_date_idx = list(indexes).index(str(target_date)) - 1
+            #
+            # prev_date_df = stock[code][indexes[prev_date_idx]:indexes[prev_date_idx]]
 
             try:
-                target_open = target_date_df['Open'].values[0]
+                # target_open = target_date_df['Open'].values[0]
+                target_open = range_df['Open'].values[-1]
             except:
                 target_open = 0
 
             try:
-                target_close = target_date_df['Adj_Close'].values[0]
+                # target_close = target_date_df['Adj_Close'].values[0]
+                target_close = range_df['Adj_Close'].values[-1]
             except:
                 target_close = 0
 
             try:
-                prev_close = prev_date_df['Adj_Close'].values[0]
+                # prev_close = prev_date_df['Adj_Close'].values[0]
+                prev_close = range_df['Adj_Close'].values[-2]
             except:
                 prev_close = 0
 
