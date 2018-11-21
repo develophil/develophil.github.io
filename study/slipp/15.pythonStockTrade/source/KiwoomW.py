@@ -19,6 +19,7 @@ class Kiwoom(QAxWidget):
         self.trade_item_code = "6EZ18"
         self.rq_msg = ""
         print('code : ', self.trade_item_code)
+        self.tradable = True
 
     def _create_kiwoom_instance(self):
         self.setControl("KFOPENAPI.KFOpenAPICtrl.1")
@@ -65,9 +66,9 @@ class Kiwoom(QAxWidget):
 
     def comm_rq_data(self, rqname, trcode, next, screen_no):
         print('rqname : {}, trcode : {}, next: {}, screenno: {}'.format(rqname, trcode, next, screen_no))
-        self.dynamicCall("CommRqData(QString, QString, int, QString)", rqname, trcode, next, screen_no)
-        # self.tr_event_loop = QEventLoop()
-        # self.tr_event_loop.exec_()
+        self.dynamicCall("CommRqData(QString, QString, QString, QString)", rqname, trcode, next, screen_no)
+        self.tr_event_loop = QEventLoop()
+        self.tr_event_loop.exec_()
 
     def _get_comm_data(self, tr_code, record_name, index, item_name):
         ret = self.dynamicCall("GetCommData(QString, QString, int, QString)", tr_code,
@@ -168,10 +169,10 @@ class Kiwoom(QAxWidget):
         elif rqname == "send_order_req":
             print('end')
 
-        # try:
-        #     self.tr_event_loop.exit()
-        # except AttributeError:
-        #     pass
+        try:
+            self.tr_event_loop.exit()
+        except AttributeError:
+            pass
 
     @staticmethod
     def change_format(data):
@@ -338,9 +339,33 @@ class Kiwoom(QAxWidget):
         self.available_buy_count = self._get_comm_data(trcode, rqname, 0, "주문가능수량")
         print('available : {}'.format(self.available_buy_count))
 
+
     # 장운영정보조회
     def _opw50001(self, rqname, trcode):
         print('opw50001')
+        current_time = self._get_comm_data(trcode, rqname, 0, "현재시간")
+
+        data_cnt = self._get_repeat_cnt(trcode, rqname)
+        for i in range(data_cnt):
+            code = self._get_comm_data(trcode, rqname, i, "파생품목코드")
+
+            if code.startswith('6E'):
+                opr_time = self._get_comm_data(trcode, rqname, i, "장운영시간1")
+                start_opr_time = opr_time[:4]
+                end_opr_time = opr_time[4:]
+
+                if end_opr_time < current_time < start_opr_time:
+                    self.tradable = False
+                    return self.tradable
+                else:
+                    return self.tradable
+
+        return self.tradable
+
+    def is_available_trading_time(self):
+        self.set_input_value("품목구분", 'CUR')
+        self.comm_rq_data("opw50001_req", "opw50001", '0', "5001")
+        print('tradable : ', self.tradable)
 
     # 원화외화예수금잔액조회
     def _opw60003(self, rqname, trcode):
@@ -357,9 +382,11 @@ if __name__ == "__main__":
     kiwoom = Kiwoom()
     kiwoom.comm_connect()
 
-    kiwoom.reset_opw30009_output()
-    kiwoom.get_chart_data('minute', 30)
+    # kiwoom.reset_opw30009_output()
+    # kiwoom.get_chart_data('minute', 30)
     print(kiwoom.get_available_order_count(accno, '1'))
-    print(kiwoom._get_comm_real_data("해외선물시세", 10))
+    # print(kiwoom._get_comm_real_data("해외선물시세", 10))
 
+    # time.sleep(20)
+    # print(kiwoom.is_available_trading_time())
 
