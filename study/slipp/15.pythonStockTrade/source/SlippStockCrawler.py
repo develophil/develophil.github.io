@@ -3,10 +3,15 @@ import sqlite3
 import sys
 from datetime import timedelta, datetime
 from io import BytesIO
+from urllib.request import urlopen
+
 import pandas as pd
 import pandas_datareader.data as web
 import requests
+from bs4 import BeautifulSoup
+
 import Logger as log
+import talib.abstract as ta
 
 
 def calc_available_days(max_ma_days):
@@ -130,6 +135,78 @@ class SlippStockCrawler:
 
         return df
 
+    # naver 데이터 사용
+    def crawling_naver_stock_price(self, code, start=None, end=None):
+
+        try:
+            # url = 'http://finance.naver.com/item/sise_day.nhn?code=' + code
+            # html = urlopen(url)
+            # source = BeautifulSoup(html.read(), "html.parser")
+            #
+            # maxPage = source.find_all("table", align="center")
+            # mp = maxPage[0].find_all("td", class_="pgRR")
+            # mpNum = int(mp[0].a.get('href')[-3:])
+            #
+            # for page in range(1, mpNum + 1):
+            #     print(str(page))
+
+            page = 1
+
+            url = 'http://finance.naver.com/item/sise_day.nhn?code=' + code + '&page=' + str(page)
+            html = urlopen(url)
+            source = BeautifulSoup(html.read(), "html.parser")
+            srlists = source.find_all("tr")
+            isCheckNone = None
+
+            # if ((page % 1) == 0):
+            #     time.sleep(1.50)
+
+            # 종목 이름을 입력하면 종목에 해당하는 코드를 불러와
+            #  네이버 금융(http://finance.naver.com)에 넣어줌
+            def get_url(item_name, code_df):
+                code = code_df.query("name=='{}'".format(item_name))['code'].to_string(index=False)
+                url = 'http://finance.naver.com/item/sise_day.nhn?code={code}'.format(code=code)
+                print("요청 URL = {}".format(url))
+                return url
+                # 신라젠의 일자데이터 url 가져오기
+
+            item_name = '신라젠'
+            url = get_url(item_name,code_df)
+            # 일자 데이터를 담을 df라는 DataFrame 정의
+            df = pd.DataFrame()
+            # 1페이지에서 20페이지의 데이터만 가져오기
+            for page in range(1, 21): pg_url = '{url}&page={page}'.format(url=url, page=page)
+            df = df.append(pd.read_html(pg_url, header=0)[0],
+                           ignore_index=True)
+            # df.dropna()를 이용해 결측값 있는 행 제거
+            df = df.dropna()
+
+            # 한글로 된 컬럼명을 영어로 바꿔줌
+            df = df.rename(columns= {'날짜': 'date', '종가': 'close', '전일비': 'diff', '시가': 'open', '고가': 'high', '저가': 'low', '거래량': 'volume'})
+            # 데이터의 타입을 int형으로 바꿔줌
+            df[['close', 'diff', 'open', 'high', 'low', 'volume']] = df[['close', 'diff', 'open', 'high', 'low', 'volume']].astype(int)
+            # 컬럼명 'date'의 타입을 date로 바꿔줌
+            df['date'] = pd.to_datetime(df['date'])
+            # 일자(date)를 기준으로 오름차순 정렬
+            df = df.sort_values(by=['date'], ascending=True)
+
+
+
+            #
+            # # 종목 선택
+            # df = web.DataReader(code + ".KS", "yahoo", start, end)
+            #
+            # df.rename(columns={
+            #     'Adj Close': 'Adj_Close'
+            # }, inplace=True)
+            #
+            # # 주말에는 장이 열리지 않으므로 제거
+            # df = df[df['Volume'] != 0]
+        except:
+            print('크롤링 실패 - code: {}, start: {}, end: {}'.format(code, start, end))
+
+        return srlists
+
     # 이동평균 데이터 추가
     def append_moving_averages(self, df):
 
@@ -159,8 +236,8 @@ class SlippStockCrawler:
         with self.get_sqlite_connection() as con:
             for i, code in enumerate(kospi_corp_info.index.values):
                 # test
-                if i < 592:
-                    continue
+                # if i < 592:
+                #     continue
 
                 try:
                     self.insert_stock_price_model(code, con, setup_type)
@@ -283,5 +360,48 @@ class SlippStockCrawler:
 
 
 if __name__ == "__main__":
-    SlippStockCrawler().init_crawling()
+    # SlippStockCrawler().init_crawling()
+    # 코스피 법인 목록 크롤링
+
+    self = SlippStockCrawler()
+    kospi_corp_info = self.crawling_kospi_corp_list(MarketType.KOSPI)
+
+    total = len(kospi_corp_info)
+    insert_error_code_list = []
+    with self.get_sqlite_connection() as con:
+        for i, code in enumerate(kospi_corp_info.index.values):
+            try:
+                df = self.crawling_stock_price(code, '2018-11-15')
+
+                ##################################지표추가#######################################
+
+                df['sma5'] = talib.SMA(np.asarray(df['close']), 5)
+
+                df['sma20'] = talib.SMA(np.asarray(df['close']), 20)
+
+                df['sma120'] = talib.SMA(np.asarray(df['close']), 120)
+
+                df['ema12'] = talib.SMA(np.asarray(df['close']), 12)
+
+                df['ema26'] = talib.SMA(np.asarray(df['close']), 26)
+
+                upper, middle, lower = talib.BBANDS(np.asarray(df['close']), timeperiod=20, nbdevup=2, nbdevdn=2,
+                                                    matype=0)
+                df['dn'] = lower
+                df['mavg'] = middle
+                df['up'] = upper
+                df['pctB'] = (df.close - df.dn) / (df.up - df.dn)
+
+                rsi14 = talib.RSI(np.asarray(df['close']), 14)
+                df['rsi14'] = rsi14
+
+                macd, macdsignal, macdhist = talib.MACD(np.asarray(df['close']), 12, 26, 9)
+                df['macd'] = macd
+                df['signal'] = macdsignal
+
+                log.info('{} / {} : {}'.format(i, total, code))
+            except:
+                log.warning('{} / {} : {} - 주가 모델 저장 불가'.format(i, total, code))
+
+
     sys.exit()
