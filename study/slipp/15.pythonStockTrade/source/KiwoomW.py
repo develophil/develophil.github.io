@@ -22,6 +22,7 @@ class Kiwoom(QAxWidget):
     def _set_variable(self):
         self.trade_item_code = "6EZ18"
         self.rq_msg = ""
+        self.remained_data = False
         print('code : ', self.trade_item_code)
 
     def _create_kiwoom_instance(self):
@@ -69,9 +70,9 @@ class Kiwoom(QAxWidget):
 
     def comm_rq_data(self, rqname, trcode, next, screen_no):
         print('rqname : {}, trcode : {}, next: {}, screenno: {}'.format(rqname, trcode, next, screen_no))
-        self.dynamicCall("CommRqData(QString, QString, int, QString)", rqname, trcode, next, screen_no)
-        # self.tr_event_loop = QEventLoop()
-        # self.tr_event_loop.exec_()
+        self.dynamicCall("CommRqData(QString, QString, QString, QString)", rqname, trcode, next, screen_no)
+        self.tr_event_loop = QEventLoop()
+        self.tr_event_loop.exec_()
 
     def _get_comm_func(self, func_name, params):
         ret = self.dynamicCall("GetCommonFunc(QString, QString)", func_name, params)
@@ -178,10 +179,10 @@ class Kiwoom(QAxWidget):
         elif rqname == "send_order_req":
             print('end')
 
-        # try:
-        #     self.tr_event_loop.exit()
-        # except AttributeError:
-        #     pass
+        try:
+            self.tr_event_loop.exit()
+        except AttributeError:
+            pass
 
     @staticmethod
     def change_format(data):
@@ -304,7 +305,9 @@ class Kiwoom(QAxWidget):
         self.opw30009_output = []
 
     def _opw30009(self, rqname, trcode):
-        print(self._get_comm_full_data(trcode, rqname, 0))
+        print('full : ', self._get_comm_full_data(trcode, rqname, 0))
+        # print('real : ', self._get_comm_real_data('해외옵션시세', 10))
+
         currency_code = self._get_comm_data(trcode, rqname, 0, "통화코드")
         foreign_currency_deposit = self._get_comm_data(trcode, rqname, 0, "외화예수금")
         receivables = self._get_comm_data(trcode, rqname, 0, "미수금")
@@ -329,27 +332,30 @@ class Kiwoom(QAxWidget):
         ss= self._get_comm_data(trcode, rqname, 0, "위험도")
 
         self.opw30009_output.append(currency_code)
-        self.opw30009_output.append(foreign_currency_deposit)
-        self.opw30009_output.append(receivables)
-        self.opw30009_output.append(aa)
-        self.opw30009_output.append(bb)
-        self.opw30009_output.append(cc)
-        self.opw30009_output.append(dd)
-        self.opw30009_output.append(ee)
-        self.opw30009_output.append(ff)
-        self.opw30009_output.append(gg)
-        self.opw30009_output.append(hh)
-        self.opw30009_output.append(ii)
-        self.opw30009_output.append(jj)
-        self.opw30009_output.append(kk)
-        self.opw30009_output.append(ll)
-        self.opw30009_output.append(mm)
-        self.opw30009_output.append(nn)
-        self.opw30009_output.append(oo)
-        self.opw30009_output.append(pp)
-        self.opw30009_output.append(qq)
-        self.opw30009_output.append(rr)
-        self.opw30009_output.append(ss)
+        self.opw30009_output.append(int(foreign_currency_deposit))
+        self.opw30009_output.append(int(receivables))
+        self.opw30009_output.append(int(aa))
+        self.opw30009_output.append(int(bb))
+        self.opw30009_output.append(int(cc))
+        self.opw30009_output.append(int(dd))
+        self.opw30009_output.append(int(ee))
+        self.opw30009_output.append(int(ff))
+        self.opw30009_output.append(int(gg))
+        self.opw30009_output.append(int(hh))
+        self.opw30009_output.append(int(ii))
+        self.opw30009_output.append(int(jj))
+        self.opw30009_output.append(int(kk))
+        self.opw30009_output.append(int(ll))
+        self.opw30009_output.append(int(mm))
+        self.opw30009_output.append(int(nn))
+        self.opw30009_output.append(int(oo))
+        self.opw30009_output.append(int(pp))
+        self.opw30009_output.append(int(qq))
+        self.opw30009_output.append(int(rr))
+        self.opw30009_output.append(int(ss))
+
+        print('300009 output : ', self.opw30009_output)
+
 
     # 주문가능수량조회
     def _opw30011(self, rqname, trcode):

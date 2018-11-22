@@ -37,8 +37,6 @@ class MyWindow(QMainWindow, form_class):
         self.pushButton_2.clicked.connect(self.check_balance)
         self.pushButton_4.clicked.connect(self.check_available_order)
 
-        print(self.kiwoom._get_comm_real_data("해외선물시세", 10))
-
         # self.load_buy_sell_list()
 
     def trade_stocks(self):
@@ -190,7 +188,7 @@ class MyWindow(QMainWindow, form_class):
             self.spin_box.setText(self.kiwoom.available_buy_count)
 
     def check_balance(self):
-        # self.kiwoom.reset_opw00018_output()
+        self.kiwoom.reset_opw30009_output()
         account_number = self.comboBox.currentText()
         account_number = account_number.split(';')[0]
         print('balance : ', account_number)
@@ -198,41 +196,25 @@ class MyWindow(QMainWindow, form_class):
         self.kiwoom.set_input_value("비밀번호", '0000')
         self.kiwoom.set_input_value("비밀번호입력매체", '00')
         ret = self.kiwoom.comm_rq_data("opw30009_req", "opw30009", 0, "3009")
-
         print('check_balance ret : ', ret)
 
         # while self.kiwoom.remained_data:
-        #     print('while')
         #     time.sleep(0.2)
         #     self.kiwoom.set_input_value("계좌번호", account_number)
+        #     self.kiwoom.set_input_value("비밀번호", '0000')
+        #     self.kiwoom.set_input_value("비밀번호입력매체", '00')
         #     self.kiwoom.comm_rq_data("opw30009_req", "opw30009", 2, "3009")
 
-        # balance
-        # item = QTableWidgetItem(self.balanceTable)
-        # item.setTextAlignment(Qt.AlignVCenter | Qt.AlignRight)
-        # self.balanceTable.setItem(0, 0, item)
-
-        if len(self.kiwoom.opw30009_output) > 0:
+        output_length = len(self.kiwoom.opw30009_output)
+        print('len : ', output_length)
+        if output_length > 0:
             for i in range(1, 22):
-                print(i, ' : ', self.kiwoom.opw30009_output)
-                item = QTableWidgetItem(self.kiwoom.opw30009_output[i - 1])
+                print(i, ' : ', self.kiwoom.opw30009_output[i - 1])
+                item = QTableWidgetItem(str(self.kiwoom.opw30009_output[i - 1]))
                 item.setTextAlignment(Qt.AlignVCenter | Qt.AlignRight)
                 self.balanceTable.setItem(0, i, item)
 
             self.balanceTable.resizeRowsToContents()
-        #
-        # # Item list
-        # item_count = len(self.kiwoom.opw00018_output['multi'])
-        # self.tableWidget_2.setRowCount(item_count)
-        #
-        # for j in range(item_count):
-        #     row = self.kiwoom.opw00018_output['multi'][j]
-        #     for i in range(len(row)):
-        #         item = QTableWidgetItem(row[i])
-        #         item.setTextAlignment(Qt.AlignVCenter | Qt.AlignRight)
-        #         self.tableWidget_2.setItem(j, i, item)
-        #
-        # self.tableWidget_2.resizeRowsToContents()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
