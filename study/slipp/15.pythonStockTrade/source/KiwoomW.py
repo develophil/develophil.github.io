@@ -14,10 +14,15 @@ class Kiwoom(QAxWidget):
         self._set_signal_slots()
         self._set_variable()
         self.reset_opw30009_output()
+        self._set_comm_func()
+
+    def _set_comm_func(self):
+        self.dynamicCall("GetCommonFunc(QString, QString)", "SetStartTime", "ScrNo;6EZ18")
 
     def _set_variable(self):
         self.trade_item_code = "6EZ18"
         self.rq_msg = ""
+        self.remained_data = False
         print('code : ', self.trade_item_code)
         self.tradable = True
 
@@ -69,6 +74,13 @@ class Kiwoom(QAxWidget):
         self.dynamicCall("CommRqData(QString, QString, QString, QString)", rqname, trcode, next, screen_no)
         self.tr_event_loop = QEventLoop()
         self.tr_event_loop.exec_()
+<<<<<<< HEAD
+=======
+
+    def _get_comm_func(self, func_name, params):
+        ret = self.dynamicCall("GetCommonFunc(QString, QString)", func_name, params)
+        return ret
+>>>>>>> futures
 
     def _get_comm_data(self, tr_code, record_name, index, item_name):
         ret = self.dynamicCall("GetCommData(QString, QString, int, QString)", tr_code,
@@ -102,6 +114,8 @@ class Kiwoom(QAxWidget):
 
     def _receive_real_data(self, sJongmokCode, sRealType, sRealData):
         print("receive_real_data sJongmokCode:{}, sRealType:{}, sRealData:{}".format(sJongmokCode, sRealType, sRealData))
+        real_val = self._get_comm_func("GetRealMA", "1001;opc10002_req;6EZ18;'해외옵션시세")
+        print(real_val)
 
     def _receive_chejan_data(self, gubun, item_cnt, fid_list):
         '''
@@ -165,7 +179,7 @@ class Kiwoom(QAxWidget):
         elif rqname == "opc10001_req":
             self._opc10001(rqname, trcode)
         elif rqname == "opc10002_req":
-            self._opc10002(rqname, trcode)
+            self._opc10001(rqname, trcode)
         elif rqname == "send_order_req":
             print('end')
 
@@ -203,6 +217,7 @@ class Kiwoom(QAxWidget):
 
     def _opc10001(self, rqname, trcode):
         data_cnt = self._get_repeat_cnt(trcode, rqname)
+        print('total count : ', data_cnt)
 
         for i in range(data_cnt):
             # date = self._get_comm_data(trcode, rqname, i, "영업일자")
@@ -221,13 +236,22 @@ class Kiwoom(QAxWidget):
             self.ohlcv['price'].append(price)
             self.ohlcv['volume'].append(volume)
 
-        df = DataFrame(self.ohlcv, columns=['open', 'high', 'low', 'price', 'volume'], index=kiwoom.ohlcv['time'])
+        df = DataFrame(self.ohlcv, columns=['open', 'high', 'low', 'price', 'volume'], index=self.ohlcv['time'])
         df.sort_index(inplace=True)
-        self.append_moving_average(df, 5)
-        self.append_moving_average(df, 20)
-        self.append_moving_average(df, 60)
+        # self.append_moving_average(df, 5)
+        # self.append_moving_average(df, 20)
+        # self.append_moving_average(df, 60)
 
-        df = df[df['MA60'] == df['MA60']]
+        # df = df[df['MA60'] == df['MA60']]
+
+        print('dataframe result : ', df)
+
+        ma_val = self._get_comm_func("GetMA", "1001;" + rqname + ";0;0;5;20;60;120;250")
+        # ma_val2 = self._get_comm_func("GetMA", "1001;" + rqname + ";1;0;5;20;60;120;250")
+        print('ma val')
+        print(ma_val)
+        # print('ma val2')
+        # print(ma_val2)
 
         # 결과 그래프 출력
         # plt.figure(1)
@@ -235,16 +259,16 @@ class Kiwoom(QAxWidget):
         # plt.ylabel('dollor')
         # plt.show()
 
-        plt.figure(2)
-        plt.plot(df['MA5'], 'r', label='5')
-        plt.plot(df['MA20'], 'g', label='20')
-        plt.plot(df['MA60'], 'b', label='60')
-        plt.plot(df['price'], 'k', label='price')
-        plt.xlabel('time')
-        plt.ylabel('dollor')
-        plt.legend(loc=0)
-        plt.show()
-        print(df)
+        # plt.figure(2)
+        # plt.plot(df['MA5'], 'r', label='5')
+        # plt.plot(df['MA20'], 'g', label='20')
+        # plt.plot(df['MA60'], 'b', label='60')
+        # plt.plot(df['price'], 'k', label='price')
+        # plt.xlabel('time')
+        # plt.ylabel('dollor')
+        # plt.legend(loc=0)
+        # plt.show()
+
 
     @staticmethod
     def append_moving_average(df, days):
@@ -279,13 +303,15 @@ class Kiwoom(QAxWidget):
 
         self.ohlcv = {'time': [], 'open': [], 'high': [], 'low': [], 'price': [], 'volume': []}
 
-        self.comm_rq_data(tr_code+"_req", tr_code, 0, "화면번호")
+        self.comm_rq_data(tr_code+"_req", tr_code, 0, '1001')
 
     def reset_opw30009_output(self):
         self.opw30009_output = []
 
     def _opw30009(self, rqname, trcode):
-        print(self._get_comm_full_data(trcode, rqname, 0))
+        print('full : ', self._get_comm_full_data(trcode, rqname, 0))
+        # print('real : ', self._get_comm_real_data('해외옵션시세', 10))
+
         currency_code = self._get_comm_data(trcode, rqname, 0, "통화코드")
         foreign_currency_deposit = self._get_comm_data(trcode, rqname, 0, "외화예수금")
         receivables = self._get_comm_data(trcode, rqname, 0, "미수금")
@@ -310,27 +336,30 @@ class Kiwoom(QAxWidget):
         ss= self._get_comm_data(trcode, rqname, 0, "위험도")
 
         self.opw30009_output.append(currency_code)
-        self.opw30009_output.append(foreign_currency_deposit)
-        self.opw30009_output.append(receivables)
-        self.opw30009_output.append(aa)
-        self.opw30009_output.append(bb)
-        self.opw30009_output.append(cc)
-        self.opw30009_output.append(dd)
-        self.opw30009_output.append(ee)
-        self.opw30009_output.append(ff)
-        self.opw30009_output.append(gg)
-        self.opw30009_output.append(hh)
-        self.opw30009_output.append(ii)
-        self.opw30009_output.append(jj)
-        self.opw30009_output.append(kk)
-        self.opw30009_output.append(ll)
-        self.opw30009_output.append(mm)
-        self.opw30009_output.append(nn)
-        self.opw30009_output.append(oo)
-        self.opw30009_output.append(pp)
-        self.opw30009_output.append(qq)
-        self.opw30009_output.append(rr)
-        self.opw30009_output.append(ss)
+        self.opw30009_output.append(int(foreign_currency_deposit))
+        self.opw30009_output.append(int(receivables))
+        self.opw30009_output.append(int(aa))
+        self.opw30009_output.append(int(bb))
+        self.opw30009_output.append(int(cc))
+        self.opw30009_output.append(int(dd))
+        self.opw30009_output.append(int(ee))
+        self.opw30009_output.append(int(ff))
+        self.opw30009_output.append(int(gg))
+        self.opw30009_output.append(int(hh))
+        self.opw30009_output.append(int(ii))
+        self.opw30009_output.append(int(jj))
+        self.opw30009_output.append(int(kk))
+        self.opw30009_output.append(int(ll))
+        self.opw30009_output.append(int(mm))
+        self.opw30009_output.append(int(nn))
+        self.opw30009_output.append(int(oo))
+        self.opw30009_output.append(int(pp))
+        self.opw30009_output.append(int(qq))
+        self.opw30009_output.append(int(rr))
+        self.opw30009_output.append(int(ss))
+
+        print('300009 output : ', self.opw30009_output)
+
 
     # 주문가능수량조회
     def _opw30011(self, rqname, trcode):
