@@ -14,17 +14,18 @@ class Kiwoom(QAxWidget):
         self._set_signal_slots()
         self._set_variable()
         self.reset_opw30009_output()
-        self._set_comm_func()
-
-    def _set_comm_func(self):
-        self.dynamicCall("GetCommonFunc(QString, QString)", "SetStartTime", "ScrNo;6EZ18")
+        self._set_start_time()
 
     def _set_variable(self):
-        self.trade_item_code = "6EZ18"
+
+        self.trade_item_code = '6EZ18'
+        self.scr_no = '1001'
         self.rq_msg = ""
         self.remained_data = False
-        print('code : ', self.trade_item_code)
         self.tradable = True
+
+    def _set_start_time(self):
+        self.dynamicCall("GetCommonFunc(QString, QString)", "SetStartTime", self.scr_no+";"+self.trade_item_code)
 
     def _create_kiwoom_instance(self):
         self.setControl("KFOPENAPI.KFOpenAPICtrl.1")
@@ -74,13 +75,10 @@ class Kiwoom(QAxWidget):
         self.dynamicCall("CommRqData(QString, QString, QString, QString)", rqname, trcode, next, screen_no)
         self.tr_event_loop = QEventLoop()
         self.tr_event_loop.exec_()
-<<<<<<< HEAD
-=======
 
     def _get_comm_func(self, func_name, params):
         ret = self.dynamicCall("GetCommonFunc(QString, QString)", func_name, params)
         return ret
->>>>>>> futures
 
     def _get_comm_data(self, tr_code, record_name, index, item_name):
         ret = self.dynamicCall("GetCommData(QString, QString, int, QString)", tr_code,
@@ -114,8 +112,17 @@ class Kiwoom(QAxWidget):
 
     def _receive_real_data(self, sJongmokCode, sRealType, sRealData):
         print("receive_real_data sJongmokCode:{}, sRealType:{}, sRealData:{}".format(sJongmokCode, sRealType, sRealData))
-        real_val = self._get_comm_func("GetRealMA", "1001;opc10002_req;6EZ18;'해외옵션시세")
-        print(real_val)
+        '''
+        ###
+        - 화면번호(ScrNo), 화면명(RQName), 종목코드(JongCode), RealType(해외선물시세,해외옵션시세) 
+        - 수신데이타
+        전문(구분(1) + 날짜시간(20) + MA1(20) + MA2(20) + MA3(20) + MA4(20) + MA5(20)
+        = > 구분        0: 기존        마지막시간에        업데이트, 1: 신규시간        추가
+
+        - 예) Cstring strVal = GetCommonFunc("GetRealMA",1000;분차트;6AH17;해외선물시세");
+        '''
+        real_val = self._get_comm_func("GetRealMA", self.scr_no + ";opc10002_req;"+self.trade_item_code+";'해외옵션시세")
+        print('real val : ', real_val)
 
     def _receive_chejan_data(self, gubun, item_cnt, fid_list):
         '''
@@ -245,8 +252,8 @@ class Kiwoom(QAxWidget):
         # df = df[df['MA60'] == df['MA60']]
 
         print('dataframe result : ', df)
-
-        ma_val = self._get_comm_func("GetMA", "1001;" + rqname + ";0;0;5;20;60;120;250")
+        next_flag = 0   # 0: 처음, 1: 다음
+        ma_val = self._get_comm_func("GetMA", self.scr_no + ";" + rqname + ";"+next_flag+";5;20;60;120;250")
         # ma_val2 = self._get_comm_func("GetMA", "1001;" + rqname + ";1;0;5;20;60;120;250")
         print('ma val')
         print(ma_val)
@@ -406,7 +413,7 @@ class Kiwoom(QAxWidget):
 
 if __name__ == "__main__":
     accno = '7006265572'
-    item_code = '6EZ18'
+
     app = QApplication(sys.argv)
     kiwoom = Kiwoom()
     kiwoom.comm_connect()
