@@ -213,7 +213,7 @@ class MyWindow(QMainWindow, form_class):
                 print(i, ' : ', self.kiwoom.opw30009_output[i - 1])
                 item = QTableWidgetItem(str(self.kiwoom.opw30009_output[i - 1]))
                 item.setTextAlignment(Qt.AlignVCenter | Qt.AlignRight)
-                self.balanceTable.setItem(0, i, item)
+                self.balanceTable.setItem(0, i-1, item)
 
             self.balanceTable.resizeRowsToContents()
 
