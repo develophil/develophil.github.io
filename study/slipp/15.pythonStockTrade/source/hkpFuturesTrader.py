@@ -5,6 +5,7 @@ from PyQt5 import uic
 import time
 
 from KiwoomW import Kiwoom
+from PyEnum import TradeFlags
 
 form_class = uic.loadUiType("hkpFuturesTrader.ui")[0]
 
@@ -25,6 +26,10 @@ class MyWindow(QMainWindow, form_class):
         self.timer2 = QTimer(self)
         self.timer2.start(1000 *10)
         self.timer2.timeout.connect(self.timeout2)
+
+        self.auto_order_timer = QTimer(self)
+        self.auto_order_timer.start(1000)
+        self.auto_order_timer.timeout.connect(self.auto_order)
 
         accouns_num = int(self.kiwoom.get_login_info("ACCOUNT_CNT"))
         accounts = self.kiwoom.get_login_info("ACCNO")
@@ -138,17 +143,21 @@ class MyWindow(QMainWindow, form_class):
         self.lineEdit_2.setText(name)
 
     def send_order(self):
-        order_type_lookup = {'신규매도': 1, '신규매수': 2, '매도취소': 3, '매수취소': 4, '매도정정': 5, '매수정정': 6}
-        hoga_lookup = {'시장가': "1", '지정가': "2", 'STOP': "3", 'STOP LIMIT': "4"}
-
-        account = self.comboBox.currentText()
         order_type = self.comboBox_2.currentText()
-        code = self.lineEdit.text()
         hoga = self.comboBox_3.currentText()
         num = self.spinBox.value()
         price = self.doubleSpinBox.value()
 
-        order_result = self.kiwoom.send_order("send_order_req", "0101", account, order_type_lookup[order_type], code, num, price, price, hoga_lookup[hoga], "")
+        self.order(order_type, num, price, price*2, hoga, "")
+
+    def order(self, order_type, num, price, stop_price, hoga, org_no):
+        order_type_lookup = {'신규매도': 1, '신규매수': 2, '매도취소': 3, '매수취소': 4, '매도정정': 5, '매수정정': 6}
+        hoga_lookup = {'시장가': "1", '지정가': "2", 'STOP': "3", 'STOP LIMIT': "4"}
+
+        account = self.comboBox.currentText()
+        code = self.kiwoom.trade_item_code
+
+        order_result = self.kiwoom.send_order("send_order_req", "0101", account, order_type_lookup[order_type], code, num, price, stop_price, hoga_lookup[hoga], org_no)
         print('order : ', order_result)
         self.statusbar.showMessage(self.kiwoom.rq_msg)
         # self.check_balance()
@@ -176,6 +185,24 @@ class MyWindow(QMainWindow, form_class):
         if self.checkBox.isChecked():
             # self.check_balance()
             self.kiwoom.get_chart_data('minute', 30)
+
+    def auto_order(self):
+        print('auto order : ', self.kiwoom.trade_flag)
+        if self.kiwoom.trade_flag == TradeFlags.BUY:
+            try:
+                buy = self.order('신규매수', 1, 0, 0, '시장가', "")
+                print('buy : ', buy)
+                self.kiwoom.trade_flag = TradeFlags.BEFORE_SELL
+            except AttributeError:
+                pass
+
+        elif self.kiwoom.trade_flag == TradeFlags.SELL:
+            try:
+                sell = self.order('신규매도', 1, 0, 0, '시장가', "")
+                print('sell : ', sell)
+                self.kiwoom.trade_flag = TradeFlags.BEFORE_BUY
+            except AttributeError:
+                pass
 
     def check_available_order(self):
         order_type_lookup = {'신규매수': 1, '신규매도': 2, '매수취소': 3, '매도취소': 4}

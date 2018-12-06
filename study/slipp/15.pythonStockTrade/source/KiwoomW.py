@@ -1,13 +1,15 @@
 import sys
-import time
+import re
 
 from PyQt5.QtWidgets import *
 from PyQt5.QAxContainer import *
 from PyQt5.QtCore import *
 from pandas import DataFrame
 import matplotlib.pyplot as plt
+from PyEnum import TradeFlags
 
 class Kiwoom(QAxWidget):
+
     def __init__(self):
         super().__init__()
         self._create_kiwoom_instance()
@@ -23,6 +25,8 @@ class Kiwoom(QAxWidget):
         self.rq_msg = ""
         self.remained_data = False
         self.tradable = True
+        self.trade_flag = TradeFlags.BEFORE_BUY
+        self.is_ma_status_changed = False
 
     def _set_start_time(self):
         self.dynamicCall("GetCommonFunc(QString, QString)", "SetStartTime", self.scr_no+";"+self.trade_item_code)
@@ -110,19 +114,51 @@ class Kiwoom(QAxWidget):
         print("_receive_msg screen_no:{}, rqname:{}, trcode:{}, msg:{}".format(screen_no, rqname, trcode, msg))
         self.rq_msg = msg
 
-    def _receive_real_data(self, sJongmokCode, sRealType, sRealData):
-        print("receive_real_data sJongmokCode:{}, sRealType:{}, sRealData:{}".format(sJongmokCode, sRealType, sRealData))
-        '''
-        ###
-        - 화면번호(ScrNo), 화면명(RQName), 종목코드(JongCode), RealType(해외선물시세,해외옵션시세) 
-        - 수신데이타
-        전문(구분(1) + 날짜시간(20) + MA1(20) + MA2(20) + MA3(20) + MA4(20) + MA5(20)
-        = > 구분        0: 기존        마지막시간에        업데이트, 1: 신규시간        추가
+    '''
+    # print("receive_real_data sJongmokCode:{}, sRealType:{}, sRealData:{}".format(sJongmokCode, sRealType, sRealData))
+    - 화면번호(ScrNo), 화면명(RQName), 종목코드(JongCode), RealType(해외선물시세,해외옵션시세) 
+    - 수신데이타
+    전문(구분(1) + 날짜시간(20) + MA1(20) + MA2(20) + MA3(20) + MA4(20) + MA5(20)
+    = > 구분        0: 기존        마지막시간에        업데이트, 1: 신규시간        추가
 
-        - 예) Cstring strVal = GetCommonFunc("GetRealMA",1000;분차트;6AH17;해외선물시세");
-        '''
-        real_val = self._get_comm_func("GetRealMA", self.scr_no + ";opc10002_req;"+self.trade_item_code+";'해외옵션시세")
+    - 예) Cstring strVal = GetCommonFunc("GetRealMA",1000;분차트;6AH17;해외선물시세");
+    '''
+    def _receive_real_data(self, sJongmokCode, sRealType, sRealData):
+        real_val = self._get_comm_func("GetRealMA", self.scr_no + ";opc10002_req;"+sJongmokCode+";"+sRealType)
         print('real val : ', real_val)
+        gubun = real_val[0:1]
+        time = real_val[1:21].strip()
+        ma5 = float(real_val[21:41])
+        ma20 = float(real_val[41:61])
+        ma60 = float(real_val[61:81])
+        ma120 = float(real_val[81:101])
+        ma250 = float(real_val[101:121])
+
+        print('gubun : {}, time : {}, ma : {},{},{},{},{}'.format(gubun, time, float(ma5), float(ma20), float(ma60), float(ma120), float(ma250)))
+
+        if self.trade_flag is TradeFlags.BEFORE_BUY:
+            is_ascending = self.is_moving_average_order_ascending([ma5, ma20, ma60])
+            print(is_ascending)
+            if is_ascending is True:
+                self.trade_flag = TradeFlags.BUY
+
+        if self.trade_flag is TradeFlags.BEFORE_SELL:
+            is_descending = self.is_moving_average_order_descending([ma5, ma20, ma60])
+            print(is_descending)
+            if is_descending is True:
+                self.trade_flag = TradeFlags.SELL
+
+    def is_moving_average_order_ascending(self, ma_list):
+        before = -9999999
+        for ma in ma_list:
+            if ma <= before:
+                return False
+            else:
+                before = ma
+        return True
+
+    def is_moving_average_order_descending(self, ma_list):
+        return self.is_moving_average_order_ascending(reversed(ma_list))
 
     def _receive_chejan_data(self, gubun, item_cnt, fid_list):
         '''
@@ -252,7 +288,7 @@ class Kiwoom(QAxWidget):
         # df = df[df['MA60'] == df['MA60']]
 
         print('dataframe result : ', df)
-        next_flag = 0   # 0: 처음, 1: 다음
+        next_flag = '0'   # 0: 처음, 1: 다음
         ma_val = self._get_comm_func("GetMA", self.scr_no + ";" + rqname + ";"+next_flag+";5;20;60;120;250")
         # ma_val2 = self._get_comm_func("GetMA", "1001;" + rqname + ";1;0;5;20;60;120;250")
         print('ma val')
@@ -276,7 +312,6 @@ class Kiwoom(QAxWidget):
         # plt.legend(loc=0)
         # plt.show()
 
-
     @staticmethod
     def append_moving_average(df, days):
         ma = df['price'].rolling(window=days).mean().round(6)
@@ -298,14 +333,13 @@ class Kiwoom(QAxWidget):
     def get_chart_data(self, type, value):
         # opt10012 : 분 단위 데이터 조회.... 이걸로 바꿔야 할듯..
         tr_code = ''
-        item_code = '6EZ18'
 
         if type == 'tick':
             tr_code = 'opc10001'
         elif type == 'minute':
             tr_code = 'opc10002'
 
-        self.set_input_value("종목코드", item_code)
+        self.set_input_value("종목코드", self.trade_item_code)
         self.set_input_value("시간단위", value)
 
         self.ohlcv = {'time': [], 'open': [], 'high': [], 'low': [], 'price': [], 'volume': []}
@@ -414,13 +448,13 @@ class Kiwoom(QAxWidget):
 if __name__ == "__main__":
     accno = '7006265572'
 
-    app = QApplication(sys.argv)
-    kiwoom = Kiwoom()
-    kiwoom.comm_connect()
+    # app = QApplication(sys.argv)
+    # kiwoom = Kiwoom()
+    # kiwoom.comm_connect()
 
     # kiwoom.reset_opw30009_output()
     # kiwoom.get_chart_data('minute', 30)
-    print(kiwoom.get_available_order_count(accno, '1'))
+    # print(kiwoom.get_available_order_count(accno, '1'))
     # print(kiwoom._get_comm_real_data("해외선물시세", 10))
 
     # time.sleep(20)
