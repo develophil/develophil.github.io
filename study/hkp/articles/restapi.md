@@ -14,7 +14,6 @@
     > 복수명사
     1. Controller
     > 동사, 동사구
-    
 
 
 
@@ -28,6 +27,7 @@
 
 
 
+https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
 
 3.1 URI 식별자 설계
 URI : Uniform Resourc Identifier(식별)
