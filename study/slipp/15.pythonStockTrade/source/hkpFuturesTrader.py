@@ -2,10 +2,9 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5 import uic
-import time
 
 from KiwoomW import Kiwoom
-from PyEnum import TradeFlags
+from enums.PyEnum import TradeFlags
 
 form_class = uic.loadUiType("hkpFuturesTrader.ui")[0]
 

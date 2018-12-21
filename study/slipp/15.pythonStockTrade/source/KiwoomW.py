@@ -1,12 +1,7 @@
-import sys
-import re
-
-from PyQt5.QtWidgets import *
 from PyQt5.QAxContainer import *
 from PyQt5.QtCore import *
 from pandas import DataFrame
-import matplotlib.pyplot as plt
-from PyEnum import TradeFlags
+from enums.PyEnum import TradeFlags
 
 class Kiwoom(QAxWidget):
 
