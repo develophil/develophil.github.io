@@ -39,10 +39,13 @@ class MyWindow(QMainWindow, form_class):
         self.lineEdit.textChanged.connect(self.code_changed)
         self.pushButton.clicked.connect(self.send_order)
         self.pushButton_2.clicked.connect(self.check_balance)
-        self.pushButton_4.clicked.connect(self.kiwoom.is_available_trading_time)
+        self.pushButton_4.clicked.connect(self.testtest)
         # self.pushButton_4.clicked.connect(self.check_available_order)
 
         # self.load_buy_sell_list()
+
+    def testtest(self):
+        self.kiwoom._get_euro_fx_code("201903")
 
     def trade_stocks(self):
         hoga_lookup = {'지정가': "00", '시장가': "03"}

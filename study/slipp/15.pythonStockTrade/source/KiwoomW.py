@@ -15,13 +15,18 @@ class Kiwoom(QAxWidget):
 
     def _set_variable(self):
 
-        self.trade_item_code = '6EZ18'
+        self.trade_item_code = '6EH19'
         self.scr_no = '1001'
         self.rq_msg = ""
         self.remained_data = False
         self.tradable = True
         self.trade_flag = TradeFlags.BEFORE_BUY
         self.is_ma_status_changed = False
+
+    def _get_euro_fx_code(self, month):
+        rrr = self.dynamicCall("GetGlobalFutureCodeByItemMonth(QString, QString)", "6E", month)
+        print('rrr : ', rrr)
+        return rrr
 
     def _set_start_time(self):
         self.dynamicCall("GetCommonFunc(QString, QString)", "SetStartTime", self.scr_no+";"+self.trade_item_code)
@@ -319,7 +324,7 @@ class Kiwoom(QAxWidget):
         self.set_input_value("계좌번호", account_number)
         self.set_input_value("비밀번호", '0000')
         self.set_input_value("비밀번호입력매체", '00')
-        self.set_input_value("종목코드", '6EZ18')
+        self.set_input_value("종목코드", '6EH19')
         self.set_input_value("매도수구분", '1')
         self.set_input_value("해외주문유형", '1')
         self.set_input_value("주문표시가격", '1')
