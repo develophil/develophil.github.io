@@ -17,5 +17,7 @@ class MovingTrend(enum.Enum):
 
 class TradeSignal(enum.Enum):
     NONE = 'none'
+    WAITING_SELL = 'ws'
     SELL = 'sell'
+    WAITING_BUY = 'wb'
     BUY = 'buy'
