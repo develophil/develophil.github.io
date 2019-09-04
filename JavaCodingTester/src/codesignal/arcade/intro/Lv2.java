@@ -3,8 +3,7 @@ package codesignal.arcade.intro;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 import java.util.stream.IntStream;
 
 public class Lv2 {
@@ -117,6 +116,40 @@ public class Lv2 {
         System.out.println(queue.size());
 
     }
+
+    String[] allLongestStrings(String[] inputArray) {
+
+        final int maxLength = getLongestLength(inputArray);
+
+        return Arrays.stream(inputArray)
+                .filter(s -> s.length() == maxLength)
+                .toArray(String[]::new);
+    }
+
+    private int getLongestLength(String[] inputArray) {
+        return Arrays.stream(inputArray).max(Comparator.comparingInt(String::length)).orElse("").length();
+    }
+
+    @Test
+    public void allLongestStrings4() {
+
+        String[] input = {"aba", "aa", "ad", "vcd", "aba"};
+        String[] result = {"aba", "vcd", "aba"};
+
+        Assert.assertArrayEquals(result, allLongestStrings(input));
+
+        String[] input2 = {"aa"};
+        String[] result2 = {"aa"};
+
+        Assert.assertArrayEquals(result2, allLongestStrings(input2));
+
+        String[] input3 = {"abc","eeee","abcd","dcd"};
+        String[] result3 = {"eeee","abcd"};
+
+        Assert.assertArrayEquals(result3, allLongestStrings(input3));
+
+    }
+
 
 
 }
