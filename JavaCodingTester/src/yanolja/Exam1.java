@@ -5,6 +5,10 @@ import org.junit.Test;
 
 import java.util.stream.IntStream;
 
+/**
+ * N개의 숫자를 더해서 0으로 만드는 숫자 배열 찾기
+ *   - 0으로 초기화 된 배열의 중간값을 기준으로 맨앞, 맨뒤의 숫자들부터 반대의 숫자로 채우자.
+ */
 public class Exam1 {
 
     private static final int DIV_PAIR_NUM = 2;

@@ -3,6 +3,9 @@ package yanolja;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * 2진법의 숫자가 홀수면 - 1, 짝수면 / 2. 총 몇번의 스텝까지 진행할 수 있는지 구하라
+ */
 public class Exam4 {
     public int solution(String s) {
 

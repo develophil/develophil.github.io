@@ -27,10 +27,12 @@ public class Exam3 {
         int startSeconds = convertSeconds(S);
         int endSeconds = convertSeconds(S);
 
+/*
         IntStream.rangeClosed(startSeconds, endSeconds)
                 .mapToObj(t->new HashSet(convertTimeString(t)))
 
 
+*/
 
         return 0;
     }
