@@ -1,1 +1,451 @@
-Hello World
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Androphil Blog Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      min-height: 100vh;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+      border-bottom: 1px solid #1e293b;
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-left { display: flex; align-items: center; gap: 16px; }
+
+    .blog-logo {
+      width: 48px; height: 48px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px;
+    }
+
+    .blog-title { font-size: 22px; font-weight: 700; color: #f1f5f9; }
+    .blog-subtitle { font-size: 13px; color: #64748b; margin-top: 2px; }
+
+    .header-right { text-align: right; }
+    .last-updated { font-size: 12px; color: #64748b; }
+    .last-updated span { color: #94a3b8; }
+
+    .main { padding: 32px; max-width: 1400px; margin: 0 auto; }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .stat-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 20px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+
+    .stat-card.blue::before   { background: #3b82f6; }
+    .stat-card.purple::before { background: #8b5cf6; }
+    .stat-card.green::before  { background: #10b981; }
+    .stat-card.orange::before { background: #f59e0b; }
+
+    .stat-label {
+      font-size: 12px; color: #64748b;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .stat-value { font-size: 32px; font-weight: 700; color: #f1f5f9; line-height: 1; }
+    .stat-value.small { font-size: 18px; line-height: 1.4; }
+    .stat-sub { font-size: 12px; color: #64748b; margin-top: 4px; }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .content-grid-bottom {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 24px;
+    }
+
+    .card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .card-header {
+      padding: 16px 24px;
+      border-bottom: 1px solid #334155;
+      font-size: 14px; font-weight: 600;
+      color: #94a3b8;
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+
+    .card-body { padding: 24px; }
+
+    .post-list { list-style: none; }
+
+    .post-item {
+      padding: 12px 0;
+      border-bottom: 1px solid #1e293b;
+      display: flex; gap: 12px; align-items: flex-start;
+    }
+
+    .post-item:last-child { border-bottom: none; }
+    .post-item:hover .post-title { color: #60a5fa; }
+
+    .post-num { font-size: 11px; color: #475569; min-width: 20px; padding-top: 2px; }
+    .post-content { flex: 1; }
+
+    .post-title {
+      font-size: 14px; color: #e2e8f0; font-weight: 500;
+      line-height: 1.5; text-decoration: none; display: block;
+      transition: color 0.2s;
+    }
+
+    .post-meta {
+      display: flex; gap: 8px; align-items: center;
+      margin-top: 4px; flex-wrap: wrap;
+    }
+
+    .post-date { font-size: 11px; color: #475569; }
+
+    .post-category {
+      font-size: 11px; background: #1e3a5f;
+      color: #60a5fa; padding: 1px 8px; border-radius: 4px;
+    }
+
+    .chart-container { position: relative; height: 260px; }
+
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; padding: 8px 0; }
+
+    .tag {
+      background: #1e3a5f; color: #94a3b8;
+      padding: 4px 12px; border-radius: 20px;
+      border: 1px solid #334155;
+      cursor: default; transition: all 0.2s; font-weight: 500;
+    }
+
+    .tag:hover { background: #1d4ed8; color: #dbeafe; border-color: #3b82f6; }
+    .tag.lg { font-size: 16px; }
+    .tag.md { font-size: 14px; }
+    .tag.sm { font-size: 12px; }
+    .tag.xs { font-size: 11px; }
+
+    .loading { text-align: center; padding: 80px 24px; color: #475569; }
+
+    .loading-spinner {
+      width: 32px; height: 32px;
+      border: 3px solid #334155; border-top-color: #3b82f6;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 16px;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .footer {
+      text-align: center; padding: 24px;
+      font-size: 12px; color: #334155;
+      border-top: 1px solid #1e293b; margin-top: 16px;
+    }
+
+    .footer a { color: #475569; text-decoration: none; }
+    .footer a:hover { color: #94a3b8; }
+
+    @media (max-width: 900px) {
+      .main { padding: 16px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .content-grid, .content-grid-bottom { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .header { padding: 16px; }
+      .blog-title { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <div class="blog-logo">📝</div>
+    <div>
+      <div class="blog-title">Androphil Blog</div>
+      <div class="blog-subtitle">androphil.tistory.com</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="last-updated">마지막 업데이트: <span id="fetchedAt">-</span></div>
+    <div class="last-updated" style="margin-top:4px">
+      <a href="https://androphil.tistory.com" target="_blank" rel="noopener"
+         style="color:#3b82f6;text-decoration:none;">블로그 바로가기 →</a>
+    </div>
+  </div>
+</header>
+
+<main class="main" id="main">
+  <div class="loading">
+    <div class="loading-spinner"></div>
+    <div>데이터 불러오는 중...</div>
+  </div>
+</main>
+
+<footer class="footer">
+  <a href="https://androphil.tistory.com" target="_blank" rel="noopener">androphil.tistory.com</a>
+  &nbsp;·&nbsp;
+  Powered by GitHub Pages &amp; GitHub Actions
+</footer>
+
+<script>
+const CHART_COLORS = [
+  '#3b82f6','#8b5cf6','#10b981','#f59e0b','#ef4444',
+  '#06b6d4','#ec4899','#84cc16','#f97316','#a855f7'
+];
+
+function formatDate(isoStr) {
+  if (!isoStr) return '-';
+  try {
+    return new Date(isoStr).toLocaleDateString('ko-KR', {
+      year: 'numeric', month: 'long', day: 'numeric'
+    });
+  } catch { return isoStr; }
+}
+
+function formatDateShort(isoStr) {
+  if (!isoStr) return '-';
+  try {
+    return new Date(isoStr).toLocaleDateString('ko-KR', {
+      year: 'numeric', month: '2-digit', day: '2-digit'
+    });
+  } catch { return isoStr; }
+}
+
+function formatMonthLabel(key) {
+  const [y, m] = key.split('-');
+  return `${y}.${m}`;
+}
+
+function renderDashboard(data) {
+  const { stats, posts, fetchedAt } = data;
+
+  document.getElementById('fetchedAt').textContent = formatDate(fetchedAt);
+
+  const cats = Object.entries(stats.categoryCount || {}).sort((a, b) => b[1] - a[1]);
+  const topCat = cats[0] ? cats[0][0] : '-';
+  const catCount = cats.length;
+  const latestDate = posts.length > 0 ? formatDateShort(posts[0].pubDate) : '-';
+
+  document.getElementById('main').innerHTML = `
+    <div class="stats-grid">
+      <div class="stat-card blue">
+        <div class="stat-label">수집된 글 수</div>
+        <div class="stat-value">${stats.totalPosts}</div>
+        <div class="stat-sub">RSS 기준</div>
+      </div>
+      <div class="stat-card purple">
+        <div class="stat-label">카테고리 수</div>
+        <div class="stat-value">${catCount}</div>
+        <div class="stat-sub">개의 분류</div>
+      </div>
+      <div class="stat-card green">
+        <div class="stat-label">인기 카테고리</div>
+        <div class="stat-value small">${topCat}</div>
+        <div class="stat-sub">${cats[0] ? cats[0][1] + '개 글' : ''}</div>
+      </div>
+      <div class="stat-card orange">
+        <div class="stat-label">최신 글 날짜</div>
+        <div class="stat-value small">${latestDate}</div>
+        <div class="stat-sub">&nbsp;</div>
+      </div>
+    </div>
+
+    <div class="content-grid">
+      <div class="card">
+        <div class="card-header">최신 글</div>
+        <div class="card-body">
+          <ul class="post-list" id="postList"></ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">카테고리 분포</div>
+        <div class="card-body">
+          <div class="chart-container">
+            <canvas id="categoryChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-grid-bottom">
+      <div class="card">
+        <div class="card-header">월별 작성 빈도</div>
+        <div class="card-body">
+          <div class="chart-container">
+            <canvas id="monthlyChart"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">태그 클라우드</div>
+        <div class="card-body">
+          <div class="tag-cloud" id="tagCloud"></div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // Posts
+  const postList = document.getElementById('postList');
+  posts.slice(0, 10).forEach((p, i) => {
+    const li = document.createElement('li');
+    li.className = 'post-item';
+    li.innerHTML = `
+      <span class="post-num">${i + 1}</span>
+      <div class="post-content">
+        <a class="post-title" href="${p.link}" target="_blank" rel="noopener">${p.title}</a>
+        <div class="post-meta">
+          <span class="post-date">${formatDateShort(p.pubDate)}</span>
+          ${p.category ? `<span class="post-category">${p.category}</span>` : ''}
+        </div>
+      </div>
+    `;
+    postList.appendChild(li);
+  });
+
+  // Category doughnut
+  if (cats.length > 0) {
+    new Chart(document.getElementById('categoryChart'), {
+      type: 'doughnut',
+      data: {
+        labels: cats.map(c => c[0]),
+        datasets: [{
+          data: cats.map(c => c[1]),
+          backgroundColor: CHART_COLORS.slice(0, cats.length),
+          borderColor: '#0f172a',
+          borderWidth: 3,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: { color: '#94a3b8', font: { size: 11 }, padding: 12, boxWidth: 12 }
+          },
+          tooltip: {
+            backgroundColor: '#1e293b', titleColor: '#e2e8f0',
+            bodyColor: '#94a3b8', borderColor: '#334155', borderWidth: 1
+          }
+        }
+      }
+    });
+  }
+
+  // Monthly bar
+  const monthly = stats.monthlyCount || {};
+  const monthKeys = Object.keys(monthly).sort();
+  if (monthKeys.length > 0) {
+    new Chart(document.getElementById('monthlyChart'), {
+      type: 'bar',
+      data: {
+        labels: monthKeys.map(formatMonthLabel),
+        datasets: [{
+          label: '글 수',
+          data: monthKeys.map(k => monthly[k]),
+          backgroundColor: '#3b82f680',
+          borderColor: '#3b82f6',
+          borderWidth: 1,
+          borderRadius: 4,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#1e293b', titleColor: '#e2e8f0',
+            bodyColor: '#94a3b8', borderColor: '#334155', borderWidth: 1
+          }
+        },
+        scales: {
+          x: { ticks: { color: '#64748b', font: { size: 10 } }, grid: { color: '#1e293b' } },
+          y: { ticks: { color: '#64748b', stepSize: 1 }, grid: { color: '#1e293b' }, beginAtZero: true }
+        }
+      }
+    });
+  } else {
+    document.getElementById('monthlyChart').parentElement.innerHTML =
+      '<p style="color:#475569;text-align:center;padding:40px 0">데이터가 없습니다</p>';
+  }
+
+  // Tag cloud
+  const tagCloud = document.getElementById('tagCloud');
+  const tags = Object.entries(stats.tagCount || {});
+  if (tags.length === 0) {
+    tagCloud.innerHTML = '<p style="color:#475569">태그 없음</p>';
+  } else {
+    const maxCount = tags[0][1];
+    tags.slice(0, 40).forEach(([tag, count]) => {
+      const ratio = count / maxCount;
+      const sz = ratio > 0.75 ? 'lg' : ratio > 0.5 ? 'md' : ratio > 0.25 ? 'sm' : 'xs';
+      const span = document.createElement('span');
+      span.className = `tag ${sz}`;
+      span.textContent = tag;
+      span.title = `${count}번 사용`;
+      tagCloud.appendChild(span);
+    });
+  }
+}
+
+async function loadData() {
+  try {
+    const res = await fetch('data.json?t=' + Date.now());
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    renderDashboard(await res.json());
+  } catch (e) {
+    document.getElementById('main').innerHTML = `
+      <div class="loading">
+        <div style="font-size:40px;margin-bottom:16px">⚠️</div>
+        <div style="color:#ef4444;font-size:16px;margin-bottom:8px">데이터를 불러올 수 없습니다</div>
+        <div style="font-size:13px">data.json 파일이 없거나 GitHub Actions가 아직 실행되지 않았습니다.</div>
+        <div style="margin-top:16px;font-size:12px;color:#475569">${e.message}</div>
+      </div>
+    `;
+  }
+}
+
+loadData();
+</script>
+</body>
+</html>
