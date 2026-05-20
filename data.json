@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-19T19:53:19.474475+00:00",
+  "fetchedAt": "2026-05-20T03:41:10.564170+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -11,6 +11,8 @@
       "GoogleIO2026": 5,
       "anthropic": 4,
       "CerebrasIPO": 2,
+      "Gemini3.5": 1,
+      "Meta재구조화": 1,
       "Gemini": 1,
       "마키나락스": 1,
       "오픈웨이트모델": 1,
@@ -32,16 +34,27 @@
       "GeminiAndroid": 1,
       "GitHub장애": 1,
       "GoogleIO": 1,
-      "LOPE": 1,
-      "Claude코드": 1,
-      "GM해고": 1,
-      "기업AI채택": 1
+      "LOPE": 1
     },
     "monthlyCount": {
       "2026-05": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.05.20",
+      "link": "https://androphil.tistory.com/855",
+      "pubDate": "2026-05-20T07:38:55+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "anthropic",
+        "Gemini3.5",
+        "Meta재구조화",
+        "개발자"
+      ],
+      "excerpt": "어제의 흐름: 2026.05.19 — Google I/O 2026이 오늘 개막해 Gemini 4.0·Android XR 안경 등 역대 최대 규모 AI 발표가 쏟아지고, 중국 오픈소스 4개 모델이 12일 만에 프론티어를 따라잡으며 Google I/O 2026 결산으로 Gemini 3.5 Flash·Gemini Spark이 공식 출시됐고, Anthropic이 $30B 펀딩·$900B 밸류에이션으로 OpenAI를 처음 추월할 채비를 마쳤다. Meta는 오늘 8,000명 해고와 동시에 7,000명을 AI 전담 조직으로 재편하며 빅테크의 A"
+    },
     {
       "title": "[AI 트렌드] 2026.05.19",
       "link": "https://androphil.tistory.com/852",
@@ -171,21 +184,6 @@
         "개발자"
       ],
       "excerpt": "어제의 흐름: 2026.05.11 — Anthropic이 기업 AI 채택률에서 처음으로 OpenAI를 추월 했고, GM이 IT 직원 600명을 해고하며 AI 네이티브 인력으로 교체하 Google이 Android를 Gemini 중심의 &quot;인텔리전스 시스템&quot;으로 재설계한다고 발표하며 Google I/O를 하루 앞두고 선제적 기대를 끌어올렸다. GitHub은 AI 에이전트 커밋 폭증으로 인프라 신뢰도가 86%까지 하락했고, 라틴어 난수 프리픽스가 LLM 추론 성능을 높인다는 LoPE 논문이 화제를 모았다. 목차 오늘의 핵"
-    },
-    {
-      "title": "[AI 트렌드] 2026.05.11",
-      "link": "https://androphil.tistory.com/843",
-      "pubDate": "2026-05-17T11:22:05+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "anthropic",
-        "Claude코드",
-        "GM해고",
-        "개발자",
-        "기업AI채택"
-      ],
-      "excerpt": "어제의 흐름: 2026.05.10 — AI 데이터센터 전기료 청구서가 일반 시민에게 전가 되는 논란이 미국 전역으로 번지고, 로컬 모델이 실용 가능 영역에 진입 하면서 클라우드 의존 Anthropic이 기업 AI 채택률에서 처음으로 OpenAI를 추월했고, GM이 IT 직원 600명을 해고하며 AI 네이티브 인력으로 교체하는 &quot;AI 스킬 스왑&quot; 방식이 대형 제조업까지 확산됐다. 개발자 인터뷰 판도가 AI 활용 능력 중심으로 재편되고 있다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 다음 주 캘린더 커뮤"
     }
   ]
 }
