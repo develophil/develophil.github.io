@@ -1,18 +1,29 @@
 {
-  "fetchedAt": "2026-05-20T20:19:29.340293+00:00",
+  "fetchedAt": "2026-05-21T03:52:38.528095+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
       "Dev/AI": 10
     },
     "tagCount": {
-      "AI뉴스": 10,
-      "개발자": 9,
+      "AI뉴스": 9,
+      "개발자": 8,
+      "anthropic": 6,
       "GoogleIO2026": 5,
-      "anthropic": 4,
-      "CerebrasIPO": 2,
-      "Gemini3.5": 1,
-      "Meta재구조화": 1,
+      "Gemini3.5": 2,
+      "Meta재구조화": 2,
+      "codex": 1,
+      "gatekeeper": 1,
+      "homebrew": 1,
+      "MacOS": 1,
+      "npm": 1,
+      "OpenAI": 1,
+      "손상": 1,
+      "인증서": 1,
+      "트러블슈팅": 1,
+      "Karpathy": 1,
+      "OpenAI에이전트": 1,
+      "삼성AI글라스": 1,
       "Gemini": 1,
       "마키나락스": 1,
       "오픈웨이트모델": 1,
@@ -24,23 +35,62 @@
       "에이전틱ai": 1,
       "Cloudflare에이전트": 1,
       "OpenAI엔터프라이즈": 1,
+      "CerebrasIPO": 1,
       "GrokBuild": 1,
-      "OpenAICodex": 1,
-      "AISecurityThreat": 1,
-      "AnthropicPwC": 1,
-      "AnthropicFunding": 1,
-      "AppleiOS27": 1,
-      "ClaudeSmallBusiness": 1,
-      "GeminiAndroid": 1,
-      "GitHub장애": 1,
-      "GoogleIO": 1,
-      "LOPE": 1
+      "OpenAICodex": 1
     },
     "monthlyCount": {
       "2026-05": 10
     }
   },
   "posts": [
+    {
+      "title": "macOS에서 'codex'가 사용자의 컴퓨터를 손상시킵니다 경고 해결하기",
+      "link": "https://androphil.tistory.com/858",
+      "pubDate": "2026-05-21T10:50:36+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "codex",
+        "gatekeeper",
+        "homebrew",
+        "MacOS",
+        "npm",
+        "OpenAI",
+        "손상",
+        "인증서",
+        "트러블슈팅"
+      ],
+      "excerpt": "&nbsp; 어느 날 갑자기 OpenAI Codex CLI가 macOS에서 \"'codex'은(는) 사용자의 컴퓨터를 손상시킵니다. 해당 항목을 휴지통으로 이동해야 합니다.\" 라는 경고와 함께 실행이 차단되는 현상이 발생했다. 결론부터 말하면 PC가 감염된 게 아니라, OpenAI의 macOS 코드 서명 인증서가 폐기되면서 Gatekeeper가 구 버전 바이너리를 차단한 것이다. 원인: 2026년 5월 8일자로 OpenAI macOS 코드 서명 인증서 폐기 (axios npm 공급망 공격 여파) 영향 받는 앱: ChatGPT Desk"
+    },
+    {
+      "title": "[AI 트렌드] 2026.05.21",
+      "link": "https://androphil.tistory.com/857",
+      "pubDate": "2026-05-21T07:41:05+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "anthropic",
+        "Karpathy",
+        "OpenAI에이전트",
+        "개발자",
+        "삼성AI글라스"
+      ],
+      "excerpt": "어제의 흐름: 2026.05.20 — Google I/O 2026 결산으로 Gemini 3.5 Flash·Gemini Spark 이 공식 출시됐고, Anthropic이 $30B 펀딩· $900B 밸류에이션 으로 OpenAI를 처음 추월할 채비를 마쳤다 Karpathy의 Anthropic 합류로 AI 인재 전쟁이 새 국면에 접어들었고, OpenAI가 Guaranteed Capacity로 에이전틱 AI 시대의 컴퓨팅 선점에 나섰다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 다음 주 캘린더 커뮤니티 핫토픽 개발자 심화 개발"
+    },
+    {
+      "title": "[AI 트렌드] 2026.05.20",
+      "link": "https://androphil.tistory.com/856",
+      "pubDate": "2026-05-21T07:36:33+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "anthropic",
+        "Gemini3.5",
+        "Meta재구조화",
+        "개발자"
+      ],
+      "excerpt": "어제의 흐름: 2026.05.19 — Google I/O 2026이 오늘 개막해 Gemini 4.0·Android XR 안경 등 역대 최대 규모 AI 발표가 쏟아지고, 중국 오픈소스 4개 모델이 12일 만에 프론티어를 따라잡으며 Google I/O 2026 결산으로 Gemini 3.5 Flash·Gemini Spark이 공식 출시됐고, Anthropic이 $30B 펀딩·$900B 밸류에이션으로 OpenAI를 처음 추월할 채비를 마쳤다. Meta는 오늘 8,000명 해고와 동시에 7,000명을 AI 전담 조직으로 재편하며 빅테크의 A"
+    },
     {
       "title": "[AI 트렌드] 2026.05.20",
       "link": "https://androphil.tistory.com/855",
@@ -141,49 +191,6 @@
         "개발자"
       ],
       "excerpt": "어제의 흐름: 2026.05.14 — Cerebras가 Nasdaq 첫날 +79% 급등하며 2026년 최대 기술 IPO를 장식 했고, Anthropic은 PwC·게이츠재단과 대형 파 Cerebras IPO 첫날 주가가 -10% 조정을 받는 동안 xAI가 Grok Build로 코딩 에이전트 삼파전에 참전했다. OpenAI는 Codex를 모바일로 확장하고, AI 코딩 에이전트 시장이 본격적인 다자 경쟁 국면에 진입했다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 다음 주 캘린더 커뮤니티 핫토픽 개발자 심화 개발자를 위한 A"
-    },
-    {
-      "title": "[AI 트렌드] 2026.05.14",
-      "link": "https://androphil.tistory.com/846",
-      "pubDate": "2026-05-17T11:23:28+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AISecurityThreat",
-        "AI뉴스",
-        "AnthropicPwC",
-        "CerebrasIPO",
-        "개발자"
-      ],
-      "excerpt": "어제의 흐름: 2026.05.13 — Anthropic이 중소기업 시장에 직접 뛰어들고 $950B 밸류에이션 펀딩을 추진하며 생태계 확장을 가속화했다. Apple이 iOS 27에서 Cerebras가 Nasdaq 첫날 +79% 급등하며 2026년 최대 기술 IPO를 장식했고, Anthropic은 PwC·게이츠재단과 대형 파트너십을 동시에 체결했다. AI 칩·에이전트·보안 세 전선에서 하루 만에 판도를 바꾸는 뉴스가 쏟아진 날이다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 다음 주 캘린더 커뮤니티 핫토픽 개발자 심화 개발"
-    },
-    {
-      "title": "[AI 트렌드] 2026.05.13",
-      "link": "https://androphil.tistory.com/845",
-      "pubDate": "2026-05-17T11:23:04+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "AnthropicFunding",
-        "AppleiOS27",
-        "ClaudeSmallBusiness",
-        "개발자"
-      ],
-      "excerpt": "어제의 흐름: 2026.05.12 — Google이 Android를 Gemini 중심의 &quot;인텔리전스 시스템&quot;으로 재설계 한다고 발표하며 Google I/O를 하루 앞두고 선제적 기대 Anthropic이 중소기업 시장에 직접 뛰어들고 $950B 밸류에이션 펀딩을 추진하며 생태계 확장을 가속화했다. Apple이 iOS 27에서 서드파티 AI를 개방하고, 미·중 AI 반도체 패권 경쟁은 입법 단계로 격화됐다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 다음 주 캘린더 커뮤니티 핫토픽 개발자 심화 개발자를 위"
-    },
-    {
-      "title": "[AI 트렌드] 2026.05.12",
-      "link": "https://androphil.tistory.com/844",
-      "pubDate": "2026-05-17T11:22:32+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "GeminiAndroid",
-        "GitHub장애",
-        "GoogleIO",
-        "LOPE",
-        "개발자"
-      ],
-      "excerpt": "어제의 흐름: 2026.05.11 — Anthropic이 기업 AI 채택률에서 처음으로 OpenAI를 추월 했고, GM이 IT 직원 600명을 해고하며 AI 네이티브 인력으로 교체하 Google이 Android를 Gemini 중심의 &quot;인텔리전스 시스템&quot;으로 재설계한다고 발표하며 Google I/O를 하루 앞두고 선제적 기대를 끌어올렸다. GitHub은 AI 에이전트 커밋 폭증으로 인프라 신뢰도가 86%까지 하락했고, 라틴어 난수 프리픽스가 LLM 추론 성능을 높인다는 LoPE 논문이 화제를 모았다. 목차 오늘의 핵"
     }
   ]
 }
