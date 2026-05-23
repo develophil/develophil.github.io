@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-22T19:47:47.791000+00:00",
+  "fetchedAt": "2026-05-23T03:24:13.606178+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -17,6 +17,10 @@
       "티스토리": 2,
       "티스토리 SEO": 2,
       "GoogleIO2026": 2,
+      "ai사이버보안": 1,
+      "CodexEnterprise": 1,
+      "OpenAI수학": 1,
+      "ProjectGlasswing": 1,
       "GoogleIO": 1,
       "Stainless인수": 1,
       "펜타곤AI": 1,
@@ -52,17 +56,28 @@
       "구글 색인": 1,
       "구글 서치 콘솔": 1,
       "마키나락스": 1,
-      "오픈웨이트모델": 1,
-      "CanvasLMS": 1,
-      "DOGE위헌판결": 1,
-      "공급망보안": 1,
-      "업스테이지다음인수": 1
+      "오픈웨이트모델": 1
     },
     "monthlyCount": {
       "2026-05": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.05.23",
+      "link": "https://androphil.tistory.com/873",
+      "pubDate": "2026-05-23T07:42:48+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "ai사이버보안",
+        "CodexEnterprise",
+        "OpenAI수학",
+        "ProjectGlasswing",
+        "개발자"
+      ],
+      "excerpt": "어제의 흐름: 2026.05.22 — Anthropic과 OpenAI 모델이 분 차이로 동시 출시되며 AI 모델 군비경쟁이 새 정점에 달했고, Anthropic은 대규모 밸류에이션 펀딩을 추진해 AI 사이버 방어가 현실로: Anthropic Mythos Preview가 오픈소스 핵심 소프트웨어에서 한 달 만에 1만 개 이상 취약점을 발견했고, OpenAI는 Gartner 기업용 AI 코딩 에이전트 리더에 선정되며 보안과 개발 모두를 바꾸는 이중 변혁이 가속화됐다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 다음 주 캘린"
+    },
     {
       "title": "[AI 트렌드] 2026.05.22",
       "link": "https://androphil.tistory.com/871",
@@ -207,21 +222,6 @@
         "오픈웨이트모델"
       ],
       "excerpt": "어제의 흐름: 2026.05.07 — Canvas LMS 랜섬웨어 공격으로 미국 9,000개 학교·2억 7,500만 학생 데이터가 위협받고, DOGE가 ChatGPT로 인문학 지원금을 삭감한 게 위헌 판결을 받으면서 AI의 공공 책임 논쟁이 수면 위로 Google I/O 2026이 내일 개막하며 Gemini 4.0과 Android &quot;Intelligence OS&quot;를 예고하는 가운데, Anthropic 밸류에이션이 OpenAI를 추월할 기세로 치솟고, 중국 오픈웨이트 코딩 모델 4종이 12일 만에 쏟아지며 AI 시장의"
-    },
-    {
-      "title": "[AI 트렌드] 2026.05.07",
-      "link": "https://androphil.tistory.com/850",
-      "pubDate": "2026-05-17T11:44:03+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "CanvasLMS",
-        "DOGE위헌판결",
-        "개발자",
-        "공급망보안",
-        "업스테이지다음인수"
-      ],
-      "excerpt": "어제의 흐름: 2026.05.06 — 도킨스가 Claude와 72시간 대화 끝에 &quot;AI는 의식이 있다&quot;고 선언해 철학·과학계가 들끓었고, DeepSeek V4 Pro가 75% 할인으 Canvas LMS 랜섬웨어 공격으로 미국 9,000개 학교·2억 7,500만 학생 데이터가 위협받고, DOGE가 ChatGPT로 인문학 지원금을 삭감한 게 위헌 판결을 받으면서 AI의 공공 책임 논쟁이 수면 위로 올라왔다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 다음 주 캘린더 커뮤니티 핫토픽 개발자 심화 개발자를 위"
     }
   ]
 }
