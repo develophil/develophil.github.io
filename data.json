@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-23T19:12:03.990943+00:00",
+  "fetchedAt": "2026-05-24T03:42:52.758219+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -9,14 +9,18 @@
     "tagCount": {
       "AI뉴스": 6,
       "개발자": 6,
-      "anthropic": 4,
+      "OpenAI": 3,
+      "anthropic": 3,
       "Gemini": 2,
-      "OpenAI": 2,
       "검색엔진 최적화": 2,
       "사이트맵": 2,
       "티스토리": 2,
       "티스토리 SEO": 2,
-      "GoogleIO2026": 2,
+      "AI비용전쟁": 1,
+      "claudecode": 1,
+      "Gemini3.5Flash": 1,
+      "GeminiOmni": 1,
+      "코딩에이전트": 1,
       "ai사이버보안": 1,
       "CodexEnterprise": 1,
       "OpenAI수학": 1,
@@ -52,17 +56,30 @@
       "네이버 서치어드바이저": 1,
       "네이버 웹마스터": 1,
       "gsc": 1,
-      "SEO": 1,
-      "구글 색인": 1,
-      "구글 서치 콘솔": 1,
-      "마키나락스": 1,
-      "오픈웨이트모델": 1
+      "SEO": 1
     },
     "monthlyCount": {
       "2026-05": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.05.24",
+      "link": "https://androphil.tistory.com/874",
+      "pubDate": "2026-05-24T07:42:24+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "AI비용전쟁",
+        "claudecode",
+        "Gemini3.5Flash",
+        "GeminiOmni",
+        "OpenAI",
+        "개발자",
+        "코딩에이전트"
+      ],
+      "excerpt": "어제의 흐름: 2026.05.23 — AI 사이버 방어가 현실로 : Anthropic Mythos Preview가 오픈소스 핵심 소프트웨어에서 한 달 만에 1만 개 이상 취약점을 발견했고, OpenAI는 Gartner 기업용 AI 코딩 에이전트 리더에 Microsoft가 수천 명 내부 개발자에게 6개월간 제공하던 Claude Code 라이선스를 회수하고 GitHub Copilot CLI로 전환을 유도했다. 개발자들이 자사 Copilot보다 Claude Code를 선호한다는 사실이 역설적으로 드러난 사건이다. 목차 오늘의 핵심 오늘의"
+    },
     {
       "title": "[AI 트렌드] 2026.05.23",
       "link": "https://androphil.tistory.com/873",
@@ -208,20 +225,6 @@
         "마키나락스"
       ],
       "excerpt": "어제의 흐름: 2026.05.18 — Google I/O 2026이 내일 개막 하며 Gemini 4.0과 Android &quot;Intelligence OS&quot;를 예고하는 가운데, Anthropic 밸류에이션이 OpenAI를 추월할 기세로 치솟고, 중국 오픈웨... Google I/O 2026이 오늘 개막해 Gemini 4.0·Android XR 안경·Googlebooks 등 역대 최대 규모 AI 발표가 쏟아지고, 중국 오픈소스 4개 모델이 12일 만에 프론티어를 따라잡으며 AI 경쟁 지형이 급변하고 있다. 목차 오늘의 핵"
-    },
-    {
-      "title": "[AI 트렌드] 2026.05.18",
-      "link": "https://androphil.tistory.com/851",
-      "pubDate": "2026-05-18T07:42:33+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "anthropic",
-        "GoogleIO2026",
-        "개발자",
-        "오픈웨이트모델"
-      ],
-      "excerpt": "어제의 흐름: 2026.05.07 — Canvas LMS 랜섬웨어 공격으로 미국 9,000개 학교·2억 7,500만 학생 데이터가 위협받고, DOGE가 ChatGPT로 인문학 지원금을 삭감한 게 위헌 판결을 받으면서 AI의 공공 책임 논쟁이 수면 위로 Google I/O 2026이 내일 개막하며 Gemini 4.0과 Android &quot;Intelligence OS&quot;를 예고하는 가운데, Anthropic 밸류에이션이 OpenAI를 추월할 기세로 치솟고, 중국 오픈웨이트 코딩 모델 4종이 12일 만에 쏟아지며 AI 시장의"
     }
   ]
 }
