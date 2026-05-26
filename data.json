@@ -1,10 +1,10 @@
 {
-  "fetchedAt": "2026-05-25T19:41:59.430118+00:00",
+  "fetchedAt": "2026-05-26T03:40:52.104073+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
-      "미분류": 1,
       "Dev/AI": 7,
+      "미분류": 1,
       "Phil/블로그 운영기": 1,
       "Dev/트러블슈팅": 1
     },
@@ -12,7 +12,11 @@
       "AI뉴스": 6,
       "개발자": 6,
       "OpenAI": 3,
-      "anthropic": 3,
+      "anthropic": 2,
+      "BitCPM": 1,
+      "GrokV9Medium": 1,
+      "LingBot": 1,
+      "에이전트논쟁": 1,
       "Anthropic흑자": 1,
       "GoogleAI": 1,
       "교황AI회칙": 1,
@@ -54,11 +58,7 @@
       "MacOS": 1,
       "npm": 1,
       "troubleshooting": 1,
-      "손상": 1,
-      "인증서": 1,
-      "Karpathy": 1,
-      "OpenAI에이전트": 1,
-      "삼성AI글라스": 1
+      "손상": 1
     },
     "monthlyCount": {
       "2026-05": 10
@@ -66,12 +66,27 @@
   },
   "posts": [
     {
+      "title": "[AI 트렌드] 2026.05.26",
+      "link": "https://androphil.tistory.com/879",
+      "pubDate": "2026-05-26T07:42:12+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "BitCPM",
+        "GrokV9Medium",
+        "LingBot",
+        "개발자",
+        "에이전트논쟁"
+      ],
+      "excerpt": "어제의 흐름: 2026.05.25 — 교황이 Anthropic 공동창업자와 AI 회칙을 공동 발표 하며 AI 논의가 문명적 전환점에 섰고, Anthropic은 사상 첫 분기 흑자($559M)를 예고해 AI 수익화 레이스가 임계점에 도달했다. xAI Grok V9-Medium (1.5T 파라미터) 학습 완료로 AI 모델 규모 경쟁이 새 국면에 접어들었고, George Hotz가 6개월 실사용 경험을 근거로 AI 에이전트 도입이 소프트웨어 역사상 가장 비싼 실수가 될 것이라 경고하며 개발자 커뮤니티를 달궜다. 목차 오늘의 핵심 오늘의 "
+    },
+    {
       "title": "처음 오셨나요?",
       "link": "https://androphil.tistory.com/pages/start",
       "pubDate": "2026-05-25T17:28:41+09:00",
       "category": "미분류",
       "tags": [],
-      "excerpt": "삶은 개발. 인생은 빌드.무에서 유를 창조하며 살아가는 이야기를 기록하는 공간입니다. Life : 개발자로, 직장인으로, 한 사람으로 살아가는 이야기 Dev : 실제로 만들고 설계하고 실패하고 다시 만드는 개발 이야기 Love : 좋아하는 것들. 추천, 취미, 애정하는 장소 Phil : 그냥 나. 솔직한 기록 &nbsp; 더보기 전체 카테고리 펼쳐보기 Life 생활 건강 요리 여행 Dev 아키텍처 AI Backend Frontend DB &amp; Infra 트러블슈팅 환경 &amp; 도구 학습 노트 CTO 관점 아카이브 Love "
+      "excerpt": "삶은 개발. 인생은 빌드.무에서 유를 창조하며 살아가는 이야기를 기록하는 공간입니다. Life : 개발자로, 직장인으로, 한 사람으로 살아가는 이야기 Dev : 실제로 만들고 설계하고 실패하고 다시 만드는 개발 이야기 Love : 좋아하는 것들. 추천, 취미, 애정하는 장소 Phil : 그냥 나. 솔직한 기록 전체&nbsp;카테고리&nbsp;펼쳐보기 더보기 Life 생활 건강 요리 여행 Dev 아키텍처 AI Backend Frontend DB &amp; Infra 트러블슈팅 환경 &amp; 도구 학습 노트 CTO 관점 아카이브 Lo"
     },
     {
       "title": "[AI 트렌드] 2026.05.25",
@@ -205,20 +220,6 @@
         "삼성AI글라스"
       ],
       "excerpt": "어제의 흐름: 2026.05.20 — Google I/O 2026 결산으로 Gemini 3.5 Flash·Gemini Spark 이 공식 출시됐고, Anthropic이 $30B 펀딩· $900B 밸류에이션 으로 OpenAI를 처음 추월할 채비를 마쳤다 Karpathy의 Anthropic 합류로 AI 인재 전쟁이 새 국면에 접어들었고, OpenAI가 Guaranteed Capacity로 에이전틱 AI 시대의 컴퓨팅 선점에 나섰다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 다음 주 캘린더 커뮤니티 핫토픽 개발자 심화 개발"
-    },
-    {
-      "title": "[AI 트렌드] 2026.05.20",
-      "link": "https://androphil.tistory.com/855",
-      "pubDate": "2026-05-20T07:38:55+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "anthropic",
-        "Gemini3.5",
-        "Meta재구조화",
-        "개발자"
-      ],
-      "excerpt": "어제의 흐름: 2026.05.19 — Google I/O 2026이 오늘 개막해 Gemini 4.0·Android XR 안경 등 역대 최대 규모 AI 발표가 쏟아지고, 중국 오픈소스 4개 모델이 12일 만에 프론티어를 따라잡으며 Google I/O 2026 결산으로 Gemini 3.5 Flash·Gemini Spark이 공식 출시됐고, Anthropic이 $30B 펀딩·$900B 밸류에이션으로 OpenAI를 처음 추월할 채비를 마쳤다. Meta는 오늘 8,000명 해고와 동시에 7,000명을 AI 전담 조직으로 재편하며 빅테크의 A"
     }
   ]
 }
