@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-28T03:44:25.215079+00:00",
+  "fetchedAt": "2026-05-28T10:04:47.645311+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -9,13 +9,15 @@
     },
     "tagCount": {
       "AI뉴스": 7,
-      "개발자": 6,
-      "AI에이전트": 2,
-      "GeminiOmni": 2,
+      "개발자": 5,
       "교황AI회칙": 2,
       "OpenAI": 2,
-      "Cloudflare": 1,
-      "OpenAI코덱스": 1,
+      "claude": 1,
+      "duckduckgo": 1,
+      "productmarketfit": 1,
+      "YouTubeAI": 1,
+      "개발자도구": 1,
+      "에이전트개발": 1,
       "AI코딩": 1,
       "mcp": 1,
       "버그헌팅AI": 1,
@@ -25,6 +27,7 @@
       "에이전트논쟁": 1,
       "Anthropic흑자": 1,
       "GoogleAI": 1,
+      "AI에이전트": 1,
       "기자": 1,
       "레오": 1,
       "연재": 1,
@@ -44,6 +47,7 @@
       "AI비용전쟁": 1,
       "claudecode": 1,
       "Gemini3.5Flash": 1,
+      "GeminiOmni": 1,
       "코딩에이전트": 1,
       "ai사이버보안": 1,
       "CodexEnterprise": 1,
@@ -53,8 +57,7 @@
       "Gemini": 1,
       "GoogleIO": 1,
       "Stainless인수": 1,
-      "펜타곤AI": 1,
-      "피지컬ai": 1
+      "펜타곤AI": 1
     },
     "monthlyCount": {
       "2026-05": 10
@@ -68,13 +71,14 @@
       "category": "Dev/AI",
       "tags": [
         "AI뉴스",
-        "AI에이전트",
-        "Cloudflare",
-        "GeminiOmni",
-        "OpenAI코덱스",
-        "개발자"
+        "claude",
+        "duckduckgo",
+        "productmarketfit",
+        "YouTubeAI",
+        "개발자도구",
+        "에이전트개발"
       ],
-      "excerpt": "어제의 흐름: 2026.05.27 — 교황청이 Anthropic 공동창업자와 AI 무장해제 회칙을 공동 발표한 여파가 계속되는 가운데, AI 에이전트가 버그헌팅 경제를 뒤흔들고 있다. Google Gemini Omni가 영상 생성·편집을 통합한 멀티모달 시대를 열었고, 기업 AI 비용 대비 가치 논쟁이 Uber·Microsoft 사례로 다시 불붙고 있다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 다음 주 캘린더 커뮤니티 핫토픽 개발자 심화 개발자를 위한 Action Item Claude 소식 OpenClaw 소식 지난"
+      "excerpt": "어제의 흐름: 2026.05.27 &mdash; YouTube AI 라벨 정책 업데이트, Anthropic &amp; OpenAI \"프로덕트-마켓핏\" 확인, DuckDuckGo 트래픽 28% 증가 AI 투명성 정책이 강화되는 가운데, 엔터프라이즈 사용자들의 LLM 비용 충격이 커지고 있다. Claude Code와 Copilot이 기업 운영 비용을 급증시키면서, AI 프로덕트가 완연한 경제 가치를 증명하고 있다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 개발자를 위한 Action Item &nbsp; 오늘의 시그널 AI 콘텐츠 투"
     },
     {
       "title": "[AI 트렌드] 2026.05.27",
@@ -145,7 +149,7 @@
       "excerpt": "레오. 제 분신입니다 레오는 예전 회사에서 처음으로 사용한 영어 이름입니다. 레오나르도 디카프리오의 레오로 소개했는데, 어느 순간 밀림의 왕자 레오가 돼버린...^^;조금 엉뚱하지만 과감하게, 시련을 극복하며 성장하는 밀림의 수호자 - 그래서인지 더 정이 가는 이름입니다.그래서 저를 대신해서 많은 역할을 수행할 AI 에이전트에게 그 이름을 붙였습니다. 레오가 이 블로그에서 하는 일들 레오는 지금 네 가지 역할을 수행중입니다. &nbsp; 편집장 매일 아침 AI 트렌드를 정리해서 발행합니다. 제가 놓친 흐름, 주목할 만한 소식들을 레"
     },
     {
-      "title": "AI 트렌드 데일리 &mdash; 2026.05.28",
+      "title": "[블로그 소생기] #3 &mdash; 6개 글 업데이트 완료, 그런데 숫자가 이상하다",
       "link": "https://androphil.tistory.com/875",
       "pubDate": "2026-05-24T14:34:56+09:00",
       "category": "Phil/블로그 운영기",
@@ -160,7 +164,7 @@
         "애드센스",
         "티스토리"
       ],
-      "excerpt": "글로벌 AI 뉴스 YouTube, AI 생성 영상 자동 라벨링 시작 출처: blog.youtube (2026-05-27) 요약: YouTube가 AI 생성 콘텐츠 라벨 정책을 업데이트. 크리에이터 공시가 없어도 자동 감지해 라벨링. 포토리얼 영상은 플레이어 하단에 눈에 띄게 표시, Shorts는 오버레이로 노출. 유튜브 자체 AI 도구(Veo, Dream Screen)로 생성된 콘텐츠는 영구 라벨. Anthropic &amp; OpenAI, &quot;프로덕트-마켓핏&quot; 달성 출처: simonwillison.net (2026"
+      "excerpt": "프롤로그 &nbsp; \"Quick Win &mdash; 기존 글 업데이트. 이미 구글에 노출되고 있는 글의 순위를 끌어올리는 것.\" &nbsp; 5월 12일부터 16일 사이에 우선순위 6개 글을 전부 손봤다. 작업하면서 느낀 건, 생각보다 손댈 게 많았다는 것이다. 내용 추가만으로는 부족했고, 구조 자체를 뜯어고친 글도 있었다. 결과가 어떻게 나왔는지 데이터로 확인해봤다. 업데이트 내용 요약 URL 주제 작업 내용 /668 맥 특수기호 입력 스크린샷 교체, Raycast 주의문구 추가 /498 Linux wget 예제 섹션 추가, "
     },
     {
       "title": "[AI 트렌드] 2026.05.24",
