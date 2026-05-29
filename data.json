@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-28T20:25:32.545304+00:00",
+  "fetchedAt": "2026-05-29T03:44:45.626229+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -10,9 +10,14 @@
     "tagCount": {
       "AI뉴스": 7,
       "개발자": 5,
-      "교황AI회칙": 2,
+      "AI에이전트": 2,
+      "claude": 2,
       "OpenAI": 2,
-      "claude": 1,
+      "교황AI회칙": 2,
+      "anthropic": 1,
+      "Gemini": 1,
+      "IPO": 1,
+      "수익성": 1,
       "duckduckgo": 1,
       "productmarketfit": 1,
       "YouTubeAI": 1,
@@ -27,7 +32,6 @@
       "에이전트논쟁": 1,
       "Anthropic흑자": 1,
       "GoogleAI": 1,
-      "AI에이전트": 1,
       "기자": 1,
       "레오": 1,
       "연재": 1,
@@ -52,18 +56,31 @@
       "ai사이버보안": 1,
       "CodexEnterprise": 1,
       "OpenAI수학": 1,
-      "ProjectGlasswing": 1,
-      "anthropic": 1,
-      "Gemini": 1,
-      "GoogleIO": 1,
-      "Stainless인수": 1,
-      "펜타곤AI": 1
+      "ProjectGlasswing": 1
     },
     "monthlyCount": {
       "2026-05": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.05.29",
+      "link": "https://androphil.tistory.com/882",
+      "pubDate": "2026-05-29T07:32:43+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "AI에이전트",
+        "anthropic",
+        "claude",
+        "Gemini",
+        "IPO",
+        "OpenAI",
+        "개발자",
+        "수익성"
+      ],
+      "excerpt": "Anthropic이 첫 영업이익 $559M을 달성하며 AI 산업의 수익성 시대 개막했고, OpenAI는 IPO 신청으로 1조 달러 시대를 선언했다. 동시에 Google I/O에서 Gemini 3.5 Flash가 전격 출시되며 AI 경쟁이 본격화했다. 어제의 흐름: 2026.05.28 — Google Gemini Omni 가 영상 생성·편집을 통합한 멀티모달 시대를 열었고, 기업 AI 비용 대비 가치 논쟁이 Uber·Microsoft 사례로 다시 불붙고 있다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 다음 주 캘린더 커뮤니티 핫토"
+    },
     {
       "title": "[AI 트렌드] 2026.05.28",
       "link": "https://androphil.tistory.com/881",
@@ -197,24 +214,6 @@
         "개발자"
       ],
       "excerpt": "어제의 흐름: 2026.05.22 — Anthropic과 OpenAI 모델이 분 차이로 동시 출시되며 AI 모델 군비경쟁이 새 정점에 달했고, Anthropic은 대규모 밸류에이션 펀딩을 추진해 AI 사이버 방어가 현실로: Anthropic Mythos Preview가 오픈소스 핵심 소프트웨어에서 한 달 만에 1만 개 이상 취약점을 발견했고, OpenAI는 Gartner 기업용 AI 코딩 에이전트 리더에 선정되며 보안과 개발 모두를 바꾸는 이중 변혁이 가속화됐다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 다음 주 캘린"
-    },
-    {
-      "title": "[AI 트렌드] 2026.05.22",
-      "link": "https://androphil.tistory.com/871",
-      "pubDate": "2026-05-22T12:04:16+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "anthropic",
-        "Gemini",
-        "GoogleIO",
-        "OpenAI",
-        "Stainless인수",
-        "개발자",
-        "펜타곤AI",
-        "피지컬ai"
-      ],
-      "excerpt": "어제의 흐름: 2026.05.21 — Karpathy의 Anthropic 합류로 AI 인재 전쟁이 새 국면에 접어들었고, OpenAI가 Guaranteed Capacity로 에이전틱 AI 시대의 컴퓨팅 선점에 나섰다 Anthropic이 경쟁사 SDK 인프라를 인수로 차단했고, Q2 첫 흑자를 예고했지만 SpaceX 컴퓨트 스왑 덕분이라는 논란이 터졌다. Google은 I/O 이후 Gemini 3.5 Flash를 즉시 전환하며 반격에 나섰고, 펜타곤은 자율무기 조항 거부한 Anthropic을 제외하고 OpenAI·Google 등 8개"
     }
   ]
 }
