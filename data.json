@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-29T09:55:33.739162+00:00",
+  "fetchedAt": "2026-05-29T15:36:44.107469+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -79,7 +79,7 @@
         "개발자",
         "수익성"
       ],
-      "excerpt": "Anthropic이 첫 영업이익 $559M을 달성하며 AI 산업의 수익성 시대 개막했고, OpenAI는 IPO 신청으로 1조 달러 시대를 선언했다. 동시에 Google I/O에서 Gemini 3.5 Flash가 전격 출시되며 AI 경쟁이 본격화했다. 어제의 흐름: 2026.05.28 — Google Gemini Omni 가 영상 생성·편집을 통합한 멀티모달 시대를 열었고, 기업 AI 비용 대비 가치 논쟁이 Uber·Microsoft 사례로 다시 불붙고 있다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 다음 주 캘린더 커뮤니티 핫토"
+      "excerpt": "어제의 흐름: 2026.05.28 — YouTube AI 자동 라벨링, Anthropic &amp; OpenAI &quot;프로덕트-마켓핏&quot; 달성, DuckDuckGo 28% 트래픽 급증 Anthropic이 Claude Opus 4.8을 전격 발표했다. 동시에 Claude Code에 수십~수백 개 에이전트를 동시 오케스트레이션하는 Dynamic Workflows가 추가됐다. 에이전트 시대가 한 단계 더 깊어지는 하루였다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 개발자를 위한 Action Item Claude"
     },
     {
       "title": "[AI 트렌드] 2026.05.28",
