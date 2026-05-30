@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-29T20:27:09.122462+00:00",
+  "fetchedAt": "2026-05-30T03:32:45.713000+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -10,11 +10,14 @@
     "tagCount": {
       "AI뉴스": 7,
       "개발자": 5,
+      "anthropic": 2,
       "AI에이전트": 2,
       "claude": 2,
       "OpenAI": 2,
       "교황AI회칙": 2,
-      "anthropic": 1,
+      "AutoTTS": 1,
+      "삼성HBM4E": 1,
+      "엣지Ai": 1,
       "Gemini": 1,
       "IPO": 1,
       "수익성": 1,
@@ -52,17 +55,28 @@
       "claudecode": 1,
       "Gemini3.5Flash": 1,
       "GeminiOmni": 1,
-      "코딩에이전트": 1,
-      "ai사이버보안": 1,
-      "CodexEnterprise": 1,
-      "OpenAI수학": 1,
-      "ProjectGlasswing": 1
+      "코딩에이전트": 1
     },
     "monthlyCount": {
       "2026-05": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.05.30",
+      "link": "https://androphil.tistory.com/883",
+      "pubDate": "2026-05-30T07:39:03+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "anthropic",
+        "AutoTTS",
+        "개발자",
+        "삼성HBM4E",
+        "엣지Ai"
+      ],
+      "excerpt": "AI 자체 추론 최적화(AutoTTS)로 토큰 비용 70% 절감 길이 열렸고, Anthropic이 9,650억달러 기업가치로 OpenAI를 추월하며 삼성·SK가 전략적 파트너로 합류했다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 다음 주 캘린더 커뮤니티 핫토픽 개발자 심화 개발자를 위한 Action Item Claude 소식 OpenClaw 소식 지난 1주일 AI 트렌드 오늘의 시그널 구글과 메타가 공동 발표한 AutoTTS 프레임워크는 AI 추론 비용 절감의 새 패러다임을 제시했다. 사람이 설계하던 추론 전략을 AI"
+    },
     {
       "title": "[AI 트렌드] 2026.05.29",
       "link": "https://androphil.tistory.com/882",
@@ -199,21 +213,6 @@
         "코딩에이전트"
       ],
       "excerpt": "어제의 흐름: 2026.05.23 — AI 사이버 방어가 현실로 : Anthropic Mythos Preview가 오픈소스 핵심 소프트웨어에서 한 달 만에 1만 개 이상 취약점을 발견했고, OpenAI는 Gartner 기업용 AI 코딩 에이전트 리더에 Microsoft가 수천 명 내부 개발자에게 6개월간 제공하던 Claude Code 라이선스를 회수하고 GitHub Copilot CLI로 전환을 유도했다. 개발자들이 자사 Copilot보다 Claude Code를 선호한다는 사실이 역설적으로 드러난 사건이다. 목차 오늘의 핵심 오늘의"
-    },
-    {
-      "title": "[AI 트렌드] 2026.05.23",
-      "link": "https://androphil.tistory.com/873",
-      "pubDate": "2026-05-23T07:42:48+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "ai사이버보안",
-        "CodexEnterprise",
-        "OpenAI수학",
-        "ProjectGlasswing",
-        "개발자"
-      ],
-      "excerpt": "어제의 흐름: 2026.05.22 — Anthropic과 OpenAI 모델이 분 차이로 동시 출시되며 AI 모델 군비경쟁이 새 정점에 달했고, Anthropic은 대규모 밸류에이션 펀딩을 추진해 AI 사이버 방어가 현실로: Anthropic Mythos Preview가 오픈소스 핵심 소프트웨어에서 한 달 만에 1만 개 이상 취약점을 발견했고, OpenAI는 Gartner 기업용 AI 코딩 에이전트 리더에 선정되며 보안과 개발 모두를 바꾸는 이중 변혁이 가속화됐다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 다음 주 캘린"
     }
   ]
 }
