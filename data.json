@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-30T19:18:05.748120+00:00",
+  "fetchedAt": "2026-05-31T03:59:01.644065+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -13,13 +13,16 @@
       "anthropic": 2,
       "AI에이전트": 2,
       "claude": 2,
-      "OpenAI": 2,
       "교황AI회칙": 2,
+      "Biodefense": 1,
+      "GeminiOmni": 1,
+      "OpenRouter": 1,
       "AutoTTS": 1,
       "삼성HBM4E": 1,
       "엣지Ai": 1,
       "Gemini": 1,
       "IPO": 1,
+      "OpenAI": 1,
       "수익성": 1,
       "duckduckgo": 1,
       "productmarketfit": 1,
@@ -50,18 +53,27 @@
       "블로그소생기": 1,
       "블로그운영": 1,
       "애드센스": 1,
-      "티스토리": 1,
-      "AI비용전쟁": 1,
-      "claudecode": 1,
-      "Gemini3.5Flash": 1,
-      "GeminiOmni": 1,
-      "코딩에이전트": 1
+      "티스토리": 1
     },
     "monthlyCount": {
       "2026-05": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.05.31",
+      "link": "https://androphil.tistory.com/884",
+      "pubDate": "2026-05-31T07:38:32+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "Biodefense",
+        "GeminiOmni",
+        "OpenRouter",
+        "개발자"
+      ],
+      "excerpt": "어제의 흐름: 2026.05.30 — AI 자체 추론 최적화 (AutoTTS)로 토큰 비용 70% 절감 길이 열렸고, Anthropic이 9,650억달러 기업가치로 OpenAI를 추월하며 삼성·SK가 전략적 파트너로 합류했다. Google이 Gemini Omni로 텍스트·이미지·오디오·비디오를 자유롭게 넘나드는 영상 생성·편집 패러다임을 열었고, OpenAI는 Rosalind Biodefense로 AI를 국가 바이오방어 최전선에 배치했다. LLM 라우팅 플랫폼 OpenRouter의 $113M Series B는 모델 중개 레이어가 A"
+    },
     {
       "title": "[AI 트렌드] 2026.05.30",
       "link": "https://androphil.tistory.com/883",
@@ -196,23 +208,6 @@
         "티스토리"
       ],
       "excerpt": "프롤로그 &nbsp; \"Quick Win &mdash; 기존 글 업데이트. 이미 구글에 노출되고 있는 글의 순위를 끌어올리는 것.\" &nbsp; 5월 12일부터 16일 사이에 우선순위 6개 글을 전부 손봤다. 작업하면서 느낀 건, 생각보다 손댈 게 많았다는 것이다. 내용 추가만으로는 부족했고, 구조 자체를 뜯어고친 글도 있었다. 결과가 어떻게 나왔는지 데이터로 확인해봤다. 업데이트 내용 요약 URL 주제 작업 내용 /668 맥 특수기호 입력 스크린샷 교체, Raycast 주의문구 추가 /498 Linux wget 예제 섹션 추가, "
-    },
-    {
-      "title": "[AI 트렌드] 2026.05.24",
-      "link": "https://androphil.tistory.com/874",
-      "pubDate": "2026-05-24T07:42:24+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "AI비용전쟁",
-        "claudecode",
-        "Gemini3.5Flash",
-        "GeminiOmni",
-        "OpenAI",
-        "개발자",
-        "코딩에이전트"
-      ],
-      "excerpt": "어제의 흐름: 2026.05.23 — AI 사이버 방어가 현실로 : Anthropic Mythos Preview가 오픈소스 핵심 소프트웨어에서 한 달 만에 1만 개 이상 취약점을 발견했고, OpenAI는 Gartner 기업용 AI 코딩 에이전트 리더에 Microsoft가 수천 명 내부 개발자에게 6개월간 제공하던 Claude Code 라이선스를 회수하고 GitHub Copilot CLI로 전환을 유도했다. 개발자들이 자사 Copilot보다 Claude Code를 선호한다는 사실이 역설적으로 드러난 사건이다. 목차 오늘의 핵심 오늘의"
     }
   ]
 }
