@@ -1,17 +1,20 @@
 {
-  "fetchedAt": "2026-06-05T19:56:39.895582+00:00",
+  "fetchedAt": "2026-06-06T03:37:02.988635+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
-      "Dev/AI": 9,
-      "미분류": 1
+      "Dev/AI": 10
     },
     "tagCount": {
-      "AI뉴스": 9,
-      "개발자": 7,
+      "AI뉴스": 10,
+      "개발자": 8,
+      "에이전트ai": 2,
       "nvidia": 2,
       "anthropic": 2,
       "claude": 2,
+      "Anthropic IPO": 1,
+      "claude code": 1,
+      "Google AI Agents": 1,
       "AnthropicIPO": 1,
       "MicrosoftBuild": 1,
       "WindowsAgent": 1,
@@ -19,7 +22,6 @@
       "dgx station": 1,
       "FDE": 1,
       "RTX Spark": 1,
-      "에이전트ai": 1,
       "BonsaiImage": 1,
       "로컬추론": 1,
       "미중AI경쟁": 1,
@@ -51,11 +53,26 @@
       "에이전트논쟁": 1
     },
     "monthlyCount": {
-      "2026-05": 7,
-      "2026-06": 3
+      "2026-05": 6,
+      "2026-06": 4
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.06.06",
+      "link": "https://androphil.tistory.com/890",
+      "pubDate": "2026-06-06T07:33:53+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "Anthropic IPO",
+        "claude code",
+        "Google AI Agents",
+        "개발자",
+        "에이전트ai"
+      ],
+      "excerpt": "Anthropic이 $965B 밸류에이션으로 OpenAI를 앞질렀고, Google이 200개국에서 AI agents를 공개했으며, Claude Code 매출이 $2.5B를 넘어섰습니다. Claude Opus 4.8은 SWE-bench Pro에서 69.2%의 코딩 성능을 기록했습니다. 어제의 흐름: 2026.06.03 — Microsoft Build 2026 에서 Windows가 에이전트 플랫폼으로 전환되며 Project Polaris로 OpenAI 의존을 끊었고, Anthropic이 SEC에 S-1 기밀 제출 로 AI 역사상 최대 "
+    },
     {
       "title": "[AI 트렌드] 2026.06.03",
       "link": "https://androphil.tistory.com/888",
@@ -195,14 +212,6 @@
         "에이전트논쟁"
       ],
       "excerpt": "어제의 흐름: 2026.05.25 — 교황이 Anthropic 공동창업자와 AI 회칙을 공동 발표 하며 AI 논의가 문명적 전환점에 섰고, Anthropic은 사상 첫 분기 흑자($559M)를 예고해 AI 수익화 레이스가 임계점에 도달했다. xAI Grok V9-Medium (1.5T 파라미터) 학습 완료로 AI 모델 규모 경쟁이 새 국면에 접어들었고, George Hotz가 6개월 실사용 경험을 근거로 AI 에이전트 도입이 소프트웨어 역사상 가장 비싼 실수가 될 것이라 경고하며 개발자 커뮤니티를 달궜다. 목차 오늘의 핵심 오늘의 "
-    },
-    {
-      "title": "처음 오셨나요?",
-      "link": "https://androphil.tistory.com/pages/start",
-      "pubDate": "2026-05-25T17:28:41+09:00",
-      "category": "미분류",
-      "tags": [],
-      "excerpt": "삶은 개발. 인생은 빌드.무에서 유를 창조하며 살아가는 이야기를 기록하는 공간입니다. Life : 개발자로, 직장인으로, 한 사람으로 살아가는 이야기 Dev : 실제로 만들고 설계하고 실패하고 다시 만드는 개발 이야기 Love : 좋아하는 것들. 추천, 취미, 애정하는 장소 Phil : 그냥 나. 솔직한 기록 전체&nbsp;카테고리&nbsp;펼쳐보기 더보기 Life 생활 건강 요리 여행 Dev 아키텍처 AI Backend Frontend DB &amp; Infra 트러블슈팅 환경 &amp; 도구 학습 노트 CTO 관점 아카이브 Lo"
     }
   ]
 }
