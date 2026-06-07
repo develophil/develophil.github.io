@@ -1,23 +1,22 @@
 {
-  "fetchedAt": "2026-06-07T04:04:00.011303+00:00",
+  "fetchedAt": "2026-06-07T08:57:24.871866+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
-      "Dev/AI": 10
+      "Dev/AI": 9,
+      "Phil/인터뷰연재": 1
     },
     "tagCount": {
-      "AI뉴스": 9,
-      "개발자": 7,
-      "anthropic": 4,
+      "AI뉴스": 8,
+      "개발자": 6,
+      "anthropic": 3,
       "claudecode": 3,
-      "IPO": 2,
       "온디바이스AI": 2,
-      "Gemini": 2,
-      "OpenAI": 2,
       "nvidia": 2,
       "ai인프라": 1,
       "google": 1,
       "grok": 1,
+      "IPO": 1,
       "OpenClaw": 1,
       "SpaceX": 1,
       "XAI": 1,
@@ -27,6 +26,8 @@
       "ai규제": 1,
       "chatgpt메모리": 1,
       "DreamingV3": 1,
+      "Gemini": 1,
+      "OpenAI": 1,
       "바이오보안": 1,
       "합성DNA": 1,
       "AnthropicIPO": 1,
@@ -37,6 +38,15 @@
       "FDE": 1,
       "RTX Spark": 1,
       "에이전트ai": 1,
+      "agentic": 1,
+      "claude code": 1,
+      "TBD": 1,
+      "개발 생산성": 1,
+      "개발 프로세스": 1,
+      "모노리포": 1,
+      "에이전틱 개발": 1,
+      "지침을 프로세스로": 1,
+      "클로드코드": 1,
       "BonsaiImage": 1,
       "로컬추론": 1,
       "미중AI경쟁": 1,
@@ -46,14 +56,11 @@
       "OpenRouter": 1,
       "AutoTTS": 1,
       "삼성HBM4E": 1,
-      "엣지Ai": 1,
-      "AI에이전트": 1,
-      "claude": 1,
-      "수익성": 1
+      "엣지Ai": 1
     },
     "monthlyCount": {
-      "2026-05": 3,
-      "2026-06": 7
+      "2026-05": 2,
+      "2026-06": 8
     }
   },
   "posts": [
@@ -152,6 +159,24 @@
       "excerpt": "어제의 흐름: 2026.06.01 — 온디바이스 AI 시대가 열리며 1-bit 이미지 생성 모델이 아이폰에서 구동되고, 한국은 미중 AI 격전지로 본격 부상 NVIDIA RTX Spark 슈퍼칩이 로컬 AI 패러다임 전환을 선언하고, AI가 80년 묵은 수학 난제를 돌파하며 인간-AI 공동 연구자 시대의 문이 활짝 열렸다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 다음 주 캘린더 커뮤니티 핫토픽 개발자 심화 개발자를 위한 Action Item Claude 소식 OpenClaw 소식 지난 1주일 AI 트렌드 오늘의 시그"
     },
     {
+      "title": "출근하니 UI가 바뀌어 있었다 [지침을 프로세스로 &middot; #1]",
+      "link": "https://androphil.tistory.com/886",
+      "pubDate": "2026-06-01T18:11:47+09:00",
+      "category": "Phil/인터뷰연재",
+      "tags": [
+        "agentic",
+        "claude code",
+        "TBD",
+        "개발 생산성",
+        "개발 프로세스",
+        "모노리포",
+        "에이전틱 개발",
+        "지침을 프로세스로",
+        "클로드코드"
+      ],
+      "excerpt": "어느 날 아침, 팀원 한 명이 Slack에 스크린샷을 올렸다. 이거 우리가 바꾼 거 맞아요? &nbsp; 이미 운영 중인 어드민 화면이었다. 사전 공유도, PR도, 리뷰도 없었다.&nbsp; 그런데&nbsp;UI가&nbsp;바뀌어&nbsp;있었다.누군가의 실수는 아니었다. 팀이 AI를 \"잘 쓰려고\" 한 결과였다.이 한 장면이 develophil이 멀티에이전트 파이프라인을 설계하게 된 출발점이다.&nbsp; 스타트업 CTO로 Claude Code 중심의 Agentic 개발을 도입하고, 그 혼란을 정리한 사람. 오늘 그 과정을 들어봤다"
+    },
+    {
       "title": "[AI 트렌드] 2026.06.01",
       "link": "https://androphil.tistory.com/885",
       "pubDate": "2026-06-01T07:38:03+09:00",
@@ -195,24 +220,6 @@
         "엣지Ai"
       ],
       "excerpt": "AI 자체 추론 최적화(AutoTTS)로 토큰 비용 70% 절감 길이 열렸고, Anthropic이 9,650억달러 기업가치로 OpenAI를 추월하며 삼성·SK가 전략적 파트너로 합류했다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 다음 주 캘린더 커뮤니티 핫토픽 개발자 심화 개발자를 위한 Action Item Claude 소식 OpenClaw 소식 지난 1주일 AI 트렌드 오늘의 시그널 구글과 메타가 공동 발표한 AutoTTS 프레임워크는 AI 추론 비용 절감의 새 패러다임을 제시했다. 사람이 설계하던 추론 전략을 AI"
-    },
-    {
-      "title": "[AI 트렌드] 2026.05.29",
-      "link": "https://androphil.tistory.com/882",
-      "pubDate": "2026-05-29T07:32:43+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "AI에이전트",
-        "anthropic",
-        "claude",
-        "Gemini",
-        "IPO",
-        "OpenAI",
-        "개발자",
-        "수익성"
-      ],
-      "excerpt": "어제의 흐름: 2026.05.28 — YouTube AI 자동 라벨링, Anthropic &amp; OpenAI &quot;프로덕트-마켓핏&quot; 달성, DuckDuckGo 28% 트래픽 급증 Anthropic이 Claude Opus 4.8을 전격 발표했다. 동시에 Claude Code에 수십~수백 개 에이전트를 동시 오케스트레이션하는 Dynamic Workflows가 추가됐다. 에이전트 시대가 한 단계 더 깊어지는 하루였다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 개발자를 위한 Action Item Claude"
     }
   ]
 }
