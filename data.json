@@ -1,20 +1,34 @@
 {
-  "fetchedAt": "2026-06-06T19:25:08.785473+00:00",
+  "fetchedAt": "2026-06-07T04:04:00.011303+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
       "Dev/AI": 10
     },
     "tagCount": {
-      "AI뉴스": 10,
-      "개발자": 8,
-      "에이전트ai": 2,
+      "AI뉴스": 9,
+      "개발자": 7,
+      "anthropic": 4,
+      "claudecode": 3,
+      "IPO": 2,
+      "온디바이스AI": 2,
+      "Gemini": 2,
+      "OpenAI": 2,
       "nvidia": 2,
-      "anthropic": 2,
-      "claude": 2,
-      "Anthropic IPO": 1,
-      "claude code": 1,
-      "Google AI Agents": 1,
+      "ai인프라": 1,
+      "google": 1,
+      "grok": 1,
+      "OpenClaw": 1,
+      "SpaceX": 1,
+      "XAI": 1,
+      "AI보안": 1,
+      "ProjectGlasswing": 1,
+      "연방AI규제": 1,
+      "ai규제": 1,
+      "chatgpt메모리": 1,
+      "DreamingV3": 1,
+      "바이오보안": 1,
+      "합성DNA": 1,
       "AnthropicIPO": 1,
       "MicrosoftBuild": 1,
       "WindowsAgent": 1,
@@ -22,11 +36,11 @@
       "dgx station": 1,
       "FDE": 1,
       "RTX Spark": 1,
+      "에이전트ai": 1,
       "BonsaiImage": 1,
       "로컬추론": 1,
       "미중AI경쟁": 1,
       "소버린ai": 1,
-      "온디바이스AI": 1,
       "Biodefense": 1,
       "GeminiOmni": 1,
       "OpenRouter": 1,
@@ -34,44 +48,76 @@
       "삼성HBM4E": 1,
       "엣지Ai": 1,
       "AI에이전트": 1,
-      "Gemini": 1,
-      "IPO": 1,
-      "OpenAI": 1,
-      "수익성": 1,
-      "duckduckgo": 1,
-      "productmarketfit": 1,
-      "YouTubeAI": 1,
-      "개발자도구": 1,
-      "에이전트개발": 1,
-      "AI코딩": 1,
-      "mcp": 1,
-      "교황AI회칙": 1,
-      "버그헌팅AI": 1,
-      "BitCPM": 1,
-      "GrokV9Medium": 1,
-      "LingBot": 1,
-      "에이전트논쟁": 1
+      "claude": 1,
+      "수익성": 1
     },
     "monthlyCount": {
-      "2026-05": 6,
-      "2026-06": 4
+      "2026-05": 3,
+      "2026-06": 7
     }
   },
   "posts": [
     {
-      "title": "[AI 트렌드] 2026.06.06",
-      "link": "https://androphil.tistory.com/890",
-      "pubDate": "2026-06-06T07:33:53+09:00",
+      "title": "[AI 트렌드] 2026.06.07",
+      "link": "https://androphil.tistory.com/896",
+      "pubDate": "2026-06-07T12:20:26+09:00",
       "category": "Dev/AI",
       "tags": [
         "AI뉴스",
-        "Anthropic IPO",
-        "claude code",
-        "Google AI Agents",
-        "개발자",
-        "에이전트ai"
+        "ai인프라",
+        "anthropic",
+        "claudecode",
+        "google",
+        "grok",
+        "IPO",
+        "OpenClaw",
+        "SpaceX",
+        "XAI"
       ],
-      "excerpt": "Anthropic이 $965B 밸류에이션으로 OpenAI를 앞질렀고, Google이 200개국에서 AI agents를 공개했으며, Claude Code 매출이 $2.5B를 넘어섰습니다. Claude Opus 4.8은 SWE-bench Pro에서 69.2%의 코딩 성능을 기록했습니다. 어제의 흐름: 2026.06.03 — Microsoft Build 2026 에서 Windows가 에이전트 플랫폼으로 전환되며 Project Polaris로 OpenAI 의존을 끊었고, Anthropic이 SEC에 S-1 기밀 제출 로 AI 역사상 최대 "
+      "excerpt": "AI 경쟁사들이 경쟁자의 인프라를 임대하기 시작했다. Anthropic은 xAI Colossus에 월 $1.25B, Google은 월 $920M을 지불한다. SpaceX는 이 매출을 앞세워 6월 12일 나스닥 상장을 앞두고 있다. AI 시대의 인프라 경제학이 완전히 새로 쓰이고 있다. 어제의 흐름: 2026.06.06 — Claude Code v2.1.166 폴백 모델·보안 강화, Project Glasswing 15개국 150개 기관 확대, 연방 AI법 소비자 보호 논란 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 개발"
+    },
+    {
+      "title": "[AI 트렌드] 2026.06.06",
+      "link": "https://androphil.tistory.com/895",
+      "pubDate": "2026-06-07T11:56:11+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "AI보안",
+        "anthropic",
+        "claudecode",
+        "ProjectGlasswing",
+        "개발자",
+        "연방AI규제",
+        "온디바이스AI"
+      ],
+      "excerpt": "Claude Code v2.1.166이 폴백 모델 설정·보안 강화와 함께 배포됐고, Project Glasswing이 15개국 150개 신규 기관으로 확대됐다. 연방 AI 법안 논란은 소비자·노동 단체의 전면 반발로 격화됐다. 어제의 흐름: 2026.06.05 — AI CEO 합성 DNA 규제 공동 서한, ChatGPT Dreaming V3 배포, Gemini 3.5 Flash GA 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 개발자를 위한 Action Item Claude 소식 오늘의 시그널 Claude Code가 프로"
+    },
+    {
+      "title": "[AI 트렌드] 2026.06.05",
+      "link": "https://androphil.tistory.com/894",
+      "pubDate": "2026-06-07T11:55:32+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "ai규제",
+        "AI뉴스",
+        "chatgpt메모리",
+        "claudecode",
+        "DreamingV3",
+        "Gemini",
+        "OpenAI",
+        "바이오보안",
+        "합성DNA"
+      ],
+      "excerpt": "AI 수장 4인이 한목소리로 경고했다. Altman·Amodei·Suleyman·Pichai가 의회에 합성 DNA 규제를 촉구했고, OpenAI는 ChatGPT 메모리를 전면 재설계한 Dreaming V3를 배포했으며, EU는 최초로 GPT-5.5 사이버보안 모델을 받았다. 어제의 흐름: 2026.06.04 — 미국 연방 AI 법안 초안 공개, 백악관 AI 행정명령 서명, NVIDIA RTX Spark·Vera 발표 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 개발자를 위한 Action Item Claude 소식 오늘의 "
+    },
+    {
+      "title": "[AI 트렌드] 2026.06.04",
+      "link": "https://androphil.tistory.com/893",
+      "pubDate": "2026-06-07T11:53:03+09:00",
+      "category": "Dev/AI",
+      "tags": [],
+      "excerpt": "미국 최초 연방 AI 규제법 초안이 공개됐고, 백악관 AI 행정명령이 사이버 보안·혁신 강화를 함께 추진한다. NVIDIA는 에이전트 시대를 겨냥한 신규 칩을 연달아 발표하며 AI 인프라 경쟁을 가속화했다. 어제의 흐름: 2026.06.03 — Microsoft Build Day 2, Claude Code v2.1.162 출시, Windows 에이전트 플랫폼 전환 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 개발자를 위한 Action Item Claude 소식 오늘의 시그널 미국 연방 AI 규제가 현실이 됐습니다. Jay"
     },
     {
       "title": "[AI 트렌드] 2026.06.03",
@@ -167,51 +213,6 @@
         "수익성"
       ],
       "excerpt": "어제의 흐름: 2026.05.28 — YouTube AI 자동 라벨링, Anthropic &amp; OpenAI &quot;프로덕트-마켓핏&quot; 달성, DuckDuckGo 28% 트래픽 급증 Anthropic이 Claude Opus 4.8을 전격 발표했다. 동시에 Claude Code에 수십~수백 개 에이전트를 동시 오케스트레이션하는 Dynamic Workflows가 추가됐다. 에이전트 시대가 한 단계 더 깊어지는 하루였다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 개발자를 위한 Action Item Claude"
-    },
-    {
-      "title": "[AI 트렌드] 2026.05.28",
-      "link": "https://androphil.tistory.com/881",
-      "pubDate": "2026-05-28T07:41:30+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "claude",
-        "duckduckgo",
-        "productmarketfit",
-        "YouTubeAI",
-        "개발자도구",
-        "에이전트개발"
-      ],
-      "excerpt": "어제의 흐름: 2026.05.27 &mdash; YouTube AI 라벨 정책 업데이트, Anthropic &amp; OpenAI \"프로덕트-마켓핏\" 확인, DuckDuckGo 트래픽 28% 증가 AI 투명성 정책이 강화되는 가운데, 엔터프라이즈 사용자들의 LLM 비용 충격이 커지고 있다. Claude Code와 Copilot이 기업 운영 비용을 급증시키면서, AI 프로덕트가 완연한 경제 가치를 증명하고 있다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 개발자를 위한 Action Item &nbsp; 오늘의 시그널 AI 콘텐츠 투"
-    },
-    {
-      "title": "[AI 트렌드] 2026.05.27",
-      "link": "https://androphil.tistory.com/880",
-      "pubDate": "2026-05-27T07:43:30+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "AI코딩",
-        "mcp",
-        "교황AI회칙",
-        "버그헌팅AI"
-      ],
-      "excerpt": "어제의 흐름: 2026.05.26 — xAI Grok V9-Medium (1.5T 파라미터) 학습 완료로 AI 모델 규모 경쟁이 새 국면에 접어들었고, George Hotz가 6개월 실사용 경험을 근거로 AI 에이전트 도입이 소프트웨어 역사상 가장 비싼 교황청이 Anthropic 공동창업자와 AI 무장해제 회칙을 공동 발표한 여파가 계속되는 가운데, AI 에이전트가 버그헌팅 경제를 뒤흔들고 있다. 개발자 커뮤니티에서는 &quot;AI로 빠른 코드&quot;보다 AI로 품질 높은 코드를 쓰자는 실천 논쟁이 확산 중이다. 목차 오늘의 "
-    },
-    {
-      "title": "[AI 트렌드] 2026.05.26",
-      "link": "https://androphil.tistory.com/879",
-      "pubDate": "2026-05-26T07:42:12+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "BitCPM",
-        "GrokV9Medium",
-        "LingBot",
-        "개발자",
-        "에이전트논쟁"
-      ],
-      "excerpt": "어제의 흐름: 2026.05.25 — 교황이 Anthropic 공동창업자와 AI 회칙을 공동 발표 하며 AI 논의가 문명적 전환점에 섰고, Anthropic은 사상 첫 분기 흑자($559M)를 예고해 AI 수익화 레이스가 임계점에 도달했다. xAI Grok V9-Medium (1.5T 파라미터) 학습 완료로 AI 모델 규모 경쟁이 새 국면에 접어들었고, George Hotz가 6개월 실사용 경험을 근거로 AI 에이전트 도입이 소프트웨어 역사상 가장 비싼 실수가 될 것이라 경고하며 개발자 커뮤니티를 달궜다. 목차 오늘의 핵심 오늘의 "
     }
   ]
 }
