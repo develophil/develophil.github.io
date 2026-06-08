@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-07T19:24:16.874222+00:00",
+  "fetchedAt": "2026-06-08T04:08:14.390298+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -13,6 +13,9 @@
       "claudecode": 3,
       "온디바이스AI": 2,
       "nvidia": 2,
+      "AppleWWDC": 1,
+      "GeminiSiri": 1,
+      "ios27": 1,
       "ai인프라": 1,
       "google": 1,
       "grok": 1,
@@ -53,17 +56,29 @@
       "소버린ai": 1,
       "Biodefense": 1,
       "GeminiOmni": 1,
-      "OpenRouter": 1,
-      "AutoTTS": 1,
-      "삼성HBM4E": 1,
-      "엣지Ai": 1
+      "OpenRouter": 1
     },
     "monthlyCount": {
-      "2026-05": 2,
-      "2026-06": 8
+      "2026-05": 1,
+      "2026-06": 9
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.06.08",
+      "link": "https://androphil.tistory.com/897",
+      "pubDate": "2026-06-08T07:39:23+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "anthropic",
+        "AppleWWDC",
+        "GeminiSiri",
+        "ios27",
+        "개발자"
+      ],
+      "excerpt": "어제의 흐름: 2026.06.07 — AI 경쟁사들이 경쟁자의 인프라를 임대하기 시작했다. Anthropic은 xAI Colossus에 월 $1.25B, Google은 월 $920M을 지불한다. SpaceX는 이 매출을 앞세워 6월 12일 나스닥 상장을 Apple WWDC에서 Gemini 기반 Siri가 공개되며 iOS 27과 함께 멀티 AI 플랫폼 시대가 열렸다. Anthropic은 $47B 매출과 함께 자사 AI가 곧 통제 불능 수준에 도달할 수 있다는 경고를 발표하는 이중적 행보를 보였다. 목차 오늘의 핵심 오늘의 시그널 뉴스"
+    },
     {
       "title": "[AI 트렌드] 2026.06.07",
       "link": "https://androphil.tistory.com/896",
@@ -205,21 +220,6 @@
         "개발자"
       ],
       "excerpt": "어제의 흐름: 2026.05.30 — AI 자체 추론 최적화 (AutoTTS)로 토큰 비용 70% 절감 길이 열렸고, Anthropic이 9,650억달러 기업가치로 OpenAI를 추월하며 삼성·SK가 전략적 파트너로 합류했다. Google이 Gemini Omni로 텍스트·이미지·오디오·비디오를 자유롭게 넘나드는 영상 생성·편집 패러다임을 열었고, OpenAI는 Rosalind Biodefense로 AI를 국가 바이오방어 최전선에 배치했다. LLM 라우팅 플랫폼 OpenRouter의 $113M Series B는 모델 중개 레이어가 A"
-    },
-    {
-      "title": "[AI 트렌드] 2026.05.30",
-      "link": "https://androphil.tistory.com/883",
-      "pubDate": "2026-05-30T07:39:03+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "anthropic",
-        "AutoTTS",
-        "개발자",
-        "삼성HBM4E",
-        "엣지Ai"
-      ],
-      "excerpt": "AI 자체 추론 최적화(AutoTTS)로 토큰 비용 70% 절감 길이 열렸고, Anthropic이 9,650억달러 기업가치로 OpenAI를 추월하며 삼성·SK가 전략적 파트너로 합류했다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 다음 주 캘린더 커뮤니티 핫토픽 개발자 심화 개발자를 위한 Action Item Claude 소식 OpenClaw 소식 지난 1주일 AI 트렌드 오늘의 시그널 구글과 메타가 공동 발표한 AutoTTS 프레임워크는 AI 추론 비용 절감의 새 패러다임을 제시했다. 사람이 설계하던 추론 전략을 AI"
     }
   ]
 }
