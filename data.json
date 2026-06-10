@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-09T20:08:05.779375+00:00",
+  "fetchedAt": "2026-06-10T03:52:23.771062+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -12,8 +12,10 @@
       "anthropic": 3,
       "claudecode": 3,
       "XAI": 2,
-      "온디바이스AI": 2,
       "nvidia": 2,
+      "ClaudeFable5": 1,
+      "공급망보안": 1,
+      "삼성AX": 1,
       "apple intelligence": 1,
       "OpenAI IPO": 1,
       "Xiaomi MiMo": 1,
@@ -29,6 +31,7 @@
       "AI보안": 1,
       "ProjectGlasswing": 1,
       "연방AI규제": 1,
+      "온디바이스AI": 1,
       "ai규제": 1,
       "chatgpt메모리": 1,
       "DreamingV3": 1,
@@ -52,17 +55,27 @@
       "모노리포": 1,
       "에이전틱 개발": 1,
       "지침을 프로세스로": 1,
-      "클로드코드": 1,
-      "BonsaiImage": 1,
-      "로컬추론": 1,
-      "미중AI경쟁": 1,
-      "소버린ai": 1
+      "클로드코드": 1
     },
     "monthlyCount": {
       "2026-06": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.06.10",
+      "link": "https://androphil.tistory.com/900",
+      "pubDate": "2026-06-10T07:40:58+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "ClaudeFable5",
+        "개발자",
+        "공급망보안",
+        "삼성AX"
+      ],
+      "excerpt": "어제의 흐름: 2026.06.09 — Apple이 Google Gemini 기반으로 Apple Intelligence를 전면 재설계 했고, OpenAI는 IPO 시계를 공식화하는 S-1 초안을 SEC에 제출했다 Anthropic이 역대 최강 Claude Fable 5를 공개했다. 동시에 경쟁 LLM 개발 차단을 위한 숨겨진 safeguard가 개발자 공급망 신뢰에 새로운 균열을 냈다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 다음 주 캘린더 커뮤니티 핫토픽 개발자 심화 개발자를 위한 Action Item Claude "
+    },
     {
       "title": "[AI 트렌드] 2026.06.09",
       "link": "https://androphil.tistory.com/898",
@@ -204,22 +217,6 @@
         "클로드코드"
       ],
       "excerpt": "어느 날 아침, 팀원 한 명이 Slack에 스크린샷을 올렸다. 이거 우리가 바꾼 거 맞아요? &nbsp; 이미 운영 중인 어드민 화면이었다. 사전 공유도, PR도, 리뷰도 없었다.&nbsp; 그런데&nbsp;UI가&nbsp;바뀌어&nbsp;있었다.누군가의 실수는 아니었다. 팀이 AI를 \"잘 쓰려고\" 한 결과였다.이 한 장면이 develophil이 멀티에이전트 파이프라인을 설계하게 된 출발점이다.&nbsp; 스타트업 CTO로 Claude Code 중심의 Agentic 개발을 도입하고, 그 혼란을 정리한 사람. 오늘 그 과정을 들어봤다"
-    },
-    {
-      "title": "[AI 트렌드] 2026.06.01",
-      "link": "https://androphil.tistory.com/885",
-      "pubDate": "2026-06-01T07:38:03+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "BonsaiImage",
-        "개발자",
-        "로컬추론",
-        "미중AI경쟁",
-        "소버린ai",
-        "온디바이스AI"
-      ],
-      "excerpt": "어제의 흐름: 2026.05.31 — Google이 Gemini Omni 로 텍스트·이미지·오디오·비디오를 자유롭게 넘나드는 영상 생성·편집 패러다임을 열었고, OpenAI는 Rosalind Biodefense 로 AI를 국가 바이오방어 최전선에 배치했 온디바이스 AI 시대가 열리며 1-bit 이미지 생성 모델이 아이폰에서 구동되고, 한국은 미중 AI 격전지로 본격 부상해 GPT 5.5-사이버·중국 초저가 AI까지 총집결하는 하루다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 다음 주 캘린더 커뮤니티 핫토픽 개발자 심화"
     }
   ]
 }
