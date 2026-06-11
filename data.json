@@ -1,18 +1,20 @@
 {
-  "fetchedAt": "2026-06-10T20:32:00.022441+00:00",
+  "fetchedAt": "2026-06-11T04:05:03.798455+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
-      "Dev/AI": 9,
-      "Phil/인터뷰연재": 1
+      "Dev/AI": 10
     },
     "tagCount": {
-      "AI뉴스": 8,
-      "개발자": 6,
+      "AI뉴스": 9,
+      "개발자": 7,
       "anthropic": 3,
       "claudecode": 3,
       "XAI": 2,
       "nvidia": 2,
+      "ClaudeOpus4.6": 1,
+      "DiffusionGemma": 1,
+      "GPT-5.3-Codex": 1,
       "ClaudeFable5": 1,
       "공급망보안": 1,
       "삼성AX": 1,
@@ -46,22 +48,27 @@
       "dgx station": 1,
       "FDE": 1,
       "RTX Spark": 1,
-      "에이전트ai": 1,
-      "agentic": 1,
-      "claude code": 1,
-      "TBD": 1,
-      "개발 생산성": 1,
-      "개발 프로세스": 1,
-      "모노리포": 1,
-      "에이전틱 개발": 1,
-      "지침을 프로세스로": 1,
-      "클로드코드": 1
+      "에이전트ai": 1
     },
     "monthlyCount": {
       "2026-06": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.06.11",
+      "link": "https://androphil.tistory.com/901",
+      "pubDate": "2026-06-11T07:39:58+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "ClaudeOpus4.6",
+        "DiffusionGemma",
+        "GPT-5.3-Codex",
+        "개발자"
+      ],
+      "excerpt": "어제의 흐름: 2026.06.10 — Anthropic이 역대 최강 Claude Fable 5 를 공개했다. 동시에 경쟁 LLM 개발 차단을 위한 숨겨진 safeguard가 개발자 공급망 신뢰에 새로운 균열을 냈다. Google이 DiffusionGemma로 텍스트 생성 4배 가속을 오픈소스 공개한 가운데, Amazon이 추가로 $17.5B를 차입하며 AI 인프라 군비 경쟁이 새 국면을 맞았다. xAI Grok 안전 소송과 독일 Google AI Overviews 책임 판결은 AI 거버넌스 리스크를 동시에 끌어올렸다. 목차 오늘의 "
+    },
     {
       "title": "[AI 트렌드] 2026.06.10",
       "link": "https://androphil.tistory.com/900",
@@ -199,24 +206,6 @@
         "에이전트ai"
       ],
       "excerpt": "어제의 흐름: 2026.06.01 — 온디바이스 AI 시대가 열리며 1-bit 이미지 생성 모델이 아이폰에서 구동되고, 한국은 미중 AI 격전지로 본격 부상 NVIDIA RTX Spark 슈퍼칩이 로컬 AI 패러다임 전환을 선언하고, AI가 80년 묵은 수학 난제를 돌파하며 인간-AI 공동 연구자 시대의 문이 활짝 열렸다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 다음 주 캘린더 커뮤니티 핫토픽 개발자 심화 개발자를 위한 Action Item Claude 소식 OpenClaw 소식 지난 1주일 AI 트렌드 오늘의 시그"
-    },
-    {
-      "title": "출근하니 UI가 바뀌어 있었다 [지침을 프로세스로 &middot; #1]",
-      "link": "https://androphil.tistory.com/886",
-      "pubDate": "2026-06-01T18:11:47+09:00",
-      "category": "Phil/인터뷰연재",
-      "tags": [
-        "agentic",
-        "claude code",
-        "TBD",
-        "개발 생산성",
-        "개발 프로세스",
-        "모노리포",
-        "에이전틱 개발",
-        "지침을 프로세스로",
-        "클로드코드"
-      ],
-      "excerpt": "어느 날 아침, 팀원 한 명이 Slack에 스크린샷을 올렸다. 이거 우리가 바꾼 거 맞아요? &nbsp; 이미 운영 중인 어드민 화면이었다. 사전 공유도, PR도, 리뷰도 없었다.&nbsp; 그런데&nbsp;UI가&nbsp;바뀌어&nbsp;있었다.누군가의 실수는 아니었다. 팀이 AI를 \"잘 쓰려고\" 한 결과였다.이 한 장면이 develophil이 멀티에이전트 파이프라인을 설계하게 된 출발점이다.&nbsp; 스타트업 CTO로 Claude Code 중심의 Agentic 개발을 도입하고, 그 혼란을 정리한 사람. 오늘 그 과정을 들어봤다"
     }
   ]
 }
