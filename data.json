@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-11T20:23:40.414621+00:00",
+  "fetchedAt": "2026-06-12T04:06:00.727325+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -8,14 +8,15 @@
     "tagCount": {
       "AI뉴스": 9,
       "개발자": 7,
-      "anthropic": 3,
+      "anthropic": 4,
       "claudecode": 3,
+      "ClaudeFable5": 2,
+      "OpenAI": 2,
       "XAI": 2,
-      "nvidia": 2,
+      "AI에이전트": 1,
       "ClaudeOpus4.6": 1,
       "DiffusionGemma": 1,
       "GPT-5.3-Codex": 1,
-      "ClaudeFable5": 1,
       "공급망보안": 1,
       "삼성AX": 1,
       "apple intelligence": 1,
@@ -38,23 +39,33 @@
       "chatgpt메모리": 1,
       "DreamingV3": 1,
       "Gemini": 1,
-      "OpenAI": 1,
       "바이오보안": 1,
       "합성DNA": 1,
       "AnthropicIPO": 1,
       "MicrosoftBuild": 1,
-      "WindowsAgent": 1,
-      "AI수학": 1,
-      "dgx station": 1,
-      "FDE": 1,
-      "RTX Spark": 1,
-      "에이전트ai": 1
+      "nvidia": 1,
+      "WindowsAgent": 1
     },
     "monthlyCount": {
       "2026-06": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.06.12",
+      "link": "https://androphil.tistory.com/902",
+      "pubDate": "2026-06-12T07:38:28+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "AI에이전트",
+        "anthropic",
+        "ClaudeFable5",
+        "OpenAI",
+        "개발자"
+      ],
+      "excerpt": "어제의 흐름: 2026.06.11 — Anthropic Claude Opus 4.6 과 OpenAI GPT-5.3-Codex 가 수 분 간격으로 동시 출시되며 코딩 에이전트 전쟁의 새 라운드를 열었다. Google은 DiffusionGemma로 오픈소스 OpenAI가 Codex를 영구 클라우드 에이전트로 진화시키며 Ona를 인수했고, Anthropic은 $150M 규모 Claude Corps 펠로우십으로 AI의 사회 환원 모델을 제시했다. Fable 5 가드레일 논란은 안전-성능 균형의 딜레마를 다시 수면 위로 끌어올리고 있다. 목"
+    },
     {
       "title": "[AI 트렌드] 2026.06.11",
       "link": "https://androphil.tistory.com/901",
@@ -189,23 +200,6 @@
         "개발자"
       ],
       "excerpt": "어제의 흐름: 2026.06.02 — NVIDIA RTX Spark 슈퍼칩이 로컬 AI 패러다임 전환을 선언하고, AI가 80년 묵은 수학 난제를 돌파하며 인간-AI 공동 연구자 시대의 문이 활짝 열렸다. Microsoft Build 2026에서 Windows가 에이전트 플랫폼으로 전환되며 Project Polaris로 OpenAI 의존을 끊었고, Anthropic이 SEC에 S-1 기밀 제출로 AI 역사상 최대 IPO 카운트다운이 시작됐다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 다음 주 캘린더 커뮤니티 핫토픽 개"
-    },
-    {
-      "title": "[AI 트렌드] 2026.06.02",
-      "link": "https://androphil.tistory.com/887",
-      "pubDate": "2026-06-02T07:37:25+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "AI수학",
-        "dgx station",
-        "FDE",
-        "nvidia",
-        "RTX Spark",
-        "개발자",
-        "에이전트ai"
-      ],
-      "excerpt": "어제의 흐름: 2026.06.01 — 온디바이스 AI 시대가 열리며 1-bit 이미지 생성 모델이 아이폰에서 구동되고, 한국은 미중 AI 격전지로 본격 부상 NVIDIA RTX Spark 슈퍼칩이 로컬 AI 패러다임 전환을 선언하고, AI가 80년 묵은 수학 난제를 돌파하며 인간-AI 공동 연구자 시대의 문이 활짝 열렸다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 다음 주 캘린더 커뮤니티 핫토픽 개발자 심화 개발자를 위한 Action Item Claude 소식 OpenClaw 소식 지난 1주일 AI 트렌드 오늘의 시그"
     }
   ]
 }
