@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-13T14:02:06.665590+00:00",
+  "fetchedAt": "2026-06-13T19:27:13.841824+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -78,7 +78,7 @@
         "OpenAI",
         "개발자"
       ],
-      "excerpt": "어제의 흐름: 2026.06.11 — Anthropic Claude Opus 4.6 과 OpenAI GPT-5.3-Codex 가 수 분 간격으로 동시 출시되며 코딩 에이전트 전쟁의 새 라운드를 열었다. Google은 DiffusionGemma로 오픈소스 OpenAI가 Codex를 영구 클라우드 에이전트로 진화시키며 Ona를 인수했고, Anthropic은 $150M 규모 Claude Corps 펠로우십으로 AI의 사회 환원 모델을 제시했다. Fable 5 가드레일 논란은 안전-성능 균형의 딜레마를 다시 수면 위로 끌어올리고 있다. 목"
+      "excerpt": "어제의 흐름: 2026.06.11 — Google이 DiffusionGemma로 텍스트 생성 4배 가속을 오픈소스 공개한 가운데, Amazon이 추가로 $17.5B를 차입하며 AI 인프라 군비 경쟁이 새 국면을 맞았다. OpenAI가 Ona를 인수해 Codex를 영구 클라우드 에이전트로 진화시켰고, Anthropic은 $150M 규모 Claude Corps 펠로우십을 출범시켜 AI 수익의 사회 환원 모델을 제시했다. Claude Fable 5의 &#39;보이지 않는 가드레일&#39; 논란에 Anthropic이 공식 사과했고, Spa"
     },
     {
       "title": "[AI 트렌드] 2026.06.11",
