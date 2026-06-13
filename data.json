@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-12T20:12:13.579454+00:00",
+  "fetchedAt": "2026-06-13T03:54:11.532859+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -7,12 +7,16 @@
     },
     "tagCount": {
       "AI뉴스": 9,
-      "개발자": 7,
+      "개발자": 6,
       "anthropic": 4,
       "claudecode": 3,
       "ClaudeFable5": 2,
       "OpenAI": 2,
       "XAI": 2,
+      "ai법적책임": 1,
+      "OpenAI Academy": 1,
+      "Perplexity멀티에이전트": 1,
+      "월드모델": 1,
       "AI에이전트": 1,
       "ClaudeOpus4.6": 1,
       "DiffusionGemma": 1,
@@ -40,17 +44,27 @@
       "DreamingV3": 1,
       "Gemini": 1,
       "바이오보안": 1,
-      "합성DNA": 1,
-      "AnthropicIPO": 1,
-      "MicrosoftBuild": 1,
-      "nvidia": 1,
-      "WindowsAgent": 1
+      "합성DNA": 1
     },
     "monthlyCount": {
       "2026-06": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.06.13",
+      "link": "https://androphil.tistory.com/903",
+      "pubDate": "2026-06-13T07:39:01+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "ai법적책임",
+        "OpenAI Academy",
+        "Perplexity멀티에이전트",
+        "월드모델"
+      ],
+      "excerpt": "어제의 흐름: 2026.06.12 — OpenAI가 Codex를 영구 클라우드 에이전트로 진화시키며 Ona를 인수했고, Anthropic은 $150M 규모 Claude Corps 펠로우십으로 AI의 사회 환원 모델을 제시했다. OpenAI Academy가 기업 AI 역량 내재화 플랫폼으로 공식 출범했고, Perplexity는 20개 이상 AI 모델을 단일 워크플로우로 묶어 BrowseComp 성능을 2배 이상 향상시켰다. 독일 뮌헨 법원의 Google AI Overviews 책임 판결은 생성형 AI 서비스 전반에 법적 전환점을 예고"
+    },
     {
       "title": "[AI 트렌드] 2026.06.12",
       "link": "https://androphil.tistory.com/902",
@@ -185,21 +199,6 @@
       "category": "Dev/AI",
       "tags": [],
       "excerpt": "미국 최초 연방 AI 규제법 초안이 공개됐고, 백악관 AI 행정명령이 사이버 보안·혁신 강화를 함께 추진한다. NVIDIA는 에이전트 시대를 겨냥한 신규 칩을 연달아 발표하며 AI 인프라 경쟁을 가속화했다. 어제의 흐름: 2026.06.03 — Microsoft Build Day 2, Claude Code v2.1.162 출시, Windows 에이전트 플랫폼 전환 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 개발자를 위한 Action Item Claude 소식 오늘의 시그널 미국 연방 AI 규제가 현실이 됐습니다. Jay"
-    },
-    {
-      "title": "[AI 트렌드] 2026.06.03",
-      "link": "https://androphil.tistory.com/888",
-      "pubDate": "2026-06-03T07:38:22+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "AnthropicIPO",
-        "MicrosoftBuild",
-        "nvidia",
-        "WindowsAgent",
-        "개발자"
-      ],
-      "excerpt": "어제의 흐름: 2026.06.02 — NVIDIA RTX Spark 슈퍼칩이 로컬 AI 패러다임 전환을 선언하고, AI가 80년 묵은 수학 난제를 돌파하며 인간-AI 공동 연구자 시대의 문이 활짝 열렸다. Microsoft Build 2026에서 Windows가 에이전트 플랫폼으로 전환되며 Project Polaris로 OpenAI 의존을 끊었고, Anthropic이 SEC에 S-1 기밀 제출로 AI 역사상 최대 IPO 카운트다운이 시작됐다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 다음 주 캘린더 커뮤니티 핫토픽 개"
     }
   ]
 }
