@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-13T19:27:13.841824+00:00",
+  "fetchedAt": "2026-06-14T04:12:46.025903+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -51,6 +51,14 @@
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.06.14",
+      "link": "https://androphil.tistory.com/904",
+      "pubDate": "2026-06-14T07:38:44+09:00",
+      "category": "Dev/AI",
+      "tags": [],
+      "excerpt": "어제의 흐름: 2026.06.13 — Anthropic이 Trump 행정명령에 따라 Fable 5·Mythos 5의 외국인 접근을 전면 차단했다. SpaceX는 IPO 첫날 20% 급등했고, 중국 Moonshot AI가 Kimi K2.7-Code를 오픈소스로 공개했다. 아마존 CEO Andy Jassy가 미국 정부에 Fable 5 보안 우려를 제보한 것이 차단 명령의 발단으로 밝혀졌다. KPMG는 AI 환각으로 오염된 보고서를 전면 철회했고, 다수의 미국 주 검찰총장이 OpenAI 수사에 착수했다. AI 거버넌스의 세 균열 — 국가"
+    },
     {
       "title": "[AI 트렌드] 2026.06.13",
       "link": "https://androphil.tistory.com/903",
@@ -191,14 +199,6 @@
         "합성DNA"
       ],
       "excerpt": "AI 수장 4인이 한목소리로 경고했다. Altman·Amodei·Suleyman·Pichai가 의회에 합성 DNA 규제를 촉구했고, OpenAI는 ChatGPT 메모리를 전면 재설계한 Dreaming V3를 배포했으며, EU는 최초로 GPT-5.5 사이버보안 모델을 받았다. 어제의 흐름: 2026.06.04 — 미국 연방 AI 법안 초안 공개, 백악관 AI 행정명령 서명, NVIDIA RTX Spark·Vera 발표 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 개발자를 위한 Action Item Claude 소식 오늘의 "
-    },
-    {
-      "title": "[AI 트렌드] 2026.06.04",
-      "link": "https://androphil.tistory.com/893",
-      "pubDate": "2026-06-07T11:53:03+09:00",
-      "category": "Dev/AI",
-      "tags": [],
-      "excerpt": "미국 최초 연방 AI 규제법 초안이 공개됐고, 백악관 AI 행정명령이 사이버 보안·혁신 강화를 함께 추진한다. NVIDIA는 에이전트 시대를 겨냥한 신규 칩을 연달아 발표하며 AI 인프라 경쟁을 가속화했다. 어제의 흐름: 2026.06.03 — Microsoft Build Day 2, Claude Code v2.1.162 출시, Windows 에이전트 플랫폼 전환 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 개발자를 위한 Action Item Claude 소식 오늘의 시그널 미국 연방 AI 규제가 현실이 됐습니다. Jay"
     }
   ]
 }
