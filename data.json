@@ -1,23 +1,23 @@
 {
-  "fetchedAt": "2026-06-14T19:27:54.408949+00:00",
+  "fetchedAt": "2026-06-15T04:23:56.058421+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
       "Dev/AI": 10
     },
     "tagCount": {
-      "AI뉴스": 9,
+      "AI뉴스": 8,
       "개발자": 6,
       "anthropic": 4,
-      "claudecode": 3,
       "ClaudeFable5": 2,
-      "OpenAI": 2,
       "XAI": 2,
+      "claudecode": 2,
       "ai법적책임": 1,
       "OpenAI Academy": 1,
       "Perplexity멀티에이전트": 1,
       "월드모델": 1,
       "AI에이전트": 1,
+      "OpenAI": 1,
       "ClaudeOpus4.6": 1,
       "DiffusionGemma": 1,
       "GPT-5.3-Codex": 1,
@@ -38,19 +38,21 @@
       "AI보안": 1,
       "ProjectGlasswing": 1,
       "연방AI규제": 1,
-      "온디바이스AI": 1,
-      "ai규제": 1,
-      "chatgpt메모리": 1,
-      "DreamingV3": 1,
-      "Gemini": 1,
-      "바이오보안": 1,
-      "합성DNA": 1
+      "온디바이스AI": 1
     },
     "monthlyCount": {
       "2026-06": 10
     }
   },
   "posts": [
+    {
+      "title": "[2026.06.15] AI 지정학 전선 &mdash; 중국 Mythos 접근 의혹&middot;메타 Manus 철수&middot;AI IPO 대기줄",
+      "link": "https://androphil.tistory.com/905",
+      "pubDate": "2026-06-15T07:36:55+09:00",
+      "category": "Dev/AI",
+      "tags": [],
+      "excerpt": "오늘의 시그널 AI 패권 경쟁이 코드 밖으로 나왔다. 중국이 Mythos 5에 접근했다는 의혹이 부상하고, 베이징의 명령 한 마디에 메타는 $20억 딜을 철회했다. 반면 SpaceX IPO가 역사를 새로 쓰자 AI 스타트업들은 상장 행렬에 줄을 서기 시작했다. 전선은 모델 성능에서 지정학으로 이동 중이다. 메인 뉴스 1. 중국, Mythos 5 접근했나 — 백악관 침묵 속 의혹 확산 The Verge가 보도한 바에 따르면, 중국과 연관된 그룹이 Anthropic의 Mythos 5 모델에 접근했을 가능성이 있다. 이것이 사실이라면 심"
+    },
     {
       "title": "[AI 트렌드] 2026.06.14",
       "link": "https://androphil.tistory.com/904",
@@ -181,24 +183,6 @@
         "온디바이스AI"
       ],
       "excerpt": "Claude Code v2.1.166이 폴백 모델 설정·보안 강화와 함께 배포됐고, Project Glasswing이 15개국 150개 신규 기관으로 확대됐다. 연방 AI 법안 논란은 소비자·노동 단체의 전면 반발로 격화됐다. 어제의 흐름: 2026.06.05 — AI CEO 합성 DNA 규제 공동 서한, ChatGPT Dreaming V3 배포, Gemini 3.5 Flash GA 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 개발자를 위한 Action Item Claude 소식 오늘의 시그널 Claude Code가 프로"
-    },
-    {
-      "title": "[AI 트렌드] 2026.06.05",
-      "link": "https://androphil.tistory.com/894",
-      "pubDate": "2026-06-07T11:55:32+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "ai규제",
-        "AI뉴스",
-        "chatgpt메모리",
-        "claudecode",
-        "DreamingV3",
-        "Gemini",
-        "OpenAI",
-        "바이오보안",
-        "합성DNA"
-      ],
-      "excerpt": "AI 수장 4인이 한목소리로 경고했다. Altman·Amodei·Suleyman·Pichai가 의회에 합성 DNA 규제를 촉구했고, OpenAI는 ChatGPT 메모리를 전면 재설계한 Dreaming V3를 배포했으며, EU는 최초로 GPT-5.5 사이버보안 모델을 받았다. 어제의 흐름: 2026.06.04 — 미국 연방 AI 법안 초안 공개, 백악관 AI 행정명령 서명, NVIDIA RTX Spark·Vera 발표 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 개발자를 위한 Action Item Claude 소식 오늘의 "
     }
   ]
 }
