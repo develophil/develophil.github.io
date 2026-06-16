@@ -1,17 +1,16 @@
 {
-  "fetchedAt": "2026-06-15T20:56:21.618377+00:00",
+  "fetchedAt": "2026-06-16T04:18:20.010511+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
       "Dev/AI": 10
     },
     "tagCount": {
-      "AI뉴스": 8,
-      "개발자": 6,
-      "anthropic": 4,
+      "AI뉴스": 7,
+      "개발자": 5,
+      "anthropic": 3,
       "ClaudeFable5": 2,
       "XAI": 2,
-      "claudecode": 2,
       "ai법적책임": 1,
       "OpenAI Academy": 1,
       "Perplexity멀티에이전트": 1,
@@ -30,21 +29,26 @@
       "GeminiSiri": 1,
       "ios27": 1,
       "ai인프라": 1,
+      "claudecode": 1,
       "google": 1,
       "grok": 1,
       "IPO": 1,
       "OpenClaw": 1,
-      "SpaceX": 1,
-      "AI보안": 1,
-      "ProjectGlasswing": 1,
-      "연방AI규제": 1,
-      "온디바이스AI": 1
+      "SpaceX": 1
     },
     "monthlyCount": {
       "2026-06": 10
     }
   },
   "posts": [
+    {
+      "title": "Anthropic 규제 파문 2라운드 &mdash; '재킬브레이크 아닌 정치 충돌' 내막 + Meta AI Mode 출시 | AI 뉴스 2026-06-16",
+      "link": "https://androphil.tistory.com/906",
+      "pubDate": "2026-06-16T07:38:05+09:00",
+      "category": "Dev/AI",
+      "tags": [],
+      "excerpt": "오늘의 AI 시그널 트럼프 행정부의 Fable 5·Mythos 5 접근 금지가 &#39;기술적 보안 위협&#39;이 아닌 &#39;성격 충돌(personality differences)&#39;에서 비롯됐다는 내막이 드러났다. 사이버보안 전문가들은 &quot;이 조치가 미국 사이버 방어를 오히려 해친다&quot;며 집단 항의에 나섰다. 한편 Meta는 Facebook에 AI Mode를 전면 출시하며 공개 게시글 기반 검색 시대를 열었고, Salesforce는 AI 에이전트 전쟁에 $36억 베팅을 선언했다. 메인 뉴스 1. &quot"
+    },
     {
       "title": "[2026.06.15] AI 지정학 전선 &mdash; 중국 Mythos 접근 의혹&middot;메타 Manus 철수&middot;AI IPO 대기줄",
       "link": "https://androphil.tistory.com/905",
@@ -166,23 +170,6 @@
         "XAI"
       ],
       "excerpt": "AI 경쟁사들이 경쟁자의 인프라를 임대하기 시작했다. Anthropic은 xAI Colossus에 월 $1.25B, Google은 월 $920M을 지불한다. SpaceX는 이 매출을 앞세워 6월 12일 나스닥 상장을 앞두고 있다. AI 시대의 인프라 경제학이 완전히 새로 쓰이고 있다. 어제의 흐름: 2026.06.06 — Claude Code v2.1.166 폴백 모델·보안 강화, Project Glasswing 15개국 150개 기관 확대, 연방 AI법 소비자 보호 논란 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 개발"
-    },
-    {
-      "title": "[AI 트렌드] 2026.06.06",
-      "link": "https://androphil.tistory.com/895",
-      "pubDate": "2026-06-07T11:56:11+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "AI보안",
-        "anthropic",
-        "claudecode",
-        "ProjectGlasswing",
-        "개발자",
-        "연방AI규제",
-        "온디바이스AI"
-      ],
-      "excerpt": "Claude Code v2.1.166이 폴백 모델 설정·보안 강화와 함께 배포됐고, Project Glasswing이 15개국 150개 신규 기관으로 확대됐다. 연방 AI 법안 논란은 소비자·노동 단체의 전면 반발로 격화됐다. 어제의 흐름: 2026.06.05 — AI CEO 합성 DNA 규제 공동 서한, ChatGPT Dreaming V3 배포, Gemini 3.5 Flash GA 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 개발자를 위한 Action Item Claude 소식 오늘의 시그널 Claude Code가 프로"
     }
   ]
 }
