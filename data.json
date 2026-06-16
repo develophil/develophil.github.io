@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-16T04:18:20.010511+00:00",
+  "fetchedAt": "2026-06-16T11:12:07.453793+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -7,15 +7,17 @@
     },
     "tagCount": {
       "AI뉴스": 7,
-      "개발자": 5,
+      "개발자": 6,
       "anthropic": 3,
+      "AI에이전트": 2,
       "ClaudeFable5": 2,
-      "XAI": 2,
+      "MetaAIMode": 1,
+      "salesforce": 1,
+      "수출통제": 1,
       "ai법적책임": 1,
       "OpenAI Academy": 1,
       "Perplexity멀티에이전트": 1,
       "월드모델": 1,
-      "AI에이전트": 1,
       "OpenAI": 1,
       "ClaudeOpus4.6": 1,
       "DiffusionGemma": 1,
@@ -24,17 +26,11 @@
       "삼성AX": 1,
       "apple intelligence": 1,
       "OpenAI IPO": 1,
+      "XAI": 1,
       "Xiaomi MiMo": 1,
       "AppleWWDC": 1,
       "GeminiSiri": 1,
-      "ios27": 1,
-      "ai인프라": 1,
-      "claudecode": 1,
-      "google": 1,
-      "grok": 1,
-      "IPO": 1,
-      "OpenClaw": 1,
-      "SpaceX": 1
+      "ios27": 1
     },
     "monthlyCount": {
       "2026-06": 10
@@ -42,12 +38,28 @@
   },
   "posts": [
     {
-      "title": "Anthropic 규제 파문 2라운드 &mdash; '재킬브레이크 아닌 정치 충돌' 내막 + Meta AI Mode 출시 | AI 뉴스 2026-06-16",
+      "title": "[AI 트렌드] 2026.06.16",
+      "link": "https://androphil.tistory.com/907",
+      "pubDate": "2026-06-16T13:31:40+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "AI에이전트",
+        "anthropic",
+        "MetaAIMode",
+        "salesforce",
+        "개발자",
+        "수출통제"
+      ],
+      "excerpt": "어제의 흐름: 2026.06.15 — 중국이 Anthropic Mythos 5에 접근했다는 의혹이 부상한 가운데 백악관은 침묵했고, 메타는 베이징의 압박 속 $20억 Manus 딜을 철회했다. SpaceX IPO 흥행에 AI 스타트업들이 상장 행렬에 줄을 섰다. 미 상무부의 Fable 5·Mythos 5 접근 금지가 보안 위협이 아닌 &#39;정치적 충돌&#39;에서 비롯됐다는 내막이 드러나며 사이버보안 전문가들이 집단 항의에 나섰다. 한편 Meta는 Facebook에 &#39;AI Mode&#39;를 전면 출시해 공개 게시글 기반"
+    },
+    {
+      "title": "[AI 트렌드] 2026.06.16",
       "link": "https://androphil.tistory.com/906",
       "pubDate": "2026-06-16T07:38:05+09:00",
       "category": "Dev/AI",
       "tags": [],
-      "excerpt": "오늘의 AI 시그널 트럼프 행정부의 Fable 5·Mythos 5 접근 금지가 &#39;기술적 보안 위협&#39;이 아닌 &#39;성격 충돌(personality differences)&#39;에서 비롯됐다는 내막이 드러났다. 사이버보안 전문가들은 &quot;이 조치가 미국 사이버 방어를 오히려 해친다&quot;며 집단 항의에 나섰다. 한편 Meta는 Facebook에 AI Mode를 전면 출시하며 공개 게시글 기반 검색 시대를 열었고, Salesforce는 AI 에이전트 전쟁에 $36억 베팅을 선언했다. 메인 뉴스 1. &quot"
+      "excerpt": "어제의 흐름: 2026.06.15 — 중국이 Anthropic Mythos 5에 접근했다는 의혹이 부상한 가운데 백악관은 침묵했고, 메타는 베이징의 압박 속 $20억 Manus 딜을 철회했다. SpaceX IPO 흥행에 AI 스타트업들이 상장 행렬에 줄을 섰다. 미 상무부의 Fable 5·Mythos 5 접근 금지가 보안 위협이 아닌 &#39;정치적 충돌&#39;에서 비롯됐다는 내막이 드러나며 사이버보안 전문가들이 집단 항의에 나섰다. 한편 Meta는 Facebook에 &#39;AI Mode&#39;를 전면 출시해 공개 게시글 기반"
     },
     {
       "title": "[2026.06.15] AI 지정학 전선 &mdash; 중국 Mythos 접근 의혹&middot;메타 Manus 철수&middot;AI IPO 대기줄",
@@ -151,25 +163,6 @@
         "개발자"
       ],
       "excerpt": "어제의 흐름: 2026.06.07 — AI 경쟁사들이 경쟁자의 인프라를 임대하기 시작했다. Anthropic은 xAI Colossus에 월 $1.25B, Google은 월 $920M을 지불한다. SpaceX는 이 매출을 앞세워 6월 12일 나스닥 상장을 Apple WWDC에서 Gemini 기반 Siri가 공개되며 iOS 27과 함께 멀티 AI 플랫폼 시대가 열렸다. Anthropic은 $47B 매출과 함께 자사 AI가 곧 통제 불능 수준에 도달할 수 있다는 경고를 발표하는 이중적 행보를 보였다. 목차 오늘의 핵심 오늘의 시그널 뉴스"
-    },
-    {
-      "title": "[AI 트렌드] 2026.06.07",
-      "link": "https://androphil.tistory.com/896",
-      "pubDate": "2026-06-07T12:20:26+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "ai인프라",
-        "anthropic",
-        "claudecode",
-        "google",
-        "grok",
-        "IPO",
-        "OpenClaw",
-        "SpaceX",
-        "XAI"
-      ],
-      "excerpt": "AI 경쟁사들이 경쟁자의 인프라를 임대하기 시작했다. Anthropic은 xAI Colossus에 월 $1.25B, Google은 월 $920M을 지불한다. SpaceX는 이 매출을 앞세워 6월 12일 나스닥 상장을 앞두고 있다. AI 시대의 인프라 경제학이 완전히 새로 쓰이고 있다. 어제의 흐름: 2026.06.06 — Claude Code v2.1.166 폴백 모델·보안 강화, Project Glasswing 15개국 150개 기관 확대, 연방 AI법 소비자 보호 논란 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 개발"
     }
   ]
 }
