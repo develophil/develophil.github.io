@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-17T20:13:18.955339+00:00",
+  "fetchedAt": "2026-06-18T04:06:08.083378+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -7,10 +7,16 @@
     },
     "tagCount": {
       "AI뉴스": 6,
-      "개발자": 5,
+      "개발자": 4,
       "anthropic": 3,
       "AI에이전트": 2,
       "ClaudeFable5": 2,
+      "ai수출규제": 1,
+      "Anthropic서울": 1,
+      "Claude코드": 1,
+      "NVIDIA로봇": 1,
+      "OpenAI화학자": 1,
+      "한국AI": 1,
       "AI트렌드": 1,
       "ChatGPT점유율": 1,
       "claude": 1,
@@ -30,17 +36,29 @@
       "DiffusionGemma": 1,
       "GPT-5.3-Codex": 1,
       "공급망보안": 1,
-      "삼성AX": 1,
-      "apple intelligence": 1,
-      "OpenAI IPO": 1,
-      "XAI": 1,
-      "Xiaomi MiMo": 1
+      "삼성AX": 1
     },
     "monthlyCount": {
       "2026-06": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.06.18",
+      "link": "https://androphil.tistory.com/909",
+      "pubDate": "2026-06-18T07:39:52+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "ai수출규제",
+        "Anthropic서울",
+        "Claude코드",
+        "NVIDIA로봇",
+        "OpenAI화학자",
+        "한국AI"
+      ],
+      "excerpt": "어제의 흐름: 2026.06.17 — SpaceX가 AI 코딩 플랫폼 Cursor를 600억 달러에 인수하며 AI 개발 도구 전쟁이 새 국면으로 진입 Anthropic이 서울 사무소를 공식 개소하며 삼성SDS·LG CNS·NAVER 등과 대규모 Claude 파트너십을 동시에 발표했다. 한편 OpenAI의 AI 화학자는 실험실에서 의약품 반응을 실제로 개선하는 데 성공했고, NVIDIA는 AI 코딩 에이전트가 밤새 로봇을 자율 훈련시키는 시스템을 공개했다. AI가 가상 공간을 넘어 실험실과 물리 세계로 깊숙이 침투하는 한 주다. 목차"
+    },
     {
       "title": "[AI 트렌드] 2026.06.17",
       "link": "https://androphil.tistory.com/908",
@@ -154,21 +172,6 @@
         "삼성AX"
       ],
       "excerpt": "어제의 흐름: 2026.06.09 — Apple이 Google Gemini 기반으로 Apple Intelligence를 전면 재설계 했고, OpenAI는 IPO 시계를 공식화하는 S-1 초안을 SEC에 제출했다 Anthropic이 역대 최강 Claude Fable 5를 공개했다. 동시에 경쟁 LLM 개발 차단을 위한 숨겨진 safeguard가 개발자 공급망 신뢰에 새로운 균열을 냈다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 다음 주 캘린더 커뮤니티 핫토픽 개발자 심화 개발자를 위한 Action Item Claude "
-    },
-    {
-      "title": "[AI 트렌드] 2026.06.09",
-      "link": "https://androphil.tistory.com/898",
-      "pubDate": "2026-06-09T07:39:20+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "apple intelligence",
-        "OpenAI IPO",
-        "XAI",
-        "Xiaomi MiMo",
-        "개발자"
-      ],
-      "excerpt": "어제의 흐름: 2026.06.08 — Apple WWDC에서 Gemini 기반 Siri 가 공개되며 iOS 27과 함께 멀티 AI 플랫폼 시대가 열렸다. Anthropic은 $47B 매출과 함께 자사 AI가 곧 통제 불능 수준에 도달할 수 있다는 경고를 Apple이 Google Gemini 기반으로 Apple Intelligence를 전면 재설계했고, OpenAI는 IPO 시계를 공식화하는 S-1 초안을 SEC에 제출했다. xAI는 Anthropic·Google에 월 $2.17B 컴퓨트를 공급하며 AI 인프라 임대업체로 변모 중이고"
     }
   ]
 }
