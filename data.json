@@ -1,16 +1,22 @@
 {
-  "fetchedAt": "2026-06-18T20:27:09.738496+00:00",
+  "fetchedAt": "2026-06-19T04:24:47.083450+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
       "Dev/AI": 10
     },
     "tagCount": {
-      "AI뉴스": 6,
+      "AI뉴스": 7,
+      "anthropic": 4,
       "개발자": 4,
-      "anthropic": 3,
       "AI에이전트": 2,
       "ClaudeFable5": 2,
+      "Adobe크리에이티브AI": 1,
+      "ai규제": 1,
+      "Fable수출통제": 1,
+      "FERC데이터센터": 1,
+      "GoogleAMIE": 1,
+      "의료AI": 1,
       "ai수출규제": 1,
       "Anthropic서울": 1,
       "Claude코드": 1,
@@ -44,7 +50,24 @@
   },
   "posts": [
     {
-      "title": "[AI 트렌드] 2026.06.18",
+      "title": "[AI 트렌드] 2026.06.19 - Anthropic Fable, AI 역사상 첫 수출 통제 대상으로 전례 없는 규제 국면",
+      "link": "https://androphil.tistory.com/910",
+      "pubDate": "2026-06-19T07:39:58+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "Adobe크리에이티브AI",
+        "ai규제",
+        "AI뉴스",
+        "anthropic",
+        "Fable수출통제",
+        "FERC데이터센터",
+        "GoogleAMIE",
+        "의료AI"
+      ],
+      "excerpt": "어제의 흐름: 2026.06.18 — Anthropic 서울 사무소 개소, 삼성SDS·LG CNS·NAVER와 대규모 Claude 파트너십 체결 트럼프 행정부가 Fable 5·Mythos 5에 수출 통제를 걸어 전면 차단한 지 일주일, 이번엔 전문가들이 &quot;이런 식으로 AI 모델에 수출 규제를 적용한 건 전례가 없다&quot;는 심층 분석을 내놨다. 같은 날 구글은 만성질환 관리 AI &#39;AMIE&#39;가 전문의 수준을 달성했다는 Nature 논문을 공개했고, Adobe는 Photoshop·Premiere 등 전 Cr"
+    },
+    {
+      "title": "[AI 트렌드] 2026.06.18 - Anthropic 서울 사무소 개소, 삼성SDS&middot;LG CNS&middot;NAVER와 Claude 파트너십",
       "link": "https://androphil.tistory.com/909",
       "pubDate": "2026-06-18T07:39:52+09:00",
       "category": "Dev/AI",
@@ -60,7 +83,7 @@
       "excerpt": "어제의 흐름: 2026.06.17 — SpaceX가 AI 코딩 플랫폼 Cursor를 600억 달러에 인수하며 AI 개발 도구 전쟁이 새 국면으로 진입 Anthropic이 서울 사무소를 공식 개소하며 삼성SDS·LG CNS·NAVER 등과 대규모 Claude 파트너십을 동시에 발표했다. 한편 OpenAI의 AI 화학자는 실험실에서 의약품 반응을 실제로 개선하는 데 성공했고, NVIDIA는 AI 코딩 에이전트가 밤새 로봇을 자율 훈련시키는 시스템을 공개했다. AI가 가상 공간을 넘어 실험실과 물리 세계로 깊숙이 침투하는 한 주다. 목차"
     },
     {
-      "title": "[AI 트렌드] 2026.06.17",
+      "title": "[AI 트렌드] 2026.06.17 - SpaceX, AI 코딩 플랫폼 Cursor 600억 달러에 인수",
       "link": "https://androphil.tistory.com/908",
       "pubDate": "2026-06-17T07:37:18+09:00",
       "category": "Dev/AI",
@@ -77,7 +100,7 @@
       "excerpt": "어제의 흐름: 2026.06.16 — 미 상무부 Fable 5·Mythos 5 수출 금지의 진짜 배경이 &#39;정치적 충돌&#39;이었다는 내막이 공개되었고, Meta가 Facebook에 AI Mode를 출시했다 SpaceX가 AI 코딩 플랫폼 Cursor를 600억 달러(약 83조 원)에 인수하며 AI 개발 도구 전쟁이 새 국면으로 전환됐다. ChatGPT는 출시 이후 처음으로 시장 점유율 50% 미만을 기록했고, Anthropic은 Claude Agent SDK 토큰 과금 계획을 개발자 반발에 전격 철회했다. OpenAI 재무"
     },
     {
-      "title": "[AI 트렌드] 2026.06.16",
+      "title": "[AI 트렌드] 2026.06.16 - 美 상무부의 Anthropic 모델 차단, 알고보니 '정치적 충돌'",
       "link": "https://androphil.tistory.com/907",
       "pubDate": "2026-06-16T13:31:40+09:00",
       "category": "Dev/AI",
@@ -93,15 +116,7 @@
       "excerpt": "어제의 흐름: 2026.06.15 — 중국이 Anthropic Mythos 5에 접근했다는 의혹이 부상한 가운데 백악관은 침묵했고, 메타는 베이징의 압박 속 $20억 Manus 딜을 철회했다. SpaceX IPO 흥행에 AI 스타트업들이 상장 행렬에 줄을 섰다. 미 상무부의 Fable 5·Mythos 5 접근 금지가 보안 위협이 아닌 &#39;정치적 충돌&#39;에서 비롯됐다는 내막이 드러나며 사이버보안 전문가들이 집단 항의에 나섰다. 한편 Meta는 Facebook에 &#39;AI Mode&#39;를 전면 출시해 공개 게시글 기반"
     },
     {
-      "title": "[AI 트렌드] 2026.06.16",
-      "link": "https://androphil.tistory.com/906",
-      "pubDate": "2026-06-16T07:38:05+09:00",
-      "category": "Dev/AI",
-      "tags": [],
-      "excerpt": "어제의 흐름: 2026.06.15 — 중국이 Anthropic Mythos 5에 접근했다는 의혹이 부상한 가운데 백악관은 침묵했고, 메타는 베이징의 압박 속 $20억 Manus 딜을 철회했다. SpaceX IPO 흥행에 AI 스타트업들이 상장 행렬에 줄을 섰다. 미 상무부의 Fable 5·Mythos 5 접근 금지가 보안 위협이 아닌 &#39;정치적 충돌&#39;에서 비롯됐다는 내막이 드러나며 사이버보안 전문가들이 집단 항의에 나섰다. 한편 Meta는 Facebook에 &#39;AI Mode&#39;를 전면 출시해 공개 게시글 기반"
-    },
-    {
-      "title": "[2026.06.15] AI 지정학 전선 &mdash; 중국 Mythos 접근 의혹&middot;메타 Manus 철수&middot;AI IPO 대기줄",
+      "title": "[AI 트렌드] 2026.06.15 - 중국 Mythos 접근 의혹&middot;메타 Manus 철수&middot;AI IPO 대기줄",
       "link": "https://androphil.tistory.com/905",
       "pubDate": "2026-06-15T07:36:55+09:00",
       "category": "Dev/AI",
@@ -109,7 +124,7 @@
       "excerpt": "오늘의 시그널 AI 패권 경쟁이 코드 밖으로 나왔다. 중국이 Mythos 5에 접근했다는 의혹이 부상하고, 베이징의 명령 한 마디에 메타는 $20억 딜을 철회했다. 반면 SpaceX IPO가 역사를 새로 쓰자 AI 스타트업들은 상장 행렬에 줄을 서기 시작했다. 전선은 모델 성능에서 지정학으로 이동 중이다. 메인 뉴스 1. 중국, Mythos 5 접근했나 — 백악관 침묵 속 의혹 확산 The Verge가 보도한 바에 따르면, 중국과 연관된 그룹이 Anthropic의 Mythos 5 모델에 접근했을 가능성이 있다. 이것이 사실이라면 심"
     },
     {
-      "title": "[AI 트렌드] 2026.06.14",
+      "title": "[AI 트렌드] 2026.06.14 - 아마존 CEO, 美 정부에 Fable 5 보안 우려 제보가 차단 발단",
       "link": "https://androphil.tistory.com/904",
       "pubDate": "2026-06-14T07:38:44+09:00",
       "category": "Dev/AI",
@@ -117,7 +132,7 @@
       "excerpt": "어제의 흐름: 2026.06.13 — Anthropic이 Trump 행정명령에 따라 Fable 5·Mythos 5의 외국인 접근을 전면 차단했다. SpaceX는 IPO 첫날 20% 급등했고, 중국 Moonshot AI가 Kimi K2.7-Code를 오픈소스로 공개했다. 아마존 CEO Andy Jassy가 미국 정부에 Fable 5 보안 우려를 제보한 것이 차단 명령의 발단으로 밝혀졌다. KPMG는 AI 환각으로 오염된 보고서를 전면 철회했고, 다수의 미국 주 검찰총장이 OpenAI 수사에 착수했다. AI 거버넌스의 세 균열 — 국가"
     },
     {
-      "title": "[AI 트렌드] 2026.06.13",
+      "title": "[AI 트렌드] 2026.06.13 - Anthropic, Trump 행정명령으로 Fable 5&middot;Mythos 5 외국인 접근 차단",
       "link": "https://androphil.tistory.com/903",
       "pubDate": "2026-06-13T07:39:01+09:00",
       "category": "Dev/AI",
@@ -131,7 +146,7 @@
       "excerpt": "어제의 흐름: 2026.06.12 — OpenAI Academy가 기업 AI 역량 내재화 플랫폼으로 공식 출범했고, Perplexity는 20개 이상 AI 모델을 단일 워크플로우로 묶어 BrowseComp 성능을 2배 이상 향상시켰다. Anthropic이 Trump 행정명령에 따라 Fable 5·Mythos 5의 외국인 접근을 전면 차단했다. SpaceX는 IPO 첫날 20% 급등하며 Musk를 세계 최초 조만장자로 만들었고, 중국 Moonshot AI는 토큰 효율 30% 절감한 코딩 모델 Kimi K2.7-Code를 오픈소스로 풀"
     },
     {
-      "title": "[AI 트렌드] 2026.06.12",
+      "title": "[AI 트렌드] 2026.06.12 - OpenAI, Ona 인수로 Codex 영구 클라우드 에이전트화",
       "link": "https://androphil.tistory.com/902",
       "pubDate": "2026-06-12T07:38:28+09:00",
       "category": "Dev/AI",
@@ -146,7 +161,7 @@
       "excerpt": "어제의 흐름: 2026.06.11 — Google이 DiffusionGemma로 텍스트 생성 4배 가속을 오픈소스 공개한 가운데, Amazon이 추가로 $17.5B를 차입하며 AI 인프라 군비 경쟁이 새 국면을 맞았다. OpenAI가 Ona를 인수해 Codex를 영구 클라우드 에이전트로 진화시켰고, Anthropic은 $150M 규모 Claude Corps 펠로우십을 출범시켜 AI 수익의 사회 환원 모델을 제시했다. Claude Fable 5의 &#39;보이지 않는 가드레일&#39; 논란에 Anthropic이 공식 사과했고, Spa"
     },
     {
-      "title": "[AI 트렌드] 2026.06.11",
+      "title": "[AI 트렌드] 2026.06.11 - Google DeepMind, DiffusionGemma 오픈소스 공개 (텍스트 생성 4배 가속)",
       "link": "https://androphil.tistory.com/901",
       "pubDate": "2026-06-11T07:39:58+09:00",
       "category": "Dev/AI",
@@ -160,7 +175,7 @@
       "excerpt": "어제의 흐름: 2026.06.10 — Anthropic이 역대 최강 Claude Fable 5 를 공개했다. 동시에 경쟁 LLM 개발 차단을 위한 숨겨진 safeguard가 개발자 공급망 신뢰에 새로운 균열을 냈다. Google이 DiffusionGemma로 텍스트 생성 4배 가속을 오픈소스 공개한 가운데, Amazon이 추가로 $17.5B를 차입하며 AI 인프라 군비 경쟁이 새 국면을 맞았다. xAI Grok 안전 소송과 독일 Google AI Overviews 책임 판결은 AI 거버넌스 리스크를 동시에 끌어올렸다. 목차 오늘의 "
     },
     {
-      "title": "[AI 트렌드] 2026.06.10",
+      "title": "[AI 트렌드] 2026.06.10 - Anthropic, 역대 최강 Claude Fable 5 공개",
       "link": "https://androphil.tistory.com/900",
       "pubDate": "2026-06-10T07:40:58+09:00",
       "category": "Dev/AI",
