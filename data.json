@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-19T19:50:38.487676+00:00",
+  "fetchedAt": "2026-06-20T03:49:34.733120+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -8,9 +8,15 @@
     "tagCount": {
       "AI뉴스": 7,
       "anthropic": 4,
-      "개발자": 4,
+      "개발자": 3,
+      "OpenAI": 2,
       "AI에이전트": 2,
-      "ClaudeFable5": 2,
+      "Amazon Trainium": 1,
+      "Barret Zoph": 1,
+      "Claude Code 아티팩트": 1,
+      "FERC 데이터센터": 1,
+      "어도비AI": 1,
+      "엔비디아": 1,
       "Adobe크리에이티브AI": 1,
       "ai규제": 1,
       "Fable수출통제": 1,
@@ -37,18 +43,33 @@
       "OpenAI Academy": 1,
       "Perplexity멀티에이전트": 1,
       "월드모델": 1,
-      "OpenAI": 1,
+      "ClaudeFable5": 1,
       "ClaudeOpus4.6": 1,
       "DiffusionGemma": 1,
-      "GPT-5.3-Codex": 1,
-      "공급망보안": 1,
-      "삼성AX": 1
+      "GPT-5.3-Codex": 1
     },
     "monthlyCount": {
       "2026-06": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.06.20 - OpenAI IPO 앞두고 핵심 임원 Barret Zoph 5개월 만에 재이탈",
+      "link": "https://androphil.tistory.com/911",
+      "pubDate": "2026-06-20T07:39:33+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "Amazon Trainium",
+        "Barret Zoph",
+        "Claude Code 아티팩트",
+        "FERC 데이터센터",
+        "OpenAI",
+        "어도비AI",
+        "엔비디아"
+      ],
+      "excerpt": "어제의 흐름: 2026.06.19 — 트럼프 행정부 Fable 5·Mythos 5 수출 통제 1주일, 전문가들 &quot;AI 모델에 수출 규제 적용은 전례 없다&quot; 심층 분석 오늘은 AI 인프라 전쟁이 칩과 전력망 두 축에서 동시에 움직인 날이다. Amazon이 Trainium 칩 외부 판매를 공식화해 Nvidia 독주 체제에 정면 도전장을 냈고, 미국 FERC는 AI 데이터센터에 전력망 패스트레인을 부여했다. 한편 OpenAI는 IPO를 앞두고 엔터프라이즈 수장 Barret Zoph가 5개월 만에 또다시 퇴사하며 조직 안"
+    },
     {
       "title": "[AI 트렌드] 2026.06.19 - Anthropic Fable, AI 역사상 첫 수출 통제 대상으로 전례 없는 규제 국면",
       "link": "https://androphil.tistory.com/910",
@@ -173,20 +194,6 @@
         "개발자"
       ],
       "excerpt": "어제의 흐름: 2026.06.10 — Anthropic이 역대 최강 Claude Fable 5 를 공개했다. 동시에 경쟁 LLM 개발 차단을 위한 숨겨진 safeguard가 개발자 공급망 신뢰에 새로운 균열을 냈다. Google이 DiffusionGemma로 텍스트 생성 4배 가속을 오픈소스 공개한 가운데, Amazon이 추가로 $17.5B를 차입하며 AI 인프라 군비 경쟁이 새 국면을 맞았다. xAI Grok 안전 소송과 독일 Google AI Overviews 책임 판결은 AI 거버넌스 리스크를 동시에 끌어올렸다. 목차 오늘의 "
-    },
-    {
-      "title": "[AI 트렌드] 2026.06.10 - Anthropic, 역대 최강 Claude Fable 5 공개",
-      "link": "https://androphil.tistory.com/900",
-      "pubDate": "2026-06-10T07:40:58+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "ClaudeFable5",
-        "개발자",
-        "공급망보안",
-        "삼성AX"
-      ],
-      "excerpt": "어제의 흐름: 2026.06.09 — Apple이 Google Gemini 기반으로 Apple Intelligence를 전면 재설계 했고, OpenAI는 IPO 시계를 공식화하는 S-1 초안을 SEC에 제출했다 Anthropic이 역대 최강 Claude Fable 5를 공개했다. 동시에 경쟁 LLM 개발 차단을 위한 숨겨진 safeguard가 개발자 공급망 신뢰에 새로운 균열을 냈다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 다음 주 캘린더 커뮤니티 핫토픽 개발자 심화 개발자를 위한 Action Item Claude "
     }
   ]
 }
