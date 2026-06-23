@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-23T14:51:04.548887+00:00",
+  "fetchedAt": "2026-06-23T20:07:11.660394+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -8,13 +8,31 @@
     "tagCount": {
       "AI뉴스": 7,
       "anthropic": 4,
-      "개발자": 3,
-      "OpenAI": 2,
-      "AI에이전트": 2,
+      "OpenAI Daybreak": 2,
+      "Oracle감원": 2,
+      "fiveeyes": 1,
+      "NAVER NVIDIA": 1,
+      "사이버보안": 1,
+      "에이전트AI보안": 1,
+      "지푸AI": 1,
+      "A24": 1,
+      "AI에이전트루프": 1,
+      "googledeepmind": 1,
+      "GPT-5.5-Cyber": 1,
+      "Groq": 1,
+      "삼성ChatGPT": 1,
+      "영화AI": 1,
+      "apple": 1,
+      "ChatGPT시장점유율": 1,
+      "Fable5": 1,
+      "ios27": 1,
+      "siriai": 1,
+      "Trump수출통제": 1,
       "Amazon Trainium": 1,
       "Barret Zoph": 1,
       "Claude Code 아티팩트": 1,
       "FERC 데이터센터": 1,
+      "OpenAI": 1,
       "어도비AI": 1,
       "엔비디아": 1,
       "Adobe크리에이티브AI": 1,
@@ -36,23 +54,67 @@
       "OpenAI재무": 1,
       "SpaceX": 1,
       "엔비디아추론칩": 1,
-      "MetaAIMode": 1,
-      "salesforce": 1,
-      "수출통제": 1,
-      "ai법적책임": 1,
-      "OpenAI Academy": 1,
-      "Perplexity멀티에이전트": 1,
-      "월드모델": 1,
-      "ClaudeFable5": 1,
-      "ClaudeOpus4.6": 1,
-      "DiffusionGemma": 1,
-      "GPT-5.3-Codex": 1
+      "AI에이전트": 1,
+      "MetaAIMode": 1
     },
     "monthlyCount": {
       "2026-06": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.06.23 - Five Eyes &quot;에이전트 AI, 수개월 내 사이버 공격 폭발&quot; &mdash; 5개국 공동 경고",
+      "link": "https://androphil.tistory.com/915",
+      "pubDate": "2026-06-24T00:37:52+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "fiveeyes",
+        "NAVER NVIDIA",
+        "OpenAI Daybreak",
+        "Oracle감원",
+        "사이버보안",
+        "에이전트AI보안",
+        "지푸AI"
+      ],
+      "excerpt": "어제의 흐름: 2026.06.22 — Google DeepMind, A24에 750억 투자 — AI가 영화 제작 현장에 들어간다 오늘은 AI 보안과 고용 구조 재편이 동시에 가시화된 날이다. 미국·영국·캐나다·호주·뉴질랜드 Five Eyes 5개국이 &quot;에이전트 AI가 수개월 내 사이버 공격 능력을 폭발시킨다&quot;는 공동 경보를 발령했다. 같은 날 Oracle은 1년간 21,000명을 AI로 감원했음을 공식 인정했고, GitLab도 14% 감원 후 에이전트 워크플로 중심 재건을 선언했다. AI가 안보와 산업 두 축에서 "
+    },
+    {
+      "title": "[AI 트렌드] 2026.06.22 - Google DeepMind, A24에 750억 투자 &mdash; AI가 영화 제작 현장에 들어간다",
+      "link": "https://androphil.tistory.com/914",
+      "pubDate": "2026-06-24T00:29:50+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "A24",
+        "AI뉴스",
+        "AI에이전트루프",
+        "googledeepmind",
+        "GPT-5.5-Cyber",
+        "Groq",
+        "OpenAI Daybreak",
+        "Oracle감원",
+        "삼성ChatGPT",
+        "영화AI"
+      ],
+      "excerpt": "어제의 흐름: 2026.06.21 — iOS 27 AI 기능 공개 — Siri 다중 모델 지원·청구서 자동 분리까지 오늘은 AI가 할리우드 영화 현장에 공식 진입한 날이다. Google DeepMind가 인디 영화사 A24에 7,500만 달러를 투자하고 AI 영화 제작 도구를 공동 개발한다. OpenAI는 사이버보안 프로그램 Daybreak를 확장해 GPT-5.5-Cyber를 정식 출시하고 28개 보안 파트너사 에코시스템을 구축했다. Nvidia에게 창업자와 핵심 기술을 넘긴 AI 칩 스타트업 Groq는 6,500억 원을 새로 조달"
+    },
+    {
+      "title": "[AI 트렌드] 2026.06.21 - iOS 27 AI 기능 공개 &mdash; Siri 다중 모델 지원&middot;청구서 자동 분리까지",
+      "link": "https://androphil.tistory.com/913",
+      "pubDate": "2026-06-24T00:07:09+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "anthropic",
+        "apple",
+        "ChatGPT시장점유율",
+        "Fable5",
+        "ios27",
+        "siriai",
+        "Trump수출통제"
+      ],
+      "excerpt": "어제의 흐름: 2026.06.20 — OpenAI IPO 앞두고 핵심 임원 Barret Zoph 5개월 만에 재이탈 오늘은 Apple이 iOS 27에 담긴 AI 기능의 구체적인 모습을 공개한 날이다. Siri가 ChatGPT·Claude 등 서드파티 LLM과 직접 연동되는 &#39;Extensions&#39;가 핵심이며, 영수증 자동 분리부터 데이터 유출 시 비밀번호 즉시 교체까지 일상에 밀착된 AI 기능들이 공개됐다. 한편 Trump 행정부의 Anthropic 제재를 둘러싸고 &quot;누가 진짜 수혜자인가&quot;라는 시장 분"
+    },
     {
       "title": "[AI 트렌드] 2026.06.20 - OpenAI IPO 앞두고 핵심 임원 Barret Zoph 5개월 만에 재이탈",
       "link": "https://androphil.tistory.com/911",
@@ -151,49 +213,6 @@
       "category": "Dev/AI",
       "tags": [],
       "excerpt": "어제의 흐름: 2026.06.13 — Anthropic이 Trump 행정명령에 따라 Fable 5·Mythos 5의 외국인 접근을 전면 차단했다. SpaceX는 IPO 첫날 20% 급등했고, 중국 Moonshot AI가 Kimi K2.7-Code를 오픈소스로 공개했다. 아마존 CEO Andy Jassy가 미국 정부에 Fable 5 보안 우려를 제보한 것이 차단 명령의 발단으로 밝혀졌다. KPMG는 AI 환각으로 오염된 보고서를 전면 철회했고, 다수의 미국 주 검찰총장이 OpenAI 수사에 착수했다. AI 거버넌스의 세 균열 — 국가"
-    },
-    {
-      "title": "[AI 트렌드] 2026.06.13 - Anthropic, Trump 행정명령으로 Fable 5&middot;Mythos 5 외국인 접근 차단",
-      "link": "https://androphil.tistory.com/903",
-      "pubDate": "2026-06-13T07:39:01+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "ai법적책임",
-        "OpenAI Academy",
-        "Perplexity멀티에이전트",
-        "월드모델"
-      ],
-      "excerpt": "어제의 흐름: 2026.06.12 — OpenAI Academy가 기업 AI 역량 내재화 플랫폼으로 공식 출범했고, Perplexity는 20개 이상 AI 모델을 단일 워크플로우로 묶어 BrowseComp 성능을 2배 이상 향상시켰다. Anthropic이 Trump 행정명령에 따라 Fable 5·Mythos 5의 외국인 접근을 전면 차단했다. SpaceX는 IPO 첫날 20% 급등하며 Musk를 세계 최초 조만장자로 만들었고, 중국 Moonshot AI는 토큰 효율 30% 절감한 코딩 모델 Kimi K2.7-Code를 오픈소스로 풀"
-    },
-    {
-      "title": "[AI 트렌드] 2026.06.12 - OpenAI, Ona 인수로 Codex 영구 클라우드 에이전트화",
-      "link": "https://androphil.tistory.com/902",
-      "pubDate": "2026-06-12T07:38:28+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "AI에이전트",
-        "anthropic",
-        "ClaudeFable5",
-        "OpenAI",
-        "개발자"
-      ],
-      "excerpt": "어제의 흐름: 2026.06.11 — Google이 DiffusionGemma로 텍스트 생성 4배 가속을 오픈소스 공개한 가운데, Amazon이 추가로 $17.5B를 차입하며 AI 인프라 군비 경쟁이 새 국면을 맞았다. OpenAI가 Ona를 인수해 Codex를 영구 클라우드 에이전트로 진화시켰고, Anthropic은 $150M 규모 Claude Corps 펠로우십을 출범시켜 AI 수익의 사회 환원 모델을 제시했다. Claude Fable 5의 &#39;보이지 않는 가드레일&#39; 논란에 Anthropic이 공식 사과했고, Spa"
-    },
-    {
-      "title": "[AI 트렌드] 2026.06.11 - Google DeepMind, DiffusionGemma 오픈소스 공개 (텍스트 생성 4배 가속)",
-      "link": "https://androphil.tistory.com/901",
-      "pubDate": "2026-06-11T07:39:58+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "ClaudeOpus4.6",
-        "DiffusionGemma",
-        "GPT-5.3-Codex",
-        "개발자"
-      ],
-      "excerpt": "어제의 흐름: 2026.06.10 — Anthropic이 역대 최강 Claude Fable 5 를 공개했다. 동시에 경쟁 LLM 개발 차단을 위한 숨겨진 safeguard가 개발자 공급망 신뢰에 새로운 균열을 냈다. Google이 DiffusionGemma로 텍스트 생성 4배 가속을 오픈소스 공개한 가운데, Amazon이 추가로 $17.5B를 차입하며 AI 인프라 군비 경쟁이 새 국면을 맞았다. xAI Grok 안전 소송과 독일 Google AI Overviews 책임 판결은 AI 거버넌스 리스크를 동시에 끌어올렸다. 목차 오늘의 "
     }
   ]
 }
