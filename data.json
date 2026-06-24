@@ -1,15 +1,20 @@
 {
-  "fetchedAt": "2026-06-23T20:07:11.660394+00:00",
+  "fetchedAt": "2026-06-24T03:41:12.610984+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
       "Dev/AI": 10
     },
     "tagCount": {
-      "AI뉴스": 7,
-      "anthropic": 4,
+      "AI뉴스": 8,
+      "anthropic": 5,
+      "Oracle감원": 3,
+      "OpenAI": 2,
       "OpenAI Daybreak": 2,
-      "Oracle감원": 2,
+      "AI정치자금": 1,
+      "ClaudeTag": 1,
+      "Daybreak": 1,
+      "슈퍼PAC": 1,
       "fiveeyes": 1,
       "NAVER NVIDIA": 1,
       "사이버보안": 1,
@@ -32,7 +37,6 @@
       "Barret Zoph": 1,
       "Claude Code 아티팩트": 1,
       "FERC 데이터센터": 1,
-      "OpenAI": 1,
       "어도비AI": 1,
       "엔비디아": 1,
       "Adobe크리에이티브AI": 1,
@@ -51,17 +55,30 @@
       "ChatGPT점유율": 1,
       "claude": 1,
       "Cursor인수": 1,
-      "OpenAI재무": 1,
-      "SpaceX": 1,
-      "엔비디아추론칩": 1,
-      "AI에이전트": 1,
-      "MetaAIMode": 1
+      "OpenAI재무": 1
     },
     "monthlyCount": {
       "2026-06": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.06.24 - Anthropic, Slack 팀원으로 일하는 'Claude Tag' 출시",
+      "link": "https://androphil.tistory.com/916",
+      "pubDate": "2026-06-24T07:39:29+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "AI정치자금",
+        "anthropic",
+        "ClaudeTag",
+        "Daybreak",
+        "OpenAI",
+        "Oracle감원",
+        "슈퍼PAC"
+      ],
+      "excerpt": "어제의 흐름: 2026.06.23 — Five Eyes 5개국 AI 사이버 위협 경보 + AI 고용 구조 재편 가시화 Anthropic이 Claude를 Slack 채널에 팀원으로 합류시키는 &#39;Claude Tag&#39;를 출시했다. 이미 앤트로픽 제품팀 코드의 65%가 Claude Tag로 생성되고 있다. 같은 날 OpenAI는 오픈소스 생태계 보안을 AI로 자동화하는 &#39;Daybreak&#39; 프로그램을 확장했고, AI 기업들이 뉴욕 지역 하원 선거에 $2,700만을 쏟아부은 사실이 드러나며 AI 자본의 정치 개입이"
+    },
     {
       "title": "[AI 트렌드] 2026.06.23 - Five Eyes &quot;에이전트 AI, 수개월 내 사이버 공격 폭발&quot; &mdash; 5개국 공동 경고",
       "link": "https://androphil.tistory.com/915",
@@ -205,14 +222,6 @@
       "category": "Dev/AI",
       "tags": [],
       "excerpt": "오늘의 시그널 AI 패권 경쟁이 코드 밖으로 나왔다. 중국이 Mythos 5에 접근했다는 의혹이 부상하고, 베이징의 명령 한 마디에 메타는 $20억 딜을 철회했다. 반면 SpaceX IPO가 역사를 새로 쓰자 AI 스타트업들은 상장 행렬에 줄을 서기 시작했다. 전선은 모델 성능에서 지정학으로 이동 중이다. 메인 뉴스 1. 중국, Mythos 5 접근했나 — 백악관 침묵 속 의혹 확산 The Verge가 보도한 바에 따르면, 중국과 연관된 그룹이 Anthropic의 Mythos 5 모델에 접근했을 가능성이 있다. 이것이 사실이라면 심"
-    },
-    {
-      "title": "[AI 트렌드] 2026.06.14 - 아마존 CEO, 美 정부에 Fable 5 보안 우려 제보가 차단 발단",
-      "link": "https://androphil.tistory.com/904",
-      "pubDate": "2026-06-14T07:38:44+09:00",
-      "category": "Dev/AI",
-      "tags": [],
-      "excerpt": "어제의 흐름: 2026.06.13 — Anthropic이 Trump 행정명령에 따라 Fable 5·Mythos 5의 외국인 접근을 전면 차단했다. SpaceX는 IPO 첫날 20% 급등했고, 중국 Moonshot AI가 Kimi K2.7-Code를 오픈소스로 공개했다. 아마존 CEO Andy Jassy가 미국 정부에 Fable 5 보안 우려를 제보한 것이 차단 명령의 발단으로 밝혀졌다. KPMG는 AI 환각으로 오염된 보고서를 전면 철회했고, 다수의 미국 주 검찰총장이 OpenAI 수사에 착수했다. AI 거버넌스의 세 균열 — 국가"
     }
   ]
 }
