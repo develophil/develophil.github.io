@@ -1,16 +1,22 @@
 {
-  "fetchedAt": "2026-06-24T19:47:31.776535+00:00",
+  "fetchedAt": "2026-06-25T03:40:31.358893+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
       "Dev/AI": 10
     },
     "tagCount": {
-      "AI뉴스": 8,
+      "AI뉴스": 9,
       "anthropic": 5,
       "Oracle감원": 3,
       "OpenAI": 2,
       "OpenAI Daybreak": 2,
+      "AI토큰비용": 1,
+      "claudecode": 1,
+      "Gemini컴퓨터사용": 1,
+      "OpenAI할라피뇨": 1,
+      "딥시크에이전트": 1,
+      "엔지니어채용": 1,
       "AI정치자금": 1,
       "ClaudeTag": 1,
       "Daybreak": 1,
@@ -49,19 +55,29 @@
       "Anthropic서울": 1,
       "Claude코드": 1,
       "NVIDIA로봇": 1,
-      "OpenAI화학자": 1,
-      "한국AI": 1,
-      "AI트렌드": 1,
-      "ChatGPT점유율": 1,
-      "claude": 1,
-      "Cursor인수": 1,
-      "OpenAI재무": 1
+      "OpenAI화학자": 1
     },
     "monthlyCount": {
       "2026-06": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.06.25 - OpenAI, Broadcom과 손잡고 첫 자체 추론 칩 '할라피뇨' 공개",
+      "link": "https://androphil.tistory.com/917",
+      "pubDate": "2026-06-25T07:39:44+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "AI토큰비용",
+        "claudecode",
+        "Gemini컴퓨터사용",
+        "OpenAI할라피뇨",
+        "딥시크에이전트",
+        "엔지니어채용"
+      ],
+      "excerpt": "어제의 흐름: 2026.06.24 — Anthropic이 Claude를 Slack 채널에 팀원으로 합류시키는 &#39;Claude Tag&#39;를 출시했다. 오늘 AI 업계의 두 굵직한 뉴스가 동시에 터졌다. OpenAI가 Broadcom과 공동 개발한 추론 전용 칩 &#39;할라피뇨(Jalapeño)&#39;를 공개하며 NVIDIA 의존 탈피를 선언했고, Google DeepMind는 Gemini 3.5 Flash에 컴퓨터 사용 기능을 기본 탑재해 에이전트 개발 문턱을 낮췄다. 한편 &quot;AI가 엔지니어를 대체한다&quot"
+    },
     {
       "title": "[AI 트렌드] 2026.06.24 - Anthropic, Slack 팀원으로 일하는 'Claude Tag' 출시",
       "link": "https://androphil.tistory.com/916",
@@ -214,14 +230,6 @@
         "수출통제"
       ],
       "excerpt": "어제의 흐름: 2026.06.15 — 중국이 Anthropic Mythos 5에 접근했다는 의혹이 부상한 가운데 백악관은 침묵했고, 메타는 베이징의 압박 속 $20억 Manus 딜을 철회했다. SpaceX IPO 흥행에 AI 스타트업들이 상장 행렬에 줄을 섰다. 미 상무부의 Fable 5·Mythos 5 접근 금지가 보안 위협이 아닌 &#39;정치적 충돌&#39;에서 비롯됐다는 내막이 드러나며 사이버보안 전문가들이 집단 항의에 나섰다. 한편 Meta는 Facebook에 &#39;AI Mode&#39;를 전면 출시해 공개 게시글 기반"
-    },
-    {
-      "title": "[AI 트렌드] 2026.06.15 - 중국 Mythos 접근 의혹&middot;메타 Manus 철수&middot;AI IPO 대기줄",
-      "link": "https://androphil.tistory.com/905",
-      "pubDate": "2026-06-15T07:36:55+09:00",
-      "category": "Dev/AI",
-      "tags": [],
-      "excerpt": "오늘의 시그널 AI 패권 경쟁이 코드 밖으로 나왔다. 중국이 Mythos 5에 접근했다는 의혹이 부상하고, 베이징의 명령 한 마디에 메타는 $20억 딜을 철회했다. 반면 SpaceX IPO가 역사를 새로 쓰자 AI 스타트업들은 상장 행렬에 줄을 서기 시작했다. 전선은 모델 성능에서 지정학으로 이동 중이다. 메인 뉴스 1. 중국, Mythos 5 접근했나 — 백악관 침묵 속 의혹 확산 The Verge가 보도한 바에 따르면, 중국과 연관된 그룹이 Anthropic의 Mythos 5 모델에 접근했을 가능성이 있다. 이것이 사실이라면 심"
     }
   ]
 }
