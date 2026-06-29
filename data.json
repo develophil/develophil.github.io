@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-28T19:21:43.892435+00:00",
+  "fetchedAt": "2026-06-29T04:02:56.245034+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -7,16 +7,23 @@
     },
     "tagCount": {
       "AI뉴스": 10,
-      "anthropic": 6,
+      "anthropic": 5,
       "OpenAI": 5,
       "Oracle감원": 3,
-      "ai규제": 2,
       "OpenAI Daybreak": 2,
+      "ChatGPT법적증거": 1,
+      "MAI코드플래시": 1,
+      "Mythos수출통제": 1,
+      "Z.aiGLM52": 1,
+      "딥시크DSpark": 1,
+      "아시아AI스타트업": 1,
+      "포드AI한계": 1,
       "AI수출통제": 1,
       "ai하드웨어": 1,
       "ClaudeCorps": 1,
       "Mythos5": 1,
       "NYT저작권소송": 1,
+      "ai규제": 1,
       "GPT-5.6": 1,
       "네이버AI탭": 1,
       "벤치마크신뢰성": 1,
@@ -48,20 +55,30 @@
       "googledeepmind": 1,
       "GPT-5.5-Cyber": 1,
       "Groq": 1,
-      "삼성ChatGPT": 1,
-      "영화AI": 1,
-      "apple": 1,
-      "ChatGPT시장점유율": 1,
-      "Fable5": 1,
-      "ios27": 1,
-      "siriai": 1,
-      "Trump수출통제": 1
+      "삼성ChatGPT": 1
     },
     "monthlyCount": {
       "2026-06": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.06.29 - 중국 Z.ai, 오픈소스로 Mythos급 사이버보안 도달 주장",
+      "link": "https://androphil.tistory.com/921",
+      "pubDate": "2026-06-29T07:40:16+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "ChatGPT법적증거",
+        "MAI코드플래시",
+        "Mythos수출통제",
+        "Z.aiGLM52",
+        "딥시크DSpark",
+        "아시아AI스타트업",
+        "포드AI한계"
+      ],
+      "excerpt": "어제의 흐름: 2026.06.28 — 트럼프 행정부가 2주간의 수출 제한 끝에 Anthropic Mythos 5를 미국 내 100개 이상 기업·기관에 제한적 허용 오늘 AI 업계는 두 가지 현실을 동시에 직면했다. 중국 Z.ai의 오픈웨이트 GLM-5.2가 일부 사이버보안 벤치마크에서 Mythos와 동급 수준에 근접했다는 연구 결과가 나오며, 미국의 수출통제가 오픈소스 생태계 앞에서 흔들리는 아이러니가 커지고 있다. 한편 포드는 AI 자동화에 의존했다가 품질 문제를 겪은 뒤 베테랑 엔지니어 350명을 재고용하며 &quot;AI가 전"
+    },
     {
       "title": "[AI 트렌드] 2026.06.28 - Anthropic Mythos 5 수출 제한 부분 해제, Fable 5는 여전히 대기 중",
       "link": "https://androphil.tistory.com/920",
@@ -217,23 +234,6 @@
         "엔비디아"
       ],
       "excerpt": "어제의 흐름: 2026.06.19 — 트럼프 행정부 Fable 5·Mythos 5 수출 통제 1주일, 전문가들 &quot;AI 모델에 수출 규제 적용은 전례 없다&quot; 심층 분석 오늘은 AI 인프라 전쟁이 칩과 전력망 두 축에서 동시에 움직인 날이다. Amazon이 Trainium 칩 외부 판매를 공식화해 Nvidia 독주 체제에 정면 도전장을 냈고, 미국 FERC는 AI 데이터센터에 전력망 패스트레인을 부여했다. 한편 OpenAI는 IPO를 앞두고 엔터프라이즈 수장 Barret Zoph가 5개월 만에 또다시 퇴사하며 조직 안"
-    },
-    {
-      "title": "[AI 트렌드] 2026.06.19 - Anthropic Fable, AI 역사상 첫 수출 통제 대상으로 전례 없는 규제 국면",
-      "link": "https://androphil.tistory.com/910",
-      "pubDate": "2026-06-19T07:39:58+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "Adobe크리에이티브AI",
-        "ai규제",
-        "AI뉴스",
-        "anthropic",
-        "Fable수출통제",
-        "FERC데이터센터",
-        "GoogleAMIE",
-        "의료AI"
-      ],
-      "excerpt": "어제의 흐름: 2026.06.18 — Anthropic 서울 사무소 개소, 삼성SDS·LG CNS·NAVER와 대규모 Claude 파트너십 체결 트럼프 행정부가 Fable 5·Mythos 5에 수출 통제를 걸어 전면 차단한 지 일주일, 이번엔 전문가들이 &quot;이런 식으로 AI 모델에 수출 규제를 적용한 건 전례가 없다&quot;는 심층 분석을 내놨다. 같은 날 구글은 만성질환 관리 AI &#39;AMIE&#39;가 전문의 수준을 달성했다는 Nature 논문을 공개했고, Adobe는 Photoshop·Premiere 등 전 Cr"
     }
   ]
 }
