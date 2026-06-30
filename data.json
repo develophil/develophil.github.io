@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-29T19:59:08.191324+00:00",
+  "fetchedAt": "2026-06-30T03:45:54.334376+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -7,10 +7,18 @@
     },
     "tagCount": {
       "AI뉴스": 10,
-      "anthropic": 5,
       "OpenAI": 5,
+      "anthropic": 5,
       "Oracle감원": 3,
+      "codex": 2,
       "OpenAI Daybreak": 2,
+      "claude": 1,
+      "Gemini": 1,
+      "RAMageddon": 1,
+      "반도체": 1,
+      "앤트로픽": 1,
+      "캘리포니아": 1,
+      "한국AI": 1,
       "ChatGPT법적증거": 1,
       "MAI코드플래시": 1,
       "Mythos수출통제": 1,
@@ -28,7 +36,6 @@
       "네이버AI탭": 1,
       "벤치마크신뢰성": 1,
       "보상해킹": 1,
-      "codex": 1,
       "GPT5.6": 1,
       "NotionMail": 1,
       "알리바바": 1,
@@ -48,20 +55,32 @@
       "fiveeyes": 1,
       "NAVER NVIDIA": 1,
       "사이버보안": 1,
-      "에이전트AI보안": 1,
-      "지푸AI": 1,
-      "A24": 1,
-      "AI에이전트루프": 1,
-      "googledeepmind": 1,
-      "GPT-5.5-Cyber": 1,
-      "Groq": 1,
-      "삼성ChatGPT": 1
+      "에이전트AI보안": 1
     },
     "monthlyCount": {
       "2026-06": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.06.30 - 앤트로픽, 캘리포니아 주정부에 Claude 반값 공급 계약",
+      "link": "https://androphil.tistory.com/922",
+      "pubDate": "2026-06-30T07:37:30+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "claude",
+        "codex",
+        "Gemini",
+        "OpenAI",
+        "RAMageddon",
+        "반도체",
+        "앤트로픽",
+        "캘리포니아",
+        "한국AI"
+      ],
+      "excerpt": "어제의 흐름: 2026.06.29 — 중국 Z.ai GLM-5.2가 사이버보안 벤치마크에서 Mythos에 근접했고, 트럼프 행정부의 수출통제가 오픈소스 생태계와 충돌하는 구조적 긴장이 부각됐다 앤트로픽이 캘리포니아 주정부 전 기관에 Claude를 50% 할인 공급하는 계약을 체결했다. 연방정부(트럼프)와 AI 기업 간 갈등이 심화하는 가운데, 주 단위 AI 정책이 연방과 다른 노선을 걷기 시작했다. 한국은 삼성·SK하이닉스를 앞세워 반도체·AI 인프라에 $900B+ 투자 계획을 발표하며 AI 칩 공급 위기(RAMageddon)에 국"
+    },
     {
       "title": "[AI 트렌드] 2026.06.29 - 중국 Z.ai, 오픈소스로 Mythos급 사이버보안 도달 주장",
       "link": "https://androphil.tistory.com/921",
@@ -217,23 +236,6 @@
         "Trump수출통제"
       ],
       "excerpt": "어제의 흐름: 2026.06.20 — OpenAI IPO 앞두고 핵심 임원 Barret Zoph 5개월 만에 재이탈 오늘은 Apple이 iOS 27에 담긴 AI 기능의 구체적인 모습을 공개한 날이다. Siri가 ChatGPT·Claude 등 서드파티 LLM과 직접 연동되는 &#39;Extensions&#39;가 핵심이며, 영수증 자동 분리부터 데이터 유출 시 비밀번호 즉시 교체까지 일상에 밀착된 AI 기능들이 공개됐다. 한편 Trump 행정부의 Anthropic 제재를 둘러싸고 &quot;누가 진짜 수혜자인가&quot;라는 시장 분"
-    },
-    {
-      "title": "[AI 트렌드] 2026.06.20 - OpenAI IPO 앞두고 핵심 임원 Barret Zoph 5개월 만에 재이탈",
-      "link": "https://androphil.tistory.com/911",
-      "pubDate": "2026-06-20T07:39:33+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "Amazon Trainium",
-        "Barret Zoph",
-        "Claude Code 아티팩트",
-        "FERC 데이터센터",
-        "OpenAI",
-        "어도비AI",
-        "엔비디아"
-      ],
-      "excerpt": "어제의 흐름: 2026.06.19 — 트럼프 행정부 Fable 5·Mythos 5 수출 통제 1주일, 전문가들 &quot;AI 모델에 수출 규제 적용은 전례 없다&quot; 심층 분석 오늘은 AI 인프라 전쟁이 칩과 전력망 두 축에서 동시에 움직인 날이다. Amazon이 Trainium 칩 외부 판매를 공식화해 Nvidia 독주 체제에 정면 도전장을 냈고, 미국 FERC는 AI 데이터센터에 전력망 패스트레인을 부여했다. 한편 OpenAI는 IPO를 앞두고 엔터프라이즈 수장 Barret Zoph가 5개월 만에 또다시 퇴사하며 조직 안"
     }
   ]
 }
