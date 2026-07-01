@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-01T09:49:08.631768+00:00",
+  "fetchedAt": "2026-07-01T14:38:25.365760+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -8,15 +8,21 @@
     "tagCount": {
       "AI뉴스": 10,
       "OpenAI": 5,
-      "anthropic": 5,
+      "anthropic": 4,
       "Oracle감원": 3,
+      "앤트로픽": 2,
       "codex": 2,
       "OpenAI Daybreak": 2,
+      "ClaudeScience": 1,
+      "ClaudeSonnet5": 1,
+      "Etched": 1,
+      "Fable5재배포": 1,
+      "GeminiOmniFlash": 1,
+      "NanoBanana2Lite": 1,
       "claude": 1,
       "Gemini": 1,
       "RAMageddon": 1,
       "반도체": 1,
-      "앤트로픽": 1,
       "캘리포니아": 1,
       "한국AI": 1,
       "ChatGPT법적증거": 1,
@@ -49,19 +55,31 @@
       "딥시크에이전트": 1,
       "엔지니어채용": 1,
       "AI정치자금": 1,
-      "ClaudeTag": 1,
-      "Daybreak": 1,
-      "슈퍼PAC": 1,
-      "fiveeyes": 1,
-      "NAVER NVIDIA": 1,
-      "사이버보안": 1,
-      "에이전트AI보안": 1
+      "ClaudeTag": 1
     },
     "monthlyCount": {
-      "2026-06": 10
+      "2026-06": 9,
+      "2026-07": 1
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.07.01 - 앤트로픽 Fable 5 전세계 재배포, Claude Sonnet 5&middot;Science 공개",
+      "link": "https://androphil.tistory.com/923",
+      "pubDate": "2026-07-01T23:15:16+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "ClaudeScience",
+        "ClaudeSonnet5",
+        "Etched",
+        "Fable5재배포",
+        "GeminiOmniFlash",
+        "NanoBanana2Lite",
+        "앤트로픽"
+      ],
+      "excerpt": "어제의 흐름: 2026.06.30 — 앤트로픽, 캘리포니아 주정부 전 기관 Claude 50% 할인 계약 미 상무부가 6월 30일 Fable 5·Mythos 5 수출 규제를 공식 해제했다. 오늘(7/1)부터 전 세계 Claude 플랫폼에서 Fable 5가 재개되며, 앤트로픽은 에이전트 작업에 최적화된 Claude Sonnet 5와 과학자를 위한 AI 워크벤치 Claude Science도 동시에 공개했다. Google 역시 Nano Banana 2 Lite와 Gemini Omni Flash를 개발자에게 열었다. 목차 오늘의 핵심 오늘"
+    },
     {
       "title": "[AI 트렌드] 2026.06.30 - 앤트로픽, 캘리포니아 주정부에 Claude 반값 공급 계약",
       "link": "https://androphil.tistory.com/922",
@@ -219,23 +237,6 @@
         "영화AI"
       ],
       "excerpt": "어제의 흐름: 2026.06.21 — iOS 27 AI 기능 공개 — Siri 다중 모델 지원·청구서 자동 분리까지 오늘은 AI가 할리우드 영화 현장에 공식 진입한 날이다. Google DeepMind가 인디 영화사 A24에 7,500만 달러를 투자하고 AI 영화 제작 도구를 공동 개발한다. OpenAI는 사이버보안 프로그램 Daybreak를 확장해 GPT-5.5-Cyber를 정식 출시하고 28개 보안 파트너사 에코시스템을 구축했다. Nvidia에게 창업자와 핵심 기술을 넘긴 AI 칩 스타트업 Groq는 6,500억 원을 새로 조달"
-    },
-    {
-      "title": "[AI 트렌드] 2026.06.21 - iOS 27 AI 기능 공개 &mdash; Siri 다중 모델 지원&middot;청구서 자동 분리까지",
-      "link": "https://androphil.tistory.com/913",
-      "pubDate": "2026-06-24T00:07:09+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "anthropic",
-        "apple",
-        "ChatGPT시장점유율",
-        "Fable5",
-        "ios27",
-        "siriai",
-        "Trump수출통제"
-      ],
-      "excerpt": "어제의 흐름: 2026.06.20 — OpenAI IPO 앞두고 핵심 임원 Barret Zoph 5개월 만에 재이탈 오늘은 Apple이 iOS 27에 담긴 AI 기능의 구체적인 모습을 공개한 날이다. Siri가 ChatGPT·Claude 등 서드파티 LLM과 직접 연동되는 &#39;Extensions&#39;가 핵심이며, 영수증 자동 분리부터 데이터 유출 시 비밀번호 즉시 교체까지 일상에 밀착된 AI 기능들이 공개됐다. 한편 Trump 행정부의 Anthropic 제재를 둘러싸고 &quot;누가 진짜 수혜자인가&quot;라는 시장 분"
     }
   ]
 }
