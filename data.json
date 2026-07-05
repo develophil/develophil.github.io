@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-04T19:14:56.475973+00:00",
+  "fetchedAt": "2026-07-05T03:31:28.035751+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -12,6 +12,12 @@
       "Gemini": 2,
       "앤트로픽": 2,
       "codex": 2,
+      "AI토큰지출": 1,
+      "Meta앤트로픽": 1,
+      "OpenClaw": 1,
+      "린스트랄1.5": 1,
+      "알리바바Claude코드금지": 1,
+      "팬픽션AI감지": 1,
       "Anthropic신약개발": 1,
       "Google전력소비": 1,
       "MS코파일럿슈퍼앱": 1,
@@ -49,20 +55,30 @@
       "포드AI한계": 1,
       "AI수출통제": 1,
       "ai하드웨어": 1,
-      "ClaudeCorps": 1,
-      "Mythos5": 1,
-      "NYT저작권소송": 1,
-      "ai규제": 1,
-      "GPT-5.6": 1,
-      "네이버AI탭": 1,
-      "벤치마크신뢰성": 1
+      "ClaudeCorps": 1
     },
     "monthlyCount": {
-      "2026-06": 6,
-      "2026-07": 4
+      "2026-06": 5,
+      "2026-07": 5
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.07.05 - 알리바바, Claude Code 전면 차단&hellip; 차단과 도입이 동시에 벌어지는 AI 신뢰 전쟁",
+      "link": "https://androphil.tistory.com/927",
+      "pubDate": "2026-07-05T07:40:38+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "AI토큰지출",
+        "Meta앤트로픽",
+        "OpenClaw",
+        "린스트랄1.5",
+        "알리바바Claude코드금지",
+        "팬픽션AI감지"
+      ],
+      "excerpt": "어제의 흐름: 2026.07.04 — Anthropic, 신약 개발 직접 나선다… AI의 생명과학 진입 선언 알리바바가 7월 10일부터 직원들의 Claude Code 사용을 전면 금지한다. Anthropic이 중국 사용자를 식별하는 비밀 실험을 진행했다는 의혹이 도화선이 됐다. 역설적으로 같은 날 Meta는 Anthropic과 클로드 프라이빗 인스턴스 계약 최종 협상 중이라는 보도가 나왔다. 한편 AI 토큰 지출 지표가 5월 고점 대비 20% 가까이 빠지며 &#39;AI 거품 붕괴 vs 수요 조정&#39; 논쟁이 다시 불붙었다. 목"
+    },
     {
       "title": "[AI 트렌드] 2026.07.04 - Anthropic, 신약 개발 직접 나선다&hellip; AI의 생명과학 진입 선언",
       "link": "https://androphil.tistory.com/926",
@@ -217,22 +233,6 @@
         "휴머노이드로봇"
       ],
       "excerpt": "어제의 흐름: 2026.06.25 — OpenAI가 Broadcom과 첫 자체 추론 칩 &#39;할라피뇨&#39;를 공개했고, Google DeepMind는 Gemini 3.5 Flash에 컴퓨터 사용 기능을 통합했다. 트럼프 행정부가 OpenAI에 GPT-5.6 출시를 늦춰달라고 요청하며 AI 기업에 대한 직접 개입이 현실화됐다. 동시에 Anthropic은 알리바바가 25,000개 계정으로 2,880만 건의 대화를 통해 Claude를 대규모 복제하려 한 사실을 폭로하며 AI 능력 도용이 지정학적 전쟁의 새 전선이 됐음을 확인시켰다"
-    },
-    {
-      "title": "[AI 트렌드] 2026.06.25 - OpenAI, Broadcom과 손잡고 첫 자체 추론 칩 '할라피뇨' 공개",
-      "link": "https://androphil.tistory.com/917",
-      "pubDate": "2026-06-25T07:39:44+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "AI토큰비용",
-        "claudecode",
-        "Gemini컴퓨터사용",
-        "OpenAI할라피뇨",
-        "딥시크에이전트",
-        "엔지니어채용"
-      ],
-      "excerpt": "어제의 흐름: 2026.06.24 — Anthropic이 Claude를 Slack 채널에 팀원으로 합류시키는 &#39;Claude Tag&#39;를 출시했다. 오늘 AI 업계의 두 굵직한 뉴스가 동시에 터졌다. OpenAI가 Broadcom과 공동 개발한 추론 전용 칩 &#39;할라피뇨(Jalapeño)&#39;를 공개하며 NVIDIA 의존 탈피를 선언했고, Google DeepMind는 Gemini 3.5 Flash에 컴퓨터 사용 기능을 기본 탑재해 에이전트 개발 문턱을 낮췄다. 한편 &quot;AI가 엔지니어를 대체한다&quot"
     }
   ]
 }
