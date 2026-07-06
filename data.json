@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-05T19:19:01.941066+00:00",
+  "fetchedAt": "2026-07-06T03:38:55.854847+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -7,11 +7,16 @@
     },
     "tagCount": {
       "AI뉴스": 10,
-      "anthropic": 4,
-      "OpenAI": 4,
+      "anthropic": 3,
+      "OpenAI": 3,
       "Gemini": 2,
       "앤트로픽": 2,
-      "codex": 2,
+      "AI에너지소비": 1,
+      "Amazon Mechanical Turk": 1,
+      "KAIST에이전트": 1,
+      "Midjourney저작권": 1,
+      "SKT데이터센터": 1,
+      "바이트댄스시댄스": 1,
       "AI토큰지출": 1,
       "Meta앤트로픽": 1,
       "OpenClaw": 1,
@@ -42,6 +47,7 @@
       "GeminiOmniFlash": 1,
       "NanoBanana2Lite": 1,
       "claude": 1,
+      "codex": 1,
       "RAMageddon": 1,
       "반도체": 1,
       "캘리포니아": 1,
@@ -49,20 +55,30 @@
       "ChatGPT법적증거": 1,
       "MAI코드플래시": 1,
       "Mythos수출통제": 1,
-      "Z.aiGLM52": 1,
-      "딥시크DSpark": 1,
-      "아시아AI스타트업": 1,
-      "포드AI한계": 1,
-      "AI수출통제": 1,
-      "ai하드웨어": 1,
-      "ClaudeCorps": 1
+      "Z.aiGLM52": 1
     },
     "monthlyCount": {
-      "2026-06": 5,
-      "2026-07": 5
+      "2026-06": 4,
+      "2026-07": 6
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.07.06 - Amazon Mechanical Turk, AI에게 마지막 일감을 빼앗기다",
+      "link": "https://androphil.tistory.com/928",
+      "pubDate": "2026-07-06T07:40:59+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "AI에너지소비",
+        "Amazon Mechanical Turk",
+        "KAIST에이전트",
+        "Midjourney저작권",
+        "SKT데이터센터",
+        "바이트댄스시댄스"
+      ],
+      "excerpt": "어제의 흐름: 2026.07.05 — 알리바바가 7월 10일부터 Claude Code 사용 전면 금지. Anthropic 중국 사용자 추적 의혹이 발단, Meta는 같은 날 Claude 직접 서비스를 추진 중 Amazon이 AI 학습 데이터 크라우드소싱의 상징 Mechanical Turk에 신규 가입을 7월 30일부터 닫는다. AI가 사람의 AI 교사 역할까지 대체하는 구도가 완성됐다. KAIST는 같은 날 AI 에이전트 1건당 에너지 소비가 챗봇보다 136.5배 많다는 연구를 발표하며, 에이전트 대중화의 진짜 병목이 인프라임을 수"
+    },
     {
       "title": "[AI 트렌드] 2026.07.05 - 알리바바, Claude Code 전면 차단&hellip; 차단과 도입이 동시에 벌어지는 AI 신뢰 전쟁",
       "link": "https://androphil.tistory.com/927",
@@ -214,25 +230,6 @@
         "보상해킹"
       ],
       "excerpt": "어제의 흐름: 2026.06.26 — 트럼프 행정부의 OpenAI GPT-5.6 출시 개입 현실화, Anthropic 알리바바 오용 폭로 지연 요청 하루 만에 OpenAI가 GPT-5.6 Sol·Terra·Luna 3종을 프리뷰 공개했다. Sol은 Claude Fable 5 절반 가격에 Terminal-Bench 91.9%로 역대 코딩 AI 최강 성능을 기록했다. 동시에 Anthropic의 Mythos·Fable 모델 오프라인 14일째가 이어지며, AI 규제 프레임워크 부재가 미국 AI 산업 전체의 위기로 번지고 있다. 목차 오늘의"
-    },
-    {
-      "title": "[AI 트렌드] 2026.06.26 - 트럼프 행정부, OpenAI에 GPT-5.6 발매 유예 요청 &mdash; AI 규제 '기업별 차등' 시대",
-      "link": "https://androphil.tistory.com/918",
-      "pubDate": "2026-06-26T07:39:02+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "anthropic",
-        "codex",
-        "GPT5.6",
-        "NotionMail",
-        "OpenAI",
-        "알리바바",
-        "에이전트",
-        "트럼프AI규제",
-        "휴머노이드로봇"
-      ],
-      "excerpt": "어제의 흐름: 2026.06.25 — OpenAI가 Broadcom과 첫 자체 추론 칩 &#39;할라피뇨&#39;를 공개했고, Google DeepMind는 Gemini 3.5 Flash에 컴퓨터 사용 기능을 통합했다. 트럼프 행정부가 OpenAI에 GPT-5.6 출시를 늦춰달라고 요청하며 AI 기업에 대한 직접 개입이 현실화됐다. 동시에 Anthropic은 알리바바가 25,000개 계정으로 2,880만 건의 대화를 통해 Claude를 대규모 복제하려 한 사실을 폭로하며 AI 능력 도용이 지정학적 전쟁의 새 전선이 됐음을 확인시켰다"
     }
   ]
 }
