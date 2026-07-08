@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-07T19:56:30.618739+00:00",
+  "fetchedAt": "2026-07-08T02:46:29.846836+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -7,10 +7,15 @@
     },
     "tagCount": {
       "AI뉴스": 10,
-      "anthropic": 3,
+      "anthropic": 2,
       "Gemini": 2,
       "앤트로픽": 2,
-      "OpenAI": 2,
+      "ClaudeCowork": 1,
+      "DeepSeek반도체": 1,
+      "GeminiAPI에이전트": 1,
+      "MetaMuse": 1,
+      "방산ai": 1,
+      "소버린ai": 1,
       "ai규제": 1,
       "KT토큰팩토리": 1,
       "Microsoft해고": 1,
@@ -50,19 +55,30 @@
       "Etched": 1,
       "Fable5재배포": 1,
       "GeminiOmniFlash": 1,
-      "NanoBanana2Lite": 1,
-      "claude": 1,
-      "codex": 1,
-      "RAMageddon": 1,
-      "반도체": 1,
-      "캘리포니아": 1
+      "NanoBanana2Lite": 1
     },
     "monthlyCount": {
-      "2026-06": 3,
-      "2026-07": 7
+      "2026-06": 2,
+      "2026-07": 8
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.07.08 - DeepSeek, 미국 제재에 맞서 자체 반도체 개발 선언",
+      "link": "https://androphil.tistory.com/930",
+      "pubDate": "2026-07-08T07:43:37+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "ClaudeCowork",
+        "DeepSeek반도체",
+        "GeminiAPI에이전트",
+        "MetaMuse",
+        "방산ai",
+        "소버린ai"
+      ],
+      "excerpt": "어제의 흐름: 2026.07.07 — Anthropic이 &quot;반(反)감시&quot; 원칙을 내세우면서도 Claude Code에 중국 사용자를 비밀리에 추적하는 코드를 심은 사실이 드러나 충격을 줬고, Microsoft는 Xbox 부문 포함 대규모 해고를 단행했다. DeepSeek이 미국의 Nvidia 수출 규제에 맞서 자체 AI 칩 개발 계획을 선언했다. 같은 날 Anthropic은 Claude Cowork를 모바일·웹으로 확장하며 에이전트 AI가 사무실 전반으로 스며드는 흐름을 가속했고, Google은 Gemini API에"
+    },
     {
       "title": "[AI 트렌드] 2026.07.07 - Anthropic, Claude Code에 중국 사용자 비밀 추적 코드 삽입 논란",
       "link": "https://androphil.tistory.com/929",
@@ -212,23 +228,6 @@
         "포드AI한계"
       ],
       "excerpt": "어제의 흐름: 2026.06.28 — 트럼프 행정부가 2주간의 수출 제한 끝에 Anthropic Mythos 5를 미국 내 100개 이상 기업·기관에 제한적 허용 오늘 AI 업계는 두 가지 현실을 동시에 직면했다. 중국 Z.ai의 오픈웨이트 GLM-5.2가 일부 사이버보안 벤치마크에서 Mythos와 동급 수준에 근접했다는 연구 결과가 나오며, 미국의 수출통제가 오픈소스 생태계 앞에서 흔들리는 아이러니가 커지고 있다. 한편 포드는 AI 자동화에 의존했다가 품질 문제를 겪은 뒤 베테랑 엔지니어 350명을 재고용하며 &quot;AI가 전"
-    },
-    {
-      "title": "[AI 트렌드] 2026.06.28 - Anthropic Mythos 5 수출 제한 부분 해제, Fable 5는 여전히 대기 중",
-      "link": "https://androphil.tistory.com/920",
-      "pubDate": "2026-06-28T07:39:10+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "AI수출통제",
-        "ai하드웨어",
-        "anthropic",
-        "ClaudeCorps",
-        "Mythos5",
-        "NYT저작권소송",
-        "OpenAI"
-      ],
-      "excerpt": "어제의 흐름: 2026.06.27 — 지연 요청 하루 만에 OpenAI가 GPT-5.6 Sol·Terra·Luna 3종을 프리뷰 공개했다. Sol은 Claude Fable 5 절반 가격에 Terminal-Bench 91.9%로 역대 코딩 AI 최강 성능 트럼프 행정부가 2주간의 수출 제한 끝에 Anthropic Mythos 5를 미국 내 100개 이상 기업·기관에 제한적으로 허용했다. Fable 5 복귀는 여전히 불투명한 가운데, Anthropic은 같은 날 Claude Corps 펠로우십($150M), AI 안전 핵심 원칙, Ga"
     }
   ]
 }
