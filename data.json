@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-08T19:26:28.972438+00:00",
+  "fetchedAt": "2026-07-09T03:23:18.000023+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -7,9 +7,18 @@
     },
     "tagCount": {
       "AI뉴스": 10,
+      "OpenAI": 2,
       "anthropic": 2,
       "Gemini": 2,
       "앤트로픽": 2,
+      "geminiapi": 1,
+      "google": 1,
+      "GPT-Live": 1,
+      "Grok4.5": 1,
+      "ManagedAgents": 1,
+      "mcp": 1,
+      "metaAI": 1,
+      "XAI": 1,
       "ClaudeCowork": 1,
       "DeepSeek반도체": 1,
       "GeminiAPI에이전트": 1,
@@ -46,23 +55,33 @@
       "삼성AI칩": 1,
       "엔비디아ASPIRE": 1,
       "Claude Science": 1,
-      "Cloudflare": 1,
-      "추론최적화": 1,
-      "컴퓨트멀티플라이어": 1,
-      "피지컬ai": 1,
-      "ClaudeScience": 1,
-      "ClaudeSonnet5": 1,
-      "Etched": 1,
-      "Fable5재배포": 1,
-      "GeminiOmniFlash": 1,
-      "NanoBanana2Lite": 1
+      "Cloudflare": 1
     },
     "monthlyCount": {
-      "2026-06": 2,
-      "2026-07": 8
+      "2026-06": 1,
+      "2026-07": 9
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.07.09 - OpenAI, 동시 발화&middot;청취 가능한 GPT-Live 출시",
+      "link": "https://androphil.tistory.com/931",
+      "pubDate": "2026-07-09T07:40:00+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "geminiapi",
+        "google",
+        "GPT-Live",
+        "Grok4.5",
+        "ManagedAgents",
+        "mcp",
+        "metaAI",
+        "OpenAI",
+        "XAI"
+      ],
+      "excerpt": "어제의 흐름: 2026.07.08 — DeepSeek, 자체 AI 칩 개발 선언으로 Nvidia 수출 규제 정면 돌파 시도 OpenAI가 동시 발화·청취가 가능한 음성 모드 &#39;GPT-Live&#39;를 출시했다. 같은 날 xAI는 Grok 4.5를 &quot;Opus급 모델&quot;로 포지셔닝하며 프론티어 모델 경쟁에 새로운 변수를 던졌다. Google은 Gemini API에 배경 실행 태스크와 원격 MCP를 추가하며 에이전트 인프라를 빠르게 확장하고 있다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 다음 주 "
+    },
     {
       "title": "[AI 트렌드] 2026.07.08 - DeepSeek, 미국 제재에 맞서 자체 반도체 개발 선언",
       "link": "https://androphil.tistory.com/930",
@@ -211,23 +230,6 @@
         "한국AI"
       ],
       "excerpt": "어제의 흐름: 2026.06.29 — 중국 Z.ai GLM-5.2가 사이버보안 벤치마크에서 Mythos에 근접했고, 트럼프 행정부의 수출통제가 오픈소스 생태계와 충돌하는 구조적 긴장이 부각됐다 앤트로픽이 캘리포니아 주정부 전 기관에 Claude를 50% 할인 공급하는 계약을 체결했다. 연방정부(트럼프)와 AI 기업 간 갈등이 심화하는 가운데, 주 단위 AI 정책이 연방과 다른 노선을 걷기 시작했다. 한국은 삼성·SK하이닉스를 앞세워 반도체·AI 인프라에 $900B+ 투자 계획을 발표하며 AI 칩 공급 위기(RAMageddon)에 국"
-    },
-    {
-      "title": "[AI 트렌드] 2026.06.29 - 중국 Z.ai, 오픈소스로 Mythos급 사이버보안 도달 주장",
-      "link": "https://androphil.tistory.com/921",
-      "pubDate": "2026-06-29T07:40:16+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "ChatGPT법적증거",
-        "MAI코드플래시",
-        "Mythos수출통제",
-        "Z.aiGLM52",
-        "딥시크DSpark",
-        "아시아AI스타트업",
-        "포드AI한계"
-      ],
-      "excerpt": "어제의 흐름: 2026.06.28 — 트럼프 행정부가 2주간의 수출 제한 끝에 Anthropic Mythos 5를 미국 내 100개 이상 기업·기관에 제한적 허용 오늘 AI 업계는 두 가지 현실을 동시에 직면했다. 중국 Z.ai의 오픈웨이트 GLM-5.2가 일부 사이버보안 벤치마크에서 Mythos와 동급 수준에 근접했다는 연구 결과가 나오며, 미국의 수출통제가 오픈소스 생태계 앞에서 흔들리는 아이러니가 커지고 있다. 한편 포드는 AI 자동화에 의존했다가 품질 문제를 겪은 뒤 베테랑 엔지니어 350명을 재고용하며 &quot;AI가 전"
     }
   ]
 }
