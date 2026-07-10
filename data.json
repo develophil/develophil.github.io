@@ -1,15 +1,20 @@
 {
-  "fetchedAt": "2026-07-10T14:28:18.723887+00:00",
+  "fetchedAt": "2026-07-10T19:27:51.004388+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
       "Dev/AI": 10
     },
     "tagCount": {
-      "AI뉴스": 10,
+      "AI뉴스": 9,
       "ai규제": 2,
       "OpenAI": 2,
       "anthropic": 2,
+      "임신보험": 1,
+      "임신준비": 1,
+      "태아보험": 1,
+      "태아보험가입시기": 1,
+      "태아보험추천": 1,
       "ClaudeWrapped": 1,
       "GPT-5.6": 1,
       "MetaMuseSparkl": 1,
@@ -50,18 +55,27 @@
       "MS코파일럿슈퍼앱": 1,
       "로컬AI규제": 1,
       "삼성피지컬AI": 1,
-      "저커버그AI에이전트": 1,
-      "Claude Sonnet5": 1,
-      "FDE경쟁": 1,
-      "Microsoft Frontier": 1,
-      "OpenAI국부펀드": 1,
-      "삼성AI칩": 1
+      "저커버그AI에이전트": 1
     },
     "monthlyCount": {
       "2026-07": 10
     }
   },
   "posts": [
+    {
+      "title": "태아보험 언제 가입해야 할까? 시기별 완벽 가이드",
+      "link": "https://androphil.tistory.com/933",
+      "pubDate": "2026-07-10T23:38:22+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "임신보험",
+        "임신준비",
+        "태아보험",
+        "태아보험가입시기",
+        "태아보험추천"
+      ],
+      "excerpt": "태아보험, 도대체 언제 가입해야 할까요? 임신 소식을 들으면 가장 먼저 챙겨야 할 것 중 하나가 바로 태아보험입니다. 하지만 막상 언제 가입해야 할지 모르는 분들이 많아요. &#39;아직 시간 있겠지&#39; 하다가 중요한 특약을 놓치는 경우도 생기거든요. 오늘은 태아보험 가입 시기에 대해 명확하게 정리해 드릴게요. 태아보험 가입 가능 시기는 언제까지? 태아보험은 임신이 확인된 이후부터 가입할 수 있습니다. 일반적으로 임신 22주 이전까지 가입이 가능하지만, 중요한 특약들은 훨씬 이전에 마감됩니다. 특히 선천성이상 특약은 대부분 임"
+    },
     {
       "title": "[AI 트렌드] 2026.07.10 - GPT-5.6 시리즈 전면 출시, Fable 5와 1점 차에 비용은 3분의 1",
       "link": "https://androphil.tistory.com/932",
@@ -210,23 +224,6 @@
         "피지컬ai"
       ],
       "excerpt": "어제의 흐름: 2026.07.01 — 미 상무부 Fable 5·Mythos 5 수출 규제 해제, 7/1부터 글로벌 재개 Anthropic이 오늘 과학자 전용 AI 연구 환경 &#39;Claude Science&#39;를 베타 출시했다. 유전체학·단백질 구조·화학정보학 등 60여 개 전문 커넥터를 단일 워크스페이스에 통합한 것이 특징이다. 한편 Cloudflare가 9월 15일부터 광고 페이지에서 혼합형 AI 크롤러를 기본 차단하겠다고 선언하며 AI 기업과 출판사 간 콘텐츠 저작권 분쟁이 새 국면을 맞고 있다. 목차 오늘의 핵심 오늘"
-    },
-    {
-      "title": "[AI 트렌드] 2026.07.01 - 앤트로픽 Fable 5 전세계 재배포, Claude Sonnet 5&middot;Science 공개",
-      "link": "https://androphil.tistory.com/923",
-      "pubDate": "2026-07-01T23:15:16+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "ClaudeScience",
-        "ClaudeSonnet5",
-        "Etched",
-        "Fable5재배포",
-        "GeminiOmniFlash",
-        "NanoBanana2Lite",
-        "앤트로픽"
-      ],
-      "excerpt": "어제의 흐름: 2026.06.30 — 앤트로픽, 캘리포니아 주정부 전 기관 Claude 50% 할인 계약 미 상무부가 6월 30일 Fable 5·Mythos 5 수출 규제를 공식 해제했다. 오늘(7/1)부터 전 세계 Claude 플랫폼에서 Fable 5가 재개되며, 앤트로픽은 에이전트 작업에 최적화된 Claude Sonnet 5와 과학자를 위한 AI 워크벤치 Claude Science도 동시에 공개했다. Google 역시 Nano Banana 2 Lite와 Gemini Omni Flash를 개발자에게 열었다. 목차 오늘의 핵심 오늘"
     }
   ]
 }
