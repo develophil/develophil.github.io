@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-09T19:47:33.339867+00:00",
+  "fetchedAt": "2026-07-10T03:26:01.339477+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -7,10 +7,14 @@
     },
     "tagCount": {
       "AI뉴스": 10,
+      "ai규제": 2,
       "OpenAI": 2,
       "anthropic": 2,
-      "Gemini": 2,
-      "앤트로픽": 2,
+      "ClaudeWrapped": 1,
+      "GPT-5.6": 1,
+      "MetaMuseSparkl": 1,
+      "에이전트코딩": 1,
+      "저작권소송": 1,
       "geminiapi": 1,
       "google": 1,
       "GPT-Live": 1,
@@ -25,7 +29,6 @@
       "MetaMuse": 1,
       "방산ai": 1,
       "소버린ai": 1,
-      "ai규제": 1,
       "KT토큰팩토리": 1,
       "Microsoft해고": 1,
       "메타AI에이전트": 1,
@@ -52,17 +55,30 @@
       "FDE경쟁": 1,
       "Microsoft Frontier": 1,
       "OpenAI국부펀드": 1,
-      "삼성AI칩": 1,
-      "엔비디아ASPIRE": 1,
-      "Claude Science": 1,
-      "Cloudflare": 1
+      "삼성AI칩": 1
     },
     "monthlyCount": {
-      "2026-06": 1,
-      "2026-07": 9
+      "2026-07": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.07.10 - GPT-5.6 시리즈 전면 출시, Fable 5와 1점 차에 비용은 3분의 1",
+      "link": "https://androphil.tistory.com/932",
+      "pubDate": "2026-07-10T07:43:43+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "ai규제",
+        "AI뉴스",
+        "ClaudeWrapped",
+        "GPT-5.6",
+        "MetaMuseSparkl",
+        "OpenAI",
+        "에이전트코딩",
+        "저작권소송"
+      ],
+      "excerpt": "어제의 흐름: 2026.07.09 — OpenAI GPT-Live(동시 발화·청취 음성 모드) 출시, xAI Grok 4.5 공개로 프론티어 경쟁 격화 OpenAI가 Sol·Terra·Luna 3개 변형으로 구성된 GPT-5.6 시리즈를 전 세계 공개했다. Sol은 Claude Fable 5와 지능 지수 1점 차를 유지하면서도 작업당 비용은 3분의 1 수준이다. 같은 날 Meta는 에이전트 코딩 특화 모델 Muse Spark 1.1을 출시했고, Anthropic은 사용 패턴 리포트 &#39;Claude Wrapped&#39;를 선보"
+    },
     {
       "title": "[AI 트렌드] 2026.07.09 - OpenAI, 동시 발화&middot;청취 가능한 GPT-Live 출시",
       "link": "https://androphil.tistory.com/931",
@@ -211,25 +227,6 @@
         "앤트로픽"
       ],
       "excerpt": "어제의 흐름: 2026.06.30 — 앤트로픽, 캘리포니아 주정부 전 기관 Claude 50% 할인 계약 미 상무부가 6월 30일 Fable 5·Mythos 5 수출 규제를 공식 해제했다. 오늘(7/1)부터 전 세계 Claude 플랫폼에서 Fable 5가 재개되며, 앤트로픽은 에이전트 작업에 최적화된 Claude Sonnet 5와 과학자를 위한 AI 워크벤치 Claude Science도 동시에 공개했다. Google 역시 Nano Banana 2 Lite와 Gemini Omni Flash를 개발자에게 열었다. 목차 오늘의 핵심 오늘"
-    },
-    {
-      "title": "[AI 트렌드] 2026.06.30 - 앤트로픽, 캘리포니아 주정부에 Claude 반값 공급 계약",
-      "link": "https://androphil.tistory.com/922",
-      "pubDate": "2026-06-30T07:37:30+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "claude",
-        "codex",
-        "Gemini",
-        "OpenAI",
-        "RAMageddon",
-        "반도체",
-        "앤트로픽",
-        "캘리포니아",
-        "한국AI"
-      ],
-      "excerpt": "어제의 흐름: 2026.06.29 — 중국 Z.ai GLM-5.2가 사이버보안 벤치마크에서 Mythos에 근접했고, 트럼프 행정부의 수출통제가 오픈소스 생태계와 충돌하는 구조적 긴장이 부각됐다 앤트로픽이 캘리포니아 주정부 전 기관에 Claude를 50% 할인 공급하는 계약을 체결했다. 연방정부(트럼프)와 AI 기업 간 갈등이 심화하는 가운데, 주 단위 AI 정책이 연방과 다른 노선을 걷기 시작했다. 한국은 삼성·SK하이닉스를 앞세워 반도체·AI 인프라에 $900B+ 투자 계획을 발표하며 AI 칩 공급 위기(RAMageddon)에 국"
     }
   ]
 }
