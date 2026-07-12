@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-11T19:04:17.231855+00:00",
+  "fetchedAt": "2026-07-12T02:51:11.424985+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -7,9 +7,15 @@
     },
     "tagCount": {
       "AI뉴스": 10,
+      "OpenAI": 3,
       "ai규제": 2,
-      "OpenAI": 2,
       "anthropic": 2,
+      "AI반도체": 1,
+      "HBM": 1,
+      "meta": 1,
+      "SK하이닉스": 1,
+      "딥페이크": 1,
+      "삼바노바": 1,
       "alphaevolve": 1,
       "AnthropicReflect": 1,
       "Apple소송": 1,
@@ -49,19 +55,30 @@
       "AI토큰지출": 1,
       "Meta앤트로픽": 1,
       "OpenClaw": 1,
-      "린스트랄1.5": 1,
-      "알리바바Claude코드금지": 1,
-      "팬픽션AI감지": 1,
-      "Anthropic신약개발": 1,
-      "Google전력소비": 1,
-      "MS코파일럿슈퍼앱": 1,
-      "로컬AI규제": 1
+      "린스트랄1.5": 1
     },
     "monthlyCount": {
       "2026-07": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.07.12 - SK하이닉스, 미국 역대 최대 외국 기업 나스닥 IPO로 AI 반도체 시대 증명",
+      "link": "https://androphil.tistory.com/935",
+      "pubDate": "2026-07-12T07:40:19+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "AI반도체",
+        "HBM",
+        "meta",
+        "OpenAI",
+        "SK하이닉스",
+        "딥페이크",
+        "삼바노바"
+      ],
+      "excerpt": "어제의 흐름: 2026.07.11 — Apple이 OpenAI를 상대로 하드웨어 영업비밀 도용 소송을 제기하며 빅테크 간 AI 경쟁이 법정으로 번졌다 SK하이닉스가 미국 역사상 최대 외국 기업 나스닥 IPO로 265억 달러를 조달하며 AI 반도체 수요가 만들어낸 월스트리트 역사를 썼다. OpenAI는 개인 사용자를 넘어 가족 시장을 공략하는 전담 팀을 출범했고, Meta는 Instagram에 도입한 AI 이미지 기능이 동의 없이 공인 사진을 변형할 수 있다는 비판에 출시 3일 만에 전면 철회했다. 목차 오늘의 핵심 오늘의 시그널 뉴"
+    },
     {
       "title": "[AI 트렌드] 2026.07.11 - Apple, OpenAI 상대 하드웨어 영업비밀 도용 소송 제기",
       "link": "https://androphil.tistory.com/934",
@@ -211,22 +228,6 @@
         "엔비디아ASPIRE"
       ],
       "excerpt": "어제의 흐름: 2026.07.02 — Anthropic이 과학자 전용 AI 연구 환경 &#39;Claude Science&#39;를 베타 출시했다. 유전체학·단백질 구조·화학정보학 등 60여 개 전문 커넥터를 단일 워크스페이스에 통합한 것이 특징이다. 오늘 Anthropic이 Claude Sonnet 5를 전격 출시했다. Opus 4.8에 근접한 에이전트 성능을 낮은 가격에 제공하며 Free·Pro 플랜 기본 모델로 배정됐다. 한편 OpenAI는 트럼프 행정부와의 관계 개선을 위해 미국 국부펀드에 지분 5% 기부를 제안했고, Mic"
-    },
-    {
-      "title": "[AI 트렌드] 2026.07.02 - Anthropic, 과학자 전용 AI 워크벤치 'Claude Science' 베타 출시",
-      "link": "https://androphil.tistory.com/924",
-      "pubDate": "2026-07-02T07:39:00+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "Claude Science",
-        "Cloudflare",
-        "Gemini",
-        "추론최적화",
-        "컴퓨트멀티플라이어",
-        "피지컬ai"
-      ],
-      "excerpt": "어제의 흐름: 2026.07.01 — 미 상무부 Fable 5·Mythos 5 수출 규제 해제, 7/1부터 글로벌 재개 Anthropic이 오늘 과학자 전용 AI 연구 환경 &#39;Claude Science&#39;를 베타 출시했다. 유전체학·단백질 구조·화학정보학 등 60여 개 전문 커넥터를 단일 워크스페이스에 통합한 것이 특징이다. 한편 Cloudflare가 9월 15일부터 광고 페이지에서 혼합형 AI 크롤러를 기본 차단하겠다고 선언하며 AI 기업과 출판사 간 콘텐츠 저작권 분쟁이 새 국면을 맞고 있다. 목차 오늘의 핵심 오늘"
     }
   ]
 }
