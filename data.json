@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-16T19:12:17.253233+00:00",
+  "fetchedAt": "2026-07-17T02:42:58.088067+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -9,10 +9,16 @@
       "AI뉴스": 10,
       "OpenAI": 3,
       "OpenAI하드웨어": 2,
-      "anthropic": 2,
       "GPT-5.6": 2,
       "SK하이닉스": 2,
-      "ai규제": 2,
+      "Claude1Password": 1,
+      "DMA": 1,
+      "EU규제": 1,
+      "GeminiNotebook": 1,
+      "Kimi K3": 1,
+      "MoonshotAI": 1,
+      "notebooklm": 1,
+      "오픈웨이트AI": 1,
       "AI학습데이터": 1,
       "ClaudeForTeachers": 1,
       "Inkling오픈모델": 1,
@@ -25,6 +31,7 @@
       "Grok보안": 1,
       "뉴욕데이터센터모라토리엄": 1,
       "ai데이터보안": 1,
+      "anthropic": 1,
       "ClaudeDesign": 1,
       "ICML2026": 1,
       "사티아나델라": 1,
@@ -47,21 +54,32 @@
       "FidjiSimo사임": 1,
       "OpenAI영업비밀": 1,
       "SK하이닉스IPO": 1,
-      "ClaudeWrapped": 1,
-      "MetaMuseSparkl": 1,
-      "에이전트코딩": 1,
-      "저작권소송": 1,
-      "geminiapi": 1,
-      "google": 1,
-      "GPT-Live": 1,
-      "Grok4.5": 1,
-      "ManagedAgents": 1
+      "ai규제": 1,
+      "ClaudeWrapped": 1
     },
     "monthlyCount": {
       "2026-07": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.07.17 - EU, 구글에 검색 데이터&middot;Android AI 강제 개방 명령",
+      "link": "https://androphil.tistory.com/940",
+      "pubDate": "2026-07-17T07:38:06+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "Claude1Password",
+        "DMA",
+        "EU규제",
+        "GeminiNotebook",
+        "Kimi K3",
+        "MoonshotAI",
+        "notebooklm",
+        "오픈웨이트AI"
+      ],
+      "excerpt": "어제의 흐름: 2026.07.16 — 해킹으로 유출된 내부 파일이 AI 음악 업체 Suno의 무단 스크래핑 실태를 낱낱이 드러냈다 EU가 DMA 결정을 확정하며 구글에 검색 데이터 공유와 Android AI 개방을 의무화했다. 동시에 중국 Moonshot의 Kimi K3가 2~3조 파라미터로 Opus 4.8 수준을 목표로 출시 임박하고, NotebookLM은 Gemini Notebook으로 리브랜딩됐다. Claude는 1Password와 통합되며 AI 에이전트의 브라우저 자동화 능력이 한 단계 진화했다. 목차 오늘의 핵심 오늘의 시"
+    },
     {
       "title": "[AI 트렌드] 2026.07.16 - Suno, 해킹으로 YouTube&middot;Deezer 수백만 곡 무단 학습 실태 전격 폭로",
       "link": "https://androphil.tistory.com/939",
@@ -214,22 +232,6 @@
         "소버린ai"
       ],
       "excerpt": "어제의 흐름: 2026.07.07 — Anthropic이 &quot;반(反)감시&quot; 원칙을 내세우면서도 Claude Code에 중국 사용자를 비밀리에 추적하는 코드를 심은 사실이 드러나 충격을 줬고, Microsoft는 Xbox 부문 포함 대규모 해고를 단행했다. DeepSeek이 미국의 Nvidia 수출 규제에 맞서 자체 AI 칩 개발 계획을 선언했다. 같은 날 Anthropic은 Claude Cowork를 모바일·웹으로 확장하며 에이전트 AI가 사무실 전반으로 스며드는 흐름을 가속했고, Google은 Gemini API에"
-    },
-    {
-      "title": "[AI 트렌드] 2026.07.07 - Anthropic, Claude Code에 중국 사용자 비밀 추적 코드 삽입 논란",
-      "link": "https://androphil.tistory.com/929",
-      "pubDate": "2026-07-07T07:40:35+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "ai규제",
-        "AI뉴스",
-        "anthropic",
-        "KT토큰팩토리",
-        "Microsoft해고",
-        "메타AI에이전트",
-        "바이트댄스"
-      ],
-      "excerpt": "어제의 흐름: 2026.07.06 — Amazon이 AI 학습 데이터 크라우드소싱의 상징 Mechanical Turk에 신규 가입을 7월 30일부터 닫는다 Anthropic이 &quot;반(反)감시&quot; 원칙을 내세우면서도 Claude Code에 중국 사용자를 비밀리에 추적하는 코드를 심은 사실이 드러나 충격을 주고 있다. 같은 날 Microsoft는 Xbox 부문을 포함해 직원 5,000여 명을 해고한다고 발표했고, 메타는 AI를 본격적인 에이전트로 진화시키는 &#39;예약 작업&#39; 기능 도입을 예고했다. AI 신뢰·구"
     }
   ]
 }
