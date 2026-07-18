@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-17T19:10:30.741673+00:00",
+  "fetchedAt": "2026-07-18T02:33:35.595521+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -8,9 +8,16 @@
     "tagCount": {
       "AI뉴스": 10,
       "OpenAI": 3,
+      "claudecode": 2,
       "OpenAI하드웨어": 2,
       "GPT-5.6": 2,
       "SK하이닉스": 2,
+      "AnthropicIPO": 1,
+      "ARC-AGI": 1,
+      "databricks": 1,
+      "NVIDIACosmos": 1,
+      "OpenAI성과지표": 1,
+      "WAIC2026": 1,
       "Claude1Password": 1,
       "DMA": 1,
       "EU규제": 1,
@@ -26,7 +33,6 @@
       "Suno저작권": 1,
       "ThinkingMachines": 1,
       "AI거버넌스": 1,
-      "claudecode": 1,
       "DeepMind규제": 1,
       "Grok보안": 1,
       "뉴욕데이터센터모라토리엄": 1,
@@ -49,19 +55,30 @@
       "삼바노바": 1,
       "alphaevolve": 1,
       "AnthropicReflect": 1,
-      "Apple소송": 1,
-      "Cursor에이전트": 1,
-      "FidjiSimo사임": 1,
-      "OpenAI영업비밀": 1,
-      "SK하이닉스IPO": 1,
-      "ai규제": 1,
-      "ClaudeWrapped": 1
+      "Apple소송": 1
     },
     "monthlyCount": {
       "2026-07": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.07.18 - Anthropic, OpenAI 제치고 10월 IPO 추진 &mdash; AI 투자 열풍의 최대 수혜자",
+      "link": "https://androphil.tistory.com/941",
+      "pubDate": "2026-07-18T07:40:47+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "AnthropicIPO",
+        "ARC-AGI",
+        "claudecode",
+        "databricks",
+        "NVIDIACosmos",
+        "OpenAI성과지표",
+        "WAIC2026"
+      ],
+      "excerpt": "어제의 흐름: 2026.07.17 — EU DMA 확정으로 구글에 검색 데이터 공유·Android AI 개방이 의무화됐고, Kimi K3 출시 임박과 NotebookLM → Gemini Notebook 리브랜딩이 이어졌다. Anthropic이 Goldman Sachs·Morgan Stanley 등 월가 주관사와 함께 10월 상장을 목표로 투자자 설명을 시작했다. OpenAI보다 먼저 상장해 비상장 AI 1위 기업으로서 자본 주도권을 확보하려는 전략이다. 같은 날 Databricks는 5개월 만에 기업가치를 $134B에서 $188B으"
+    },
     {
       "title": "[AI 트렌드] 2026.07.17 - EU, 구글에 검색 데이터&middot;Android AI 강제 개방 명령",
       "link": "https://androphil.tistory.com/940",
@@ -216,22 +233,6 @@
         "XAI"
       ],
       "excerpt": "어제의 흐름: 2026.07.08 — DeepSeek, 자체 AI 칩 개발 선언으로 Nvidia 수출 규제 정면 돌파 시도 OpenAI가 동시 발화·청취가 가능한 음성 모드 &#39;GPT-Live&#39;를 출시했다. 같은 날 xAI는 Grok 4.5를 &quot;Opus급 모델&quot;로 포지셔닝하며 프론티어 모델 경쟁에 새로운 변수를 던졌다. Google은 Gemini API에 배경 실행 태스크와 원격 MCP를 추가하며 에이전트 인프라를 빠르게 확장하고 있다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 다음 주 "
-    },
-    {
-      "title": "[AI 트렌드] 2026.07.08 - DeepSeek, 미국 제재에 맞서 자체 반도체 개발 선언",
-      "link": "https://androphil.tistory.com/930",
-      "pubDate": "2026-07-08T07:43:37+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "ClaudeCowork",
-        "DeepSeek반도체",
-        "GeminiAPI에이전트",
-        "MetaMuse",
-        "방산ai",
-        "소버린ai"
-      ],
-      "excerpt": "어제의 흐름: 2026.07.07 — Anthropic이 &quot;반(反)감시&quot; 원칙을 내세우면서도 Claude Code에 중국 사용자를 비밀리에 추적하는 코드를 심은 사실이 드러나 충격을 줬고, Microsoft는 Xbox 부문 포함 대규모 해고를 단행했다. DeepSeek이 미국의 Nvidia 수출 규제에 맞서 자체 AI 칩 개발 계획을 선언했다. 같은 날 Anthropic은 Claude Cowork를 모바일·웹으로 확장하며 에이전트 AI가 사무실 전반으로 스며드는 흐름을 가속했고, Google은 Gemini API에"
     }
   ]
 }
