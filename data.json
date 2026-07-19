@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-18T19:05:06.931440+00:00",
+  "fetchedAt": "2026-07-19T02:48:07.625982+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -7,11 +7,17 @@
     },
     "tagCount": {
       "AI뉴스": 10,
-      "OpenAI": 3,
-      "claudecode": 2,
+      "claudecode": 3,
       "OpenAI하드웨어": 2,
       "GPT-5.6": 2,
       "SK하이닉스": 2,
+      "OpenAI": 2,
+      "ChatGPT비판": 1,
+      "Kimi": 1,
+      "MoonshootAI": 1,
+      "데이터브릭스": 1,
+      "딥시크": 1,
+      "의료AI": 1,
       "AnthropicIPO": 1,
       "ARC-AGI": 1,
       "databricks": 1,
@@ -49,19 +55,30 @@
       "OpenAI안전팀": 1,
       "수학난제증명": 1,
       "AI반도체": 1,
-      "HBM": 1,
-      "meta": 1,
-      "딥페이크": 1,
-      "삼바노바": 1,
-      "alphaevolve": 1,
-      "AnthropicReflect": 1,
-      "Apple소송": 1
+      "HBM": 1
     },
     "monthlyCount": {
       "2026-07": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.07.19 - Dave Eggers, Sam Altman 초청 받아 OpenAI 직원들에게 &quot;ChatGPT가 한 세대를 침묵시킨다&quot; 직격",
+      "link": "https://androphil.tistory.com/942",
+      "pubDate": "2026-07-19T07:37:02+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "ChatGPT비판",
+        "claudecode",
+        "Kimi",
+        "MoonshootAI",
+        "데이터브릭스",
+        "딥시크",
+        "의료AI"
+      ],
+      "excerpt": "어제의 흐름: 2026.07.18 — Anthropic이 Goldman Sachs·Morgan Stanley 등 월가 주관사와 함께 10월 IPO를 목표로 투자자 설명을 시작했다. 소설가 Dave Eggers가 Sam Altman의 초청을 받아 OpenAI 사옥에서 직원들에게 ChatGPT를 정면 비판했다. 동시에 중국 Moonshot AI의 Kimi 모델이 &quot;AI 공산주의&quot; 논쟁을 불러일으키고, AI가 의료 사전승인을 개선할지 악화시킬지를 둘러싼 논쟁도 커지고 있다. 기술 바깥에서 AI에 대한 목소리가 커지는 날"
+    },
     {
       "title": "[AI 트렌드] 2026.07.18 - Anthropic, OpenAI 제치고 10월 IPO 추진 &mdash; AI 투자 열풍의 최대 수혜자",
       "link": "https://androphil.tistory.com/941",
@@ -214,25 +231,6 @@
         "저작권소송"
       ],
       "excerpt": "어제의 흐름: 2026.07.09 — OpenAI GPT-Live(동시 발화·청취 음성 모드) 출시, xAI Grok 4.5 공개로 프론티어 경쟁 격화 OpenAI가 Sol·Terra·Luna 3개 변형으로 구성된 GPT-5.6 시리즈를 전 세계 공개했다. Sol은 Claude Fable 5와 지능 지수 1점 차를 유지하면서도 작업당 비용은 3분의 1 수준이다. 같은 날 Meta는 에이전트 코딩 특화 모델 Muse Spark 1.1을 출시했고, Anthropic은 사용 패턴 리포트 &#39;Claude Wrapped&#39;를 선보"
-    },
-    {
-      "title": "[AI 트렌드] 2026.07.09 - OpenAI, 동시 발화&middot;청취 가능한 GPT-Live 출시",
-      "link": "https://androphil.tistory.com/931",
-      "pubDate": "2026-07-09T07:40:00+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "geminiapi",
-        "google",
-        "GPT-Live",
-        "Grok4.5",
-        "ManagedAgents",
-        "mcp",
-        "metaAI",
-        "OpenAI",
-        "XAI"
-      ],
-      "excerpt": "어제의 흐름: 2026.07.08 — DeepSeek, 자체 AI 칩 개발 선언으로 Nvidia 수출 규제 정면 돌파 시도 OpenAI가 동시 발화·청취가 가능한 음성 모드 &#39;GPT-Live&#39;를 출시했다. 같은 날 xAI는 Grok 4.5를 &quot;Opus급 모델&quot;로 포지셔닝하며 프론티어 모델 경쟁에 새로운 변수를 던졌다. Google은 Gemini API에 배경 실행 태스크와 원격 MCP를 추가하며 에이전트 인프라를 빠르게 확장하고 있다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국내 동향 다음 주 "
     }
   ]
 }
