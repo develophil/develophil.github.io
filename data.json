@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-19T19:07:44.613582+00:00",
+  "fetchedAt": "2026-07-20T03:17:03.230116+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -9,9 +9,14 @@
       "AI뉴스": 10,
       "claudecode": 3,
       "OpenAI하드웨어": 2,
-      "GPT-5.6": 2,
       "SK하이닉스": 2,
-      "OpenAI": 2,
+      "CurrentAI": 1,
+      "소버린ai": 1,
+      "애플OpenAI소송": 1,
+      "엔비디아": 1,
+      "젠슨황": 1,
+      "크리스토퍼놀란": 1,
+      "페이블5": 1,
       "ChatGPT비판": 1,
       "Kimi": 1,
       "MoonshootAI": 1,
@@ -50,18 +55,30 @@
       "이중루프자율연구": 1,
       "크리에이티브ai": 1,
       "AI데이터센터": 1,
-      "Apple Neural Engine": 1,
-      "MS코파일럿": 1,
-      "OpenAI안전팀": 1,
-      "수학난제증명": 1,
-      "AI반도체": 1,
-      "HBM": 1
+      "Apple Neural Engine": 1
     },
     "monthlyCount": {
       "2026-07": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.07.20 - 젠슨 황 일본서 소버린 AI 팩토리 협정, 놀란 감독 &quot;AI는 유리 트로이 목마&quot;",
+      "link": "https://androphil.tistory.com/943",
+      "pubDate": "2026-07-20T07:37:26+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "CurrentAI",
+        "소버린ai",
+        "애플OpenAI소송",
+        "엔비디아",
+        "젠슨황",
+        "크리스토퍼놀란",
+        "페이블5"
+      ],
+      "excerpt": "어제의 흐름: 2026.07.19 — 소설가 Dave Eggers가 OpenAI 사옥을 찾아 직원들에게 ChatGPT를 정면 비판했고, Kimi의 &#39;무료 개방&#39; 전략이 AI 공산주의 논쟁을 촉발했다. 엔비디아 젠슨 황 CEO가 도쿄에서 일본 산업계·정부와 국가급 AI 팩토리 협정을 잇달아 체결했다. 같은 날 크리스토퍼 놀란 감독은 &quot;AI는 누구나 그리스군이 안에 있다는 걸 아는 유리 트로이 목마&quot;라고 작심 발언했다. 빅테크와 크리에이터 간 긴장이 고조되는 가운데, 비영리 단체 Current AI는 &"
+    },
     {
       "title": "[AI 트렌드] 2026.07.19 - Dave Eggers, Sam Altman 초청 받아 OpenAI 직원들에게 &quot;ChatGPT가 한 세대를 침묵시킨다&quot; 직격",
       "link": "https://androphil.tistory.com/942",
@@ -214,23 +231,6 @@
         "SK하이닉스IPO"
       ],
       "excerpt": "어제의 흐름: 2026.07.10 — OpenAI가 Sol·Terra·Luna 3개 변형으로 구성된 GPT-5.6 시리즈를 전 세계 공개했다 Apple이 OpenAI를 상대로 하드웨어 영업비밀 도용 소송을 제기하며 빅테크 간 AI 경쟁이 법정으로 번졌다. 같은 날 OpenAI AGI 총괄 Fidji Simo가 건강 문제로 사임하면서 조직 내 리더십 변화도 이어지고 있다. 반면 Google은 AlphaEvolve를 전 클라우드 고객에 정식 공개하며 알고리즘 최적화 AI 시장을 공략했다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리핑 국"
-    },
-    {
-      "title": "[AI 트렌드] 2026.07.10 - GPT-5.6 시리즈 전면 출시, Fable 5와 1점 차에 비용은 3분의 1",
-      "link": "https://androphil.tistory.com/932",
-      "pubDate": "2026-07-10T07:43:43+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "ai규제",
-        "AI뉴스",
-        "ClaudeWrapped",
-        "GPT-5.6",
-        "MetaMuseSparkl",
-        "OpenAI",
-        "에이전트코딩",
-        "저작권소송"
-      ],
-      "excerpt": "어제의 흐름: 2026.07.09 — OpenAI GPT-Live(동시 발화·청취 음성 모드) 출시, xAI Grok 4.5 공개로 프론티어 경쟁 격화 OpenAI가 Sol·Terra·Luna 3개 변형으로 구성된 GPT-5.6 시리즈를 전 세계 공개했다. Sol은 Claude Fable 5와 지능 지수 1점 차를 유지하면서도 작업당 비용은 3분의 1 수준이다. 같은 날 Meta는 에이전트 코딩 특화 모델 Muse Spark 1.1을 출시했고, Anthropic은 사용 패턴 리포트 &#39;Claude Wrapped&#39;를 선보"
     }
   ]
 }
