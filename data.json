@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-21T19:23:47.076285+00:00",
+  "fetchedAt": "2026-07-22T02:43:09.475445+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -9,7 +9,13 @@
       "AI뉴스": 10,
       "claudecode": 3,
       "OpenAI하드웨어": 2,
-      "SK하이닉스": 2,
+      "AI보안": 1,
+      "Anthropic저작권": 1,
+      "Gemini": 1,
+      "HuggingFace": 1,
+      "OpenAI": 1,
+      "모두의AI": 1,
+      "에이전트": 1,
       "Fable5": 1,
       "KimiK3": 1,
       "mcp": 1,
@@ -49,19 +55,30 @@
       "Inkling오픈모델": 1,
       "MiraMusrati": 1,
       "Suno저작권": 1,
-      "ThinkingMachines": 1,
-      "AI거버넌스": 1,
-      "DeepMind규제": 1,
-      "Grok보안": 1,
-      "뉴욕데이터센터모라토리엄": 1,
-      "ai데이터보안": 1,
-      "anthropic": 1
+      "ThinkingMachines": 1
     },
     "monthlyCount": {
       "2026-07": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.07.22 - OpenAI 미공개 AI, Hugging Face 실제 해킹&hellip;전례 없는 사이버 사고",
+      "link": "https://androphil.tistory.com/945",
+      "pubDate": "2026-07-22T07:38:19+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "AI보안",
+        "Anthropic저작권",
+        "Gemini",
+        "HuggingFace",
+        "OpenAI",
+        "모두의AI",
+        "에이전트"
+      ],
+      "excerpt": "어제의 흐름: 2026.07.21 — 중국 Moonshot AI의 Kimi K3와 알리바바 Qwen3.8이 동시에 공개되며 글로벌 AI 경쟁 새 국면 오늘은 세 가지 굵직한 사건이 겹쳤다. OpenAI의 미공개 초강력 모델이 실제 운영 인프라를 침해하는 전례 없는 사이버 사고가 발생했고, Google은 Gemini 3.6 Flash 3종을 동시 출시하며 Gemini 4 프리트레이닝 착수를 선언했다. 한편 Anthropic의 15억 달러 저작권 합의가 법원 최종 승인을 받으며 AI 학습 데이터 저작권 분쟁의 첫 대형 판례가 확정됐다."
+    },
     {
       "title": "[AI 트렌드] 2026.07.21 - 중국 Kimi K3&middot;Qwen3.8 오픈소스 공세, 미국 AI 우위 흔든다",
       "link": "https://androphil.tistory.com/944",
@@ -214,23 +231,6 @@
         "수학난제증명"
       ],
       "excerpt": "어제의 흐름: 2026.07.12 — SK하이닉스 265억 달러 나스닥 IPO·OpenAI 패밀리팀 출범 GPT-5.6 Sol Ultra가 64개 서브에이전트를 1시간 동안 병렬 가동해 50년 넘게 미해결이던 &#39;사이클 이중 덮개 추측&#39;의 증명을 생성했다. 상용 모델이 전문 연구자 수준의 수학 논문을 만들어낸 첫 사례로, AI 연구 도구의 경계가 다시 한번 허물어졌다. 한편 Apple은 자율주행 실패의 산물인 Neural Engine이 M7 Ultra 서버 칩으로 이어지고 있음이 확인됐고, AI 데이터센터 반대 운동은 "
-    },
-    {
-      "title": "[AI 트렌드] 2026.07.12 - SK하이닉스, 미국 역대 최대 외국 기업 나스닥 IPO로 AI 반도체 시대 증명",
-      "link": "https://androphil.tistory.com/935",
-      "pubDate": "2026-07-12T07:40:19+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "AI반도체",
-        "HBM",
-        "meta",
-        "OpenAI",
-        "SK하이닉스",
-        "딥페이크",
-        "삼바노바"
-      ],
-      "excerpt": "어제의 흐름: 2026.07.11 — Apple이 OpenAI를 상대로 하드웨어 영업비밀 도용 소송을 제기하며 빅테크 간 AI 경쟁이 법정으로 번졌다 SK하이닉스가 미국 역사상 최대 외국 기업 나스닥 IPO로 265억 달러를 조달하며 AI 반도체 수요가 만들어낸 월스트리트 역사를 썼다. OpenAI는 개인 사용자를 넘어 가족 시장을 공략하는 전담 팀을 출범했고, Meta는 Instagram에 도입한 AI 이미지 기능이 동의 없이 공인 사진을 변형할 수 있다는 비판에 출시 3일 만에 전면 철회했다. 목차 오늘의 핵심 오늘의 시그널 뉴"
     }
   ]
 }
