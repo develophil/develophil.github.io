@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-23T19:18:46.391769+00:00",
+  "fetchedAt": "2026-07-24T02:44:02.441033+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -8,11 +8,17 @@
     "tagCount": {
       "AI뉴스": 10,
       "claudecode": 3,
-      "anthropic": 2,
       "젠슨황": 2,
       "OpenAI하드웨어": 2,
+      "AI킬스위치법": 1,
+      "리벨리온NPU": 1,
+      "업스테이지솔라오픈2": 1,
+      "제미나이": 1,
+      "챗GPT헬스": 1,
+      "클로드음성모드": 1,
       "ai인프라": 1,
       "AMD": 1,
+      "anthropic": 1,
       "구글실적": 1,
       "중국AI제재": 1,
       "특허소송": 1,
@@ -49,19 +55,29 @@
       "OpenAI성과지표": 1,
       "WAIC2026": 1,
       "Claude1Password": 1,
-      "DMA": 1,
-      "EU규제": 1,
-      "GeminiNotebook": 1,
-      "Kimi K3": 1,
-      "MoonshotAI": 1,
-      "notebooklm": 1,
-      "오픈웨이트AI": 1
+      "DMA": 1
     },
     "monthlyCount": {
       "2026-07": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.07.24 - 오픈AI 챗GPT 헬스 전면 개방, 앤트로픽 음성모드 업그레이드",
+      "link": "https://androphil.tistory.com/947",
+      "pubDate": "2026-07-24T07:37:21+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "AI킬스위치법",
+        "리벨리온NPU",
+        "업스테이지솔라오픈2",
+        "제미나이",
+        "챗GPT헬스",
+        "클로드음성모드"
+      ],
+      "excerpt": "어제의 흐름: 2026.07.23 — AMD가 앤트로픽에 최대 50억 달러를 투자하며 2GW 규모 차세대 AI 칩 공급 계약을 맺었고, 구글 클라우드 매출이 82% 성장했다 오늘은 AI가 실생활 서비스 깊숙이 들어오는 흐름과, 그 반작용으로 규제가 뒤쫓아오는 흐름이 동시에 나타났다. 오픈AI는 챗GPT 헬스를 전 미국 이용자에게 개방했고 앤트로픽은 클로드 음성모드를 고성능 모델로 확장했다. 한편 의회는 AI 시스템을 정부가 강제로 셧다운시킬 수 있는 &#39;킬스위치법&#39;을 발의했다. 목차 오늘의 핵심 오늘의 시그널 뉴스 브리"
+    },
     {
       "title": "[AI 트렌드] 2026.07.23 - AMD, 앤트로픽에 50억 달러 베팅&hellip;AI 인프라 동맹 재편",
       "link": "https://androphil.tistory.com/946",
@@ -214,23 +230,6 @@
         "뉴욕데이터센터모라토리엄"
       ],
       "excerpt": "어제의 흐름: 2026.07.14 — Anthropic이 Claude Design·Claude for Teachers를 동시 공개하며 크리에이티브·교육 시장으로 전선 확대 OpenAI가 블룸버그를 통해 첫 하드웨어 기기 — 스크린 없는 이동형 AI 스피커 — 의 존재를 공개했다. 같은 날 뉴욕주는 미국 최초로 데이터센터 건설 1년 모라토리엄을 선언했고, DeepMind CEO 데미스 하사비스는 FINRA형 독립 AI 규제기구 창설을 촉구했다. AI 확장 속도만큼 규제·법적 마찰도 빠르게 쌓이고 있다. 목차 오늘의 핵심 오늘의 시그널"
-    },
-    {
-      "title": "[AI 트렌드] 2026.07.14 - Anthropic, Claude Design&middot;크리에이티브 커넥터 동시 공개",
-      "link": "https://androphil.tistory.com/937",
-      "pubDate": "2026-07-14T07:40:46+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "ai데이터보안",
-        "anthropic",
-        "ClaudeDesign",
-        "ICML2026",
-        "사티아나델라",
-        "이중루프자율연구",
-        "크리에이티브ai"
-      ],
-      "excerpt": "어제의 흐름: 2026.07.13 — GPT-5.6 Sol Ultra가 64개 서브에이전트로 50년 미해결 수학 추측 증명 생성 Anthropic이 하루에 두 가지 크리에이티브 도구를 동시에 공개했다. Claude Design은 Opus 4.7 기반으로 디자인·슬라이드·프로토타입을 대화로 만드는 Anthropic Labs 신제품이고, Creative Work 커넥터는 Adobe Creative Cloud·Ableton·Blender·Autodesk Fusion 등 기존 크리에이티브 소프트웨어와 Claude를 직접 연결한다. 같은 날"
     }
   ]
 }
