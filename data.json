@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-25T02:42:50.128537+00:00",
+  "fetchedAt": "2026-07-25T08:06:55.484687+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -7,9 +7,15 @@
     },
     "tagCount": {
       "AI뉴스": 10,
-      "claudecode": 3,
+      "anthropic": 2,
       "젠슨황": 2,
-      "OpenAI하드웨어": 2,
+      "claudecode": 2,
+      "AI에이전트": 1,
+      "APEC": 1,
+      "cognition": 1,
+      "오픈소스AI규제": 1,
+      "클로드오퍼스5": 1,
+      "피지컬ai": 1,
       "AI킬스위치법": 1,
       "리벨리온NPU": 1,
       "업스테이지솔라오픈2": 1,
@@ -18,7 +24,6 @@
       "클로드음성모드": 1,
       "ai인프라": 1,
       "AMD": 1,
-      "anthropic": 1,
       "구글실적": 1,
       "중국AI제재": 1,
       "특허소송": 1,
@@ -50,18 +55,30 @@
       "의료AI": 1,
       "AnthropicIPO": 1,
       "ARC-AGI": 1,
-      "databricks": 1,
-      "NVIDIACosmos": 1,
-      "OpenAI성과지표": 1,
-      "WAIC2026": 1,
-      "Claude1Password": 1,
-      "DMA": 1
+      "databricks": 1
     },
     "monthlyCount": {
       "2026-07": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.07.25 - 앤트로픽, 클로드 오퍼스 5 출시&hellip;Fable 5 성능에 가격은 절반",
+      "link": "https://androphil.tistory.com/948",
+      "pubDate": "2026-07-25T13:30:00+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "AI에이전트",
+        "anthropic",
+        "APEC",
+        "cognition",
+        "오픈소스AI규제",
+        "클로드오퍼스5",
+        "피지컬ai"
+      ],
+      "excerpt": "어제의 흐름: 2026.07.24 — AI가 실생활 서비스 깊숙이 들어오는 흐름과 규제가 뒤쫓아오는 흐름이 동시에 나타난 하루 오늘은 모델 경쟁의 축이 &quot;더 강한 모델&quot;에서 &quot;같은 값에 더 저렴한 모델&quot;로 옮겨간 하루였다. 앤트로픽이 최상위 모델 페이블 5에 근접한 성능을 절반 가격에 내놓는 클로드 오퍼스 5를 출시했고, 미국 빅테크와 각국 정부는 오픈소스 AI 규제를 둘러싸고 한목소리와 균열을 동시에 냈다. Cognition의 Poke 인수는 &quot;AI의 성능&quot;만큼 &quot;AI"
+    },
     {
       "title": "[AI 트렌드] 2026.07.24 - 오픈AI 챗GPT 헬스 전면 개방, 앤트로픽 음성모드 업그레이드",
       "link": "https://androphil.tistory.com/947",
@@ -214,22 +231,6 @@
         "ThinkingMachines"
       ],
       "excerpt": "어제의 흐름: 2026.07.15 — OpenAI가 AI 스피커 하드웨어 존재를 공개하고, 뉴욕주가 데이터센터 건설 1년 모라토리엄을 선언했다 해킹 사건으로 유출된 내부 파일이 AI 음악 생성 업체 Suno의 학습 데이터 실태를 낱낱이 드러냈다. YouTube Music·Deezer·Genius에서 수백만 곡을 무단 스크래핑한 정황이 확인되면서, RIAA 소송전과 맞물려 AI 저작권 논쟁이 새로운 국면을 맞고 있다. 같은 날 Mira Murati의 Thinking Machines Lab은 975B 파라미터 오픈 MoE 모델 &#39"
-    },
-    {
-      "title": "[AI 트렌드] 2026.07.15 - OpenAI, 스크린 없는 이동형 AI 스피커로 하드웨어 시장 진출",
-      "link": "https://androphil.tistory.com/938",
-      "pubDate": "2026-07-15T07:42:36+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI거버넌스",
-        "AI뉴스",
-        "claudecode",
-        "DeepMind규제",
-        "Grok보안",
-        "OpenAI하드웨어",
-        "뉴욕데이터센터모라토리엄"
-      ],
-      "excerpt": "어제의 흐름: 2026.07.14 — Anthropic이 Claude Design·Claude for Teachers를 동시 공개하며 크리에이티브·교육 시장으로 전선 확대 OpenAI가 블룸버그를 통해 첫 하드웨어 기기 — 스크린 없는 이동형 AI 스피커 — 의 존재를 공개했다. 같은 날 뉴욕주는 미국 최초로 데이터센터 건설 1년 모라토리엄을 선언했고, DeepMind CEO 데미스 하사비스는 FINRA형 독립 AI 규제기구 창설을 촉구했다. AI 확장 속도만큼 규제·법적 마찰도 빠르게 쌓이고 있다. 목차 오늘의 핵심 오늘의 시그널"
     }
   ]
 }
