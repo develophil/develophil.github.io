@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-25T19:08:05.698233+00:00",
+  "fetchedAt": "2026-07-26T02:51:35.639119+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -7,14 +7,19 @@
     },
     "tagCount": {
       "AI뉴스": 10,
+      "젠슨황": 3,
+      "클로드오퍼스5": 2,
       "anthropic": 2,
-      "젠슨황": 2,
       "claudecode": 2,
+      "ai규제": 1,
+      "미드저니": 1,
+      "삼성SDS": 1,
+      "오픈웨이트": 1,
+      "코그니션": 1,
       "AI에이전트": 1,
       "APEC": 1,
       "cognition": 1,
       "오픈소스AI규제": 1,
-      "클로드오퍼스5": 1,
       "피지컬ai": 1,
       "AI킬스위치법": 1,
       "리벨리온NPU": 1,
@@ -50,18 +55,30 @@
       "ChatGPT비판": 1,
       "Kimi": 1,
       "MoonshootAI": 1,
-      "데이터브릭스": 1,
-      "딥시크": 1,
-      "의료AI": 1,
-      "AnthropicIPO": 1,
-      "ARC-AGI": 1,
-      "databricks": 1
+      "데이터브릭스": 1
     },
     "monthlyCount": {
       "2026-07": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.07.26 - 빅테크, &quot;오픈웨이트 규제 확대 말라&quot; 공동 서한",
+      "link": "https://androphil.tistory.com/949",
+      "pubDate": "2026-07-26T07:37:14+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "ai규제",
+        "AI뉴스",
+        "미드저니",
+        "삼성SDS",
+        "오픈웨이트",
+        "젠슨황",
+        "코그니션",
+        "클로드오퍼스5"
+      ],
+      "excerpt": "어제의 흐름: 2026.07.25 — 모델 경쟁의 축이 &quot;더 강한 모델&quot;에서 &quot;같은 값에 더 저렴한 모델&quot;로 옮겨간 하루, 앤트로픽이 클로드 오퍼스 5를 페이블 5 근접 성능·절반 가격에 출시 오늘은 미중 AI 경쟁의 반작용이 정책 무대로 번진 하루였다. 허깅페이스·메타·MS·미스트랄·엔비디아가 &quot;오픈웨이트 모델 전면 규제는 안 된다&quot;는 공동 서한을 냈고, 동시에 코그니션의 포크 인수·미드저니의 코스타 인수 등 &quot;AI에 성격을 입히는&quot; 경쟁도 뚜렷해졌다. 국내는"
+    },
     {
       "title": "[AI 트렌드] 2026.07.25 - 앤트로픽, 클로드 오퍼스 5 출시&hellip;Fable 5 성능에 가격은 절반",
       "link": "https://androphil.tistory.com/948",
@@ -214,23 +231,6 @@
         "오픈웨이트AI"
       ],
       "excerpt": "어제의 흐름: 2026.07.16 — 해킹으로 유출된 내부 파일이 AI 음악 업체 Suno의 무단 스크래핑 실태를 낱낱이 드러냈다 EU가 DMA 결정을 확정하며 구글에 검색 데이터 공유와 Android AI 개방을 의무화했다. 동시에 중국 Moonshot의 Kimi K3가 2~3조 파라미터로 Opus 4.8 수준을 목표로 출시 임박하고, NotebookLM은 Gemini Notebook으로 리브랜딩됐다. Claude는 1Password와 통합되며 AI 에이전트의 브라우저 자동화 능력이 한 단계 진화했다. 목차 오늘의 핵심 오늘의 시"
-    },
-    {
-      "title": "[AI 트렌드] 2026.07.16 - Suno, 해킹으로 YouTube&middot;Deezer 수백만 곡 무단 학습 실태 전격 폭로",
-      "link": "https://androphil.tistory.com/939",
-      "pubDate": "2026-07-16T07:38:31+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "AI학습데이터",
-        "ClaudeForTeachers",
-        "Inkling오픈모델",
-        "MiraMusrati",
-        "OpenAI하드웨어",
-        "Suno저작권",
-        "ThinkingMachines"
-      ],
-      "excerpt": "어제의 흐름: 2026.07.15 — OpenAI가 AI 스피커 하드웨어 존재를 공개하고, 뉴욕주가 데이터센터 건설 1년 모라토리엄을 선언했다 해킹 사건으로 유출된 내부 파일이 AI 음악 생성 업체 Suno의 학습 데이터 실태를 낱낱이 드러냈다. YouTube Music·Deezer·Genius에서 수백만 곡을 무단 스크래핑한 정황이 확인되면서, RIAA 소송전과 맞물려 AI 저작권 논쟁이 새로운 국면을 맞고 있다. 같은 날 Mira Murati의 Thinking Machines Lab은 975B 파라미터 오픈 MoE 모델 &#39"
     }
   ]
 }
