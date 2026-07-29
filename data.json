@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-28T19:24:56.897270+00:00",
+  "fetchedAt": "2026-07-29T02:42:16.794953+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
@@ -12,6 +12,13 @@
       "엔비디아": 2,
       "클로드오퍼스5": 2,
       "anthropic": 2,
+      "AI감속": 1,
+      "MAICyber": 1,
+      "마이크로소프트보안": 1,
+      "샘알트먼": 1,
+      "세이프슈퍼인텔리전스": 1,
+      "카나나2": 1,
+      "클로드보안": 1,
       "앤트로픽": 1,
       "업스테이지": 1,
       "오픈시큐어AI얼라이언스": 1,
@@ -48,20 +55,30 @@
       "Anthropic저작권": 1,
       "Gemini": 1,
       "HuggingFace": 1,
-      "OpenAI": 1,
-      "모두의AI": 1,
-      "에이전트": 1,
-      "Fable5": 1,
-      "KimiK3": 1,
-      "mcp": 1,
-      "qwen3": 1,
-      "구글AI칩": 1
+      "OpenAI": 1
     },
     "monthlyCount": {
       "2026-07": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.07.29 - 샘 알트먼, &quot;AI 감속&quot;으로 선회",
+      "link": "https://androphil.tistory.com/953",
+      "pubDate": "2026-07-29T07:38:57+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI감속",
+        "AI뉴스",
+        "MAICyber",
+        "마이크로소프트보안",
+        "샘알트먼",
+        "세이프슈퍼인텔리전스",
+        "카나나2",
+        "클로드보안"
+      ],
+      "excerpt": "어제의 흐름: 2026.07.28 — 엔비디아·마이크로소프트가 주도한 &#39;오픈 시큐어 AI 얼라이언스&#39;에 오픈AI·구글·앤트로픽은 빠졌고, 아모데이는 오픈웨이트 반대는 아니라고 선을 그었다 오늘은 &quot;가속&quot;을 외치던 진영에서도 균열이 보인 하루였다. 샘 알트먼이 처음으로 AI 개발 속도 조절 필요성을 인정했고, 마이크로소프트는 앤트로픽·오픈AI를 겨냥한 사이버보안 특화 모델을 내놨다. 그 사이 클로드 공유 대화가 구글 검색에 노출된 사건까지 겹치며, &quot;빠르게 만드는 능력&quot;과 &quot;"
+    },
     {
       "title": "[AI 트렌드] 2026.07.28 - 엔비디아&middot;MS, 오픈AI&middot;구글&middot;앤트로픽 빼고 'AI 보안 연합' 결성",
       "link": "https://androphil.tistory.com/952",
@@ -213,23 +230,6 @@
         "페이블5"
       ],
       "excerpt": "어제의 흐름: 2026.07.19 — 소설가 Dave Eggers가 OpenAI 사옥을 찾아 직원들에게 ChatGPT를 정면 비판했고, Kimi의 &#39;무료 개방&#39; 전략이 AI 공산주의 논쟁을 촉발했다. 엔비디아 젠슨 황 CEO가 도쿄에서 일본 산업계·정부와 국가급 AI 팩토리 협정을 잇달아 체결했다. 같은 날 크리스토퍼 놀란 감독은 &quot;AI는 누구나 그리스군이 안에 있다는 걸 아는 유리 트로이 목마&quot;라고 작심 발언했다. 빅테크와 크리에이터 간 긴장이 고조되는 가운데, 비영리 단체 Current AI는 &"
-    },
-    {
-      "title": "[AI 트렌드] 2026.07.19 - Dave Eggers, Sam Altman 초청 받아 OpenAI 직원들에게 &quot;ChatGPT가 한 세대를 침묵시킨다&quot; 직격",
-      "link": "https://androphil.tistory.com/942",
-      "pubDate": "2026-07-19T07:37:02+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "AI뉴스",
-        "ChatGPT비판",
-        "claudecode",
-        "Kimi",
-        "MoonshootAI",
-        "데이터브릭스",
-        "딥시크",
-        "의료AI"
-      ],
-      "excerpt": "어제의 흐름: 2026.07.18 — Anthropic이 Goldman Sachs·Morgan Stanley 등 월가 주관사와 함께 10월 IPO를 목표로 투자자 설명을 시작했다. 소설가 Dave Eggers가 Sam Altman의 초청을 받아 OpenAI 사옥에서 직원들에게 ChatGPT를 정면 비판했다. 동시에 중국 Moonshot AI의 Kimi 모델이 &quot;AI 공산주의&quot; 논쟁을 불러일으키고, AI가 의료 사전승인을 개선할지 악화시킬지를 둘러싼 논쟁도 커지고 있다. 기술 바깥에서 AI에 대한 목소리가 커지는 날"
     }
   ]
 }
