@@ -130,4 +130,6 @@
 - 완료: `study/` 삭제(53파일) · `.gitignore` 최소화 · `index.html`→`blog/index.html`(fetch `../data.json`) · 새 `index.html`·`en/index.html`·`assets/style.css`·`assets/favicon.svg`·`assets/og.png`(PIL 1200×630) · `privacy/pianori/index.html` · `sitemap.xml`·`robots.txt`·`README.md`
 - 로컬 검증: 전 경로 200, 데스크톱 1280 / 모바일 390(iframe) 렌더 정상, 대시보드 데이터 로드 확인, 나브 모바일 축약 동작
 - 미검증: 다크모드 스크린샷(CSS는 `prefers-color-scheme`로 구현), Lighthouse 수치 → 배포 후 실측
-- 후속: ① push 승인 → GitHub Pages 배포 확인 ② `pianori-privacy` 리포 index를 `/privacy/pianori/`로 meta refresh ③ AdMob pub ID 수령 후 `app-ads.txt` ④ Play Console·pianori `store-listing.md`에 웹사이트 `https://develophil.github.io/`·방침 `https://develophil.github.io/privacy/pianori/` 반영 ⑤ 보드게임메이트 도메인 구매 시 카드 URL 교체
+- 배포: 396da48 → GitHub Pages built, 전 경로 200 확인(2026-09-05). Actions `pages build and deployment` success
+- 완료된 후속: ① push·배포 ✅ ② `pianori-privacy` index → meta refresh 리다이렉트(37924f6) ✅ ④ pianori `store-listing.md`·`launch-checklist.md` A5에 사이트·방침 URL 기입 ✅(pianori 리포 미커밋)
+- 남은 후속: ③ AdMob pub ID 수령 후 `app-ads.txt` ⑤ 보드게임메이트 도메인 구매 시 카드 URL 교체 ⑥ 다크모드·Lighthouse 실기기 확인 ⑦ Play Console 앱 만들기 시 웹사이트 `https://develophil.github.io/` 입력
