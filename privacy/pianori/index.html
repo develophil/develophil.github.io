@@ -117,6 +117,11 @@
         <td>앱 전용 기기 저장소. 로그아웃 또는 계정 삭제 시 제거</td>
       </tr>
       <tr>
+        <td>보호자 동의 기록<br>(선택 로그인 시)</td>
+        <td>로그인 계정 ID, 동의 문안 버전, 동의 시각, 언어, 동의 범위</td>
+        <td>보호자가 별도 동의 화면의 두 항목을 직접 확인한 뒤 서버에서 기록</td>
+      </tr>
+      <tr>
         <td>랭킹·학습 통계<br>(선택 · 로그인 후)</td>
         <td>앱이 생성한 비식별 별명, XP, 레벨, 스트릭, 곡 ID, 정확도, 별점</td>
         <td>로그인 후 학습 활동에 따라 자동 동기화. 아이가 입력한 이름은 사용하지 않음</td>
@@ -152,7 +157,7 @@
     <ul>
       <li>기기 데이터: 앱 데이터 삭제 또는 앱 제거 시 삭제됩니다. Android 앱 자동 백업은 비활성화되어 있습니다.</li>
       <li>로그인 세션: 앱 전용 저장소에 보관하며 로그아웃 또는 계정 삭제 시 제거합니다. 현재 SDK 기본 저장소의 별도 암호화 여부는 외부 보안 검토 항목으로 관리합니다.</li>
-      <li>계정·랭킹·백업 데이터: 계정 삭제가 완료될 때까지 보관하고 삭제 요청 완료 시 연관 데이터를 삭제합니다.</li>
+      <li>계정·보호자 동의·랭킹·백업 데이터: 계정 삭제가 완료될 때까지 보관하고 삭제 요청 완료 시 연관 데이터를 삭제합니다.</li>
       <li>계정과 연결하지 않았던 과거 익명 분석 이벤트: 신규 수집을 중단했으며 서버 적용 시 기존 행도 삭제할 예정입니다.</li>
       <li>법령상 보관 의무나 공급자 백업·보안 로그의 별도 보유가 있는 경우 그 범위는 외부 법무 검토 후 확정합니다.</li>
     </ul>
@@ -176,7 +181,7 @@
       <tr>
         <td>Supabase, Inc.<br>(미국)</td>
         <td>서버 데이터 저장 및 인증</td>
-        <td>선택 로그인 정보, 비식별 랭킹 별명, 학습 통계, 수동 백업</td>
+        <td>선택 로그인 정보, 보호자 동의 기록, 비식별 랭킹 별명, 학습 통계, 수동 백업</td>
         <td>계정 삭제 시까지. 공급자 로그·백업의 별도 기간은 검토 중</td>
       </tr>
       <tr>
@@ -249,8 +254,16 @@
     </p>
     <p>
       앱의 산수 문제와 부모 PIN은 아이가 부모 전용 설정을 쉽게 열지 못하게 하는 장치이며,
-      법률상 법정대리인 동의를 증명하는 수단으로 기록하지 않습니다. 선택 로그인·광고·국외 처리에
-      필요한 동의 절차는 출시 국가와 외부 법무 검토 결과에 따라 추가합니다.
+      그 자체를 법률상 법정대리인 동의로 간주하지 않습니다. 보호자가 선택 로그인을 시작할 때에는
+      별도의 동의 화면에서 처리 항목·목적·보유·삭제·국외 클라우드 저장 안내를 확인하고,
+      법정대리인 또는 동의 권한이 있는 보호자임과 개인정보 처리 동의를 각각 표시해야 합니다.
+      동의 버전과 서버 기록 시각은 로그인 계정에 연결하여 저장합니다. 동의하지 않아도 모든 로컬
+      학습 기능을 이용할 수 있으며, 랭킹과 클라우드 백업만 사용할 수 없습니다.
+    </p>
+    <p>
+      현재 절차는 앱 안에서 보호자가 직접 확인하고 동의했다는 기록을 남기는 방식입니다.
+      휴대전화 본인확인·신용카드·서면 확인 같은 강화된 법정대리인 확인 수단이 필요한지는
+      출시 국가의 법령과 외부 법무 검토 결과에 따라 보완합니다.
     </p>
   </section>
 
@@ -288,7 +301,9 @@
       Sign-in is optional. Google sign-in may store an email address and provider identifiers in Supabase Auth.
       Kakao sign-in stores the Kakao member number, nickname, an internal synthetic email, and a Supabase user ID;
       it does not request the user's real Kakao email. Signed-in users may store a non-identifying ranking nickname,
-      learning statistics, and a parent-initiated cloud backup.
+      learning statistics, and a parent-initiated cloud backup. Before optional sign-in, a parent or authorized
+      guardian must review the data notice and explicitly confirm both their authority and consent. The consent
+      notice version and server timestamp are retained with the account. Local learning remains available without consent.
     </p>
     <p lang="en">
       AdMob is configured for child-directed, G-rated, non-personalized ads. The Android advertising ID permission
@@ -304,10 +319,11 @@
       <li>2026년 6월 8일: 최초 제정</li>
       <li>2026년 8월 19일: 마이크 정보 처리, 광고(Google AdMob), 인앱 결제 항목 추가</li>
       <li>2026년 9월 28일: 분석 수집 중단, 선택 로그인·랭킹·백업·광고 처리, 계정 삭제 경로 및 영문 요약 반영</li>
+      <li>2026년 10월 3일: 선택 로그인 전 보호자 명시 동의와 동의 버전·시각 기록 절차 반영</li>
     </ul>
   </section>
 
-  <p class="updated">시행일: 2026년 9월 28일</p>
+  <p class="updated">시행일: 2026년 10월 3일</p>
 
 </main>
 
