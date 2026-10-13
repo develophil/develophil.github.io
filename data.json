@@ -1,27 +1,32 @@
 {
-  "fetchedAt": "2026-10-12T14:38:47.283946+00:00",
+  "fetchedAt": "2026-10-13T00:14:20.694920+00:00",
   "stats": {
     "totalPosts": 10,
     "categoryCount": {
       "Dev/AI": 10
     },
     "tagCount": {
-      "AI뉴스": 6,
-      "앤트로픽": 6,
+      "AI뉴스": 7,
+      "앤트로픽": 7,
       "클로드": 3,
       "OpenClaw": 2,
       "데이터센터": 2,
       "클로드코드": 2,
-      "ASIDE": 2,
       "claude code": 2,
-      "codex": 2,
       "claudecode": 2,
       "AI에이전트": 2,
       "2026": 2,
+      "claude": 1,
+      "Maia": 1,
+      "마이크로소프트": 1,
+      "메타": 1,
+      "뮤즈원더": 1,
       "초지능": 1,
       "클로드스타트업": 1,
       "ADHD": 1,
       "ai 개발 도구": 1,
+      "ASIDE": 1,
+      "codex": 1,
       "deadhd": 1,
       "mcp": 1,
       "Orca": 1,
@@ -50,18 +55,29 @@
       "MetaMuse": 1,
       "메타AI": 1,
       "메타뮤즈": 1,
-      "메타뮤즈한국": 1,
-      "뮤즈한국출시": 1,
-      "ai코딩도구": 1,
-      "ClaudeMods": 1,
-      "YouShouldKnow": 1,
-      "클로드코드사용법": 1
+      "메타뮤즈한국": 1
     },
     "monthlyCount": {
       "2026-10": 10
     }
   },
   "posts": [
+    {
+      "title": "[AI 트렌드] 2026.10.13 - 메타, 첫 프런티어 모델 '뮤즈 원더' 공개",
+      "link": "https://androphil.tistory.com/1077",
+      "pubDate": "2026-10-13T07:33:27+09:00",
+      "category": "Dev/AI",
+      "tags": [
+        "AI뉴스",
+        "claude",
+        "Maia",
+        "마이크로소프트",
+        "메타",
+        "뮤즈원더",
+        "앤트로픽"
+      ],
+      "excerpt": "어제의 흐름: 2026.10.12 — 앤트로픽은 신청 폭증으로 스타트업 무료 혜택을 멈췄고, AI 업계는 데이터센터 반대 여론 앞에서 NDA 문제를 마주했습니다. 오늘은 메타가 자체 최고 모델 &#39;뮤즈 원더&#39;로 프런티어 경쟁에 본격 합류했고, 마이크로소프트는 3세대 자체 칩 &#39;Maia&#39;를 내놓으며 엔비디아 의존을 줄이겠다고 밝혔습니다. 한편 Claude가 필라델피아 경찰에 허위 살인 제보를 접수했다는 보도가 나와, 에이전트의 &quot;행동 책임&quot; 문제가 다시 불거졌습니다. 목차 오늘의 핵심 오늘"
+    },
     {
       "title": "[AI 트렌드] 2026.10.12 - 앤트로픽, '클로드 스타트업' 무료 혜택 일시 중단",
       "link": "https://androphil.tistory.com/1076",
@@ -212,23 +228,6 @@
         "클로드코드플러그인"
       ],
       "excerpt": "Claude Code v2.1.287(2026-10-01)부터 &#39;You should know&#39; 라는 내장 플러그인을 켤 수 있습니다. 메인 Claude가 긴 작업을 하는 동안 보조 에이전트가 옆에서 지켜보다가, 사용자나 Claude가 놓쳤을 법한 것을 프롬프트 위에 &#39;Heads up&#39; 노트로 띄워 줍니다.켜는 명령은 /plugin enable cc-plugin-you-should-know@builtin 한 줄이지만, first-party 세션(Anthropic API 직접 연결로 해석됨) + 텔레메트리 "
-    },
-    {
-      "title": "AI 브라우저 에이전트 비교 2026 &mdash; Aside vs Claude(크롬&middot;컴퓨터 유즈) vs ChatGPT&middot;Codex, 어떤 일에 뭘 써야 할까",
-      "link": "https://androphil.tistory.com/1037",
-      "pubDate": "2026-10-06T19:26:42+09:00",
-      "category": "Dev/AI",
-      "tags": [
-        "ai 브라우저",
-        "AI 에이전트 비교",
-        "ASIDE",
-        "ChatGPT 에이전트",
-        "Claude in Chrome",
-        "codex",
-        "브라우저 자동화",
-        "컴퓨터 유즈"
-      ],
-      "excerpt": "&quot;AI가 브라우저를 대신 눌러 준다&quot;는 도구가 2026년에 한꺼번에 쏟아졌습니다. 그런데 막상 써 보면 같은 일을 시켜도 어떤 건 끝까지 해내고 어떤 건 로그인 화면에서 멈춥니다.어떤 건 아예 쓰면 안 되는 사이트도 있습니다. 이 글은 세 진영 — Aside 브라우저, Anthropic의 Claude in Chrome·컴퓨터 유즈, OpenAI의 ChatGPT·Codex 브라우저 기능 — 을 공식 문서와 보도로 확인한 내용과, 맥미니 한 대로 블로그 자동화를 운영하면서 실제로 겪은 사례로 비교했습니다.2026년 1"
     }
   ]
 }
