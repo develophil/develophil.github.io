@@ -20,3 +20,13 @@ Supabase 기본 도메인의 HTML 응답 제한으로 기존 공개 삭제 주�
   기존 URL 연결을 적용하고 공개 브라우저에서 검증한다. 아직 푸시/배포하지 않았다.
 
 정본 운영 문서: 피아노리 `docs/public-deletion-web-fix-2026-11-25.md`.
+
+## 사용자 승인 후 공개 확인
+
+- 2026-11-25 사용자가 웹 화면 공개·Supabase 연결 적용을 승인했다.
+- `6aa2be2`를 master에 반영했고 Pages build built, 공개 HTML/JS/CSS HTTP 200·정본 SHA-256 일치를 확인했다.
+- 기존 Supabase 주소는 account-deletion v3의 고정 302로 이 페이지에 연결된다.
+- Supabase Auth에 이 URL만 추가했고 기존 앱 callback은 보존했다.
+- Kakao v7은 웹 반환/CORS와 사용자 세션 클라이언트 분리를 포함한다. 기존 앱 deep link·DB 권한은 유지한다.
+- 실제 Chrome에서 기존 주소→새 한/영 UI와 초기 삭제 비활성 상태를 확인했다. 공개 OAuth·실계정 삭제 전체 검증과 360px 배치는 이어서 진행한다.
+- 공개 적용 자체와 전체 운영 E2E 통과를 구분한다. 상세 증거는 피아노리 정본 문서에 보관한다.
