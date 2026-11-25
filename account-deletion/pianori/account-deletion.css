@@ -1,0 +1,5 @@
+    :root{color-scheme:light;font-family:system-ui,-apple-system,sans-serif;background:#f7f5ff;color:#241c35}
+    body{margin:0}.wrap{max-width:680px;margin:0 auto;padding:32px 20px 64px}.card{background:#fff;border-radius:20px;padding:24px;box-shadow:0 8px 28px #442a7514;margin:16px 0}
+    h1{font-size:26px;margin:0 0 12px;color:#6d3fc0}h2{font-size:18px;margin-top:0}p,li{line-height:1.6}.en{color:#655d70;font-size:14px}
+    button{width:100%;border:0;border-radius:12px;padding:14px 16px;margin:6px 0;font-size:16px;font-weight:700;cursor:pointer}.google{background:#fff;border:1px solid #d7d2df}.kakao{background:#fee500;color:#191919}.danger{background:#b42318;color:#fff}.muted{background:#ece8f4;color:#463c54}.danger:disabled{opacity:.42;cursor:not-allowed}
+    .check{display:flex;gap:10px;align-items:flex-start;margin:18px 0}.check input{margin-top:5px}.status{white-space:pre-wrap;border-radius:12px;padding:14px;background:#f0ecf8;min-height:24px}.ok{background:#e8f7ee;color:#176b3a}.error{background:#fdecec;color:#9d241b}.hidden{display:none}.receipt{word-break:break-all;font-family:ui-monospace,monospace}

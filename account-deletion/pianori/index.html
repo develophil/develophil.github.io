@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>피아노리 계정 삭제 · Pianori account deletion</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https://thoblvgpiodvdyqfribv.supabase.co; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <link rel="stylesheet" href="account-deletion.css">
+</head>
+<body><main class="wrap">
+  <h1>피아노리 계정 및 클라우드 데이터 삭제</h1>
+  <p class="en">Delete your Pianori account and cloud data</p>
+  <section class="card">
+    <h2>삭제되는 데이터 · Data deleted</h2>
+    <ul>
+      <li>Supabase 로그인 계정과 인증 세션</li>
+      <li>랭킹 별명, XP, 스트릭, 곡별 기록</li>
+      <li>부모가 올린 클라우드 진행도 백업</li>
+    </ul>
+    <p class="en">Your sign-in account, ranking data, song records, and cloud progress backups are permanently deleted.</p>
+    <h2>자동으로 삭제되지 않는 데이터 · Data kept</h2>
+    <ul>
+      <li>기기에만 있는 자녀 프로필과 학습 기록</li>
+    </ul>
+    <p class="en">Child profiles and learning records stored only on the device remain.</p>
+    <h2>앱 자체 사용 분석 · In-app usage analytics</h2>
+    <p>앱 자체 사용 분석은 비활성화되어 있어 익명 이용 이벤트를 새로 수집하지 않습니다.</p>
+    <p class="en">In-app usage analytics are disabled, so new anonymous usage events are not collected.</p>
+  </section>
+  <section class="card" id="auth-card">
+    <h2>1. 본인 인증 · Verify your account</h2>
+    <p>삭제할 때 사용한 것과 같은 계정으로 로그인하세요.</p>
+    <p class="en">Sign in with the same account you want to delete.</p>
+    <button class="google" id="google">Google로 인증 · Continue with Google</button>
+    <button class="kakao" id="kakao">카카오로 인증 · Continue with Kakao</button>
+    <button class="muted hidden" id="logout">다른 계정으로 인증 · Use another account</button>
+  </section>
+  <section class="card">
+    <h2>2. 영구 삭제 · Permanently delete</h2>
+    <label class="check"><input type="checkbox" id="confirm"><span>클라우드 계정과 위 데이터를 되돌릴 수 없게 삭제하는 것을 이해했습니다.<br><span class="en">I understand that the cloud account and data above will be permanently deleted.</span></span></label>
+    <button class="danger" id="delete" disabled>계정 영구 삭제 · Permanently delete account</button>
+    <div class="status" id="status" role="status">먼저 본인 인증을 완료해주세요. · Verify your account first.</div>
+  </section>
+  <p class="en">Visiting this page does not delete anything. Deletion starts only after verification, confirmation, and pressing the delete button.</p>
+</main>
+<script src="account-deletion.js" defer></script></body></html>
